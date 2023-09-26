@@ -1,12 +1,9 @@
-#`-file-line-error` is similar to `--interaction nonstopmode`, but shows the concrete line number
-#Remove it, it you want pdflatex to stop on errors
-$pdflatex = 'pdflatex -shell-escape -file-line-error --synctex=-1 %O %S';
+## For more infos, see: https://texdoc.org/serve/latexmk.pdf/0
 
-#Use SumatraPDF instead of the default PDF viewer
-$pdf_previewer = 'start "C:\Program Files\SumatraPDF\SumatraPDF.exe"';
+@default_files = ('main-german.tex');
 
-#SumatraPDF updates automatically
-$preview_mode = 0;
+$pdflatex = 'lualatex -synctex=1 --shell-escape -file-line-error %O %S';
+$biber='biber %O %S';
 
 #automatically call lualatex/pdflatex (instead of latex)
 $pdf_mode = 1;

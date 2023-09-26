@@ -1,8 +1,10 @@
+name: Compilation
+# Whenever a release is published, the document gets compiled and added to the release.
+
 on:
   release:
     types: [ published  ]
     # branches: [ main ]
-
 
 jobs:
   build:
@@ -16,8 +18,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main-german.tex
-          latexmk_use_lualatex: true
-          latexmk_shell_escape: true
+      - uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: main-german.pdf
+
+## Old custom setup stuff:
 
 #      - name: Setup TeX Live
 #        uses: teatimeguest/setup-texlive-action@v2
@@ -38,13 +44,3 @@ jobs:
 #        run: |
 #          lualatex -synctex=1 -interaction=nonstopmode --shell-escape main-german
 #          lualatex -synctex=1 -interaction=nonstopmode --shell-escape main-german
-#      - name: Add PDF to Release
-#        uses: irongut/EditRelease@v1.2.0
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          id: ${{ github.event.release.id }}
-#          files: "main-german.pdf"
-      - uses: shogo82148/actions-upload-release-asset@v1
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: main-german.pdf
