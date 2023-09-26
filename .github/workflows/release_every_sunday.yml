@@ -1,0 +1,13 @@
+on:
+  schedule:
+    - cron: '59 23 * * SUN' # Run every sunday at 23:59
+
+jobs:
+  create-release:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          title: Week TODO
