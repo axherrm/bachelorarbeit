@@ -1,0 +1,53 @@
+name: Compile and upload Asset
+
+on:
+  workflow_call:
+    inputs:
+      asset-name:
+        required: false
+        type: string
+        default: main-german.pdf
+      upload-url:
+        required: true
+        type: string
+
+jobs:
+  compile_upload_asset:
+    name: Compile & add PDF to release
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main-german.tex
+      - name: Upload Release Asset
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ inputs.upload-url }}
+          asset_path: main-german.pdf
+          asset_name: ${{ inputs.asset-name }}
+
+## Old custom setup stuff:
+
+#      - name: Setup TeX Live
+#        uses: teatimeguest/setup-texlive-action@v2
+#        with:
+#          packages: scheme-basic
+#      - name: Setup MikTex
+#        run: |
+#          apt-get update
+#          apt-get install -y curl
+#          curl -fsSL https://miktex.org/download/key | tee /usr/share/keyrings/miktex-keyring.asc > /dev/null
+#          echo "deb [signed-by=/usr/share/keyrings/miktex-keyring.asc] http://miktex.org/download/ubuntu jammy universe" | tee /etc/apt/sources.list.d/miktex.list
+#          apt-get update
+#          apt-get install miktex
+#          miktexsetup --shared=yes finish
+#          initexmf --admin --set-config-value [MPM]AutoInstall=1
+#      - name: Compile PDF
+#        # biber main-german
+#        run: |
+#          lualatex -synctex=1 -interaction=nonstopmode --shell-escape main-german
+#          lualatex -synctex=1 -interaction=nonstopmode --shell-escape main-german
