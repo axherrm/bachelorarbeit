@@ -1,6 +1,9 @@
+name: Release every sunday
+
 on:
   schedule:
-    - cron: '59 23 * * SUN' # Run every sunday at 23:59
+#    - cron: '59 23 * * SUN' # Run every sunday at 23:59
+    - cron: '50,55 9 * * WED'
 
 jobs:
   create-release:
@@ -10,4 +13,4 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          title: Week TODO
+          title: Week ${{ github.run_number }}
