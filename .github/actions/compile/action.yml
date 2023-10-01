@@ -1,0 +1,14 @@
+name: Compile LaTeX document
+description: Compile LaTeX document via latexmk
+inputs:
+  root_file:
+    description: Main file to start compilation
+    required: false
+    default: main-german.tex
+runs:
+  using: "composite"
+  steps:
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: ${{ inputs.root_file }}
