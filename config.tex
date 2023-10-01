@@ -72,6 +72,10 @@
 % \usepackage{amsmath}
 
 
+% Fixes "amssymb.sty:240: LaTeX Error: Command `\eth' already defined", see: https://tex.stackexchange.com/questions/547150/latex-command-is-already-defined-error
+\usepackage{amssymb}
+
+
 %% EN: Fonts
 %% DE: Schriften
 %%
@@ -1089,7 +1093,7 @@
 ]{geometry}
 
 
-% EN: Provides todo notes
+% EN: Provides t0do notes
 % DE: schoene TODOs
 \ifdeutsch
   \usepackage[colorinlistoftodos,ngerman]{todonotes}
