@@ -1,1 +1,21 @@
 \chapter{Ähnliche Forschung}
+
+Es liegt bereits einige Forschung zum Architekturprinzip der Microservices vor.
+Folgend soll sowohl auf grundlegende Literatur zu Microservices verwiesen werden, als auch verwandte Arbeiten erwähnt werden.
+Dabei wird in Literatur zur Migration von monolithischen Systemen zu Microservices-basierten und in Literatur zum Refactoring von Microservices-basierten System unterschieden werden.
+
+\section{Migration}
+
+\Citet{10.1145/3242163.3242164} beschreiben geläufige Gefahren bei der Migration zu Microservices-Architekturen. 
+Dabei  werden fünf architektonische Fehlermuster und vier Fehlermuster bei der Migration aufgeführt.
+Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
+
+\Citet{10.1007/978-3-030-06019-0_10} kategorisieren zehn verschiedene Refactoring-Methoden. 
+Dabei wird ein Mängel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
+
+\section{Refactoring}
+
+\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
+Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
+Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
+Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
