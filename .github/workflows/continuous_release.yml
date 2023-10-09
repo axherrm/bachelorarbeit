@@ -32,6 +32,6 @@ jobs:
       - name: Upload Release Asset
         uses: shogo82148/actions-upload-release-asset@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
+          upload_url: ${{ steps.publish_release.outputs.upload_url }}
           asset_path: main-german.pdf
           asset_name: ${{ env.PDF_NAME }}
