@@ -1,0 +1,23 @@
+\chapter{Einleitung}
+\label{chap:einleitung}
+
+In Zeiten, in denen viele Softwarelösungen auf Cloud-Computing basieren, ist auch die Microservices-Architektur immer geläufiger geworden.
+Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektur übergeführt, hauptsächlich mit dem Ziel, von besserer Wartbarkeit und Skalierbarkeit zu profitieren~\cite{Fritzsch_2019}.
+Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme, kann es jedoch sehr zeit-, kostenaufwendig und kompliziert sein, diese in eine Microservices-Architektur zu migrieren.
+Es liegen aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, doch diese wird nur sehr selten in der Industrie benutzt~\cite{fritzsch2022architecturecentric}.
+
+Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat das ESE ein Microservices Migration Framework entwickelt (nachfolgend \acrshort{ese-mmf} genannt).
+Mit der Entwicklung des \acrshort{ese-mmf}, das Erkenntnisse über die Migration von monolithischen Applikationen in Richtung Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
+
+Offen ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs an einem realen Produkt, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden kann.
+Im Rahmen dieser Bachelorarbeit wird das \acrshort{ese-mmf} deshalb erstmals an einem realen Produkt, \emph{jadice flow}, evaluiert.
+Dazu wird das Framework zum Refactoring des Produkts genutzt.
+Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Frameworks und Werkzeuges verwendet, wodurch diese in Zukunft weiter verbessert werden sollen.
+
+Bei der Analyse des Produkts mithilfe des Frameworks wurden vor allem drei Design-Aspekte von Microservices betrachtet:
+[1] Die optimale Service Granularität, bei der zwischen Overhead durch zu viele Einheiten und Overhead durch zu große Einheiten abgewägt werden muss.
+[2] Paradigma der Ansteuerung der einzelnen Einheiten, Kommunikationsmodell zwischen den Einheiten.
+[3] Verringerung des IO-Flaschenhalses, Art des Payload-Transfers.
+Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ihre Arbeit verrichten können, immer die Input-Dokumente herunterladen und danach die Ergebnisse wieder hochladen müssen.
+
+
