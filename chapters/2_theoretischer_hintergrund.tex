@@ -1,7 +1,11 @@
 \chapter{Theoretischer Hintergrund}
 \label{chap:theoretischer-hintergrund}
 
-Es liegt bereits einige Forschung zum Architekturprinzip der Microservices vor.
+Es liegt bereits eine Vielzahl an akademischen Publikationen zum Architekturprinzip der Microservices vor.
+In diesem Kapitel wird auf grundlegende Literatur zu den für diese Arbeit relevanten Unterthemen davon eingegangen.
+Dazu gehört als erstes der Vergleich zwischen dem häufig genutzten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices}.
+Danach beschreiben wir aktuelle Arbeiten zur Migration zu Microservices-Architekturen.
+Abschließend wird auf ähnliche Forschungsarbeiten verwiesen.
 Folgend wird sowohl auf grundlegende Literatur zu Microservices verwiesen werden, als auch verwandte Arbeiten erwähnt.
 Dabei wird in Literatur zur Migration von monolithischen Systemen zu Microservices-basierten und in Literatur zum Refactoring von Microservices-basierten System unterschieden.
 
@@ -21,19 +25,69 @@ Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} 2022 dann die P
 Dabei  werden fünf architektonische Fehlermuster und vier Fehlermuster bei der Migration aufgeführt.
 Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
 
-\section{Refactoring}
-
-Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
-Deswegen werden folgend ein paar Quellen vorgestellt, die das Refactoring von Microservices-Architekturen behandeln.
-
-\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
-Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
-Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
-Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
+%\section{Refactoring}
+%
+%Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
+%Deswegen werden folgend ein paar Quellen vorgestellt, die das Refactoring von Microservices-Architekturen behandeln.
+%
+%\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
+%Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
+%Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
+%Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
 
 \section{Ähnliche Forschung}
 
 \section{Microservices Migration Framework}
+
+Aufgrund der beschriebenen Vorteile von Microservices Architekturen ist es im Interesse vieler Unternehmen und Entwickler, existierende Applikationen und Systeme mit monolithischer Architektur zu Microservices-basierten Systemen zu migrieren.
+Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensiv und durch große Risiken geprägt, da dabei Systeme sehr tiefliegend verändert werden.
+Erschwert wird er durch das Fehlen klarer und strukturierter Anleitungen.
+Es wurde bereits durch mehrere Metastudien versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein kann.
+Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Literatur schnell ändert und Metastudien dadurch teilweise obsolet werden.
+Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt, gelöst werden.
+Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
+
+Aus diesem Grund hat das \gls{ese} das Werkzeug \gls{arh} \cite{arh-github} entwickelt, das in diesem Kapitel vorgestellt wird.
+Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch}\cite{master-daniel-koch2}\cite{master-tobias-haller}.
+Der \gls{arh} ist eine web-basierte Anleitung, die Entwickler durch drei Phasen der Migrationsplanung führt.
+Eine Übersicht über diese Phasen und die Funktionsweise des Werkzeugs ist in \cref{fig:arh-overview} zu sehen.
+Im Folgenden werden diese drei Phasen genauer beschrieben: 
+
+\begin{itemize}
+	\item \textbf{Phase 1: System Comprehension:}
+	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt. 
+	Mit den Stakeholdern sollen dabei strategische Ziele für Produkt und Unternehmen definiert, sowie Qualitätsmerkmale und gewünschte Szenarien identifiziert werden.
+	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
+	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
+	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
+	\item \textbf{Phase 2: Strategy Definition:}
+	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
+	Eine der zwei hauptsächlichen Aufgaben in dieser Phase ist die konkrete Definition, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
+	Dafür kann zwischen (momentan) 22 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
+	Das Werkzeug kann Entwickler dabei unterstützen, indem es aufgrund der Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
+	Der zweite Teil dieser Phase besteht darin, einen Service-Identifikationsansatz zu wählen.
+	Durch diesen kann in der nächsten Phase eine sinnvolle Aufteilung in einzelne Services bestimmt werden.
+	\item \textbf{Phase 3a: Architecture Definition:}
+	Phase 3 ist in zwei Teile aufgeteilt. 
+	Im ersten Abschnitt wird die neue Architektur definiert. 
+	Hier wird, basierend auf der Methode zur Migration, die in der Planungsphase gewählt wurde, die Identifikation von Microservice-Kandidaten realisiert.
+	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
+	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden. 
+	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Implementierungen der in Phase 3a definierten Services.
+	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
+	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
+	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
+	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{figures/ese-mmf-overview.png}
+	\caption[Architecture Refactoring Helper Übersicht]{
+		Übersicht über den \acrlong{arh} des \gls{ese} \cite{fritzsch2022architecturecentric}. Es sind die drei Phasen des Prozesses zu erkennen, sowie einige Schritte der einzelnen Phasen.
+	}
+	\label{fig:arh-overview}
+\end{figure}
 
 \section{jadice flow}
 
