@@ -2,16 +2,47 @@
 \label{chap:theoretischer-hintergrund}
 
 Es liegt bereits eine Vielzahl an akademischen Publikationen zum Architekturprinzip der Microservices vor.
-In diesem Kapitel wird auf grundlegende Literatur zu den für diese Arbeit relevanten Unterthemen davon eingegangen.
-Dazu gehört als erstes der Vergleich zwischen dem häufig genutzten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices}.
+In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis relevanten Literatur eingeführt.
+Zuerst wird ein kleiner Vergleich zwischen dem häufig genutzten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices} gezogen.
 Danach beschreiben wir aktuelle Arbeiten zur Migration zu Microservices-Architekturen.
-Abschließend wird auf ähnliche Forschungsarbeiten verwiesen.
-Folgend wird sowohl auf grundlegende Literatur zu Microservices verwiesen werden, als auch verwandte Arbeiten erwähnt.
-Dabei wird in Literatur zur Migration von monolithischen Systemen zu Microservices-basierten und in Literatur zum Refactoring von Microservices-basierten System unterschieden.
+Außerdem führen wir in das Werkzeug \gls{arh} ein, das großer Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
+Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \gls{arh} überarbeitet werden soll.
 
 \section{Vergleich von monolithischen und Microservices-Systemen}
 
+Die monolithische Architektur von Systemen hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist der einfachste Weg, Software zu entwickeln.
+Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist. 
+Diese Architektur hat durchaus Stärken.
+Da es eine sehr einfache Architektur ist, können kleine Anwendungen sehr schnell erstellt, getestet und lauffähig gemacht werden.
+Es wird kein kompliziertes Kommunikationsmodell benötigt, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben sind.
+
+Je größer Monolithen werden, desto stärken zeigen sich allerdings die Schwächen dieser Architektur.
+Es entstehen riesige Codebasen und kleine Änderungen erzwingen erneutes Bauen und Testen der gesamten Applikation.
+Das steht auch dem modernen agilen Arbeitsprinzip im Weg.
+Falls nur einzelne Komponenten eines Monolithen hohe Last erfahren, muss trotzdem das ganze System skaliert werden, was zu verschwendeter Rechenleistung führen kann und die Applikationen ineffizient macht.
+
+Die meisten dieser Probleme werden durch die Microservices-Architektur gelöst.
+Dabei besteht ein System aus vielen kleinen (Micro) Services.
+Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden und genau eine Aufgabe haben.
+Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services nötig.
+Dafür existieren verschiedene Lösungen, die im Rahmen dieser Arbeit noch näher untersucht werden, doch ein sehr häufig benutztes ist beispielsweise \gls{rest}.
+
+Die Vorteile dieser Architektur gegenüber Monolithen sind vielseitig.
+Da die Services unabhängig voneinander entworfen sind, können sie einzeln implementiert, getestet und gebaut werden.
+Dadurch ist die Automatisierung des Bauens und Testens durch \gls{ci} / \gls{cd} einfacher möglich.
+Außerdem können Services je nach Last einzeln skaliert werden, was die Effizienz in manchen Szenarien stark erhöht.
+Des weiteren sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Berücksichtigung des gewählten Kommunikationsmodells ist.
+
+Wie bereits erwähnt gibt es allerdings auch Punkte, in denen Monolithen vorteilhafter sind, wodurch eine Microservices-Architektur nicht universell den Monolithen vorzuziehen ist.
+Dazu gehört vor allem die Komplexität des Systems, die mit Microservices-Architektur wesentlich erhöht ist.
+Das liegt an der Aufteilung in einzelne Services, die ein ausgefeiltes Kommunikationsmodell benötigen.
+Die Kommunikation zwischen den Komponenten ist in jedem Fall langsamen und ineffizienter als das Pendant dazu in Monolithen, wo lediglich Funktionen im selben ausgeführten Programm aufgerufen werden.
+
 \section{Migration zu Microservices}
+
+Aufgrund der genannte Vorteile der Microservices-Architektur gegenüber Monolithen, besteht großes Interesse daran, Monolithen zu Microservices zu migrieren.
+Der Eingriff in tiefe Architekturprinzipien eines Systems ist natürlich keine einfache Operation.
+Deswegen ist die Migration zu Microservices seit einiger Zeit ein stark untersuchtes Thema.
 
 In dieser Thesis wurde sehr vordergründig das Microservices Migration Framework des ESE  untersucht.
 Dieses ist aufgrund vorheriger Arbeiten wie \Citet{10.1007/978-3-030-06019-0_10} entstanden.
@@ -35,9 +66,7 @@ Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
 %Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
 %Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
 
-\section{Ähnliche Forschung}
-
-\section{Microservices Migration Framework}
+\section{\acrfull{arh}}
 
 Aufgrund der beschriebenen Vorteile von Microservices Architekturen ist es im Interesse vieler Unternehmen und Entwickler, existierende Applikationen und Systeme mit monolithischer Architektur zu Microservices-basierten Systemen zu migrieren.
 Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensiv und durch große Risiken geprägt, da dabei Systeme sehr tiefliegend verändert werden.
@@ -91,6 +120,9 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \section{jadice flow}
 
+Das vorgestellte Werkzeug soll in dieser Thesis nun erstmals in der Industrie benutzt werden.
+Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow} eingegangen, das damit überarbeitet werden soll.
+
 \emph{jadice flow} ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://solutions.levigo.de/}}.
 \emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an \emph{jadice flow} arbeiten.
 \emph{jadice flow} basiert bereits auf einer Microservices-Architektur, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monoliths \emph{jadice server}\footnote{\url{https://jadice.com/produkte/server/}}.
@@ -105,11 +137,11 @@ Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \emph{jadice flow} zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
 Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch einiges Verbesserungspotential vermutet.
-Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Frameworks und weiterer Forschung im Rahmen dieser Bachelorarbeit soll ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
+Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit soll ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
 Da das Framework für die Anwendung auf Monolithen gedacht ist, soll in dieser Arbeit die Anwendung des Frameworks auf ein bereits migriertes System angewendet werden, um dessen Eigenschaften weiter zu verbessern.
 Dadurch wird erforscht, inwiefern sich Framework und Werkzeug auf eine bereits existierende Microservice-Architektur anwenden lassen.
-\todo{Ändern je nachdem, ob jadice server verwendet wird}Falls es deshalb für diesen Anwendungsfall zielführend ist, wird zusätzlich die ursprüngliche monolithische Anwendung von \emph{jadice flow} (\emph{jadice server}) hinzugezogen.
+Falls es deshalb für diesen Anwendungsfall zielführend ist, wird zusätzlich die ursprüngliche monolithische Anwendung von \emph{jadice flow} (\emph{jadice server}) hinzugezogen.
 Die Ergebnisse dessen könnten dann mit \emph{jadice flow} verglichen werden.
 
 
