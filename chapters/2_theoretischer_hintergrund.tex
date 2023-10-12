@@ -1,42 +1,42 @@
 \chapter{Theoretischer Hintergrund}
 \label{chap:theoretischer-hintergrund}
-
-Es liegt bereits eine Vielzahl an akademischen Publikationen zum Architekturprinzip der Microservices vor.
+Zum Architekturprinzip der Microservices gibt es bereits eine Vielzahl akademischer Publikationen.
 In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis relevanten Literatur eingeführt.
-Zuerst wird ein kleiner Vergleich zwischen dem häufig genutzten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices} gezogen.
-Danach beschreiben wir aktuelle Arbeiten zur Migration zu Microservices-Architekturen.
-Außerdem führen wir in das Werkzeug \gls{arh} ein, das großer Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
+Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices} gezogen.
+Anschließend werden aktuelle Arbeiten zur Migration zu Microservices-Architekturen beschrieben.
+Des Weiteren wird das Werkzeug \gls{arh} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
 Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \gls{arh} überarbeitet werden soll.
 
 \section{Vergleich von monolithischen und Microservices-Systemen}
 
-Die monolithische Architektur von Systemen hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist der einfachste Weg, Software zu entwickeln.
+Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
 Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist. 
-Diese Architektur hat durchaus Stärken.
-Da es eine sehr einfache Architektur ist, können kleine Anwendungen sehr schnell erstellt, getestet und lauffähig gemacht werden.
-Es wird kein kompliziertes Kommunikationsmodell benötigt, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben sind.
+Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Stärken.
+Da es sich um eine sehr einfache Architektur handelt, können kleine Anwendungen sehr schnell erstellt, getestet und zum Laufen gebracht werden.
+Es wird kein kompliziertes Kommunikationsmodell benötigt, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
 
-Je größer Monolithen werden, desto stärken zeigen sich allerdings die Schwächen dieser Architektur.
+Je größer Monolithen jedoch werden, desto stärker zeigen sich die Schwächen dieser Architektur.
 Es entstehen riesige Codebasen und kleine Änderungen erzwingen erneutes Bauen und Testen der gesamten Applikation.
 Das steht auch dem modernen agilen Arbeitsprinzip im Weg.
-Falls nur einzelne Komponenten eines Monolithen hohe Last erfahren, muss trotzdem das ganze System skaliert werden, was zu verschwendeter Rechenleistung führen kann und die Applikationen ineffizient macht.
+Wenn nur einzelne Komponenten eines Monolithen eine hohe Last erfahren, muss trotzdem das gesamte System skaliert werden, was zu einer Verschwendung von Rechenleistung führen kann und die Anwendung ineffizient macht.
 
 Die meisten dieser Probleme werden durch die Microservices-Architektur gelöst.
-Dabei besteht ein System aus vielen kleinen (Micro) Services.
-Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden und genau eine Aufgabe haben.
+Dabei besteht ein System aus vielen kleinen (Micro-) Services.
+Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden, genau eine Aufgabe haben und unabhängig ausgeführt werden können \cite{10220070}.
 Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services nötig.
-Dafür existieren verschiedene Lösungen, die im Rahmen dieser Arbeit noch näher untersucht werden, doch ein sehr häufig benutztes ist beispielsweise \gls{rest}.
+Dafür existieren verschiedene Lösungen, die im Rahmen dieser Arbeit näher betrachtet werden.
+Ein sehr häufig benutztes ist beispielsweise \gls{rest}.
 
 Die Vorteile dieser Architektur gegenüber Monolithen sind vielseitig.
 Da die Services unabhängig voneinander entworfen sind, können sie einzeln implementiert, getestet und gebaut werden.
-Dadurch ist die Automatisierung des Bauens und Testens durch \gls{ci} / \gls{cd} einfacher möglich.
-Außerdem können Services je nach Last einzeln skaliert werden, was die Effizienz in manchen Szenarien stark erhöht.
-Des weiteren sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Berücksichtigung des gewählten Kommunikationsmodells ist.
+Dies erleichtert die Automatisierung des Bauens und Testens durch \gls{ci} / \gls{cd}.
+Außerdem können Services abhängig von der Last einzeln skaliert werden, was die Effizienz in bestimmten Szenarien deutlich erhöht.
+Darüber hinaus sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Berücksichtigung des gewählten Kommunikationsmodells ist.
 
-Wie bereits erwähnt gibt es allerdings auch Punkte, in denen Monolithen vorteilhafter sind, wodurch eine Microservices-Architektur nicht universell den Monolithen vorzuziehen ist.
-Dazu gehört vor allem die Komplexität des Systems, die mit Microservices-Architektur wesentlich erhöht ist.
-Das liegt an der Aufteilung in einzelne Services, die ein ausgefeiltes Kommunikationsmodell benötigen.
-Die Kommunikation zwischen den Komponenten ist in jedem Fall langsamen und ineffizienter als das Pendant dazu in Monolithen, wo lediglich Funktionen im selben ausgeführten Programm aufgerufen werden.
+Wie bereits erwähnt, gibt es allerdings auch Punkte, in denen Monolithen vorteilhafter sind, sodass eine Microservices-Architektur nicht universell den Monolithen vorzuziehen ist.
+Dazu gehört vor allem die Komplexität des Systems, die bei einer Microservices-Architektur deutlich höher ist.
+Dies liegt an der Aufteilung in einzelne Services, die ein ausgefeiltes Kommunikationsmodell erfordern.
+Die Kommunikation zwischen den Komponenten ist in jedem Fall langsamer und ineffizienter als bei Monolithen, bei denen lediglich Funktionen im selben ausgeführten Programm aufgerufen werden.
 
 \section{Migration zu Microservices}
 
@@ -44,27 +44,17 @@ Aufgrund der genannte Vorteile der Microservices-Architektur gegenüber Monolith
 Der Eingriff in tiefe Architekturprinzipien eines Systems ist natürlich keine einfache Operation.
 Deswegen ist die Migration zu Microservices seit einiger Zeit ein stark untersuchtes Thema.
 
-In dieser Thesis wurde sehr vordergründig das Microservices Migration Framework des ESE  untersucht.
-Dieses ist aufgrund vorheriger Arbeiten wie \Citet{10.1007/978-3-030-06019-0_10} entstanden.
+Anwendungen können eine unterschiedliche Ausgangsarchitekturen haben.
+Es gibt viele verschiedene Migrationsmethoden, die wissenschaftlich untersucht wurden, sodass es für jedes System eine passende gibt.
 
-In 2019 kategorisieren \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Migrations-Methoden.
-Dabei wird ein Mängel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
+Für den gesamten Prozess der Migration zu Microservices gibt es im Wesentlichen drei verschiedene Methoden \cite{master-daniel-koch}:
+\begin{enumerate}
+	\item \textbf{Re-Factor:} Der existierende Code wird kontinuierlich verändert, ohne die Funktionalität der Anwendung zu verändern.
+	\item \textbf{Re-Build:} Die gesamte Anwendung wird im Rahmen der Architekturveränderung verändert. Dabei werden passend zu den Anforderungen neue Technologien verwendet.
+	\item \textbf{Neue Anwendung:} Eine völlig neue Anwendung wird von Grund auf entwickelt.
+\end{enumerate}
 
-Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} 2022 dann die Planung ein solchen Frameworks vor. Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird bereits beschrieben. Auch wird die Entwicklung eines Web-basierten Werkzeugs erwähnt, das das Framework benutzt und Entwickler bei der Migration unterstützt.
-
-\Citet{10.1145/3242163.3242164} beschreiben geläufige Gefahren bei der Migration zu Microservices-Architekturen.
-Dabei  werden fünf architektonische Fehlermuster und vier Fehlermuster bei der Migration aufgeführt.
-Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
-
-%\section{Refactoring}
-%
-%Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
-%Deswegen werden folgend ein paar Quellen vorgestellt, die das Refactoring von Microservices-Architekturen behandeln.
-%
-%\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
-%Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
-%Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
-%Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
+Doch keine davon bietet genug Flexibilität, um alle Anwendungsfälle abdecken zu können. 
 
 \section{\acrfull{arh}}
 
