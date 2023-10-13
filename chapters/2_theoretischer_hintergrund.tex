@@ -10,7 +10,7 @@ Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \g
 \section{Vergleich von monolithischen und Microservices-Systemen}
 
 Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
-Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist. 
+Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist.
 Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Stärken.
 Da es sich um eine sehr einfache Architektur handelt, können kleine Anwendungen sehr schnell erstellt, getestet und zum Laufen gebracht werden.
 Es wird kein kompliziertes Kommunikationsmodell benötigt, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
@@ -54,7 +54,7 @@ Für den gesamten Prozess der Migration zu Microservices gibt es im Wesentlichen
 	\item \textbf{Neue Anwendung:} Eine völlig neue Anwendung wird von Grund auf entwickelt.
 \end{enumerate}
 
-Doch keine davon bietet genug Flexibilität, um alle Anwendungsfälle abdecken zu können. 
+Doch keine davon bietet genug Flexibilität, um alle Anwendungsfälle abdecken zu können.
 
 \section{\acrfull{arh}}
 
@@ -67,14 +67,14 @@ Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs
 Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
 
 Aus diesem Grund hat das \gls{ese} das Werkzeug \gls{arh} \cite{arh-github} entwickelt, das in diesem Kapitel vorgestellt wird.
-Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch}\cite{master-daniel-koch2}\cite{master-tobias-haller}.
+Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch}\cite{master-tobias-haller}.
 Der \gls{arh} ist eine web-basierte Anleitung, die Entwickler durch drei Phasen der Migrationsplanung führt.
 Eine Übersicht über diese Phasen und die Funktionsweise des Werkzeugs ist in \cref{fig:arh-overview} zu sehen.
-Im Folgenden werden diese drei Phasen genauer beschrieben: 
+Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \begin{itemize}
 	\item \textbf{Phase 1: System Comprehension:}
-	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt. 
+	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
 	Mit den Stakeholdern sollen dabei strategische Ziele für Produkt und Unternehmen definiert, sowie Qualitätsmerkmale und gewünschte Szenarien identifiziert werden.
 	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
@@ -87,11 +87,11 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	Der zweite Teil dieser Phase besteht darin, einen Service-Identifikationsansatz zu wählen.
 	Durch diesen kann in der nächsten Phase eine sinnvolle Aufteilung in einzelne Services bestimmt werden.
 	\item \textbf{Phase 3a: Architecture Definition:}
-	Phase 3 ist in zwei Teile aufgeteilt. 
-	Im ersten Abschnitt wird die neue Architektur definiert. 
+	Phase 3 ist in zwei Teile aufgeteilt.
+	Im ersten Abschnitt wird die neue Architektur definiert.
 	Hier wird, basierend auf der Methode zur Migration, die in der Planungsphase gewählt wurde, die Identifikation von Microservice-Kandidaten realisiert.
 	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
-	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden. 
+	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
 	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Implementierungen der in Phase 3a definierten Services.
 	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
 	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
@@ -134,5 +134,27 @@ Dadurch wird erforscht, inwiefern sich Framework und Werkzeug auf eine bereits e
 Falls es deshalb für diesen Anwendungsfall zielführend ist, wird zusätzlich die ursprüngliche monolithische Anwendung von \emph{jadice flow} (\emph{jadice server}) hinzugezogen.
 Die Ergebnisse dessen könnten dann mit \emph{jadice flow} verglichen werden.
 
+\section{Ähnliche Forschung}
 
+In dieser Thesis wird sehr vordergründig das Microservices Migration Framework des ESE  untersucht.
+Dieses ist aufgrund vorheriger Arbeiten wie \Citet{10.1007/978-3-030-06019-0_10} entstanden.
+
+In 2019 kategorisieren \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Migrations-Methoden.
+Dabei wird ein Mängel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
+
+Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} 2022 dann die Planung ein solchen Frameworks vor. Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird bereits beschrieben. Auch wird die Entwicklung eines Web-basierten Werkzeugs erwähnt, das das Framework benutzt und Entwickler bei der Migration unterstützt.
+
+\Citet{10.1145/3242163.3242164} beschreiben geläufige Gefahren bei der Migration zu Microservices-Architekturen.
+Dabei  werden fünf architektonische Fehlermuster und vier Fehlermuster bei der Migration aufgeführt.
+Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
+
+%\section{Refactoring}
+%
+%Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
+%Deswegen werden folgend ein paar Quellen vorgestellt, die das Refactoring von Microservices-Architekturen behandeln.
+%
+%\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
+%Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
+%Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
+%Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
 
