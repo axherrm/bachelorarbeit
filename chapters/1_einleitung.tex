@@ -6,11 +6,11 @@ Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektu
 Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme, kann die Migration in eine Microservices-Architektur jedoch sehr zeitaufwendig, kostenintensiv und kompliziert sein.
 Es liegen aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, die jedoch nur selten in der Industrie benutzt werden~\cite{fritzsch2022architecturecentric}.
 
-Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat das ESE ein Microservices Migration Framework (nachfolgend \acrshort{ese-mmf} genannt) entwickelt.
-Mit der Entwicklung des \acrshort{ese-mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
+Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat das ESE ein Microservices Migration Framework (nachfolgend \acrshort{mmf} genannt) entwickelt.
+Mit der Entwicklung des \acrshort{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
 Offen ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden kann.
-Im Rahmen dieser Bachelorarbeit wird das \acrshort{ese-mmf} daher erstmals an einem realen Produkt, \emph{jadice flow}, evaluiert.
+Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} daher erstmals an einem realen Produkt, \emph{jadice flow}, evaluiert.
 Dazu wird das Framework zum Refactoring des Produktes verwendet.
 Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Frameworks und Werkzeuges verwendet, wodurch diese in Zukunft weiter verbessert werden sollen.
 
@@ -23,7 +23,7 @@ Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ih
 Deswegen werden in dieser Arbeit die folgenden Forschungsfragen untersucht.
 
 \begin{itemize}
-	\item[RQ 1: ]Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{ese-mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
+	\item[RQ 1: ]Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
 	\begin{enumerate}[i.]
 		\item Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
 		\item Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kommunikationsmodells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
