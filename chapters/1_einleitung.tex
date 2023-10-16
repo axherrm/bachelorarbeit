@@ -6,8 +6,8 @@ Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektu
 Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme, kann die Migration in eine Microservices-Architektur jedoch sehr zeitaufwendig, kostenintensiv und kompliziert sein.
 Es liegen aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, die jedoch nur selten in der Industrie benutzt werden~\cite{fritzsch2022architecturecentric}.
 
-Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat das ESE ein Microservices Migration Framework (nachfolgend \acrshort{mmf} genannt) entwickelt.
-Mit der Entwicklung des \acrshort{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
+Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat das ESE das \gls{mmf} entwickelt.
+Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
 Offen ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden kann.
 Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} daher erstmals an einem realen Produkt, \emph{jadice flow}, evaluiert.
@@ -20,12 +20,30 @@ Bei der Analyse des Produkts mithilfe des Frameworks werden vor allem drei Desig
 [3] Reduktion des IO-Flaschenhalses, Art des Payload-Transfers.
 Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ihre Arbeit verrichten können, immer die Eingangsdokumente herunterladen und anschließend die Ergebnisse wieder hochladen müssen.
 
-Deswegen werden in dieser Arbeit die folgenden Forschungsfragen untersucht.
+Daraus folgen die Forschungsfragen, die in dieser Thesis untersucht werden:
 
 \begin{itemize}
-	\item[RQ 1: ]Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
+	\item \emph{RQ 1:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
 	\begin{enumerate}[i.]
 		\item Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
 		\item Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kommunikationsmodells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
 	\end{enumerate}
 \end{itemize}
+
+Um die definierten Forschungsfragen zu beantworten, werden zwei Ziele für diese Arbeit definiert:
+Im ersten Teil wird das \gls{mmf} benutzt, um die Architektur von \emph{jadice flow} zu überarbeiten.
+Dabei wird innerhalb von drei Phasen ein Plan für eine neue Architektur des Produkts entworfen.
+Diese Phasen beinhalten eine Sammlung von wissenschaftlich untersuchten Methoden zur Migration zu Microservices.
+
+Im zweiten Teil wird ein Prototyp implementiert, der diese neue Architektur umsetzt.
+Außerdem werden Messmethoden festgelegt, die einen Vergleich des Produkts vor und nach dem Refactoring ermöglichen.
+
+Um die definierten Forschungsfragen zu untersuchen und die gesetzten Ziele zu erreichen, ist diese Thesis in die folgenden Kapitel aufgeteilt:
+Anfangs wird in \textbf{\cref{chap:theoretischer-hintergrund}} in den theoretischen Hintergrund eingeführt, der für diese Arbeit relevant ist. 
+Es werden auch das \gls{mmf} und \emph{jadice flow} kurz beschrieben. 
+Ebenfalls werden ähnliche Arbeiten vorgestellt.
+In \textbf{\cref{chap:methodik}} wird die Methodik beschrieben, mit der diese Thesis durchgeführt werden soll und die Forschungsfragen beantwortet werden sollen.
+Mit Verwendung des \gls{mmf} wird in \textbf{\cref{chap:anwendung}} am Produkt \emph{jadice flow} die Planung eines Refactorings durchgeführt. 
+Es werden die drei Phasen des Frameworks ausgeführt, wodurch schlussendlich ein neuer Architekturplan entsteht, der in \textbf{\cref{chap:implementierung}} prototypisch implementiert wird.
+Der entstandene Prototyp dient dann in \textbf{\cref{chap:auswertung}} zum quantitativen Vergleich zwischen dem Produkt vor und nach Refactoring.
+Abschließend werden in \textbf{\cref{chap:gueltigkeit}} Einschränkungen und Gültigkeit dieser Arbeit diskutiert und in \textbf{\cref{chap:fazit}} ein Fazit gezogen und der Ausblick diskutiert.  

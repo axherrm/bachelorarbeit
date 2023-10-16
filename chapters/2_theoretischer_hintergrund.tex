@@ -8,6 +8,7 @@ Des Weiteren wird das Werkzeug \gls{arh} vorgestellt, das ein wesentlicher Besta
 Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \gls{arh} überarbeitet werden soll.
 
 \section{Vergleich von monolithischen und Microservices-Systemen}
+\label{sec:monolith-vs-microservices}
 
 Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
 Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist.
@@ -67,26 +68,27 @@ Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Liter
 Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt, gelöst werden.
 Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
 
-Aus diesem Grund hat das \gls{ese} das Werkzeug \gls{arh} \cite{arh-github} entwickelt, das in diesem Kapitel vorgestellt wird.
+Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Werkzeug \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
 Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch}\cite{master-tobias-haller}.
 Der \gls{arh} ist eine web-basierte Anleitung, die Entwickler durch drei Phasen der Migrationsplanung führt.
-Eine Übersicht über diese Phasen und die Funktionsweise des Werkzeugs ist in \cref{fig:arh-overview} zu sehen.
+Eine Übersicht über diese Phasen und die Funktionsweise des Frameworks ist in \cref{fig:mmf-overview} zu sehen.
 Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \begin{itemize}
 	\item \textbf{Phase 1: System Comprehension:}
 	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
-	Mit den Stakeholdern sollen dabei strategische Ziele für Produkt und Unternehmen definiert, sowie Qualitätsmerkmale und gewünschte Szenarien identifiziert werden.
+	Mit den Stakeholdern sollen dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \glspl{qa} und gewünschte Szenarien identifiziert werden.
 	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
+	Im Werkzeug ist in dieser Phase bisher nur die Eingabe der Szenarien mit zugehörigen \glspl{qa} in der Arbeit von \Citet{master-daniel-koch} umgesetzt worden.
 	\item \textbf{Phase 2: Strategy Definition:}
 	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
-	Eine der zwei hauptsächlichen Aufgaben in dieser Phase ist die konkrete Definition, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
-	Dafür kann zwischen (momentan) 22 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
-	Das Werkzeug kann Entwickler dabei unterstützen, indem es aufgrund der Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
-	Der zweite Teil dieser Phase besteht darin, einen Service-Identifikationsansatz zu wählen.
-	Durch diesen kann in der nächsten Phase eine sinnvolle Aufteilung in einzelne Services bestimmt werden.
+	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
+	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
+	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
+	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
+	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten einfach möglich ist.
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
@@ -103,10 +105,10 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{figures/mmf-overview}
-	\caption[Architecture Refactoring Helper Übersicht]{
-		Übersicht über den \acrlong{arh} des \gls{ese} \cite{fritzsch2022architecturecentric}. Es sind die drei Phasen des Prozesses zu erkennen, sowie einige Schritte der einzelnen Phasen.
+	\caption[\acrfull{mmf} Übersicht]{
+		Übersicht über das \gls{mmf} des \gls{ese} \cite{fritzsch2022architecturecentric}. Es sind die drei Phasen des Prozesses zu erkennen, sowie einige Schritte der einzelnen Phasen.
 	}
-	\label{fig:arh-overview}
+	\label{fig:mmf-overview}
 \end{figure}
 
 \section{jadice flow}
@@ -119,7 +121,7 @@ Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow} eing
 \emph{jadice flow} basiert bereits auf einer Microservices-Architektur, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monoliths \emph{jadice server}\footnote{\url{https://jadice.com/produkte/server/}}.
 Beide Produkte bieten Workflow-basierte Dokumentenverarbeitung an, bei der mit komplexen Datenströmen umgegangen werden kann.
 Durch den Umstieg auf eine Microservices-Architektur können in der neuen Generation einzelne Verarbeitungsschritte skaliert werden.
-Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Containern ist jadice flow prinzipiell unabhängig von der Programmiersprache.
+Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Containern ist \emph{jadice flow} prinzipiell unabhängig von der Programmiersprache.
 
 Einen beispielhaften Workflow stellt der \emph{E-Mail converter} dar.
 Dabei werden E-Mails in Einzelteile aufgeteilt (Körper, Anhänge) und diese dann einzeln in das Zielformat konvertiert.
@@ -127,7 +129,7 @@ Die einzelnen Arbeitsschritte dabei können parallelisiert werden und separat sk
 Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \emph{jadice flow} zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
-Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch einiges Verbesserungspotential vermutet.
+Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch architektonisches Verbesserungspotential vermutet.
 Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit soll ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
 Da das Framework für die Anwendung auf Monolithen gedacht ist, soll in dieser Arbeit die Anwendung des Frameworks auf ein bereits migriertes System angewendet werden, um dessen Eigenschaften weiter zu verbessern.
@@ -137,25 +139,58 @@ Die Ergebnisse dessen könnten dann mit \emph{jadice flow} verglichen werden.
 
 \section{Ähnliche Forschung}
 
-In dieser Thesis wird sehr vordergründig das Microservices Migration Framework des ESE  untersucht.
-Dieses ist aufgrund vorheriger Arbeiten wie \Citet{10.1007/978-3-030-06019-0_10} entstanden.
+Aufgrund vieler Vorteile von Microservices vor allem direkt gegenüber traditionellen Monolithen (ausführlicher im \cref{sec:monolith-vs-microservices} diskutiert) ist die Migration zu Microservices zu einem großen Forschungsfeld geworden.
+In diesem Abschnitt wird ein Überblick über für diese Arbeit relevante Publikationen gegeben.
 
-In 2019 kategorisieren \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Migrations-Methoden.
+\subsection{Grundlagen zum \gls{mmf}}
+
+Hauptsächliches Untersuchungsobjekt dieser Thesis ist das \gls{mmf} des \gls{ese}.
+Auch wenn es sich dabei immer noch nur um einen Prototypen handelt, wurde es schon durch mehrere akademische Publikationen weiterentwickelt, die nun kurz genannt werden.
+In 2019 kategorisieren \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Microservices-Migrationsmethoden.
 Dabei wird ein Mängel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
+Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} die Planung ein solchen Frameworks vor.
+Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird beschrieben.
+Auch wird die Entwicklung eines Web-basierten Werkzeugs erwähnt, das das Framework benutzt und Entwickler bei der Migration unterstützt.
+Diese Entwicklung des Werkzeugs fand im Rahmen der Masterarbeiten von \Citet{master-tobias-haller} und \Citet{master-daniel-koch} statt.
+\Citet{master-tobias-haller} forscht dabei an der erweiterbaren Speicherung von verschiedenen Migrationsmethoden und der Darstellung dieser in der Web-Applikation, dem \gls{arh}.
+Damit wurde größtenteils das Backend und Phase 2 des Werkzeugs umgesetzt.
+Schlussendlich wird außerdem eine empirische Bewertung des entstandenen Prototyps vorgenommen, die den Nutzen des Werkzeugs bestätigt und weiterführende Arbeit daran vorschlägt.
+\Citet{master-daniel-koch} setzt die Arbeit an dem Werkzeug fort, indem Phase 1 und 3 ergänzt werden.
+Dabei wird viel an \glspl{qa} in der Migration zu Microservices geforscht.
+Es werden anfangs relevante \glspl{qa} gesammelt, wobei ein Großteil davon aus ISO 25010\footnote{\url{https://www.iso.org/standard/35733.html}} stammt, welche durch weitere, oft Microservices-kontextuelle \glspl{qa}, ergänzt werden.
+Außerdem wird der Einfluss der \glspl{qa} auf Systemeigenschaften untersucht.
+Sehr relevant für den \gls{arh} ist ebenfalls die durchgeführte Untersuchung, wie durch den Nutzer definierte \glspl{qa} den Vorschlag passender Migrationsmethoden in Phase 2, sowie profitabler Design Patterns und Best Practices in Phase 3 unterstützen kann.
 
-Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} 2022 dann die Planung ein solchen Frameworks vor. Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird bereits beschrieben. Auch wird die Entwicklung eines Web-basierten Werkzeugs erwähnt, das das Framework benutzt und Entwickler bei der Migration unterstützt.
+\subsection{Ähnliche Werkzeuge}
 
-\Citet{10.1145/3242163.3242164} beschreiben geläufige Gefahren bei der Migration zu Microservices-Architekturen.
-Dabei  werden fünf architektonische Fehlermuster und vier Fehlermuster bei der Migration aufgeführt.
-Außerdem werden Lösungsmöglichkeiten für jedes Muster beschrieben.
+Abgesehen von Arbeiten zu dem \gls{mmf} und \gls{arh} sind für den Kontext dieser Arbeit auch Publikationen interessant, die andere Ansätze zur Werkzeug-unterstützten Migration zu Microservices untersuchen.
 
-%\section{Refactoring}
-%
-%Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
-%Deswegen werden folgend ein paar Quellen vorgestellt, die das Refactoring von Microservices-Architekturen behandeln.
-%
-%\Citet{https://doi.org/10.1002/spe.2974} beschreiben in einem Artikel zur $\mu$TOSCA toolchain, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
-%Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
-%Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
-%Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
+\Citet{Fil2023} stellen ein voll automatisiertes Migrationswerkzeug vor.
+Dieses arbeitet mit statischer Code-Analyse, um eine Graph-Repräsentation des monolithischen Systems zu erhalten.
+Ein solcher Graph dient als Ausgangslage für weitere automatische Analysen, die in mehreren Schritten eine Dekomposition in Services durchführen und diese weiter optimieren.
+Schlussendlich soll das Ergebnis eine Menge von hochgradig kohäsiven und lose gekoppelten Microservices sein.
+Dabei soll eine angemessene Granularität der Microservices erreicht werden.
+Die ebenfalls durchgeführte Evaluation ergibt positive Ergebnisse im Bezug auf Effektivität und Effizienz des Werkzeugs.
+Sie ist allerdings nur begrenzt valide, da nur wenige und kleine Monolithen als Eingabe für das Experiment fungiert haben.
 
+\Citet{PF4MD} stellen das semi-automatische Werkzeug \emph{PF4MD} vor, das Entwicklern bei der Dekomposition eines Monolithen in Microservices unterstützen soll.
+Sie beschreiben eine Ähnlichkeit der Microservices Architektur und der \gls{pf} nach \Citet{problem-frames} im Bezug auf das Aufteilen komplexer Probleme in kleinere, besser handlichere Teile.
+Aufgrund dieser Ähnlichkeit wollen sie das Problem der Dekomposition in Microservices mit der Beschreibung des Systems in graphisch umgesetzten Problem Diagrammen lösen, die auf \gls{pf} basieren.
+Mithilfe der eingegebenen Problem Diagramme und weiterer Eingaben, die die Problemkomplexität sowie die strukturelle Komplexität verschiedener Probleme quantifizieren, kann das Werkzeug eine Aufteilung der Probleme in verschiedene Gruppen vorschlagen.
+Eine Evaluation des Werkzeugs oder dieser Methode wurde bisher nicht durchgeführt.
+
+Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
+Deswegen ist auch der Artikel zur $\mu$TOSCA toolchain interessant.
+\Citet{https://doi.org/10.1002/spe.2974} beschreiben, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
+Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
+Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
+Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
+
+Im Vergleich zu dem \gls{arh} fällt auf, dass sich diese Werkzeuge alle sehr stark in der Funktionsweise und vielen anderen Dingen unterscheiden, obwohl sie ein sehr ähnliches Ziel haben.
+Die vorgestellten Werkzeuge sind oft wesentlich automatisierter.
+Das kann in manchen Anwendungsfällen vorteilhaft sein, da es eine einfachere und schnellere Nutzung ermöglicht.
+Jedoch sind die Ansätze alle wesentlich weniger flexibel als das Funktionsprinzip des \gls{arh}.
+Das liegt daran, dass die Werkzeuge alle eine spezielle Methode zur Migration anbieten, wohingegen der \gls{arh} eine Übersicht über momentan 115 verschiedene Ansätze zur Migration gibt.
+Die Liste dieser Methoden ist erweiterbar und manche dieser Ansätze beinhalten ebenfalls die Nutzung eines Werkzeugs, wovon momentan 31 eingetragen sind, die größtenteils zur Dekomposition gedacht sind.
+Abgesehen von der Auswahlmöglichkeit der Migrationsmethode oder des Werkzeugs bietet das \gls{arh} den weiteren Vorteil, dass Pattern und Best Practices vorgeschlagen werden können, die Entwickler bei der weiteren Planung und Implementierung der Services unterstützen.
+Ein vergleichbares Werkzeug, das Entwickler auf dieser Metaebene bei der Migration zu Microservices unterstützt, ist zum Zeitpunkt der Veröffentlichung dieser Arbeit nicht bekannt.
