@@ -4,40 +4,46 @@ Zum Architekturprinzip der Microservices gibt es bereits eine Vielzahl akademisc
 In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis relevanten Literatur eingeführt.
 Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices} gezogen.
 Anschließend werden aktuelle Arbeiten zur Migration zu Microservices-Architekturen beschrieben.
-Des Weiteren wird das Werkzeug \gls{arh} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
-Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \gls{arh} überarbeitet werden soll.
+Des Weiteren wird das \acrfull{mmf} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
+Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \gls{mmf} überarbeitet werden soll.
 
 \section{Vergleich von monolithischen und Microservices-Systemen}
 \label{sec:monolith-vs-microservices}
 
 Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
-Die gesamte Funktionalität eines Monolithen befindet sich in einer Applikation, die in sich selbst geschlossen ist.
+Moderne Programmiersprachen ermöglichen zwar die Modularisierung von Monolithen, jedoch befindet sich die gesamte Funktionalität eines Monolithen in einer Applikation, die aus nur einem ausführbaren Artefakt besteht.
+Nach den meisten Definitionen (siehe \cite{Dragoni2017}) sind Monolithen dadurch gekennzeichnet, dass ihre einzelnen Module nicht unabhängig voneinander ausführbar sind.
 Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Stärken.
-Da es sich um eine sehr einfache Architektur handelt, können kleine Anwendungen sehr schnell erstellt, getestet und zum Laufen gebracht werden.
-Es wird kein kompliziertes Kommunikationsmodell benötigt, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
+Da es sich um eine sehr simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployment und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{10220070}.
+Es ist kein kompliziertes Kommunikationsmodell notwendig, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
 
 Je größer Monolithen jedoch werden, desto stärker zeigen sich die Schwächen dieser Architektur.
-Es entstehen riesige Codebasen und kleine Änderungen erzwingen erneutes Bauen und Testen der gesamten Applikation.
-Das steht auch dem modernen agilen Arbeitsprinzip im Weg.
-Wenn nur einzelne Komponenten eines Monolithen eine hohe Last erfahren, muss trotzdem das gesamte System skaliert werden, was zu einer Verschwendung von Rechenleistung führen kann und die Anwendung ineffizient macht.
+Es entstehen riesige Codebasen und kleine Änderungen erzwingen erneutes Bauen und Testen der gesamten Applikation~\cite{Dragoni2017}.
+Dies steht auch im Widerspruch zu modernen agilen Arbeitsprinzipien.
+Wenn nur einzelne Komponenten eines Monolithen eine hohe Last erfahren, muss trotzdem das gesamte System skaliert werden, was zu einer Verschwendung von Rechenleistung führen kann und die Anwendung ineffizient macht~\cite{Dragoni2017}.
+Außerdem kann schnell das Problem der \qq{Dependency Hell}~\cite{Dragoni2017} auftreten, wobei das Hinzufügen oder Ändern von Abhängigkeiten dazu führen kann, dass das gesamte System nicht mehr kompiliert oder ausgeführt werden kann.
 
 Die meisten dieser Probleme werden durch die Microservices-Architektur gelöst.
 Dabei besteht ein System aus vielen kleinen (Micro-) Services.
 Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden, genau eine Aufgabe haben und unabhängig ausgeführt werden können \cite{10220070}.
-Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services nötig.
+Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services notwendig.
 Dafür existieren verschiedene Lösungen, die im Rahmen dieser Arbeit näher betrachtet werden.
-Ein sehr häufig benutztes ist beispielsweise \gls{rest}.
+Eine sehr häufig eingesetzte Lösung ist beispielsweise \gls{rest}.
 
 Die Vorteile dieser Architektur gegenüber Monolithen sind vielseitig.
-Da die Services unabhängig voneinander entworfen sind, können sie einzeln implementiert, getestet und gebaut werden.
-Dies erleichtert die Automatisierung des Bauens und Testens durch \gls{ci} / \gls{cd}.
-Außerdem können Services abhängig von der Last einzeln skaliert werden, was die Effizienz in bestimmten Szenarien deutlich erhöht.
-Darüber hinaus sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Berücksichtigung des gewählten Kommunikationsmodells ist.
+Da die Services unabhängig voneinander konzipiert sind, können sie einzeln implementiert, getestet und gebaut werden.
+Dies erleichtert die Automatisierung des Bauens und Testens durch \gls{ci}/\gls{cd}.
+Es ermöglicht auch, dass die Anwendung während eines Updates auf eine neue Version durchgehend online bleibt~\cite{10220070}. 
+Des Weiteren können Services abhängig von der Last einzeln skaliert werden, was die Effizienz in bestimmten Szenarien deutlich erhöht.
+Darüber hinaus sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Umsetzung des gewählten Kommunikationsmodells ist.
 
-Wie bereits erwähnt, gibt es allerdings auch Punkte, in denen Monolithen vorteilhafter sind, sodass eine Microservices-Architektur nicht universell den Monolithen vorzuziehen ist.
+Eine Microservices-Architektur ist allerdings nicht universell einer monolithischen Architektur vorzuziehen.
+Gründe dafür sind einige Nachteile von Microservices-Architekturen, die von \Citet{10220070} zusammengetragen wurden.
 Dazu gehört vor allem die Komplexität des Systems, die bei einer Microservices-Architektur deutlich höher ist.
-Dies liegt an der Aufteilung in einzelne Services, die ein ausgefeiltes Kommunikationsmodell erfordern.
-Die Kommunikation zwischen den Komponenten ist in jedem Fall langsamer und ineffizienter als bei Monolithen, bei denen lediglich Funktionen im selben ausgeführten Programm aufgerufen werden.
+Dies liegt an der Aufteilung des Systems in einzelne Services und der nichttrivialen Kommunikation zwischen den Services.
+Viele Entwickler müssen die neue Architektur mit ihrer erhöhten Komplexität, sowie die zugehörigen Werkzeuge und Mechanismen für automatisierte Tests, Deployments und Monitoring erst erlernen.
+Der resultierende Netzwerk-Overhead durch die Kommunikation zwischen den Komponenten kann zu höheren Latenzen führen und das System ineffizient machen, wohingegen bei Monolithen lediglich Funktionen innerhalb desselben laufenden Programms aufgerufen werden.
+All dies führt dazu, dass Experten empfehlen, für kleine Anwendungen bei monolithischen Architekturen zu bleiben~\cite{10220070}\cite{7742218}.
 
 \section{Migration zu Microservices}
 
