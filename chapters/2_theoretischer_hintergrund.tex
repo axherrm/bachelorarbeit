@@ -52,13 +52,13 @@ Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensi
 Deswegen ist die Migration zu Microservices seit einiger Zeit ein stark untersuchtes Thema.
 
 Bei der Migration zu Microservices gibt es mehrere zentrale Herausforderungen, die jedes Entwicklerteam bewältigen muss und auch in unserer \cref{forschungsfrage:1} als Untersuchungsobjekt dieser Thesis genannt werden.
-Eine der komplexesten ist die Dekomposition des vorhandenen, großen, zusammenhängendem Systems in kleine, unabhängige Services~\cite{a-survey-on}~\cite{taibi2017processmotivations}\cite{taibi2019decomposition}.
+Eine der komplexesten ist die Dekomposition des vorhandenen, großen, zusammenhängendem Systems in kleine, unabhängige Services~\cite{a-survey-on,taibi2017processmotivations,taibi2019decomposition}.
 Die sogenannte optimale Granularität der Services zu bestimmen, ist eine sehr wichtige Aufgabe, da sie starke Auswirkungen auf die Performanz des Systems haben kann.
 Der Nachteil zur großer Services ist, dass sie ineffizient werden und womöglich ähnliche unerwünschte Eigenschaften erhalten wie monolithische Systeme.
 Dagegen ist auch eine Aufteilung in zu kleine einzelne Einheiten problematisch, da dadurch der Kommunikationsbedarf zwischen den Microservices stark erhöht werden kann, was ebenfalls leistungsbezogene Nachteile hat.
 Für diesen entscheidenden Prozess wäre es also wichtig für Entwicklerteams, wissenschaftlich gestützte Entscheidungen treffen zu können.
 Die existierenden Werkzeuge für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse \cite{a-survey-on}. 
-Deswegen gibt es einige literarische Vorschläge für Frameworks zur Dekomposition~\cite{taibi2019decomposition}\cite{taibi2019monolithic}.
+Deswegen gibt es einige literarische Vorschläge für Frameworks zur Dekomposition~\cite{taibi2019decomposition,taibi2019monolithic}.
 
 Ebenfalls ist die Konzipierung des Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
 Das liegt daran, dass im Vergleich zu monolithischen Systemen die Kommunikation zwischen den Services die Latenz für gleichartige Aufgaben erhöht.
@@ -66,23 +66,6 @@ Um diesen Effekt zu minimieren, sollte möglichst wissenschaftlich gestützt vor
 
 Um diese verschiedenen Herausforderungen nicht einzeln angehen zu müssen, kann ein Framework hilfreich sein, das den gesamten Refactoring-Prozess in mehreren Phasen begleitet.
 Ein solches wird im nächsten Kapitel vorgestellt und anschließend in dieser Arbeit untersucht.
-
-
-
-
-
-
-%Anwendungen können eine unterschiedliche Ausgangsarchitekturen haben.
-%Es gibt viele verschiedene Migrationsmethoden, die wissenschaftlich untersucht wurden, sodass es für jedes System eine passende gibt.
-
-%Für den gesamten Prozess der Migration zu Microservices gibt es im Wesentlichen drei verschiedene Methoden \cite{master-daniel-koch}:
-%\begin{enumerate}
-%	\item \textbf{Re-Factor:} Der existierende Code wird kontinuierlich verändert, ohne die Funktionalität der Anwendung zu verändern.
-%	\item \textbf{Re-Build:} Die gesamte Anwendung wird im Rahmen der Architekturveränderung verändert. Dabei werden passend zu den Anforderungen neue Technologien verwendet.
-%	\item \textbf{Neue Anwendung:} Eine völlig neue Anwendung wird von Grund auf entwickelt.
-%\end{enumerate}
-
-%Doch keine davon bietet genug Flexibilität, um alle Anwendungsfälle abdecken zu können.
 
 \section{\acrfull{mmf}}
 \label{sec:mmf}
@@ -96,7 +79,7 @@ Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs
 Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
 
 Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Werkzeug \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
-Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch}\cite{master-tobias-haller}.
+Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch,master-tobias-haller}.
 Der \gls{arh} ist eine web-basierte Anleitung, die Entwickler durch drei Phasen der Migrationsplanung führt.
 Eine Übersicht über diese Phasen und die Funktionsweise des Frameworks ist in \cref{fig:mmf-overview} zu sehen.
 Im Folgenden werden diese drei Phasen genauer beschrieben:
@@ -188,9 +171,19 @@ Es werden anfangs relevante \glspl{qa} gesammelt, wobei ein Großteil davon aus 
 Außerdem wird der Einfluss der \glspl{qa} auf Systemeigenschaften untersucht.
 Sehr relevant für den \gls{arh} ist ebenfalls die durchgeführte Untersuchung, wie durch den Nutzer definierte \glspl{qa} den Vorschlag passender Migrationsmethoden in Phase 2, sowie profitabler Design Patterns und Best Practices in Phase 3 unterstützen kann.
 
-\subsection{Ähnliche Werkzeuge}
+\subsection{Werkzeuge}
 
-Abgesehen von Arbeiten zu dem \gls{mmf} und \gls{arh} sind für den Kontext dieser Arbeit auch Publikationen interessant, die andere Ansätze zur Werkzeug-unterstützten Migration zu Microservices untersuchen.
+Abgesehen von Arbeiten zu dem \gls{mmf} und \gls{arh} sind für den Kontext dieser Arbeit auch Publikationen interessant, die andere Ansätze zur Werkzeug-unterstützten Microservices-Architekturplanung untersuchen.
+Dabei gibt mehrere Arten von Werkzeugunterstützung, die sich vor allem dadurch unterscheiden, bei welchem Teil des Architektur-Refactorings sie Entwickler unterstützen.
+Im Folgenden werden einige in akademischen Publikationen beschriebene Werkzeuge vorgestellt.
+
+Die wohl häufigste Art von Werkzeugen sind solche, die Entwickler bei der Dekomposition von Monolithen in Microservices unterstützen.
+Der \gls{arh} speichert momentan 20 dieser Werkzeuge.
+Jedes dieser Werkzeuge setzt unterschiedliche Bedingungen für die Anwendung voraus.
+Es gibt einige voll-automatische Werkzeuge, die zwar im Bezug auf die Eingabe unflexibler sind und damit nicht in jedem Fall anwendbar, aber eine einfachere und schnellere Anwendung ermöglichen.
+Auf der anderen Seite gibt es auch semi-automatische Werkzeuge, bei denen Entwickler oft über Formulare oder Graphen ihr System beschreiben müssen, da der Code nicht direkt analysiert werden kann.
+Dies bietet allerdings den Vorteil von höherer Kompatibilität.
+Im Folgenden werden zwei Bespiele für solche Werkzeuge vorgestellt.
 
 \Citet{Fil2023} stellen ein voll automatisiertes Migrationswerkzeug vor.
 Dieses arbeitet mit statischer Code-Analyse, um eine Graph-Repräsentation des monolithischen Systems zu erhalten.
@@ -206,18 +199,27 @@ Aufgrund dieser Ähnlichkeit wollen sie das Problem der Dekomposition in Microse
 Mithilfe der eingegebenen Problem Diagramme und weiterer Eingaben, die die Problemkomplexität sowie die strukturelle Komplexität verschiedener Probleme quantifizieren, kann das Werkzeug eine Aufteilung der Probleme in verschiedene Gruppen vorschlagen.
 Eine Evaluation des Werkzeugs oder dieser Methode wurde bisher nicht durchgeführt.
 
-Obwohl in dieser Thesis ein Framework zur Migration zu Microservices im Mittelpunkt steht, sieht man schnell, dass die Migration eng verwandt mit dem Refactoring ist.
-Deswegen ist auch der Artikel zur $\mu$TOSCA toolchain interessant.
+Eine weitere Art von Werkzeugen sind Werkzeuge für den Post-Migrationszeitraum.
+Diese unterstützen natürlich nicht die Migration, da diese schon abgeschlossen ist, sondern führen eine Bewertung des Ergebnisses durch und analysieren Schwachpunkte.
+Ein Beispiel zeigt der Artikel zur $\mu$TOSCA toolchain.
 \Citet{https://doi.org/10.1002/spe.2974} beschreiben, wie sie mit dem  $\mu$TOSCA Modell Architekturen von Microservices-basierten Systemen mit dem OASIS Standard TOSCA darstellen können.
 Außerdem beschreiben sie die Möglichkeit, das $\mu$TOSCA Modell eines Systems durch das zugehörige Kubernetes Deployment automatisch zu ermitteln.
 Das $\mu$TOSCA Modell einer Applikation soll dann dazu genutzt werden, potentielle architektonische Probleme zu finden.
 Für das Ermitteln des $\mu$TOSCA Modells und das Identifizieren von Architektur Smells stellen sie zwei Werkzeug Prototypen ($\mu$Miner und $\mu$Freshener) vor.
 
-Im Vergleich zu dem \gls{arh} fällt auf, dass sich diese Werkzeuge alle sehr stark in der Funktionsweise und vielen anderen Dingen unterscheiden, obwohl sie ein sehr ähnliches Ziel haben.
-Die vorgestellten Werkzeuge sind oft wesentlich automatisierter.
-Das kann in manchen Anwendungsfällen vorteilhaft sein, da es eine einfachere und schnellere Nutzung ermöglicht.
-Jedoch sind die Ansätze alle wesentlich weniger flexibel als das Funktionsprinzip des \gls{arh}.
-Das liegt daran, dass die Werkzeuge alle eine spezielle Methode zur Migration anbieten, wohingegen der \gls{arh} eine Übersicht über momentan 115 verschiedene Ansätze zur Migration gibt.
-Die Liste dieser Methoden ist erweiterbar und manche dieser Ansätze beinhalten ebenfalls die Nutzung eines Werkzeugs, wovon momentan 31 eingetragen sind, die größtenteils zur Dekomposition gedacht sind.
-Abgesehen von der Auswahlmöglichkeit der Migrationsmethode oder des Werkzeugs bietet das \gls{arh} den weiteren Vorteil, dass Pattern und Best Practices vorgeschlagen werden können, die Entwickler bei der weiteren Planung und Implementierung der Services unterstützen.
-Ein vergleichbares Werkzeug, das Entwickler auf dieser Metaebene bei der Migration zu Microservices unterstützt, ist zum Zeitpunkt der Veröffentlichung dieser Arbeit nicht bekannt.
+Die letzte in dieser Arbeit behandelte Art von Werkzeugen sind Werkzeuge, die vor der Migration angewendet werden.
+Diese werden oft zur Prognose über eine mögliche Migration benutzt.
+Ein Beispiel dafür ist das von \Citet{muP-a-dev-framework} vorgeschlagene Framework $\mu P$.
+Dieses soll die Performance einer hypothetischen Microservices-Architektur durch das Design abschätzen können und dadurch Entwickler bei der Entscheidung unterstützen, ob sich eine Migration zu Microservices lohnt.
+Basierend auf vier Benchmarks wurde das Framework getestet, wobei der Fehler der Antwortzeiten konstant unter 10\% lag.
+
+\subsection{Ähnliche Frameworks}
+
+Die im letzten Abschnitt genannten Werkzeuge unterscheiden sich stark vom \gls{arh} in der Zielsetzung.
+Die Werkzeuge stellen jeweils eine spezielle Migrationsstrategie dar, während der \gls{arh} eine Übersicht über momentan 115 Migrationsmethoden gibt und auch in anderen Punkten der Migration unterstützt, wie beim Finden geeigneter Best Practices und Patterns.
+Diese Art von Werkzeugen sollte also gar nicht miteinander verglichen und stark abgegrenzt werden. 
+In diesem Abschnitt werden ähnliche Frameworks und Werkzeuge beschrieben, die Entwickler aus einer Meta-Perspektive bei der Migration unterstützen, wie es auch \gls{mmf}, beziehungsweise \gls{arh} machen.
+
+\Citet{on-a-metaprocess} stellen das Werkzeug \emph{M3K} vor, das auf dem OMG Essence Kernel basiert.
+TODO ...
+
