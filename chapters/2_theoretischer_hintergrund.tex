@@ -12,7 +12,7 @@ Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \g
 
 Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
 Moderne Programmiersprachen ermöglichen zwar die Modularisierung von Monolithen, jedoch befindet sich die gesamte Funktionalität eines Monolithen in einer Applikation, die aus nur einem ausführbaren Artefakt besteht.
-Nach den meisten Definitionen (siehe \cite{Dragoni2017}) sind Monolithen dadurch gekennzeichnet, dass ihre einzelnen Module nicht unabhängig voneinander ausführbar sind.
+Nach den meisten Definitionen (siehe~\cite{Dragoni2017}) sind Monolithen dadurch gekennzeichnet, dass ihre einzelnen Module nicht unabhängig voneinander ausführbar sind.
 Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Stärken.
 Da es sich um eine sehr simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployment und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{a-survey-on}.
 Es ist kein kompliziertes Kommunikationsmodell notwendig, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
@@ -21,11 +21,11 @@ Je größer Monolithen jedoch werden, desto stärker zeigen sich die Schwächen 
 Es entstehen riesige Codebasen und kleine Änderungen erzwingen erneutes Bauen und Testen der gesamten Applikation~\cite{Dragoni2017}.
 Dies steht auch im Widerspruch zu modernen agilen Arbeitsprinzipien.
 Wenn nur einzelne Komponenten eines Monolithen eine hohe Last erfahren, muss trotzdem das gesamte System skaliert werden, was zu einer Verschwendung von Rechenleistung führen kann und die Anwendung ineffizient macht~\cite{Dragoni2017}.
-Außerdem kann schnell das Problem der \qq{Dependency Hell}~\cite{Dragoni2017} auftreten, wobei das Hinzufügen oder Ändern von Abhängigkeiten dazu führen kann, dass das gesamte System nicht mehr kompiliert oder ausgeführt werden kann.
+Außerdem kann schnell das Problem der \qq{Dependency Hell}~\cite{Dragoni2017} auftreten, wobei das Hinzufügen oder Ändern von Abhängigkeiten dazu führen kann, dass das gesamte Projekt nicht mehr kompiliert oder ausgeführt werden kann.
 
 Die meisten dieser Probleme werden durch die Microservices-Architektur gelöst.
 Dabei besteht ein System aus vielen kleinen (Micro-) Services.
-Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden, genau eine Aufgabe haben und unabhängig ausgeführt werden können \cite{a-survey-on}.
+Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden, genau eine Aufgabe haben und unabhängig ausgeführt werden können~\cite{a-survey-on}.
 Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services notwendig.
 Dafür existieren verschiedene Lösungen, die im Rahmen dieser Arbeit näher betrachtet werden.
 Eine sehr häufig eingesetzte Lösung ist beispielsweise \gls{rest}.
@@ -43,7 +43,9 @@ Dazu gehört vor allem die Komplexität des Systems, die bei einer Microservices
 Dies liegt an der Aufteilung des Systems in einzelne Services und der nichttrivialen Kommunikation zwischen den Services.
 Viele Entwickler müssen die neue Architektur mit ihrer erhöhten Komplexität, sowie die zugehörigen Werkzeuge und Mechanismen für automatisierte Tests, Deployments und Monitoring erst erlernen.
 Der resultierende Netzwerk-Overhead durch die Kommunikation zwischen den Komponenten kann zu höheren Latenzen führen und das System ineffizient machen, wohingegen bei Monolithen lediglich Funktionen innerhalb desselben laufenden Programms aufgerufen werden.
-All dies führt dazu, dass Experten empfehlen, für kleine Anwendungen bei monolithischen Architekturen zu bleiben~\cite{a-survey-on}\cite{7742218}.
+Des Weiteren ist es empfehlenswert, dass Microservices jeweils eigene Datenbanken haben.
+Das fügt weitere Komplexität zum Design hinzu, da Daten dupliziert werden müssen und die Konsistenz der Datenbanken gewährleistet sein sollte.
+All dies führt dazu, dass Experten empfehlen, für kleine Anwendungen bei monolithischen Architekturen zu bleiben~\cite{a-survey-on,7742218}.
 
 \section{Migration zu Microservices}
 
@@ -57,10 +59,10 @@ Die sogenannte optimale Granularität der Services zu bestimmen, ist eine sehr w
 Der Nachteil zur großer Services ist, dass sie ineffizient werden und womöglich ähnliche unerwünschte Eigenschaften erhalten wie monolithische Systeme.
 Dagegen ist auch eine Aufteilung in zu kleine einzelne Einheiten problematisch, da dadurch der Kommunikationsbedarf zwischen den Microservices stark erhöht werden kann, was ebenfalls leistungsbezogene Nachteile hat.
 Für diesen entscheidenden Prozess wäre es also wichtig für Entwicklerteams, wissenschaftlich gestützte Entscheidungen treffen zu können.
-Die existierenden Werkzeuge für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse \cite{a-survey-on}. 
+Die existierenden Werkzeuge für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse~\cite{a-survey-on}.
 Deswegen gibt es einige literarische Vorschläge für Frameworks zur Dekomposition~\cite{taibi2019decomposition,taibi2019monolithic}.
 
-Ebenfalls ist die Konzipierung des Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
+Ebenfalls ist die Konzipierung der Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
 Das liegt daran, dass im Vergleich zu monolithischen Systemen die Kommunikation zwischen den Services die Latenz für gleichartige Aufgaben erhöht.
 Um diesen Effekt zu minimieren, sollte möglichst wissenschaftlich gestützt vorgegangen werden und Best Practices sowie beliebte Pattern evaluiert und verwendet werden.
 
@@ -123,8 +125,8 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \section{jadice flow}
 
-Das vorgestellte Werkzeug soll in dieser Thesis nun erstmals in der Industrie benutzt werden.
-Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow} eingegangen, das damit überarbeitet werden soll.
+Das vorgestellte Framework soll in dieser Thesis nun erstmals in der Industrie benutzt werden.
+Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow} eingegangen, welches mit dem \gls{mmf} überarbeitet werden soll.
 
 \emph{jadice flow} ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://solutions.levigo.de/}}.
 \emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an \emph{jadice flow} arbeiten.
@@ -142,7 +144,7 @@ Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen 
 Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch architektonisches Verbesserungspotential vermutet.
 Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit soll ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
-Da das Framework für die Anwendung auf Monolithen gedacht ist, soll in dieser Arbeit die Anwendung des Frameworks auf ein bereits migriertes System angewendet werden, um dessen Eigenschaften weiter zu verbessern.
+Obwohl das Framework für die Anwendung auf Monolithen gedacht ist, soll in dieser Arbeit die Anwendung des Frameworks auf ein bereits migriertes System angewendet werden, um dessen Eigenschaften weiter zu verbessern.
 Dadurch wird erforscht, inwiefern sich Framework und Werkzeug auf eine bereits existierende Microservice-Architektur anwenden lassen.
 Falls es deshalb für diesen Anwendungsfall zielführend ist, wird zusätzlich die ursprüngliche monolithische Anwendung von \emph{jadice flow} (\emph{jadice server}) hinzugezogen.
 Die Ergebnisse dessen könnten dann mit \emph{jadice flow} verglichen werden.
@@ -160,7 +162,7 @@ In 2019 kategorisieren \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Mi
 Dabei wird ein Mängel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
 Als Folge darauf stellen \Citet{fritzsch2022architecturecentric} die Planung ein solchen Frameworks vor.
 Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird beschrieben.
-Auch wird die Entwicklung eines Web-basierten Werkzeugs erwähnt, das das Framework benutzt und Entwickler bei der Migration unterstützt.
+Ebenfalls wird die Entwicklung eines Werkzeugs erwähnt, das das Framework in Form einer Web-basierten Lösung umsetzt und Entwickler bei der Migration unterstützt.
 Diese Entwicklung des Werkzeugs fand im Rahmen der Masterarbeiten von \Citet{master-tobias-haller} und \Citet{master-daniel-koch} statt.
 \Citet{master-tobias-haller} forscht dabei an der erweiterbaren Speicherung von verschiedenen Migrationsmethoden und der Darstellung dieser in der Web-Applikation, dem \gls{arh}.
 Damit wurde größtenteils das Backend und Phase 2 des Werkzeugs umgesetzt.
@@ -217,9 +219,23 @@ Basierend auf vier Benchmarks wurde das Framework getestet, wobei der Fehler der
 
 Die im letzten Abschnitt genannten Werkzeuge unterscheiden sich stark vom \gls{arh} in der Zielsetzung.
 Die Werkzeuge stellen jeweils eine spezielle Migrationsstrategie dar, während der \gls{arh} eine Übersicht über momentan 115 Migrationsmethoden gibt und auch in anderen Punkten der Migration unterstützt, wie beim Finden geeigneter Best Practices und Patterns.
-Diese Art von Werkzeugen sollte also gar nicht miteinander verglichen und stark abgegrenzt werden. 
+Diese Art von Werkzeugen sollte also gar nicht miteinander verglichen und stark abgegrenzt werden.
 In diesem Abschnitt werden ähnliche Frameworks und Werkzeuge beschrieben, die Entwickler aus einer Meta-Perspektive bei der Migration unterstützen, wie es auch \gls{mmf}, beziehungsweise \gls{arh} machen.
 
-\Citet{on-a-metaprocess} stellen das Werkzeug \emph{M3K} vor, das auf dem OMG Essence Kernel basiert.
-TODO ...
+\Citet{on-a-metaprocess} stellen das Werkzeug \gls{m3k} vor, das auf dem OMG Essence Kernel~\cite{essence-kernel-omg} basiert.
+Dieses Werkzeug soll Entwicklerteams beim Migrationvorgang helfen, indem ein allgemeiner Metaprozess definiert wird, der als Grundlage für spezifische Migrationsprozesse verwendet werden kann.
+Die Evaluation von \gls{m3k} steht noch aus, Fallstudien und Expertenumfragen dazu sind aber geplant.
 
+\Citet{software-architectural-migration-2021} stellen eine automatisierten Ansatz vor, mit dem Architekturmigrationen geplant werden können und der mehrere Zielarchitekturen neben Microservices unterstützt.
+Er basiert auf der formalen Modellierung der strukturellen und verhaltensbezogenen Aspekte der Architektur.
+Anhand dieser Eingaben werden Teile des Designs identifiziert, die überarbeitet werden sollten, wodurch eine neue Zielarchitektur bestimmt wird.
+Diese kann mit einer \emph{model-checking} Technologie formal gegenüber den funktionalen Anforderungen validiert werden.
+Mit einer KI-Planungstechnik werden einzelne Schritte für die Migration zur Zielarchitektur entworfen.
+Für diese Schritte können inkrementell vorläufige Modelle bestimmt werden, sowie formal überprüft werden, ob diese Modelle mit den definierten funktionalen und architektonischen Bedingungen übereinstimmen.
+Dieser Ansatz wurde mit fünf Architekturen von echten Software Systemen getestet, wobei unter anderem das Refactoring zu einer Microservices-Architektur erfolgreich war.
+In Zukunft soll die Liste der unterstützten Zielarchitekturen erweitert werden, sowie Unterstützung auf Implementierungs-Level hinzugefügt werden.
+
+In einem weiteren Artikel stellen \Citet{architect:a-framework} das Framework \emph{Architect} vor.
+Sie beschreiben, wie sie das System \emph{Artemis} mithilfe des Frameworks in zwei Phasen in eine Microservices-Architektur modernisieren.
+Während in der ersten Phase die Dekomposition des Systems durchgeführt wird, findet in der zweiten Phase die Trennung der geteilten Datenbank in mehrere Datenbanken nach \emph{database-per-microservice} Pattern statt.
+\emph{Architect} ist allerdings noch relativ limitiert, da es nur Projekte von Grund auf unterstützt, also keine Unterstützung für Software-Evolution bietet, nur dotnet-basierte Services erstellt und nur relationale Datenbanken unterstützt.
