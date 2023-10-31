@@ -10,7 +10,7 @@ Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Indus
 Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
 Offen ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden kann.
-Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} daher erstmals an einem realen Produkt, \emph{jadice flow}, evaluiert.
+Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} daher erstmalig für das Refactoring eines realen Produkts, \emph{jadice flow}, zur Optimierung der bestehenden Microservices-basierten Architektur evaluiert.
 Dazu wird das Framework zum Refactoring des Produktes verwendet.
 Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Frameworks und Werkzeuges verwendet, wodurch diese in Zukunft weiter verbessert werden sollen.
 
@@ -23,7 +23,7 @@ Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ih
 Daraus folgen die Forschungsfragen, die in dieser Thesis untersucht werden:
 
 \begin{itemize}
-	\item \label[forschungsfrage]{forschungsfrage:1} \emph{RQ 1:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
+	\item \label[forschungsfrage]{forschungsfrage:1} \emph{RQ:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
 	\begin{enumerate}[i.]
 		\item Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
 		\item Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kommunikationsmodells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
@@ -33,7 +33,7 @@ Daraus folgen die Forschungsfragen, die in dieser Thesis untersucht werden:
 Um die definierten Forschungsfragen zu beantworten, werden zwei Ziele für diese Arbeit definiert:
 Im ersten Teil wird das \gls{mmf} benutzt, um die Architektur von \emph{jadice flow} zu überarbeiten.
 Dabei wird innerhalb von drei Phasen ein Plan für eine neue Architektur des Produkts entworfen.
-Diese Phasen beinhalten eine Sammlung von wissenschaftlich untersuchten Methoden zur Migration zu Microservices sowie passender Pattern und Best Practices.
+Diese Phasen kategorisieren und verweisen auf eine Sammlung wissenschaftlich untersuchter Methoden zur Migration zu Microservices sowie passender Pattern und Best Practices.
 
 Im zweiten Teil wird diese neue Architektur praktisch umgesetzt.
 Da ein komplettes Refactoring des Systems nicht dem Rahmen dieser Arbeit angemessen wäre, wird lediglich ein Prototyp mit der neuen Architektur umgesetzt.
