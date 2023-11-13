@@ -1,4 +1,4 @@
-\chapter{Anwendung des Frameworks auf jadice flow} % TODO reconsider chap name
+\chapter{Anwendung des Frameworks auf jadice flow}
 \label{chap:anwendung}
 
 In diesem Kapitel wird ein Architektur-Refactoring am Produkt \emph{jadice flow} geplant.
@@ -13,7 +13,33 @@ Stakeholder definieren gemeinsam gewünschte Szenarien und ordnen diesen \glspl{
 Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
 Die resultierenden Szenarien können in den \gls{arh} eingegeben werden.
 
-Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben haben, sind in Abbildung TODO zu sehen.
+Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben haben, sind in der \cref{tab:scenarios} zu sehen.
+
+\begin{table}
+	\centering
+	\begin{tabular}{ p{2,5cm} p{6cm} p{2cm} l }
+		\toprule
+		\textbf{Name} & \textbf{Beschreibung} & \textbf{Wichtigkeit/ Schwierigkeit} & \textbf{Qualitätsattribute} \\
+		\midrule
+		Dynamische Skalierbarkeit & Wenn die Nutzlast steigt, kann das System dynmaisch skalieren & A/B & Scalability \\
+		Statische Skalierbarkeit & Bei geplanten Anwendungsfällen soll passend zur Einhaltung einer Zeitgrenze skaliert werden & B/C & Scalability \\
+		 Jobtemplates& Einzelne Worker sollen modular zu Services kombinierbar sein & A/C & Modularity \\
+		 Neue Worker& Neue Worker können schnell und unkompliziert zum Produkt hinzugefügt werden & A/C & Modularity \\
+		 Schnelle Abarbeitung & Effiziente Resourcennutzung durch schnelle Abarbeitung der Worker-Aufrufe  & A/A & Time Behavior \\
+		 Echtzeit-verarbeitung & Ein Nutzer soll möglichst schnell das Ergebnis seines Auftrags sehen & A/B & Time Behavior \\
+		 Einfaches Deployment & Ein neues Produkt kann aus Funktionsbausteinen innerhalb eines Tages zusammengestellt werden &C/C & Deployability \\
+		 Platform-unabhängigkeit& Das Produkt kann auf vielen Systemen deployed werden & B/A & Deployability \\
+		 Fehlertoleranz Massen-verarbeitung & Wenn 1 Dokument von tausenden einen Fehler verursacht, soll nicht die ganze Verarbeitung abbrechen & A/B & Fault-Tolerance\\
+		 Erholen nach Systemausfall & Bei dem Ausfall des Systems soll die Verarbeitung möglichst dort wieder einsteigen, wo sie aufgehört hat & A/C & Recoverability \\
+		\bottomrule
+	\end{tabular}
+	\caption{
+		Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
+		Diese sind jeweils mit dreistufiger Wichtigkeit und Schwierigkeit bewertet (A steht für sehr wichtig und sehr schwierig).
+		Außerdem sind zugehörige Qualitätsattribute assoziiert.
+		}
+	\label{tab:scenarios}
+\end{table}
 
 TODO nach Durchfürhung von Phase 1: 
  - Beschreibung der Szenarien und QAs
@@ -21,6 +47,8 @@ TODO nach Durchfürhung von Phase 1:
 
 
 \section{Phase 2 - Strategieplanung}
+\label{sec:durchführung-phase2}
+
 \section{Phase 3a - Architekturplanung}
 \section{Herausforderungen bei der Durchführung}
 %\section{Analyse der Ergebnisse}
