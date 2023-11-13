@@ -13,8 +13,8 @@ Abschließend wird ein Überblick über das Produkt gegeben, das mithilfe des \g
 Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwareprodukte ausgemacht und ist die simpelste Art, Software zu entwickeln.
 Moderne Programmiersprachen ermöglichen zwar die Modularisierung von Monolithen, jedoch befindet sich die gesamte Funktionalität eines Monolithen in einer Applikation, die aus nur einem ausführbaren Artefakt besteht.
 Nach den meisten Definitionen (siehe~\cite{Dragoni2017}) sind Monolithen dadurch gekennzeichnet, dass ihre einzelnen Module nicht unabhängig voneinander ausführbar sind.
-Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Stärken.
-Da es sich um eine sehr simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployment und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{a-survey-on}.
+Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Vorteile.
+Da es sich um eine simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployment und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{a-survey-on}.
 Es ist kein kompliziertes Kommunikationsmodell notwendig, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
 
 Je größer Monolithen jedoch werden, desto stärker zeigen sich die Schwächen dieser Architektur.
@@ -50,11 +50,11 @@ All dies führt dazu, dass Experten empfehlen, für kleine Anwendungen bei monol
 \section{Migration zu Microservices}
 
 Aufgrund der beschriebenen Vorteile von Microservices Architekturen ist es im Interesse vieler Unternehmen und Entwickler, existierende Applikationen und Systeme mit monolithischer Architektur zu Microservices-basierten Systemen zu migrieren.
-Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensiv und durch große Risiken geprägt, da dabei Systeme sehr tiefliegend verändert werden.
+Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensiv und durch große Risiken geprägt, da dabei Systeme tiefliegend verändert werden.
 Deswegen ist die Migration zu Microservices seit etwa 2015 ein stark untersuchtes Thema.
 
-Bei der Migration zu Microservices gibt es mehrere zentrale Herausforderungen, die jedes Entwicklerteam bewältigen muss und auch in unserer \hyperref[forschungsfrage:1]{Forschungsfrage} als Untersuchungsobjekt dieser Thesis genannt werden.
-Eine der komplexesten ist die Dekomposition des vorhandenen, großen, zusammenhängendem Systems in kleine, unabhängige Services~\cite{a-survey-on,taibi2017processmotivations,taibi2019decomposition}.
+Bei der Migration zu Microservices gibt es mehrere zentrale Herausforderungen, die jedes Entwicklerteam bewältigen muss und auch in der \hyperref[forschungsfrage:1]{Forschungsfrage} als Untersuchungsobjekt dieser Thesis genannt werden.
+Eine der größten ist die Dekomposition des vorhandenen, großen, zusammenhängendem Systems in kleine, unabhängige Services~\cite{a-survey-on,taibi2017processmotivations,taibi2019decomposition}.
 Die sogenannte optimale Granularität der Services zu bestimmen, ist eine sehr wichtige Aufgabe, da sie starke Auswirkungen auf die Performanz des Systems haben kann.
 Der Nachteil zur großer Services ist, dass sie ineffizient werden und womöglich ähnliche unerwünschte Eigenschaften erhalten wie monolithische Systeme.
 Dagegen ist auch eine Aufteilung in zu kleine einzelne Einheiten problematisch, da dadurch der Kommunikationsbedarf zwischen den Microservices stark erhöht werden kann, was ebenfalls leistungsbezogene Nachteile hat.
@@ -73,9 +73,9 @@ Ein solches wird im nächsten Kapitel vorgestellt und anschließend in dieser Ar
 \label{sec:mmf}
 
 Es wurden bereits viele Gründe für die sehr häufig durchgeführte Migration zu Microservices, sowie die Risiken und Herausforderungen dabei beschrieben.
-Es sollte klar sein, dass der Migrationsprozess sehr komplex, hochriskant und fehleranfällig ist.
+Dass der Migrationsprozess sehr komplex, risikoreich und fehleranfällig ist, sollte klar sein.
 Erschwert wird er durch das Fehlen klarer und strukturierter Anleitungen.
-Es wurde bereits durch mehrere Metastudien versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein kann.
+Mehrere Metastudien haben bereits versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein können.
 Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Literatur schnell ändert und Metastudien dadurch teilweise obsolet werden.
 Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt, gelöst werden.
 Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
@@ -100,7 +100,7 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
 	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
 	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
-	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten einfach möglich ist.
+	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
@@ -137,7 +137,7 @@ Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Co
 
 Einen beispielhaften Workflow stellt der \emph{E-Mail converter} dar.
 Dabei werden E-Mails in Einzelteile aufgeteilt (Körper, Anhänge) und diese dann einzeln in das Zielformat konvertiert.
-Die einzelnen Arbeitsschritte dabei können parallelisiert werden und separat skaliert werden.
+Die einzelnen Arbeitsschritte dabei können parallelisiert und separat skaliert werden.
 Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \emph{jadice flow} zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
