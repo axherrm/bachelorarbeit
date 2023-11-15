@@ -1,42 +1,44 @@
 \chapter{Anwendung des Frameworks auf jadice flow}
 \label{chap:anwendung}
 
-In diesem Kapitel wird ein Architektur-Refactoring am Produkt \emph{jadice flow} geplant.
+In diesem Kapitel wird ein Architektur-Refactoring am Produkt \emph{jadice flow} geplant und in theoretischer Ebene durchgeführt.
 Dazu wird das \gls{mmf} benutzt, das in \cref{sec:mmf} beschrieben wird.
 Unterteilt ist der Prozess in drei Phasen, deren Durchführung im Folgenden beschrieben wird.
 
 \section{Phase 1 - Architekturreview}
 
-In dieser Phase wird ein Architekturreview nach \Citet{SVAHNBERG20071893} durchgeführt.
-Dabei handelt es sich um eine Architekturbewertungsmethode, die auf Szenarien-basierten Methoden wie \gls{saam} (\Citet{saam}) und \gls{atam} (\Citet{kazman_2000}) aufbaut.
-Stakeholder definieren gemeinsam gewünschte Szenarien und ordnen diesen \glspl{qa} zu.
-Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
-Die resultierenden Szenarien können in den \gls{arh} eingegeben werden.
+In dieser Phase wurde einer Fokusgruppe ein Architekturreview nach \Citet{SVAHNBERG20071893} wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt.
+Teil dieser Gruppe waren vier Softwareentwickler beziehungsweise -Architekten 
+% Dabei handelt es sich um eine Architekturbewertungsmethode, die auf Szenarien-basierten Methoden wie \gls{saam} (\Citet{saam}) und \gls{atam} (\Citet{kazman_2000}) aufbaut.
+% Stakeholder definieren gemeinsam gewünschte Szenarien und ordnen diesen \glspl{qa} zu.
+% Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
+% Die resultierenden Szenarien können in den \gls{arh} eingegeben werden.
 
 Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben haben, sind in der \cref{tab:scenarios} zu sehen.
 
 \begin{table}
 	\centering
-	\begin{tabular}{ p{2,5cm} p{6cm} p{2cm} l }
+	\begin{tabular}{ p{2,5cm} p{6cm} p{0.7cm} p{2,5cm} l }
 		\toprule
-		\textbf{Name} & \textbf{Beschreibung} & \textbf{Wichtigkeit/ Schwierigkeit} & \textbf{Qualitätsattribute} \\
+		\textbf{Name} & \textbf{Beschreibung} & \textbf{W/S} & \textbf{\glspl{qa}} & \textbf{MS} \\
 		\midrule
-		Dynamische Skalierbarkeit & Wenn die Nutzlast steigt, kann das System dynmaisch skalieren & A/B & Scalability \\
-		Statische Skalierbarkeit & Bei geplanten Anwendungsfällen soll passend zur Einhaltung einer Zeitgrenze skaliert werden & B/C & Scalability \\
-		 Jobtemplates& Einzelne Worker sollen modular zu Services kombinierbar sein & A/C & Modularity \\
-		 Neue Worker& Neue Worker können schnell und unkompliziert zum Produkt hinzugefügt werden & A/C & Modularity \\
-		 Schnelle Abarbeitung & Effiziente Resourcennutzung durch schnelle Abarbeitung der Worker-Aufrufe  & A/A & Time Behavior \\
-		 Echtzeit-verarbeitung & Ein Nutzer soll möglichst schnell das Ergebnis seines Auftrags sehen & A/B & Time Behavior \\
-		 Einfaches Deployment & Ein neues Produkt kann aus Funktionsbausteinen innerhalb eines Tages zusammengestellt werden &C/C & Deployability \\
-		 Platform-unabhängigkeit& Das Produkt kann auf vielen Systemen deployed werden & B/A & Deployability \\
-		 Fehlertoleranz Massen-verarbeitung & Wenn 1 Dokument von tausenden einen Fehler verursacht, soll nicht die ganze Verarbeitung abbrechen & A/B & Fault-Tolerance\\
-		 Erholen nach Systemausfall & Bei dem Ausfall des Systems soll die Verarbeitung möglichst dort wieder einsteigen, wo sie aufgehört hat & A/C & Recoverability \\
+		Dynamische Skalierbarkeit & Wenn die Nutzlast steigt, kann das System dynmaisch skalieren & A/B & Scalability, Resource Utilization, Adaptability, Execution Cost & \advantage \\
+		Statische Skalierbarkeit & Bei geplanten Anwendungsfällen soll passend zur Einhaltung einer Zeitgrenze skaliert werden & B/C & Scalability, Resource Utilization, Time Behavior & \advantage \\
+		 Jobtemplates& Einzelne Worker sollen modular zu Services kombinierbar sein & A/C & Modularity, Reusability & \\
+		 Neue Worker& Neue Worker können schnell und unkompliziert zum Produkt hinzugefügt werden & A/C & Modularity, Reusability & \advantage  \\
+		 Schnelle Abarbeitung & Effiziente Ressourcennutzung durch schnelle Abarbeitung der Worker-Aufrufe  & A/A & Time Behavior, Resource Utilization & \disadvantage \\
+		 \glqq Echtzeit\grqq{}-Verarbeitung & Ein Nutzer soll möglichst schnell das Ergebnis seines Auftrags sehen & A/B & Time Behavior & \disadvantage \\
+		 Einfaches Deployment & Ein neues Produkt kann aus Funktionsbausteinen innerhalb eines Tages zusammengestellt werden &C/C & Deployability, Modularity, Agility & \disadvantage \\
+		 Platform-unabhängigkeit& Das Produkt kann auf vielen Systemen deployed werden & B/A & Deployability, Installability & \advantage \\
+		 Fehlertoleranz Massen-verarbeitung & Wenn 1 Dokument von tausenden einen Fehler verursacht, soll nicht die ganze Verarbeitung abbrechen & A/B & Fault-Tolerance &\advantage \\
+		 Erholen nach Systemausfall & Bei dem Ausfall des Systems soll die Verarbeitung möglichst dort wieder einsteigen, wo sie aufgehört hat & A/C & Recoverability & \\
 		\bottomrule
 	\end{tabular}
-	\caption{
+	\caption[Im Architekturreview ermittelte Qualitätsanforderungen und Szenarien]{
 		Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
-		Diese sind jeweils mit dreistufiger Wichtigkeit und Schwierigkeit bewertet (A steht für sehr wichtig und sehr schwierig).
-		Außerdem sind zugehörige Qualitätsattribute assoziiert.
+		\emph{W/S} gibt die Wichtigkeit/Schwierigkeit der Szenarien in drei Stufen an (A steht für sehr wichtig und sehr schwierig).
+		\emph{\glspl{qa}} gibt die Assoziation der Szenarien zu bestimmten \acrfullpl{qa} an; zuerst genannte sind diejenigen, für die die Szenarien ursprünglich erstellt wurden.
+		\emph{MS} gibt die Einschätzung darüber an, ob das jeweilige Szenario von einer Microservices-Architektur profitiert.
 		}
 	\label{tab:scenarios}
 \end{table}
