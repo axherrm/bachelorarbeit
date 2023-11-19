@@ -7,7 +7,7 @@ Unterteilt ist der Prozess in drei Phasen, deren Durchführung im Folgenden besc
 
 \section{Phase 1 - Architekturreview}
 
-In dieser Phase wurde einer Fokusgruppe ein Architekturreview nach \Citet{SVAHNBERG20071893} wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt.
+In dieser Phase wurde in einer Fokusgruppe ein Architekturreview nach \Citet{SVAHNBERG20071893} wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt.
 Teil dieser Gruppe waren vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} und ich selbst in der Rolle des Moderators.
 Durch die ebenfalls in \cref{sec:methodik-architekturreview} beschriebenen Veränderungen an der Methodik von \Citet{SVAHNBERG20071893} wurde auch der geplante Zeitrahmen dieser Fokusgruppe auf lediglich 2 Stunden reduziert. Das liegt vor allem daran, dass die letzten Phasen nicht nötig waren, aber auch daran, dass alle Teilnehmer bereits vertraut mit dem Produkt und der Architektur und Funktionsweise des Systems waren. 
 Demnach konnte nach einer kurzen Einleitung in die verwendete Methodik sofort mit Schritt 2, dem Ordnen der \glspl{qa} nach Wichtigkeit gestartet werden.
@@ -17,7 +17,7 @@ Dafür wurde
 % Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
 % Die resultierenden Szenarien können in den \gls{arh} eingegeben werden.
 
-Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben haben, sind in der \cref{tab:scenarios} zu sehen.
+Das Ergebnis dieser Fokusgruppe sind die Szenarien, in der \cref{tab:scenarios} zu sehen sind.
 
 \begin{landscape}
 	\begin{figure}
@@ -31,6 +31,9 @@ Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben ha
 	\end{figure}
 \end{landscape}
 
+Wie man in diesem Utility Tree sehen kann, sind die Szenarien nur mit jeweils einem \gls{qa} beziehungsweise Subattribut assoziiert.
+Da realistischer Weise die meisten Szenarien allerdings mehrere \glspl{qa} beinhalten, wurden an einem zweiten Termin die Szenarien erneut betrachtet und diskutiert, welche weiteren \glspl{qa} sinnvoll hinzugefügt werden sollten.
+Die resultierenden Assoziationen sind in der \cref{tab:scenarios} zu sehen.
 
 \begin{table}
 	\centering
@@ -59,9 +62,9 @@ Die Szenarien, die sich dabei im konkreten Fall zu \emph{jadice flow} ergeben ha
 	\label{tab:scenarios}
 \end{table}
 
-TODO nach Durchfürhung von Phase 1:
- - Beschreibung der Szenarien und QAs
- - Explizite Änderungsvorschläge
+Außerdem ist darin für jedes Szenario eine Einschätzung darüber enthalten, ob eine Microservices-Architektur für das spezifische Szenario von Vorteil ist (gegenüber einer monolithischen Architektur).
+Da insgesamt in fünf Fällen eine Microservices-Architektur als profitabel und nur in drei Fällen als unvorteilhaft eingeschätzt wurde, kann die Entscheidung der Migration zu einer Microservices-Architektur durch diese Metrik bestärkt werden.
+Außerdem ist anzumerken, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert sind und die obersten zwei Szenarien der hauptsächliche Treiber für die Migration zu einer Microservices-Architektur waren.
 
 
 \section{Phase 2 - Strategieplanung}
