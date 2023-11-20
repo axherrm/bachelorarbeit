@@ -54,3 +54,68 @@
 % red arrow down for
 \newcommand{\disadvantage}{\raisebox{-0.35\height}{\includegraphics[width=.04\textwidth]{down\_icon.png}}}
 %\newcommand{\disadvantage}{\textcolor{red}{$\mathbf{\downarrow}$}}
+
+
+
+
+% Trick to use more than 9 args: https://tex.stackexchange.com/a/509766
+\newcommand{\neworrenewcommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
+
+\newcommand{\fieldnotelong}[9]{
+	\neworrenewcommand{\fieldnotelongextended}[2]{
+		\begin{longtable}{|l|p{9cm}|}
+			
+			\caption{#1} \label{tab:field-notes-long-#2} \\
+			
+			\hline \textbf{Eintragstyp} & \textbf{Inhalt} \\ \hline
+			\endfirsthead
+			
+			\multicolumn{2}{c}%
+			{{\bfseries \tablename\ \thetable{} -- von der vorherigen Seite weitergeführt}} \\
+			\hline \textbf{Eintragstyp} & \textbf{Inhalt}
+			\endhead
+			
+			\hline \multicolumn{2}{|r|}{{Wird auf der n\"achsten Seite fortgef\"uhrt}} \\ \hline
+			\endfoot
+			
+			\hline
+			\endlastfoot
+			
+			Feldnotitz Nr. & #2 \\ \hline
+			Datum, Uhrzeit & #3 \\ \hline
+			Ort &  #4 \\ \hline
+			Beteiligte Personen & #5 \\ \hline
+			Phase \& Schritt des MMF & #6 \\ \hline
+			Aktionen und Entscheidungen &  #7 \\ \hline
+			Kommentare &  #8 \\ \hline
+			Was lief gut &  #9 \\ \hline
+			Probleme &  ##1 \\ \hline
+			Empfindungen & ##2 \\ \hline
+			
+		\end{longtable}
+	}
+	\fieldnotelongextended
+}
+
+%\newcommand{\fieldnote}[9]{
+%	\neworrenewcommand{\fieldnoteextended}[2]{
+%		\begin{table}
+%			\centering
+%			\begin{tabular}{|l|p{9cm}|}
+%				\hline \textbf{Eintragstyp} & \textbf{Inhalt} \\ \hline
+%				Feldnotitz Nr. & #2 \\ \hline
+%				Datum, Uhrzeit & #3 \\ \hline
+%				Ort &  #4 \\ \hline
+%				Beteiligte Personen & #5 \\ \hline
+%				Phase \& Schritt des MMF & #6 \\ \hline
+%				Aktionen und Entscheidungen &  #7 \\ \hline
+%				Kommentare &  #8 \\ \hline
+%				Was lief gut &  #9 \\ \hline
+%				Probleme &  ##1 \\ \hline
+%				Empfindungen & ##2 \\ \hline
+%			\end{tabular}
+%			\caption{#1} \label{tab:field-notes-#2}			
+%		\end{table}
+%	}
+%	\fieldnoteextended
+%}
