@@ -14,6 +14,6 @@
 
 ### Let Github do the work
 
-> - The latest version of the main branch is always available at https://axherrrm.github.io/bachelorarbeit/main-german.pdf
+> - The latest version of the main branch is always available at https://axherrm.github.io/bachelorarbeit/main-german.pdf
 > - A compilation by GitHub is triggered every time a release is published. The resulting PDF is added to the release as asset.
 > - After each week, a release of the latest version of the main branch is created.
