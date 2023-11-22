@@ -55,17 +55,17 @@
 \newcommand{\disadvantage}{\raisebox{-0.35\height}{\includegraphics[width=.04\textwidth]{down\_icon.png}}}
 %\newcommand{\disadvantage}{\textcolor{red}{$\mathbf{\downarrow}$}}
 
-
-
+% https://tex.stackexchange.com/a/150650
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 % Trick to use more than 9 args: https://tex.stackexchange.com/a/509766
 \newcommand{\neworrenewcommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
 
-\newcommand{\fieldnotelong}[9]{
-	\neworrenewcommand{\fieldnotelongextended}[2]{
-		\begin{longtable}{|l|p{9cm}|}
-			
-			\caption{#1} \label{tab:field-notes-long-#2} \\
+\newcommand{\fieldnote}[9]{
+	\neworrenewcommand{\fieldnoteextended}[2]{
+		\begin{longtable}{|p{2.5cm}|p{11cm}|}
+			%\caption{#1} \label{tab:field-notes-long-#2} \\
+			\caption{#1} \label[feldnotiz]{feldnotiz:#2} \\
 			
 			\hline \textbf{Eintragstyp} & \textbf{Inhalt} \\ \hline
 			\endfirsthead
@@ -94,7 +94,7 @@
 			
 		\end{longtable}
 	}
-	\fieldnotelongextended
+	\fieldnoteextended
 }
 
 %\newcommand{\fieldnote}[9]{
@@ -119,3 +119,11 @@
 %	}
 %	\fieldnoteextended
 %}
+
+% https://tex.stackexchange.com/a/136050
+\newenvironment{shortitemize}{
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}     }
+	{ \end{itemize}                  } 

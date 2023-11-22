@@ -2,16 +2,28 @@
 \label{chap:anwendung}
 
 In diesem Kapitel wird ein Architektur-Refactoring am Produkt \emph{jadice flow} geplant und in theoretischer Ebene durchgeführt.
-Dazu wird das \gls{mmf} benutzt, das in \cref{sec:mmf} beschrieben wird.
-Unterteilt ist der Prozess in drei Phasen, deren Durchführung im Folgenden beschrieben wird.
+Dazu werden \acrfull{mmf} und \acrfull{arh} benutzt, welche den Prozess sowie auch dieses Kapitel in drei Phasen unterteilen.
+Eine genauere Beschreibung des Frameworks ist in \cref{sec:mmf} zu finden, sehr abstrahiert und vereinfacht bestehen die Phasen aus folgenden Aktivitäten:
+\begin{itemize}
+	\item In \cref{sec:durchführung-phase1} wird die Durchführung der ersten Phase in Form eines Architekturreviews mit den wichtigsten Stakeholdern beschreiben.
+	\item Im Rahmen der zweiten Phase wird in \cref{sec:durchführung-phase2} nach adäquaten Migrationsstrategien gesucht.
+	\item In \cref{sec:durchführung-phase3} wird in der dritten Phase nach profitablen Patterns und Best Practices gesucht.
+\end{itemize}
 
-\section{Phase 1 - Architekturreview}
+\section{Phase 1 - Systemverständnis}
+\label{sec:durchführung-phase1}
 
+Das Ziel dieser Phase ist ein Verständnis des Systems aufzubauen.
+Dieses Verständnis ist wichtig für spätere Entscheidungen.
+
+\subsection{Qualitätsattribute}
+
+Im ersten Schritt dieser ersten Phase werden die gewünschten \glspl{qa} des Systems gesammelt.
 In dieser Phase wurde in einer Fokusgruppe ein Architekturreview nach \Citet{SVAHNBERG20071893} wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt.
 Teil dieser Gruppe waren vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} und ich selbst in der Rolle des Moderators.
-Durch die ebenfalls in \cref{sec:methodik-architekturreview} beschriebenen Veränderungen an der Methodik von \Citet{SVAHNBERG20071893} wurde auch der geplante Zeitrahmen dieser Fokusgruppe auf lediglich 2 Stunden reduziert. Das liegt vor allem daran, dass die letzten Phasen nicht nötig waren, aber auch daran, dass alle Teilnehmer bereits vertraut mit dem Produkt und der Architektur und Funktionsweise des Systems waren. 
+Durch die ebenfalls in \cref{sec:methodik-architekturreview} beschriebenen Veränderungen an der Methodik von \Citet{SVAHNBERG20071893} wurde auch der geplante Zeitrahmen dieser Fokusgruppe auf lediglich 2 Stunden reduziert. Das liegt vor allem daran, dass die letzten Phasen nicht nötig waren, aber auch daran, dass alle Teilnehmer bereits vertraut mit dem Produkt und der Architektur und Funktionsweise des Systems waren.
 Demnach konnte nach einer kurzen Einleitung in die verwendete Methodik sofort mit Schritt 2, dem Ordnen der \glspl{qa} nach Wichtigkeit gestartet werden.
-Dafür wurde 
+Dafür wurde
 % Dabei handelt es sich um eine Architekturbewertungsmethode, die auf Szenarien-basierten Methoden wie \gls{saam} (\Citet{saam}) und \gls{atam} (\Citet{kazman_2000}) aufbaut.
 % Stakeholder definieren gemeinsam gewünschte Szenarien und ordnen diesen \glspl{qa} zu.
 % Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
@@ -35,44 +47,37 @@ Wie man in diesem Utility Tree sehen kann, sind die Szenarien nur mit jeweils ei
 Da realistischer Weise die meisten Szenarien allerdings mehrere \glspl{qa} beinhalten, wurden an einem zweiten Termin die Szenarien erneut betrachtet und diskutiert, welche weiteren \glspl{qa} sinnvoll hinzugefügt werden sollten.
 Die resultierenden Assoziationen sind in der \cref{tab:scenarios} zu sehen.
 
-\begin{table}
-	\centering
-	\begin{tabular}{ m{2,5cm} m{6cm} m{0.7cm} m{2,5cm} p{0.7cm} }
-		\toprule
-		\textbf{Name} & \textbf{Beschreibung} & \textbf{W/S} & \textbf{\glspl{qa}} & \textbf{MS} \\
-		\midrule
-		Dynamische Skalierbarkeit & Wenn die Nutzlast steigt, kann das System dynamisch skalieren & A/B & Scalability, Resource Utilization, Adaptability, Execution Cost & \advantage \\ \hline
-		Statische Skalierbarkeit & Bei geplanten Anwendungsfällen soll passend zur Einhaltung einer Zeitgrenze skaliert werden & B/C & Scalability, Resource Utilization, Time Behavior & \advantage \\  \hline
-		 Jobtemplates& Einzelne Worker sollen modular zu Services kombinierbar sein & A/C & Modularity, Reusability & - \\ \hline
-		 Neue Worker& Neue Worker können schnell und unkompliziert zum Produkt hinzugefügt werden & A/C & Modularity, Reusability & \advantage  \\ \hline
-		 Schnelle Abarbeitung & Effiziente Ressourcennutzung durch schnelle Abarbeitung der Worker-Aufrufe  & A/A & Time Behavior, Resource Utilization & \disadvantage \\ \hline
-		 \glqq Echtzeit\grqq{}-Verarbeitung & Ein Nutzer soll möglichst schnell das Ergebnis seines Auftrags sehen & A/B & Time Behavior & \disadvantage \\ \hline
-		 Einfaches Deployment & Ein neues Produkt kann aus Funktionsbausteinen innerhalb eines Tages zusammengestellt werden &C/C & Deployability, Modularity, Agility & \disadvantage \\ \hline
-		 Platform-unabhängigkeit& Das Produkt kann auf vielen Systemen deployed werden & B/A & Deployability, Installability & \advantage \\ \hline
-		 Fehlertoleranz Massen-verarbeitung & Wenn 1 Dokument von tausenden einen Fehler verursacht, soll nicht die ganze Verarbeitung abbrechen & A/B & Fault-Tolerance &\advantage \\ \hline
-		 Erholen nach Systemausfall & Bei dem Ausfall des Systems soll die Verarbeitung möglichst dort wieder einsteigen, wo sie aufgehört hat & A/C & Recoverability & - \\
-		\bottomrule
-	\end{tabular}
-	\caption[Im Architekturreview ermittelte Qualitätsanforderungen und Szenarien]{
-		Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
-		\emph{W/S} gibt die Wichtigkeit/Schwierigkeit der Szenarien in drei Stufen an (A steht für sehr wichtig und sehr schwierig).
-		\emph{\glspl{qa}} gibt die Assoziation der Szenarien zu bestimmten \acrfullpl{qa} an; zuerst genannte sind diejenigen, für die die Szenarien ursprünglich erstellt wurden.
-		\emph{MS} gibt die Einschätzung darüber an, ob das jeweilige Szenario von einer Microservices-Architektur profitiert.
-		}
-	\label{tab:scenarios}
-\end{table}
+\input{tables/scenarios}
 
 Außerdem ist darin für jedes Szenario eine Einschätzung darüber enthalten, ob eine Microservices-Architektur für das spezifische Szenario von Vorteil ist (gegenüber einer monolithischen Architektur).
 Da insgesamt in fünf Fällen eine Microservices-Architektur als profitabel und nur in drei Fällen als unvorteilhaft eingeschätzt wurde, kann die Entscheidung der Migration zu einer Microservices-Architektur durch diese Metrik bestärkt werden.
 Außerdem ist anzumerken, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert sind und die obersten zwei Szenarien der hauptsächliche Treiber für die Migration zu einer Microservices-Architektur waren.
 
-
 \section{Phase 2 - Strategieplanung}
 \label{sec:durchführung-phase2}
 
+In dieser Phase werden die Ergebnisse der Phase 1 in Form von \glspl{qa} beziehungsweise Szenarien genutzt, um eine passende Migrationsstrategie zu finden.
+Dazu wurden die in \cref{tab:scenarios} dargestellten Szenarien bereits in den \gls{arh} eingegeben.
+Zusätzlich werden in dieser Phase Filterkriterien definiert.
+Mit deren Hilfe wird dann schlussendlich eine Liste von Migrationsstrategien vorgeschlagen, welche folgend analysiert wird.
+
+\subsection{Filterselektion}
+Damit bei der Suche nach Migrationsmethoden möglichst gut zum Zielsystem und den Vorstellungen der Architekten passende Ergebnisse vorgeschlagen werden, bietet der \gls{arh} neben der Konfiguration der Szenarien noch eine weitere Art, die Ergebnisse zu filtern und ordnen: Die Filter, die in diesem Abschnitt konfiguriert werden.
+Dabei kann für jede der Eigenschaften aus \cref{tab:phase2-filter} eine dieser drei Präferenzen angegeben werden:
+\begin{itemize}
+	\item \textbf{Include:} Methoden, die die jeweilige Eigenschaft haben, werden höher platziert.
+	\item \textbf{Neutral:} Ob Methoden die jeweilige Eigenschaft haben, wirkt sich nicht auf ihre Platzierung aus.
+	\item \textbf{Exclude:} Methoden, die die jeweilige Eigenschaft nicht haben, werden höher platziert.
+\end{itemize}
+
+\input{tables/filter}
+
+Die Qualität dieser Filterfunktion soll ebenfalls in dieser Arbeit evaluiert werden, weshalb folgend in \cref{sec:phase2-ergebnisdurchsicht} die Ergebnisse verschiedener Filter betrachtet und verglichen werden.
+Dafür wurden die Filter für das Refactoring von \emph{jadice flow} wie folgt gewählt.
+Das Vorgehen ist in \cref{feldnotiz:1} dokumentiert.
+
+\subsection{Ergebnisdurchsicht}
+\label{sec:phase2-ergebnisdurchsicht}
+
 \section{Phase 3a - Architekturplanung}
-\section{Herausforderungen bei der Durchführung}
-%\section{Analyse der Ergebnisse}
-%\section{Erstellung eines Refactoring-Konzepts}
-%\subsection{Bestimmung der optimalen Granularität}
-%\subsection{Optimierung des Kommunikationsmodells und der Verringerung des IO-Flaschenhalses}
+\label{sec:durchführung-phase3}

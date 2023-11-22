@@ -1,6 +1,6 @@
 # Bachelorarbeit: Toolunterstütztes Refactoring von Microservices-Architekturen: Eine industrielle Fallstudie
 
-![github pages](https://github.com/axherrrm/bachelorarbeit/actions/workflows/github_pages.yml/badge.svg)
+![github pages](https://github.com/axherrm/bachelorarbeit/actions/workflows/github_pages.yml/badge.svg)
 
 ## How to compile the project
 
