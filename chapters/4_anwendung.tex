@@ -20,16 +20,41 @@ Dieses Verständnis ist wichtig für spätere Entscheidungen.
 
 Im ersten Schritt dieser ersten Phase werden die gewünschten \glspl{qa} des Systems gesammelt.
 In dieser Phase wurde in einer Fokusgruppe ein Architekturreview nach \Citet{SVAHNBERG20071893} wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt.
-Teil dieser Gruppe waren vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} und ich selbst in der Rolle des Moderators.
+Teil dieser Gruppe waren vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} und der Autor selbst in der Rolle des Moderators.
 Durch die ebenfalls in \cref{sec:methodik-architekturreview} beschriebenen Veränderungen an der Methodik von \Citet{SVAHNBERG20071893} wurde auch der geplante Zeitrahmen dieser Fokusgruppe auf lediglich 2 Stunden reduziert. Das liegt vor allem daran, dass die letzten Phasen nicht nötig waren, aber auch daran, dass alle Teilnehmer bereits vertraut mit dem Produkt und der Architektur und Funktionsweise des Systems waren.
 Demnach konnte nach einer kurzen Einleitung in die verwendete Methodik sofort mit Schritt 2, dem Ordnen der \glspl{qa} nach Wichtigkeit gestartet werden.
-Dafür wurde
-% Dabei handelt es sich um eine Architekturbewertungsmethode, die auf Szenarien-basierten Methoden wie \gls{saam} (\Citet{saam}) und \gls{atam} (\Citet{kazman_2000}) aufbaut.
-% Stakeholder definieren gemeinsam gewünschte Szenarien und ordnen diesen \glspl{qa} zu.
-% Außerdem wird den verschiedenen Szenarien jeweils ein Grad der Schwierigkeit und ein Grad der Wichtigkeit zugewiesen.
-% Die resultierenden Szenarien können in den \gls{arh} eingegeben werden.
 
-Das Ergebnis dieser Fokusgruppe sind die Szenarien, in der \cref{tab:scenarios} zu sehen sind.
+Dafür sollte jeder Teilnehmer seine Einschätzung darüber, welche die wichtigsten drei Sub-\glspl{qa} sind, per Nachricht abgeben.
+Die daraus resultierende Anzahl von Stimmen pro Sub-\gls{qa} ist in \cref{tab:phase1-qas-priority} zu sehen. 
+\input{tables/qas-priority}
+Dabei ist auffällig, dass die Summe aller Stimmen 29 beträgt, obwohl bei fünf Teilnehmern der Umfrage mit jeweils drei Stimmen insgesamt nur 15 Stimmen zu erwarten wären.
+Die Differenz wird damit begründet, dass nicht alle Teilnehmer der Umfrage sich auf Sub-\glspl{qa} beschränkt haben, sondern auch die \glspl{qa} \emph{Performance}, \emph{Reliability}, \emph{Maintainability} und \emph{Portability} genannt wurden.
+Auch wenn das nicht so vorgesehen war, wurde davon abgesehen, die Teilnehmer darauf hinzuweisen und es zu korrigieren, da die Ergebnisse nicht direkt zur Priorisierung der Attribute führen müssen.
+Stattdessen wurden die Umfrageergebnisse und als vage Basis für eine freiere Diskussion um die Priorisierung benutzt, deren Ergebnis die schlussendliche Platzierung der wichtigsten sechs Sub-\glspl{qa} war, welche ebenfalls in \cref{tab:phase1-qas-priority} zu sehen ist.
+Diese sind:
+\begin{enumerate}
+	\item \emph{Scalability}
+	\item \emph{Modularity}
+	\item \emph{Time Behavior}
+	\item \emph{Deployability}
+	\item \emph{Fault Tolerance}
+	\item \emph{Recoverability}
+\end{enumerate}
+Die genaue Anzahl der wichtigsten (Sub-)Attribute war dabei nicht vorgeschrieben, sondern wurde ebenfalls von der Gruppe diskutiert und gemeinsam auf sechs festgelegt.
+
+Im nächsten Schritt war die Aufgabe, für jedes dieser (Sub-) \glspl{qa} zwei Szenarien zu definieren, die das Attribut gut und auf verschiedene Arten beschreiben.
+Dafür wurde keine spezielle Methodik angewandt, sondern in freier Diskussion der gesamten Gruppe von verschiedenen Teilnehmern der Reihe nach für die Attribute Szenarien vorgeschlagen und anschließend überarbeitet oder teilweise auch abgewiesen.
+Wie in den resultierenden Szenarien in \cref{fig:scenarios} zu sehen ist, hat jedes (Sub-)Attribut zwei Szenarien, abgesehen von den letzten zwei.
+Dafür gibt es zwei Gründe.
+Erstens wurden für diese Subattribute nicht mehrere Szenarien gefunden, die sich ausreichend stark unterschieden hätten.
+Ebenfalls wurde in dem Fall ein Szenario als ausreichend empfunden, da \emph{Reliability} das einzige \gls{qa} ist, für das mehrere Subattribute eingeschlossen wurden, zumal es das am geringsten priorisierte Attribut war.
+
+Um zusätzliche eine Priorisierung der Szenarien vornehmen zu können, sieht der \gls{arh} jeweils eine dreistufige Bewertung der Szenarien hinsichtlich ihrer Wichtigkeit und ihrer technischen Schwierigkeit vor.
+Diese wurde im nächsten Schritt vorgenommen.
+Wieder wurde dabei die Methodik der offenen Diskussion verwendet.
+Dabei wurden die Szenarien der Reihe nach TODO.
+
+
 
 \begin{landscape}
 	\begin{figure}
@@ -49,9 +74,30 @@ Die resultierenden Assoziationen sind in der \cref{tab:scenarios} zu sehen.
 
 \input{tables/scenarios}
 
-Außerdem ist darin für jedes Szenario eine Einschätzung darüber enthalten, ob eine Microservices-Architektur für das spezifische Szenario von Vorteil ist (gegenüber einer monolithischen Architektur).
-Da insgesamt in fünf Fällen eine Microservices-Architektur als profitabel und nur in drei Fällen als unvorteilhaft eingeschätzt wurde, kann die Entscheidung der Migration zu einer Microservices-Architektur durch diese Metrik bestärkt werden.
-Außerdem ist anzumerken, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert sind und die obersten zwei Szenarien der hauptsächliche Treiber für die Migration zu einer Microservices-Architektur waren.
+Abschließend kann zu dieser Phase gesagt werden, dass sie größtenteils wie geplant durchgeführt werden konnte.
+An einigen Stellen sind die verschiedene Schritte etwas verschmolzen oder es wurde kurz zu vorherigen Schritten zurückgesprungen.
+Nicht alle Teilnehmer haben sich gleich stark beteiligt, doch vermutlich TODO
+
+\subsection{Architekturbewertung}
+
+Zusätzlich zum Erfassen der wichtigsten Szenarien und \glspl{qa} hatte die Fokusgruppe als sekundäres Ziel, die Wahl der Architektur für \emph{jadice flow} zu bewerten. 
+Dies Entspricht dem vierten Schritt \emph{Assessment} der ersten Phase des \gls{arh}.
+Da dieser im Werkzeug allerdings noch nicht implementiert ist, wurde der Schritt manuell durchgeführt.
+Im Gegensatz zu vorherigen Schritten der ersten Phase ist dieser nicht relevant für die nächsten Phasen, weshalb es kein Problem ist, den \gls{arh} dabei nicht zu verwenden.
+Im Rahmen dieses Schritts wurde diskutiert, ob eine Microservices-Architektur für jedes spezifische Szenario einzeln von Vorteil ist (gegenüber einer monolithischen Architektur), wobei sich auf lediglich drei Stufen festgelegt wurde:
+\begin{itemize}
+	\item \advantage\hspace*{0.1cm}: Dieses Szenario profitiert wesentlich mehr von einer \gls{msa} als von einer monolithischen Architektur.
+	\item \disadvantage\hspace*{0.1cm}: Dieses Szenario profitiert wesentlich mehr von einer monolithischen Architektur als von einer \gls{msa}.
+	\item \hspace*{0.27cm}-\hspace*{0.27cm}: Dieses Szenario profitiert in verschiedenen Punkten sowohl von einer \gls{msa} als auch von einer monolithischen Architektur, wobei sich beide Seiten ungefähr gleichen.
+\end{itemize}
+Bei Szenarios wie beispielsweise den des \emph{Scalability} Attributs war es nicht schwer, Konsens zu finden, da die Möglichkeit der Skalierung auf Service-Ebene einer der größten Vorteile von \glspl{msa} gegenüber Monolithen ist.
+Doch in anderen Fällen war es schwieriger abzuwägen, ob die Vorteile einer \gls{msa} oder die eines Monolithen überwiegen.
+Schlussendlich konnte jedoch in Form von offener  Diskussion für jedes Szenario einstimmig geklärt werden, welche der drei Optionen gewählt werden sollte, sodass keine Abstimmungen nötig waren.
+
+Das Ergebnis dieser Einschätzungen ist ebenfalls in \cref{tab:scenarios} zu sehen.
+Insgesamt in fünf Fällen wurde eine Microservices-Architektur als profitabel und nur in drei Fällen als unvorteilhaft eingeschätzt. 
+Außerdem ist anzumerken, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert ist und die obersten zwei Szenarien der hauptsächliche Treiber für die Migration zu einer Microservices-Architektur waren.
+Durch die Überlegenheit der \gls{msa}-Favorisierungen und dass diese verstärkt bei den wichtigsten \glspl{qa} vorliegen kann diese Metrik die Entscheidung der Migration zu einer \gls{msa} bestätigen.
 
 \section{Phase 2 - Strategieplanung}
 \label{sec:durchführung-phase2}
@@ -70,14 +116,35 @@ Dabei kann für jede der Eigenschaften aus \cref{tab:phase2-filter} eine dieser 
 	\item \textbf{Exclude:} Methoden, die die jeweilige Eigenschaft nicht haben, werden höher platziert.
 \end{itemize}
 
+
+Für die Wahl der Filter für das Refactoring von \emph{jadice flow} haben \gls{po} und der Autor alle Filter betrachtet und die wichtigsten relevanten ausgewählt.
+Diese sind \cref{tab:phase2-filter} farblich markiert.
+Bewusst stammen die meisten gewählten Filter aus der Kategorie \emph{System Properties} gewählt. da diese als am ausschlaggebendsten für das System 
+Der Grund dafür ist, dass bereits ohne Filtereinstellung das wichtigste 
+
+Um bestmögliche Ergebnisse zu erhalten und dabei eine breite Abdeckung zu erhalten, wird das Suchverfahren mehrfach mit verschiedenen Filtereinstellungen wiederholt.
+
 \input{tables/filter}
+
+
+
 
 Die Qualität dieser Filterfunktion soll ebenfalls in dieser Arbeit evaluiert werden, weshalb folgend in \cref{sec:phase2-ergebnisdurchsicht} die Ergebnisse verschiedener Filter betrachtet und verglichen werden.
 Dafür wurden die Filter für das Refactoring von \emph{jadice flow} wie folgt gewählt.
 Das Vorgehen ist in \cref{feldnotiz:1} dokumentiert.
 
-\subsection{Ergebnisdurchsicht}
+\subsection{Suchergebnisbetrachtung}
 \label{sec:phase2-ergebnisdurchsicht}
+
+Die Filter, die im vorherigen Abschnitt gewählt wurden, werden in diesem Abschnitt angewendet, um jeweils geordnete Listen von Ergebnissen zu erhalten.
+In Tabelle TODO werden
+
+\input{tables/filter-results}
+
+Suche nur mit QA
+Suche mit allen Filtern
+Suche nur mit wichtigsten Filtern
+Manuelle Suche ohne Priorisierung des Systems
 
 \section{Phase 3a - Architekturplanung}
 \label{sec:durchführung-phase3}
