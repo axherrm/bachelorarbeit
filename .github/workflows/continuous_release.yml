@@ -2,7 +2,7 @@ name: Continuous Release
 
 on:
   schedule:
-    - cron: '30 21 * * SUN' # Run every sunday at 23:59 (+2 Berlin)
+    - cron: '30 22 * * SUN' # Run every sunday at 23:59 (+2 Berlin)
 
 env:
   PDF_NAME: Bachelorarbeit_Axel_Herrmann_Woche_${{ github.run_number }}.pdf
