@@ -55,9 +55,6 @@
 \newcommand{\disadvantage}{\raisebox{-0.35\height}{\includegraphics[width=.04\textwidth]{down\_icon.png}}}
 %\newcommand{\disadvantage}{\textcolor{red}{$\mathbf{\downarrow}$}}
 
-% https://tex.stackexchange.com/a/150650
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
 % Trick to use more than 9 args: https://tex.stackexchange.com/a/509766
 \newcommand{\neworrenewcommand}[1]{\providecommand{#1}{}\renewcommand{#1}}
 
@@ -127,3 +124,7 @@
 		\setlength{\parskip}{0pt}
 		\setlength{\parsep}{0pt}     }
 	{ \end{itemize}                  } 
+
+% Mark content of the filter table with prio 1 and prio 2
+\newcommand{\prioOne}[1]{\underline{\smash{\textbf{#1}}}}
+\newcommand{\prioTwo}[1]{\underline{\smash{#1}}}

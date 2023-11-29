@@ -1,21 +1,21 @@
-\begin{table}
+\begin{table}[!h]
   \centering
   \begin{tabular}{m{2cm} m{2cm} m{9cm}}
     \toprule
-    \textbf{Kategorie} & \textbf{Subkategorie} & \textbf{Eigenschaften} \\
+    \textbf{Kategorie} & \textbf{Subkategorie} & \textbf{Filter} \\
     \midrule
-    Quality Preferences & System Properties & Autonomy, Cohesion, Complexity, Coupling, Granularity, Isolation, Technology Heterogenity \\ \hline
-    \multirow{4}{=}[-1cm]{Input Preferences} & Domain Artifacts &  Documentation, Human expertise, Ontology, Version Control System \\ \cline{2-3}
-    & Runtime artifacts & Log traces, User-Application interactions \\ \cline{2-3}
+    Quality Preferences & System Properties & \prioOne{Autonomy}, Cohesion, \prioTwo{Complexity}, Coupling, \prioOne{Granularity}, \prioTwo{Isolation},  \prioOne{Technology Heterogenity} \\ \hline
+    \multirow{4}{=}[-1cm]{Input Preferences} & Domain Artifacts &  Documentation,  \prioOne{Human expertise}, Ontology,  \prioTwo{Version Control System} \\ \cline{2-3}
+    & Runtime artifacts &  \prioTwo{Log traces}, User-Application interactions \\ \cline{2-3}
     & Model artifacts & Activity diagram, Business process model, Class diagram, Custom model, Data flow diagram, Entity model, State machine diagram, Use case model \\ \cline{2-3}
-    & Executables & API / Interface, Database file, Source code (Java), Source code (No specification), Source code (Python), Test cases \\ \hline
+    & Executables &  \prioOne{API / Interface}, Database file,  \prioTwo{Source code (Java)},  \prioOne{Source code (No specification)}, Source code (Python), Test cases \\ \hline
     \multirow{6}{=}[-1.9cm]{Process Preferences} & Directions & Bottom-up, Mixed, Top-down \\ \cline{2-3}
     & Levels of automation & Automatic, Manual, Semi-automatic \\ \cline{2-3}
     & Analysis types & Dynamic, Historic, Lexical, Static \\ \cline{2-3}
     & Techniques & Clustering, Custom heuristics, Data-flow driven, Domain-Driven Design, Execution-trace modeling, General guidelines, Genetic algorithm, Graph-based, Machine Learning, Multi-Tenancy, Performance modeling, Scenario analysis, Wrapping / Black Box \\ \cline{2-3}
-    & Process Strategy & Continuous Evolution, Extension, Greenfield, Refactor, Rewrite / Rebuild, Strangler \\ \cline{2-3}
+    & Process Strategy & Continuous Evolution, Extension, Greenfield,  \prioOne{Refactor}, Rewrite / Rebuild, Strangler \\ \cline{2-3}
     & Atomar Unit & Business Capability, Class, Entity, Function, Functionality, Interface, Other \\ \hline
-    Output Preferences & Representation & Guideline / Workflow, List of services, Source code, Splitting recommendations, Visualization \\ \hline
+    Output Preferences & Representation &  \prioTwo{Guideline / Workflow},  \prioOne{List of services}, Source code,  \prioOne{Splitting recommendations}, Visualization \\ \hline
     \multirow{4}{=}[-1cm]{Usability Preferences} &Validation methods & Case study, Experiment, Industry, No validation \\ \cline{2-3}
     & Accuracy of \gls{sia} & High, Medium, Low, Not available \\ \cline{2-3}
     & Tool supports &  No tool support \\ \cline{2-3}
@@ -23,7 +23,10 @@
     \bottomrule
   \end{tabular}
   \caption[Mögliche Filter des \gls{arh} in Phase 2]{
-    Mögliche Filter des \gls{arh} in Phase 2.
+  	Mögliche Filter des \gls{arh} in Phase 2 bei der Suche nach Migrationsstrategien.
+  	Filter, die in dieser Thesis verwendet werden, sind folgendermaßen markiert:
+    \prioTwo{Unterstrichene Filter} gehören zu den Filtern, die mit geringerer Priorität verwendet werden.
+    \prioOne{Unterstrichene und fett markierte Filter} sind dabei die Filter mit höherer Priorität, die also bei jeder Suche verwendet werden.
   }
   \label{tab:phase2-filter}
 \end{table}
