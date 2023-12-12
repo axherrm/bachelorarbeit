@@ -26,22 +26,34 @@ Deren genauere Funktion und Form dieser wird in \cref{sec:structured-field-notes
 \label{sec:methodik-architekturreview}
 
 Die Methodik eines Architekturreviews wird in dieser Thesis nach Vorschlag des \gls{mmf}/\gls{arh} dazu verwendet, Qualitätsanforderungen an das System, sogenannte \acrfullpl{qa}, zu sammeln.
-Für Konformität mit dem Werkzeug \gls{arh}, das als Ergebnis des Architekturreviews Szenarien benötigt, die \acrfullpl{qa} beschreiben, beschränkt die Auswahl möglicher Verfahren für die erste Phase auf Szenarien-basierte Architekturreviews.
+Für Konformität mit dem Werkzeug \gls{arh}, das als Ergebnis des Architekturreviews Szenarien benötigt, die \acrfullpl{qa} beschreiben, beschränkt sich die Auswahl möglicher Verfahren für die erste Phase auf Szenarien-basierte Architekturreviews.
 Das bedeutet, dass die gewünschten \glspl{qa} des Systems in Form von Szenarien erfasst und dokumentiert werden.
+Ein Szenario beschreibt dabei eine Interaktion eines Stakeholders mit dem Produkt \cite{kazman_2000}.
+Diese Konkretisierung von Qualitäten soll vor allem die Verständlichkeit fördern. 
 Dabei werden mit jedem Szenario zugehörige \glspl{qa} assoziiert, wodurch am Ende eine Abbildung aller \glspl{qa} auf ihre Priorität möglich ist.
 Diese Abbildung ist das eigentliche Ergebnis, das der \gls{arh} als Eingabe für die weiteren Phasen benötigt.
 Die Szenarien sind dabei lediglich ein Zwischenprodukt und sollen dabei helfen, eine genauere Vorstellung davon zu bekommen, welche spezifischen Situationen mit den \glspl{qa} verbunden sind.
 Sie ermöglichen auch eine Bewertung der Wichtigkeit und technischen Schwierigkeit anhand konkreter Situationen, was bei abstrakten \glspl{qa} schwieriger wäre.
 
+Folgend werden verschiedene akademische Methoden beschrieben und verglichen und anschließend die verwendete Methode als Abwandlung dieser Methoden erläutert.
+
+\subsubsection{Vergleich verschiedener Methoden}
+\label{sec:atam-saam-svahnberg}
+
 Geläufige Szenarien-basierte Verfahren sind die \gls{saam} nach \Citet{saam} und die \gls{atam} nach \Citet{kazman_2000}.
+\gls{atam} ist der Nachfolger und eine Überarbeitung von \gls{saam}, weshalb folgend lediglich \gls{atam} näher betrachtet wird.
+Die Autoren beschreiben mit \gls{atam} eine Methode, die aus insgesamt neun Schritten besteht.
+Diese Schritte sollen mit den Stakeholdern des Produkts innerhalb von drei Arbeitstagen durchgeführt werden.
 Da das Ausmaß dieser allerdings nicht angemessen für den Rahmen einer Thesis ist \cite{master-marvin-knodel}, würde für diese Arbeit höchstens eine stark abgewandelte Version dieser infrage kommen.
 Stattdessen wurde sich in dieser Thesis für eine Modifikation des Architekturreviews nach \Citet{SVAHNBERG20071893} entschieden.
-Es handelt sich dabei ebenfalls um eine Szenarien-basierte Methode, die ebenfalls auf \gls{saam} und \gls{atam} basiert, jedoch spezieller für kleinere Anwendungsfälle entwickelt wurde.
+Es handelt sich dabei ebenfalls um eine Szenarien-basierte Methode, die auf \gls{saam} und \gls{atam} basiert, jedoch spezieller für kleinere Anwendungsfälle entwickelt wurde.
 Die Autoren erläutern die Verwendung dieser zur Evaluation von Studentenprojekten, die ein reales Softwareentwicklungsprojekt mit Industriekunden simulieren und einen Rahmen von 10-15 Teilnehmern und 20 Wochen Arbeitszeit vorsehen.
 
-Die vorgestellte Methodik für das Architekturreview nach  \Citet{SVAHNBERG20071893} umfasst aus sechs Schritte (Übersicht in \cref{tab:svahnberg-plan}).
+\subsubsection{Architekturreview nach \Citet{SVAHNBERG20071893}}
+
+Das Architekturreview nach  \Citet{SVAHNBERG20071893} umfasst sechs Schritte (Übersicht in \cref{tab:svahnberg-plan}).
 \input{tables/svahnberg_table}
-Diese sollen in einer etwa vierstündigen moderierten Gruppendiskussion mit den wichtigsten Stakeholdern des Produkts durchgeführt werden.
+Diese sollen in einer etwa vierstündigen, mo\-de\-rierten Gruppendiskussion mit den wichtigsten Stakeholdern des Produkts durchgeführt werden.
 Im ersten Schritt gibt der \gls{po} eine Einführung in das Projekt, in der Ziele für das Produkt sowie die Organisation geschildert werden.
 Im zweiten Schritt wird in einer Brainstorming-Runde zusammen mit dem \gls{po}, End-Nutzern und Architekten die Identifikation von \glspl{qa} durchgeführt.
 Hierfür dient die Liste der Qualitätskriterien gemäß ISO 9126~\cite{ISO-9126} als Vorlage für mögliche \glspl{qa}.
@@ -50,42 +62,72 @@ Nach einer Pause präsentiert im vierten Schritt ein Softwarearchitekt die vorge
 Anschließend werden im fünften Schritt die Szenarien sequenziell analysiert und bewertet, inwiefern sie durch die Architektur erfüllt werden und wo etwaige Probleme bestehen.
 Im sechsten Schritt werden alle identifizierten Probleme und Aspekte, die mehr Aufmerksamkeit benötigen, final diskutiert und der gesamte Prozess zusammengefasst.
 
-Die vorgestellt Methodik wird in dieser Arbeit als Vorlage verwendet, muss nun allerdings noch auf den speziellen Anwendungsfall angepasst werden.
-Während bei \gls{saam}, \gls{atam} und dem Verfahren von \Citet{SVAHNBERG20071893} die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zu Bewertung der Architektur des Systems sind, stellen sie im Architekturreview, das im Rahmen dieser Thesis durchgeführt wird, das erwünschte Endprodukt dar.
-Das bedeutet, dass die Schritte, die nach der Erhebung und Priorisierung der Szenarien erfolgen, also zur Evaluation des Systems, in diesem Fall nicht relevant sind und nicht durchgeführt werden.
-Hierbei handelt es sich um die Schritte 4, 5 und 6, die hauptsächlich dazu dienen, das System gemäß den definierten \glspl{qa} zu bewerten.
-Eine Ausnahme besteht darin, dass \gls{mmf} und \gls{arh} einen Bewertungsschritt durchführen, bei dem jedem Szenario zugeordnet wird, ob eine \gls{msa} für es vorteilhaft ist.
-Diese Bewertung kann Schritt 5 zugeordnet werden.
+\subsubsection{Anpassung des Architekturreviews auf den \gls{arh}}
 
-Ein weiterer Unterschied zwischen diesem Anwendungsfall und dem von \Citet{SVAHNBERG20071893} beschriebenen erwarteten Anwendungsfällen ist, dass die Beschreibung des Projekts in Schritt 1 überflüssig ist.
-Das liegt daran, dass die einzigen Stakeholder, die an dem Review teilnehmen der \acrfull{po} und vier Softwarearchitekten beziehungsweise -Entwickler sind, welche alle sehr gut mit dem Projekt vertraut sind und keine Einleitung benötigen.
-Stattdessen wird im ersten Schritt eine Einleitung in die verwendete Methodik gegeben, da diese dem Team noch unbekannt war.
+Ein volles Architekturreview, auf Deutsch auch mit Architekturbewertung zu übersetzen, ist generell bei der Verwendung des \gls{arh} und somit in dieser Thesis nicht das primäre Ziel.
+Vielmehr entfällt das Hauptziel eines herkömmlichen Architekturreviews: die Bewertung.
+Stattdessen wurde die in \cref{tab:architekturreview-plan} dargestellte Methodik zur Extraktion von Szenarien und \glspl{qa} entworfen.
+\input{tables/architektur-review-plan}
 
-Somit bleiben im Wesentlichen neben dem veränderten Schritt 1 nur noch Schritt 2 und 3 für diesen Anwendungsfall übrig.
-Diese wurden zusätzlich an die Verwendung mit dem \gls{arh} angepasst.
-Im Schritt 2 werden als Basis-\glspl{qa} statt der ISO 9126~\cite{ISO-9126} die von \Citet{master-daniel-koch} speziell für Microservices-Architekturen identifizierten \glspl{qa} (siehe \cref{fig:qas}) verwendet.
+Wie in der Tabelle angemerkt, dienen als Vorlage für die Methodik die ersten Schritte des Architekturreviews nach \Citet{SVAHNBERG20071893}.
+Außerdem werden auch einzelne Aspekte von \gls{atam} \cite{kazman_2000} verwendet.
+Die einzelnen Schritte werden folgend näher beschrieben.
+
+Im ersten Schritt ist die Einleitung in die Methodik geplant.
+Dabei handelt es sich um eine Modifikation des nach \Citet{SVAHNBERG20071893} geplanten ersten Schritts, bei dem stattdessen eine Einleitung in das Projekt erfolgt.
+Dieser stammt vermutlich aus dem Kontext der Studentenprojekte, bei denen mehrere Architekturreviews am selben Tag von den gleichen Personen durchgeführt werden und somit eine Einleitung in das Projekt nötig ist.
+In den meisten Fällen in der Industrie, und so auch in diesem, ist dieser Schritt nicht notwendig, da die Teilnehmer der Besprechung, die Stakeholder, bereits mit dem Produkt vertraut sind.
+Stattdessen wird (wie in \gls{atam} \cite{kazman_2000}) im ersten Schritt eine Einleitung in die verwendete Methodik gegeben, da diese dem Team noch unbekannt war.
+
+Mit Schritt 2 beginnt dann der eigentliche Inhalt das Architekturreviews.
+Dabei werden die wichtigsten \glspl{qa} durch zwei Sub-Schritte gesammelt:
+Erst erfolgt eine Umfrage, bei der die Teilnehmer jeweils eine Einschätzung über die wichtigsten drei Sub-\glspl{qa} abgeben.
+Danach wird in gemeinsamer Diskussion eine Priorisierung der Sub-\glspl{qa} finalisiert.
+Dabei werden als Basis-\glspl{qa} statt der ISO 9126~\cite{ISO-9126} nach \Citet{SVAHNBERG20071893} die von \Citet{master-daniel-koch} speziell für Microservices-Architekturen identifizierten \glspl{qa} (siehe \cref{fig:qas}) verwendet.
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{qas}
-	\includegraphics[width=0.4\textwidth]{qas-legend.drawio}
+	\includegraphics[width=0.8\textwidth]{qas}
+	\includegraphics[width=0.3\textwidth]{qas-legend.drawio}
 	\caption[Spezielle \acrlongpl{qa} für Microservices-Architekturen]{
 		Spezielle \acrfullpl{qa} für Microservices-Architekturen nach \Citet{master-daniel-koch}.
 	}
 	\label{fig:qas}
 \end{figure}
 Dabei handelt es sich zu großen Teilen um die nach der Literaturrecherche wichtigsten \glspl{qa} aus der ISO 25010~\cite{ISO-25010}, die durch wenige Microservices-spezifische \glspl{qa} ergänzt wurden.
-Abgesehen davon, dass diese besser an die Architektur angepasst sind, ist es notwendig, diese zu verwenden, da der \gls{arh} nur diese zur Auswahl hat.
+Durch die Verwendung des \gls{arh} ist die einzig sinnvolle Option, diese zu verwenden, da der \gls{arh} nur die Eingabe dieser erlaubt.
 
-Die letzte Anpassung betrifft die zusätzliche Priorisierung der Szenarien.
-In der Vorlage von \Citet{SVAHNBERG20071893} erfolgt keine explizite Bewertung oder Priorisierung der Szenarien.
-Dies ist aufgrund des Kontexts der qualitativen Bewertung durch Menschen auch nicht erforderlich.
-Im Vergleich dazu können bei der automatisierten Auswertung durch ein Werkzeug wie den \gls{arh} die Szenarien nicht automatisch eingeschätzt werden.
-Aus diesem Grund erfolgt in Schritt 3 zusätzlich eine dreistufige Bewertung der Szenarien hinsichtlich ihrer Wichtigkeit und technischen Schwierigkeit.
-Die Bewertung erfolgt von auf einer Skala von A bis C, wobei A für die höchste Wichtigkeit und höchste technische Schwierigkeit steht.
+Die im zweiten Schritt erstellte Priorisierung der \glspl{qa} wird im dritten Schritt dann verwendet, um Szenarien zu erstellen.
+Dieser ist in drei Sub-Schritte unterteilt:
+Erst werden für die wichtigsten \glspl{qa} Szenarien erstellt.
+Diese werden in Form eines Utility festgehalten (siehe \cref{fig:utility-tree}).
+Dann wird jedes Szenario erneut betrachtet und eine Bewertung hinsichtlich der Wichtigkeit und technischen Schwierigkeit vorgenommen.
+Diese erfolgt auf einer Skala von A bis C, wobei A für die höchste Wichtigkeit und höchste technische Schwierigkeit steht.
+Abschließend wird jedes Szenario ein drittes Mal betrachtet und die Assoziation mit anderen \glspl{qa} diskutiert und festgehalten.
+Bei diesem Schritt stammt nur der erste Teil aus der Methodik von \Citet{SVAHNBERG20071893} und die anderen beiden Schritte stammen aus dem \gls{arh}.
+Dass bei der Vorlage von \Citet{SVAHNBERG20071893} keine vergleichbare Bewertung der Szenarien und Assoziation der Szenarien mit weiteren \glspl{qa} beschrieben ist, liegt vermutlich am Kontext des Architekturreviews.
+Im Kontext der qualitativen Bewertung durch Menschen sind diese nicht explizit notwendig.
+Im Vergleich dazu können bei der automatisierten Auswertung durch ein Werkzeug wie den \gls{arh} die Szenarien nicht selbstständig eingeschätzt werden.
+Außerdem stammt die Visualisierung durch einen Utility Tree aus \gls{atam} \cite{kazman_2000}.
+Ein solcher soll dabei helfen, Qualitätsziele zu konkretisieren und priorisieren~\cite{kazman_2000}.
+Dabei werden nach einem semantisch unbedeutenden Wurzelknoten von links nach rechts die \glspl{qa} in Sub-\glspl{qa} verfeinert, worauf dann auf dritter Ebene Szenarien folgen.
+Wie in \cref{fig:utility-tree} zu sehen ist, enthält die in dieser Thesis verwendete Notation des Utility Trees auch die Einschätzung der Szenarien in Wichtigkeit und technische Schwierigkeit.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{utility-tree.drawio}
+	\caption[Utility Tree nach \gls{atam} \cite{kazman_2000}]{
+		Utility Tree nach \gls{atam} \cite{kazman_2000} auf die Verwendung mit \gls{arh} angepasst.
+	}
+	\label{fig:utility-tree}
+\end{figure}
 
-Eine Übersicht über die beschriebene Methodik ist in \cref{tab:architekturreview-plan} zu finden.
 
-\input{tables/architektur-review-plan}
+Im letzten Schritt, erfolgt eine Bewertung, bei der jedem Szenario zugeordnet wird, ob eine \gls{msa} für es vorteilhaft ist.
+Diese Bewertung kann als Teil des fünften Schritts nach \Citet{SVAHNBERG20071893} gesehen werden.
+Abgesehen davon wird allerdings der Teil der Bewertung der Architektur unter den Szenarien im Architekturreview komplett ausgelassen und der Rest der Schritte 4, 5 und 6 nach \Citet{SVAHNBERG20071893} nicht durchgeführt.
+Das liegt daran, dass während bei allen erwähnten Szenarien-basierten Verfahren die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zu Bewertung der Architektur des Systems sind, sie im im Architekturreview, das im Rahmen dieser Thesis durchgeführt wird, das erwünschte Endprodukt darstellen.
+
+Die vorgestellte Methodik kann als neue Methodik zur Extraktion von Szenarien und \glspl{qa} betrachtet werden und könnte in Zukunft als Vorlage für die Anwendung mit dem \gls{arh} verwendet werden.
+Trotz des Mangels des Bewertungsschritts der Methodik wird sie folgend zur Vereinfachung als Architekturreview bezeichnet.
 
 \subsection{Strukturierte Feldnotizen}
 \label{sec:structured-field-notes}

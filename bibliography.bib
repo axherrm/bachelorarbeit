@@ -465,4 +465,92 @@
 	isbn="978-3-030-79382-1"
 }
 
+@book{koch-scalability-1,
+	title={Software Architecture in Practice: Software Architect Practice\_c3},
+	author={Bass, Len and Clements, Paul and Kazman, Rick},
+	year={2012},
+	publisher={Addison-Wesley}
+}
+
+@article{koch-scalability-2,
+	title = {Understanding and addressing quality attributes of microservices architecture: A Systematic literature review},
+	journal = {Information and Software Technology},
+	volume = {131},
+	pages = {106449},
+	year = {2021},
+	issn = {0950-5849},
+	doi = {https://doi.org/10.1016/j.infsof.2020.106449},
+	url = {https://www.sciencedirect.com/science/article/pii/S0950584920301993},
+	author = {Shanshan Li and He Zhang and Zijia Jia and Chenxing Zhong and Cheng Zhang and Zhihao Shan and Jinfeng Shen and Muhammad Ali Babar},
+	keywords = {Microservices, Monolith, Quality attributes, Systematic literature review},
+	abstract = {Context: As a rapidly adopted architectural style in software engineering, Microservices Architecture (MSA) advocates implementing small-scale and independently distributed services, rather than binding all functions into one monolith. Although many initiatives have contributed to the quality improvement of microservices-based systems, there is still a lack of a systematic understanding of the Quality Attributes (QAs) associated with MSA. Objective: This study aims to investigate the evidence-based state-of-the-art of QAs of microservices-based systems. Method: We carried out a Systematic Literature Review (SLR) to identify and synthesize the relevant studies that report evidence related to QAs of MSA. Results: Based on the data extracted from the 72 selected primary studies, we portray an overview of the six identified QAs most concerned in MSA, scalability, performance, availability, monitorability, security, and testability. We identify 19 tactics that architecturally address the critical QAs in MSA, including two tactics for scalability, four for performance, four for availability, four for monitorability, three for security, and two for testability. Conclusion: This SLR concludes that for MSA-based systems: 1) Although scalability is the commonly acknowledged benefit of MSA, it is still an indispensable concern among the identified QAs, especially when trading-off with other QAs, e.g., performance. Apart from the six identified QAs in this study, other QAs for MSA like maintainability need more attention for effective improvement and evaluation in the future. 3) Practitioners need to carefully make the decision of migrating to MSA based on the return on investment, since this architectural style additionally cause some pains in practice.}
+}
+
+@article{koch-time-behavior-1,
+	title = {From monolithic systems to Microservices: An assessment framework},
+	journal = {Information and Software Technology},
+	volume = {137},
+	pages = {106600},
+	year = {2021},
+	issn = {0950-5849},
+	doi = {https://doi.org/10.1016/j.infsof.2021.106600},
+	url = {https://www.sciencedirect.com/science/article/pii/S0950584921000793},
+	author = {Florian Auer and Valentina Lenarduzzi and Michael Felderer and Davide Taibi},
+	keywords = {Microservices, Cloud migration, Software measurement},
+	abstract = {Context:
+	Re-architecting monolithic systems with Microservices-based architecture is a common trend. Various companies are migrating to Microservices for different reasons. However, making such an important decision like re-architecting an entire system must be based on real facts and not only on gut feelings.
+	Objective:
+	The goal of this work is to propose an evidence-based decision support framework for companies that need to migrate to Microservices, based on the analysis of a set of characteristics and metrics they should collect before re-architecting their monolithic system.
+	Method:
+	We conducted a survey done in the form of interviews with professionals to derive the assessment framework based on Grounded Theory.
+	Results:
+	We identified a set consisting of information and metrics that companies can use to decide whether to migrate to Microservices or not. The proposed assessment framework, based on the aforementioned metrics, could be useful for companies if they need to migrate to Microservices and do not want to run the risk of failing to consider some important information.}
+}
+
+@article{koch-time-behavior-2,
+	title = {A decomposition-based approach for service composition with global QoS guarantees},
+	journal = {Information Sciences},
+	volume = {199},
+	pages = {138-153},
+	year = {2012},
+	issn = {0020-0255},
+	doi = {https://doi.org/10.1016/j.ins.2012.02.061},
+	url = {https://www.sciencedirect.com/science/article/pii/S0020025512001892},
+	author = {Sherry X. Sun and Jing Zhao},
+	keywords = {Service composition, Quality of service, Utility, Service-oriented architecture},
+	abstract = {Service-oriented architecture has offered an opportunity to quickly and independently develop new business applications from the existing services. Given that many services are available with the same function but different quality of service (QoS) properties, and service users have different QoS preferences, the challenge of service composition is to select appropriate service candidates to maximize the overall utility while satisfying a user’s requirements. In this paper, we propose a decomposition-based approach for service composition, in which the utility of a composite service can be computed from the utilities of component services and the constraints of component services can be derived from the constraints of the composite service. Thus, with our approach, it is possible to independently manage the selection of each component service, leading to more scalability and more flexibility for service composition in a dynamic environment. The experiment studies show that our approach can achieve a near-optimal solution with a significantly improved performance in computation time.}
+}
+
+
+@Article{koch-deployability,
+	AUTHOR = {Milić, Miloš and Makajić-Nikolić, Dragana},
+	TITLE = {Development of a Quality-Based Model for Software Architecture Optimization: A Case Study of Monolith and Microservice Architectures},
+	JOURNAL = {Symmetry},
+	VOLUME = {14},
+	YEAR = {2022},
+	NUMBER = {9},
+	ARTICLE-NUMBER = {1824},
+	URL = {https://www.mdpi.com/2073-8994/14/9/1824},
+	ISSN = {2073-8994},
+	ABSTRACT = {Various architectures can be applied in software design. The aim of this research is to examine a typical implementation of Jakarta EE monolithic and microservice software architectures in the context of software quality attributes. Software quality standards are used to define quality models, as well as quality characteristics and sub-characteristics, i.e., software quality attributes. This paper evaluates monolithic and microservice architectures in the context of Coupling, Testability, Security, Complexity, Deployability, and Availability quality attributes. The performed examinations yielded a quality-based mixed integer goal programming mathematical model for software architecture optimization. The model incorporates various software metrics and considers their maximal, minimal or targeted values, as well as upper and lower deviations. The objective is the sum of all deviations, which should be minimal. Considering the presented model, a solution which incorporated multiple monoliths and microservices was defined. This way, the internal structure of the software is defined in a consistent and symmetrical context, while the external software behavior remains unchanged. In addition, an intersection point of monolithic and microservice software architectures, where software metrics obtain the same values, was introduced. Within the intersection point, either one of the architectures can be applied. With the exception of some metrics, an increase in the number of features leads to a value increase of software metrics in microservice software architecture, whilst these values are constant in monolithic software architecture. An increase in the number of features indicated a quality attribute’s importance for the software system should be examined and an appropriate architecture should be selected accordingly. Finally, practical recommendations regarding software architectures in terms of software quality were given. Since each software system needs to meet non-functional in addition to functional requirements, a quality-driven software engineering can be established.},
+	DOI = {10.3390/sym14091824}
+}
+
+@INPROCEEDINGS{koch-fault-tolerance,
+	author={Alshuqayran, Nuha and Ali, Nour and Evans, Roger},
+	booktitle={2016 IEEE 9th International Conference on Service-Oriented Computing and Applications (SOCA)}, 
+	title={A Systematic Mapping Study in Microservice Architecture}, 
+	year={2016},
+	volume={},
+	number={},
+	pages={44-51},
+	abstract={The accelerating progress of network speed, reliability and security creates an increasing demand to move software and services from being stored and processed locally on users' machines to being managed by third parties that are accessible through the network. This has created the need to develop new software development methods and software architectural styles that meet these new demands. One such example in software architectural design is the recent emergence of the microservices architecture to address the maintenance and scalability demands of online service providers. As microservice architecture is a new research area, the need for a systematic mapping study is crucial in order to summarise the progress so far and identify the gaps and requirements for future studies. In this paper we present a systematic mapping study of microservices architectures and their implementation. Our study focuses on identifying architectural challenges, the architectural diagrams/views and quality attributes related to microsevice systems.},
+	keywords={},
+	doi={10.1109/SOCA.2016.15},
+	ISSN={},
+	month={Nov},}
+
+
+
+
 @Comment{jabref-meta: databaseType:biblatex;}
