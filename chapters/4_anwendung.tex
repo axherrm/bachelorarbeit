@@ -212,7 +212,43 @@ Bei dieser wurde ein öffentliches GitHub Projekt als Legacy System verwendet, w
 Durch die Architekturänderung konnte das \emph{Coupling} reduziert werden, sowie die Modularität, Skalierbarkeit und Anfragezeit verbessert werden.
 Jedoch sind diese Ergebnisse nur bedingt aussagekräftig und müssen auch laut den Autoren noch an mittel bis großen Industriesystemen reproduziert werden.
 
+Insgesamt wirkt die Methode sehr abstrakt und oberflächlich und wenig spezifisch.
+
 \subsubsection{Ergebnis 2: \Citet{arh-result-no-filter-3}}
+
+In diesem Artikel stellen die Autoren eine Methode vor, die sie anhand der ebenfalls durchgeführten Fallstudie mit Barcelonas Fahrradvermietung-System \emph{Bicing} erklären und validieren.
+Sie besteht aus drei übergeordneten Schritten.
+Im ersten Schritt werden die Eingaben für die Methode in Form von \glspl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms.
+Für die Bestandteile dieser Eingabe (genannt Aktivitäten) werden dann im zweiten Schritt Abhängigkeiten in drei verschiedenen Formen analysiert.
+Dabei handelt es sich um \emph{control dependencies}, \emph{data dependencies} und \emph{semantic dependencies}.
+Eine \emph{control dependency} beschreibt eine Abhängigkeit zweier Aktivitäten im Kontrollfluss, also dass eine der Aktivitäten mit hoher Wahrscheinlichkeit auf die andere folgt.
+Eine \emph{data dependency} beschreibt eine Abhängigkeit der Ein- oder Ausgaben zweier Aktivitäten, also einen Datenfluss zwischen den Aktivitäten.
+Eine \emph{semantic dependency} beschreibt eine Ähnlichkeit des Zwecks zweier Aktivitäten. 
+Die Messung solcher Abhängigkeiten kann aufgrund der Ähnlichkeit der Namen der Aktivitäten geschehen.
+
+Im letzten Schritt wird die \emph{Machine Learning} Technik \emph{Collaborative clustering} verwendet, um die Menge von Aktivitäten in Gruppen (genannt \emph{Cluster}) zu unterteilen.
+Die Autoren haben dazu den \gls{hac}~\cite{hierarchical-agglomerative-algorithm} erweitert.
+Das Ziel ist dabei, dass Aktivitäten in einem Cluster hohe Kohäsion aufweisen und Aktivitäten verschiedener Cluster lose gekoppelt sind, sodass aus den Clustern potentiell Microservices entstehen können.
+
+TODO Einfügen der Übersicht: TODO get license: https://www.sciencedirect.com/science/article/pii/S1383762121001442?via%3Dihub
+
+\subsubsection{Ergebnis 3: \Citet{arh-result-no-filter-2}}
+
+Dieser Artikel beschreibt die Methode \gls{mb}, ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa}.
+In Kontrast zu den meisten anderen Methoden, die im Rahmen dieser Thesis erwähnt werden, liegt hier also nicht der Kontext einer Migration, sondern eines Refactorings vor, was gut zu dieser Fallstudie mit \emph{jadice flow} passt.
+Als Eingabe werden dabei \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
+Diese werden in Kombination mit den Metriken \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} von einem \emph{genetic algorithm} zu Microservices-Kandidaten dekomponiert.
+\gls{mb} bietet außerdem eine Visualisierung dieses Ergebnisses an, wobei die Microservices unter den genannten Metriken betrachtet werden können.
+
+Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es sich um eine echte Anwendung.
+
+\subsubsection{Ergebnis 4: \Citet{arh-result-no-filter-4}}
+
+\subsubsection{Ergebnis 5: \Citet{arh-result-no-filter-5}}
+
+\subsubsection{Ergebnis 6: \Citet{arh-result-important-filter-4}}
+
+\subsubsection{Diskussion}
 
 \section{Phase 3a - Architekturplanung}
 \label{sec:durchführung-phase3}
