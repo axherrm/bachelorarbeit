@@ -157,7 +157,7 @@ Dabei wird es in den meisten Fällen zielführender sein, präferierte Eigenscha
 
 Für die Wahl der Filter für das Refactoring von \emph{jadice flow} haben \gls{po} und der Autor alle Filter betrachtet und die wichtigsten relevanten ausgewählt (\cref{feldnotiz:1,feldnotiz:2}).
 Diese sind \cref{tab:phase2-filter} markiert.
-Dabei wurden die \gls{sp} als am wichtigsten betrachtet, weswegen dort viele Eigenschaften inkludiert wurden.
+Dabei wurden die \glspl{sp} als am wichtigsten betrachtet, weswegen dort viele Eigenschaften inkludiert wurden.
 Bei den anderen Kategorien wurde versucht, nur die wichtigsten Filter zu verwenden, da mit zu vielen Filtern eine geringere Aussagekraft dieser vermutet wird.
 Vor allem \emph{Process Preferences} und \emph{Usability Preferences}, also Eigenschaften, die die interne Funktionsweise der Methode betreffen, wurden als relativ unwichtig und vor allem auch unabhängig vom betreffenden System eingestuft und demnach nur ein einziger dieser Filter verwendet.
 Dieser betrifft die \emph{Process Strategy}, wobei \emph{Refactoring} ausgewählt wurde, da bereits eine \gls{msa} vorliegt und somit Optionen wie \emph{Rewrite/Rebuild} wenig sinnvoll wären.
@@ -189,18 +189,21 @@ Das wären beispielsweise im Fall \Citet{arh-result-no-filter-1} $m_{Wichtigste 
 Es wurde eine Gewichtung gewählt, sodass die Matches des wichtigsten Filter doppelt so stark und die aller Filter 1,5-fach gewichtet werden wie die Matches ohne Filter.
 Das ist damit zu begründen, dass die Filter mit der höchsten Gewichtung die realistischste Eingabe abbilden und damit relevanter sind.
 
-\subsubsection{Ergebnis 1: \Citet{arh-result-no-filter-1}}
+\subsubsection{Ergebnis 1: \citetitle{arh-result-no-filter-1}  \cite{arh-result-no-filter-1}}
 
 In dieser Arbeit wird konzeptuelles Evolutions-Framework vorgestellt, das mithilfe von Trans\-for\-ma\-tions\-re\-geln die Migration von Legacy-Systemen zu Microservices unterstützen soll.
-Dabei ist das Vorgehen wie in \cref{fig:arh-result-1} zu sehen in 3 Teilabschnitte unterteilt.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{arh-result-1}
-	\caption[Konzeptuelles Framework von \Citet{arh-result-no-filter-1}]{
-		Konzeptuelles Framework von \Citet{arh-result-no-filter-1}.
-	}
-	\label{fig:arh-result-1}
-\end{figure}
+Dabei ist das Vorgehen 
+%wie in \cref{fig:arh-result-1} zu sehen 
+in 3 Teilabschnitte unterteilt.
+% TODO get copyright for this
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{arh-result-1}
+%	\caption[Konzeptuelles Framework von \Citet{arh-result-no-filter-1}]{
+%		Konzeptuelles Framework von \Citet{arh-result-no-filter-1}.
+%	}
+%	\label{fig:arh-result-1}
+%\end{figure}
 Das \emph{Core System} besteht aus dem Legacy System und einer Auswahl von Transformationsregeln.
 Diese können aus der Sammlung von vorgestellten Regeln der Autoren stammen, aber auch durch eigene ergänzt werden.
 Daraus erstellt man dann ein \emph{Middle Layer}, indem diese Tranformationsregeln auf das Legacy-System angewendet werden.
@@ -214,7 +217,7 @@ Jedoch sind diese Ergebnisse nur bedingt aussagekräftig und müssen auch laut d
 
 Insgesamt wirkt die Methode sehr abstrakt und oberflächlich und wenig spezifisch.
 
-\subsubsection{Ergebnis 2: \Citet{arh-result-no-filter-3}}
+\subsubsection{Ergebnis 2: \citetitle{arh-result-no-filter-3} \cite{arh-result-no-filter-3}}
 
 In diesem Artikel stellen die Autoren eine Methode vor, die sie anhand der ebenfalls durchgeführten Fallstudie mit Barcelonas Fahrradvermietung-System \emph{Bicing} erklären und validieren.
 Sie besteht aus drei übergeordneten Schritten.
@@ -230,9 +233,9 @@ Im letzten Schritt wird die \emph{Machine Learning} Technik \emph{Collaborative 
 Die Autoren haben dazu den \gls{hac}~\cite{hierarchical-agglomerative-algorithm} erweitert.
 Das Ziel ist dabei, dass Aktivitäten in einem Cluster hohe Kohäsion aufweisen und Aktivitäten verschiedener Cluster lose gekoppelt sind, sodass aus den Clustern potentiell Microservices entstehen können.
 
-TODO Einfügen der Übersicht: TODO get license: https://www.sciencedirect.com/science/article/pii/S1383762121001442?via%3Dihub
+% TODO Einfügen der Übersicht: TODO get license: https://www.sciencedirect.com/science/article/pii/S1383762121001442?via%3Dihub
 
-\subsubsection{Ergebnis 3: \Citet{arh-result-no-filter-2}}
+\subsubsection{Ergebnis 3: \citetitle{arh-result-no-filter-2} \cite{arh-result-no-filter-2}}
 
 Dieser Artikel beschreibt die Methode \gls{mb}, ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa}.
 In Kontrast zu den meisten anderen Methoden, die im Rahmen dieser Thesis erwähnt werden, liegt hier also nicht der Kontext einer Migration, sondern eines Refactorings vor, was gut zu dieser Fallstudie mit \emph{jadice flow} passt.
@@ -242,11 +245,51 @@ Diese werden in Kombination mit den Metriken \emph{Coupling}, \emph{Kohäsion}, 
 
 Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es sich um eine echte Anwendung.
 
-\subsubsection{Ergebnis 4: \Citet{arh-result-no-filter-4}}
+% TODO Einfügen der Übersicht: TODO get license: https://ieeexplore.ieee.org/document/9519691
 
-\subsubsection{Ergebnis 5: \Citet{arh-result-no-filter-5}}
+\subsubsection{Ergebnis 4: \citetitle{arh-result-no-filter-4} \cite{arh-result-no-filter-4}}
 
-\subsubsection{Ergebnis 6: \Citet{arh-result-important-filter-4}}
+In diesem Artikel beschreiben \Citet{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Werkzeug \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
+Als Eingabe der Methode fungieren der Quellcode des Monolithen sowie ein Vorschlag für die Microservices-Aufteilung. Dieser wird in Form von Klassen pro Microservice angegeben, wobei jede Klasse nur einem Microservice angehören kann.
+In der ersten Phase des Werkzeugs, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices ermitteln.
+Diese Abhängigkeiten werden in der zweiten Phase (\emph{Database Refactoring}) dann verwendet, um die Entitäten des Systems und die Beziehungen zwischen diesen zu identifizieren und ein Refactoring der Beziehungen anzustoßen.
+In der letzten Phase werden die strukturellen Informationen und Abhängigkeiten zwischen Microservices verwendet, um Abhängigkeiten zwischen Klassen zu analysieren und die Klassen zu verändern, die Abhängigkeiten zu Klassen anderer Microservices haben.
+Dabei werden für Kommunikation zwischen verschiedenen Microservices lokale Funktionsaufrufe durch \glspl{api} und Aufrufe auf diese ersetzt.
+
+Zur Validierung dieser Methode beziehungsweise des Werkzeugs wurde ein Experiment mit zehn auf passenden, zufällig ausgewählten GitHub Projekten durchgeführt.
+Das Ergebnis der Verwendung von \emph{MicroRefact} zum Refactoring dieser Projekte zu Microservices-Applikationen ist einen 80\%-Erfolgsquote.
+Dabei wurde nur die technische Möglichkeit bestätigt und nicht überprüft, ob die neue Architektur in irgendeiner Weise profitabel für die Systeme war.
+
+Diese Methode scheint im Kontext dieser Thesis mit \emph{jadice flow} aus zwei Gründen nicht nützlich zu sein.
+Erstens sind die technischen Notwendigkeiten für die Eingabe eines Java-Monolithen, der \gls{jpa} als \gls{orm}-Implementierung verwendet nicht gegeben.
+Zwar könnte die Vorgängerversion von \emph{jadice flow}, die ein Java-Monolith ist, verwendet werden, doch dieser erfüllt trotzdem nicht das Kriterium der Nutzung von \gls{jpa}.
+Zweitens und viel wichtiger hat \emph{MicroRefact} ein ganz anderes Ziel als in dieser Arbeit im Refactoring von \emph{jadice flow} angestrebt wird.
+Während das Werkzeug eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraussetzt und lediglich die technische Umwandlung des Monolithen in Microservices vornimmt, ist das Ziel in dieser Arbeit, eine geeignete Dekomposition mit optimaler Service Granularität zu finden.
+
+% TODO abbildung?
+% Copyright © 2021 ACM
+%
+%Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org
+
+\subsubsection{Ergebnis 5: \citetitle{arh-result-no-filter-5} \cite{arh-result-no-filter-5}}
+
+In diesem Artikel beschreiben die Autoren eine systematische Methode zur Dekomposition von Monolithen in Microservices mit einer eingeschränkten Umsetzung im zugehörigen Werkzeug \emph{MonoBreaker}.
+Dabei wird durch eine statische und dynamische Analyse des Systems ein Graph der Komponenten des Systems aufgebaut, wobei die gewichteten Kanten die Stärke der Abhängigkeiten zwischen den Komponenten abbilden.
+Dieser Graph kann dann durch einen Clustering-Algorithmus so gruppiert werden, dass stark abhängige Komponenten zu einem Microservice gruppiert werden, wobei sie für geringes \emph{Coupling} möglichst schwach mit anderen Komponenten verbunden sein sollten.
+Welcher Algorithmus dafür verwendet werden sollte, wird in der Methode nicht festgelegt.
+
+In einer anschließenden industriellen Fallstudie wurde \emph{MonoBreaker} an einer Webapplikation getestet und die Entwickler dieser Anwendung über die vorgeschlagene Dekomposition befragt. 
+Das Ergebnis des Fragebogens war eine positive Bewertung der erhaltenen Dekomposition und eine bessere Bewertung der Nutzung von dynamischer und statischer Analyse statt nur statischer.
+
+Anwendbar im Kontext dieser Thesis ist \emph{MonoBreaker} nicht, da es einen Python-Monolithen mit Django framework voraussetzt.
+Die generelle Methodik könnte allerdings angewendet werden.
+Ob der erhöhte Aufwand, der sich aus der manuellen Umsetzung der Methode ergeben würde, sinnvoll ist, wird in folgender Diskussion eingeordnet.
+
+% TODO Übersicht, TODO get license under "Rights and permissions" https://link.springer.com/chapter/10.1007/978-3-030-58923-3_21
+
+\subsubsection{Ergebnis 6: \citetitle{arh-result-important-filter-4} \cite{arh-result-important-filter-4}}
+
+%TODO
 
 \subsubsection{Diskussion}
 
