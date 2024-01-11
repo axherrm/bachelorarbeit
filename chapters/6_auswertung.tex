@@ -1,6 +1,32 @@
 \chapter{Auswertung}
 \label{chap:auswertung}
 
-\section{Leistungsanalyse des Prototypen}
+\section{Bewertung des Ergebnisses des Refactorings}
 
 \section{Qualitative Auswertung des Refactoringprozesses}
+
+In diesem Abschnitt soll der gesamte Refactoringprozess, den das \gls{mmf} leitet, bewertet werden.
+Dabei werden die einzelnen Funktionen des \gls{arh} qualitativ evaluiert.
+Der Prozess besteht aus den folgenden wesentlichen Funktionen:
+\begin{itemize}
+	\item Erfassen der \glspl{qa} in Phase 1
+	\item Einstellen von Suchfiltern in Phase 2
+	\item Suche nach Migrationsverfahren in Phase 2
+	\item Suche nach Patterns und Best Practices in Phase 3
+\end{itemize}
+
+Diese Qualität dieser Funktionen kann über die Ergebnisse der Suchen ausgewertet werden, da die ersten beiden Punkte in die Ergebnisse der letzten beiden Punkte einfließen.
+Eine hypothetisch optimale Filterfunktion würde erreichen, dass Nutzer die Suchergebnisse nach Einstellen seiner Filter hinsichtlich der Nützlichkeit für sein Ziel genau gleich ordnen würde wie der \gls{arh} es tut.
+Natürlich ist eine so genaue Filterfunktion unrealistisch und nicht erreichbar.
+Im Folgenden wird versucht, von den Problemen mit Ergebnissen der Suchen Rückschlüsse auf Probleme in Filterfunktion durch Filter und \glspl{qa} zu ziehen.
+Wenn beispielsweise hoch platzierte Suchergebnisse vom Nutzer als schlecht bewertet werden, könnte ein Zusammenhang mit fehlenden Filtermöglichkeiten oder zu stark bewerteten Filtern bestehen.
+
+\subsection{Phase 2}
+
+Bei Betrachtung der Ergebnisse in Phase 2 ist auffällig, dass das am höchsten bewertete Ergebnis von \Citet{arh-result-no-filter-1} eine der am wenigsten passenden Methoden beinhaltet.
+Das Verfahren wurde aufgrund des Fehlens eines konkreten \gls{sia} ausgeschlossen.
+Eine Filterfunktion für das Ziel der Verfahren wäre sinnvoll, um solche Ergebnisse gar nicht erst vorgeschlagen zu bekommen.
+
+\subsection{Phase 3}
+
+
