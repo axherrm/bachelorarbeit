@@ -139,7 +139,7 @@ Nachdem nun erwünschte Szenarien und \glspl{qa} erhoben wurden und die Wahl ein
 
 In dieser Phase wird die Suchfunktion des \gls{arh} verwendet, um eine geeignete Migrationsstrategie zu finden.
 Diese Suche wird dabei von zwei Faktoren beeinflusst: dem Ergebnis der Phase 1 in Form von \glspl{qa} beziehungsweise Szenarien und zusätzlichen Filtern, die vor der Suche konfiguriert werden müssen.
-Im Folgenden werden diese Filter konfiguriert, die Suche mit diesen und den \glspl{qa} aus Phase 1 durchgeführt und die Ergebnisse dessen analysiert.
+Im Folgenden werden diese Filter konfiguriert, die Suche mit ihnen und den \glspl{qa} aus Phase 1 durchgeführt und die Ergebnisse dessen analysiert.
 Abschließend wird dadurch eine Migrationsstrategie für diese Fallstudie ausgewählt.
 
 \subsection{Filterselektion}
@@ -154,32 +154,34 @@ Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine dieser dr
 	\item \textbf{Neutral:} Ob Methoden die jeweilige Eigenschaft besitzen oder nicht, wirkt sich nicht auf ihre Platzierung aus.
 	\item \textbf{Exclude:} Methoden, die die jeweilige Eigenschaft nicht besitzen, werden höher platziert.
 \end{itemize}
-Es wird empfohlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nicht zu verwenden, da nur selten das Ziel sein dürfte, eine bestimmte Eigenschaft komplett auszuschließen.
-Selbst wenn eine Eigenschaft nicht erwünscht ist, kann es in vielen Fällen möglich sein, die Methode minimal abzuändern oder einen Teil der Methode zu ignorieren, sodass die Eigenschaft kein Problem darstellt.
+Es wird empfohlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nicht zu verwenden, da der Ausschluss einer Eigenschaft typischerweise nicht das Ziel ist.
+Wenn eine Eigenschaft nicht erwünscht ist, kann es in vielen Fällen möglich sein, die Methode minimal abzuändern oder einen Teil der Methode zu ignorieren.
+Dadurch sollte eine solche unerwünschte Eigenschaft trotzdem kein Problem darstellen und die Methode nicht schlechter bewertet werden.
 
 \input{tables/all-filter}
 
-Für die Wahl der Filter für das Refactoring von \emph{jadice flow} wurden alle Filter betrachtet und die wichtigsten relevanten ausgewählt (\cref{feldnotiz:1,feldnotiz:2}).
+Für die Wahl der Filter für das Refactoring von \emph{jadice flow} wurden alle Filter betrachtet und die wichtigsten für diesen Fall ausgewählt (\cref{feldnotiz:1,feldnotiz:2}).
 Ausgewählt bedeutet folgend in diesem Kontext immer, dass der entsprechende Filter auf \emph{include} gesetzt wurde.
 Die Option \emph{exclude} wurde nicht verwendet.
-Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \cref{tab:phase2-selected-filter} einzeln aufgelistet.
-Die \glspl{sp} wurden als besonders wichtig erachtet, weshalb viele Filter dieser Kategorie aufgenommen wurden.
-Bei den anderen Kategorien wurden nur die wichtigsten Filter verwendet, da eine zu große Anzahl an Filtern die Aussagekraft verringern könnte.
-Vor allem \emph{Process Preferences} und \emph{Usability Preferences}, also Eigenschaften, die die interne Funktionsweise der Methode betreffen, wurden als relativ unwichtig und vor allem auch unabhängig vom betreffenden System eingestuft.
-Daher wurde als einziger Filter in diesen Kategorien bei der Prozess-Strategie \emph{Refactoring} ausgewählt.
-Da bereits eine \gls{msa} vorliegt wären die anderen Optionen wie \emph{Rewrite/Rebuild} wenig sinnvoll.
-Die \emph{Input Preferences} und \emph{Output Preferences} hängen ebenfalls stark vom System ab und betreffen die Ausgangslage sowie das gewünschte Ergebnis.
-Deswegen wurden sie neben den \glspl{sp} ebenfalls als besonders wichtig eingestuft. 
-
-\input{tables/selected-filter}
-
-Wie ebenfalls aus \cref{tab:phase2-all-filter,tab:phase2-selected-filter} hervorgeht, wurden die ausgewählten Filter in zwei Prioritätsstufen unterteilt (\cref{feldnotiz:3}).
+Dabei wurden die ausgewählten Filter in zwei Prioritätsstufen unterteilt (\cref{feldnotiz:3}).
 Filter mit Priorität 1 sind dabei die höher priorisierten Filter.
 Diese Unterteilung ermöglicht es, Suchvorgänge mit verschiedenen Filterkonfigurationen durchzuführen, um mehrere mögliche Anwendungsfälle zu testen.
 Wie aus \cref{tab:phase2-search-description} hervorgeht, wird eine Suche mit allen Filtern, eine Suche mit den höher priorisierten Filtern und eine Suche ausschließlich mit den \glspl{qa} durchgeführt.
 \input{tables/search-description}
 Dies soll einerseits zu besseren Ergebnissen führen und andererseits die Filterfunktion untersuchen. 
-Die Ergebnisse werden im Folgenden erläutert.
+Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \cref{tab:phase2-selected-filter} einzeln aufgelistet.
+
+Die \glspl{sp} wurden als besonders wichtig erachtet, weshalb viele Filter dieser Kategorie aufgenommen wurden.
+Bei den anderen Kategorien wurden nur die nötigsten Filter verwendet, da eine zu große Anzahl an Filtern die Aussagekraft verringern könnte.
+Vor allem \emph{Process Preferences} und \emph{Usability Preferences}, also Eigenschaften, die die interne Funktionsweise der Methode betreffen, wurden als relativ unwichtig und vor allem auch unabhängig vom betreffenden System eingestuft.
+Daher wurde als einziger Filter in diesen Kategorien bei der Prozess-Strategie die Eigenschaft \emph{Refactoring} gewählt.
+Da bereits eine \gls{msa} vorliegt wären die anderen Optionen wie \emph{Rewrite/Rebuild} wenig sinnvoll.
+Die \emph{Input Preferences} und \emph{Output Preferences} hängen ebenfalls stark vom System ab und betreffen die Ausgangslage sowie das gewünschte Ergebnis.
+Deswegen wurden sie neben den \glspl{sp} ebenfalls als besonders bedeutend eingestuft. 
+
+\input{tables/selected-filter}
+
+Die Ergebnisse der Suchen mit diesen Filtern werden im Folgenden erläutert.
 
 \subsection{Suchergebnisbetrachtung}
 \label{sec:phase2-ergebnisdurchsicht}
@@ -188,10 +190,10 @@ Die im vorherigen Abschnitt gewählten Filter werden nun angewendet, um geordnet
 Ziel dieser Fallstudie ist es, eine Migrationsmethode zu finden und durchzuführen. 
 Dabei sollen nur eine begrenzte Anzahl an Optionen manuell betrachtet werden, da der \gls{arh} eine großflächigere Betrachtung der Verfahren vermeiden können sollte.
 Um eine realistisch begrenzte Auswahl der Verfahren für die detaillierte Betrachtung sicherzustellen, wurden folgende Schritte unternommen:
-Es wurden drei Suchen mit den im vorherigen Abschnitt beschriebenen Filtern durchgeführt.
+Es wurden drei Suchen mit den im vorherigen Abschnitt erläuterten Filtern durchgeführt.
 Die ersten fünf Ergebnisse jeder Suche wurden in die Auswahl aufgenommen.
 Außerdem wurden alle dem fünftem Ergebnis folgenden Ergebnisse übernommen, die die gleiche Anzahl an Übereinstimmungen aufweisen wie das fünfte.
-Damit soll die Anzahl an Übereinstimmung als einziges Kriterium für die Ordnung und Auswahl sichergestellt werden, damit andere Faktoren wie mögliche lexikalische Ordnung oder Ordnung nach Identifikationsnummer keinen Einfluss erhalten.
+Dadurch soll die Anzahl an Übereinstimmung als einziges Kriterium für die Ordnung und Auswahl sichergestellt werden, damit andere Faktoren wie eine mögliche lexikalische Ordnung oder Ordnung nach Identifikationsnummer keinen Einfluss erhalten.
 Die Ergebnisse sind in \cref{tab:phase2-filter-results} zu sehen.
 \input{tables/filter-results}
 
@@ -213,7 +215,7 @@ In dieser Reihenfolge werden die einzelnen Methoden im Folgenden kurz zusammenge
 
 \subsubsection{Ergebnis 1: \citetitle{arh-result-no-filter-1}  \cite{arh-result-no-filter-1}}
 
-In dieser Arbeit wird ein konzeptuelles Evolutions-Framework vorgestellt, das mithilfe von Trans\-for\-ma\-tions\-re\-geln die Migration von Legacy-Systemen zu Microservices unterstützen soll.
+In dieser Arbeit stellen \citeauthor{arh-result-no-filter-1} ein konzeptuelles Evolutions-Framework vor, das mithilfe von Trans\-for\-ma\-tions\-re\-geln die Migration von Legacy-Systemen zu Microservices unterstützen soll.
 Das Vorgehen ist in drei Teilabschnitte unterteilt. 
 
 % TODO get copyright for this
@@ -228,12 +230,12 @@ Das Vorgehen ist in drei Teilabschnitte unterteilt.
 Das \emph{Core System} besteht aus dem Legacy System und einer Auswahl von Transformationsregeln.
 Diese können aus der Sammlung der vorgestellten Regeln der Autoren stammen, aber auch durch eigene ergänzt werden.
 Daraus wird ein \emph{Middle Layer} erstellt, indem diese Transformationsregeln auf das Legacy-System angewendet werden.
-Daraus resultiert eine Dekomposition des Systems in Microservices.
+Das Resultat dessen ist eine Dekomposition des Systems in Microservices.
 Das \emph{Target System} kann dann entwickelt werden, indem die erhaltenen Services in einer hybriden Cloud, bestehend aus einer privaten und einer öffentlichen Cloud, umgesetzt werden.
 
 Diese Vorgehensweise wurde auch in einer Fallstudie überprüft.
 Bei dieser wurde ein öffentliches GitHub Projekt als Legacy System verwendet, welches dann mit drei der vorgestellten Trans\-for\-ma\-tions\-regeln zu einer \gls{msa} migriert wurde.
-Durch die Architekturänderung konnte das \emph{Coupling} reduziert werden, sowie die Modularität, Skalierbarkeit und Anfragezeit verbessert werden.
+Durch die Architekturänderung konnte das \emph{Coupling} reduziert, sowie die Modularität, Skalierbarkeit und Anfragezeit verbessert werden.
 Die Autoren weisen jedoch darauf hin, dass diese Ergebnisse nur bedingt aussagekräftig sind und noch an mittleren bis großen Industriesystemen reproduziert werden müssen.
 
 %Insgesamt wirkt die Methode sehr abstrakt und oberflächlich und wenig spezifisch.
@@ -245,8 +247,8 @@ Die Methode besteht aus drei übergeordneten Schritten.
 Im ersten Schritt werden die Eingaben für die Methode in Form von \glspl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms.
 Für die Bestandteile dieser Eingabe (genannt Aktivitäten) werden im zweiten Schritt Abhängigkeiten in drei verschiedenen Formen analysiert: \emph{control dependencies}, \emph{data dependencies} und \emph{semantic dependencies}.
 Eine \emph{control dependency} beschreibt eine Abhängigkeit zweier Aktivitäten im Kontrollfluss, also dass eine der Aktivitäten mit hoher Wahrscheinlichkeit auf die andere folgt.
-Eine \emph{data dependency} beschreibt den Datenfluss zwischen den Ein- oder Ausgaben zweier Aktivitäten.
-Eine \emph{semantic dependency} beschreibt die Ähnlichkeit des Zwecks zweier Aktivitäten.
+Eine \emph{data dependency} bildet einen Datenfluss zwischen den Ein- oder Ausgaben zweier Aktivitäten ab.
+Eine \emph{semantic dependency} gibt die Verwandtschaft des Zwecks zweier Aktivitäten an.
 Die Messung solcher Abhängigkeiten kann anhand der Ähnlichkeit der Namen der Aktivitäten erfolgen.
 
 Schließlich wird die \emph{Machine Learning}-Technik \emph{Collaborative Clustering} verwendet, um die Menge von Aktivitäten in Gruppen (genannt \emph{Cluster}) zu unterteilen.
@@ -257,28 +259,28 @@ Das Ziel besteht darin, dass Aktivitäten innerhalb eines Clusters eine hohe Koh
 
 \subsubsection{Ergebnis 3: \citetitle{arh-result-no-filter-2} \cite{arh-result-no-filter-2}}
 
-Dieser Artikel beschreibt die Methode \gls{mb}, ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa}.
-Im Gegensatz zu den meisten anderen Methoden, die im Rahmen dieser Thesis betrachtet werden, liegt hier also nicht der Kontext einer Migration, sondern eines Refactorings vor.
-Es wird als Ausgangsarchitektur eine \gls{msa} erwartet, genau wie es bei \emph{jadice flow} der Fall ist.
+\citeauthor{arh-result-no-filter-2} beschreiben die Methode \gls{mb}, ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa}.
+Im Gegensatz zu den meisten anderen  im Rahmen dieser Thesis betrachteten Methoden liegt hier der Kontext eines Refactorings statt einer Migration vor.
+Es wird als Ausgangsarchitektur eine \gls{msa} erwartet, genau wie es bei \jf der Fall ist.
 Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
 Diese werden in Kombination mit den Metriken \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} von einem \emph{Genetic Algorithm} zu Microservices-Kandidaten dekomponiert.
 \gls{mb} bietet außerdem eine Visualisierung dieses Ergebnisses an, wobei die Microservices unter den genannten Metriken betrachtet werden können.
 
-Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es sich um eine echte Anwendung.
+Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es sich um eine industrielle Anwendung.
 
 % TODO Einfügen der Übersicht: TODO get license: https://ieeexplore.ieee.org/document/9519691
 
 \subsubsection{Ergebnis 4: \citetitle{arh-result-no-filter-4} \cite{arh-result-no-filter-4}}
 
-In diesem Artikel beschreiben \Citet{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Werkzeug \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
+In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Werkzeug \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
 Als Eingabe der Methode fungieren der Quellcode des Monolithen sowie ein Vorschlag für die Microservices-Aufteilung. Dieser wird in Form von Klassen pro Microservice angegeben, wobei jede Klasse nur einem Microservice angehören kann.
 In der ersten Phase des Werkzeugs, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices ermitteln.
 Diese Abhängigkeiten werden in der zweiten Phase (\emph{Database Refactoring}) dann verwendet, um die Entitäten des Systems und die Beziehungen zwischen diesen zu identifizieren und ein Refactoring der Beziehungen anzustoßen.
 In der letzten Phase werden die strukturellen Informationen und Abhängigkeiten zwischen den Microservices verwendet, um Abhängigkeiten zwischen den Klassen zu analysieren.
-Im Zuge dessen werden die Klassen überarbeitet, die Abhängigkeiten zu Klassen anderer Microservices haben.
+Im Zuge dessen werden die Klassen überarbeitet, die abhängig von den Klassen anderer Microservices sind.
 Dabei werden für Kommunikation zwischen verschiedenen Microservices lokale Funktionsaufrufe durch \glspl{api} und Aufrufe auf diese ersetzt.
 
-Um diese Methode bzw. das Werkzeug zu validieren, wurde ein Experiment mit zehn passenden, zufällig ausgewählten GitHub-Projekten durchgeführt.
+Um diese Methode beziehungsweise das Werkzeug zu validieren, wurde ein Experiment mit zehn passenden, zufällig ausgewählten GitHub-Projekten durchgeführt.
 Die Verwendung von \emph{MicroRefact} zur Umstrukturierung dieser Projekte zu Microservices-Applikationen führte zu einer Erfolgsquote von 80\%.
 Es wurde jedoch nur die technische Durchführbarkeit bestätigt und nicht überprüft, ob die neue Architektur in irgendeiner Weise vorteilhaft für die Systeme ist.
 
@@ -289,7 +291,7 @@ Es wurde jedoch nur die technische Durchführbarkeit bestätigt und nicht überp
 
 \subsubsection{Ergebnis 5: \citetitle{arh-result-no-filter-5} \cite{arh-result-no-filter-5}}
 
-In diesem Artikel beschreiben die Autoren eine systematische Methode zur Dekomposition von Monolithen in Microservices mit einer eingeschränkten Umsetzung im zugehörigen Werkzeug \emph{MonoBreaker}.
+In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-5} eine systematische Methode zur Dekomposition von Monolithen in Microservices mit einer eingeschränkten Umsetzung im zugehörigen Werkzeug \emph{MonoBreaker}.
 Dabei wird durch eine statische und dynamische Analyse des Systems ein Graph der Komponenten des Systems aufgebaut.
 Die gewichteten Kanten bilden die Stärke der Abhängigkeiten zwischen den Komponenten ab.
 Dieser Graph kann dann durch einen Clustering-Algorithmus gruppiert werden, um stark abhängige Komponenten zu einem Microservice zusammenzufassen.
@@ -304,10 +306,10 @@ Das Ergebnis des Fragebogens war eine positive Bewertung der erhaltenen Dekompos
 
 \subsubsection{Ergebnis 6: \citetitle{arh-result-important-filter-4} \cite{arh-result-important-filter-4}}
 
-Dieser Artikel beschreibt eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
+\citeauthor{arh-result-important-filter-4} beschreibt eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
 Dabei wird sowohl semantische Kenntnis des Systems sowie syntaktisches Wissen über den Code verwendet.
 Im ersten Schritt werden durch die Analyse von \gls{sql}-Queries und Datenbankschemas \glspl{bo} abgeleitet.
-Im zweiten Schritt werden semantisch, strukturelle Beziehungen durch Analyse der \gls{bo}- und Methodenbeziehungen identifiziert.
+Im zweiten Schritt werden semantische und strukturelle Beziehungen durch Analyse der \gls{bo}- und Methodenbeziehungen identifiziert.
 In den folgenden zwei Schritten wird außerdem syntaktische Analyse angewendet, wobei strukturelle Ähnlichkeiten von Methoden sowie Interaktionen zwischen diesen analysiert werden.
 Im fünften Schritt wird auf Basis der nun bekannten Details über das System ein \emph{$k$-Means Clustering Algorithmus} angewendet, der letztendlich eine Aufteilung in $k$ Microservices vorschlägt.
 
@@ -329,8 +331,10 @@ Da die Methode dieses Ziel nicht behandelt, kann sie ausgeschlossen werden und w
 
 Aus ähnlichem Grund wird auch Ergebnis 1, die Methode von \Citet{arh-result-no-filter-1}, ausgeschlossen.
 Die Methode schlägt lediglich einen sehr abstrakten und allgemeinen Plan vor, nach dem bei der Migration mit den Transformations-Regelsammlungen vorgegangen werden kann.
-Eine der Regeln besagt beispielsweise, dass solange das System ein Legacy-System ist, Microservices erstellt werden sollen, so lange bis die Modularität und Skalierbarkeit maximal sind.
-Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfalls ausgeschlossen wird.
+Diese Regeln sind nur sehr abstrakt und deswegen wenig hilfreich.
+Eine der Regeln bedeutet beispielsweise das Folgende:
+Solange das System ein Legacy-System ist, sollen Microservices erstellt werden, bis die Modularität und Skalierbarkeit maximal sind.
+Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfalls ausgeschlossen und nicht weiter betrachtet wird.
 
 Wie auch in der Übersicht über die restlichen Verfahren in \cref{tab:phase2-comparison} werden diese und die Anwendbarkeit dieser auf \jf im Folgenden nach Bewertung des Autors und \gls{po} geordnet (\cref{feldnotiz:7,feldnotiz:11}) diskutiert.
 
@@ -347,15 +351,15 @@ Zudem bietet \gls{mb} eine Visualisierung der Gruppierung, in der die berechnete
 Bei der Bewertung der weiteren Ergebnisse wurden weniger Präferenzen für die Funktionsweise der Methode berücksichtigt, sondern vielmehr inwiefern sie überhaupt sinnvoll und mit adäquatem Zeitaufwand anwendbar sind.
 Den zweiten Platz belegt das Verfahren von \Citet{arh-result-no-filter-3} (Ergebnis 2).
 Dabei werden \glspl{bp} als Eingabe erwartet, welche erst für \jf erstellt werden müssten.
-Der dafür nötige Zeitaufwand wird allerdings als überschaubar eingeschätzt und die Methode somit als möglich bewertet. 
+Der dafür nötige Zeitaufwand wird allerdings als überschaubar eingeschätzt und die Methode somit als anwendbar bewertet. 
 
-\emph{MonoBreaker} (Ergebnis 5 \cite{arh-result-no-filter-5}) belegt den nächsten Platz.
+Das nächste Ergebnis in Bewertungsreihenfolge ist \emph{MonoBreaker} (Ergebnis 5 \cite{arh-result-no-filter-5}).
 Im Kontext dieser Thesis ist \emph{MonoBreaker} nicht anwendbar, da es einen Python-Monolithen mit Django Framework voraussetzt.
 Es wäre jedoch potenziell möglich, die generelle Methodik zu verwenden oder je nach Struktur des Werkzeugs \emph{MonoBreaker} für einen Teil des Prozesses zu nutzen.
 Es ist allerdings fraglich, ob der erhöhte Aufwand, der sich aus der manuellen Umsetzung der Methode ergibt, sinnvoll ist.
 Es müsste entweder ein passendes Werkzeug für die statische und dynamische Analyse von \jf gefunden werden oder diese Analysen komplett manuell durchgeführt werden.
 
-Abgesehen von den ausgeschlossenen beiden Methoden erhält damit Ergebnis 6 von \Citet{arh-result-important-filter-4} den letzten Platz.
+Abgesehen von den ausgeschlossenen beiden Methoden wird damit Ergebnis 6 von \Citet{arh-result-important-filter-4} als am wenigsten passend bewertet.
 Die Methode basiert zum einen auf der Analyse von \gls{sql}-Abfragen und Datenbank-Schemata.
 Im Kontext von \jf würde das nicht gut funktionieren, da die Datenbank nicht die eigentlichen \glspl{bo} abbildet.
 Zum anderen ist das Ziel dieser Methode, Microservices für das Betreiben auf \gls{iiot}-Knoten zu identifizieren.
