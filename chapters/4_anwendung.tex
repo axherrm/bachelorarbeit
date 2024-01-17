@@ -306,7 +306,7 @@ Das Ergebnis des Fragebogens war eine positive Bewertung der erhaltenen Dekompos
 
 \subsubsection{Ergebnis 6: \citetitle{arh-result-important-filter-4} \cite{arh-result-important-filter-4}}
 
-\citeauthor{arh-result-important-filter-4} beschreibt eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
+\citeauthor{arh-result-important-filter-4} beschreiben eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
 Dabei wird sowohl semantische Kenntnis des Systems sowie syntaktisches Wissen über den Code verwendet.
 Im ersten Schritt werden durch die Analyse von \gls{sql}-Queries und Datenbankschemas \glspl{bo} abgeleitet.
 Im zweiten Schritt werden semantische und strukturelle Beziehungen durch Analyse der \gls{bo}- und Methodenbeziehungen identifiziert.
@@ -316,6 +316,19 @@ Im fünften Schritt wird auf Basis der nun bekannten Details über das System ei
 Die Methode wurde in einer Fallstudie getestet.
 Dabei wurde das quelloffene professionelle System \emph{Dolibarr} zu einer \gls{msa} umstrukturiert.
 Es konnten Erfolge in Performance und Effizienz gemessen werden.
+
+\subsubsection{Ergebnis 7: \citetitle{arh-result-important-filter-7} \cite{arh-result-important-filter-7}}
+
+\citeauthor{arh-result-important-filter-7} stellen das \emph{Mulit-Objective}-Optimierungsproblem-basierte Verfahren \emph{toMicroservices} vor.
+Als Ziele des Problems definieren sie die Kriterien \emph{Coupling}, \emph{Cohesion}, \emph{Feature Modularization}, \emph{Network Overhead} und \emph{Reuse}.
+Die Eingabe wird dabei auf Funktionsebene erwartet, beispielsweise durch ein Klassendiagramm.
+Dazu gehört ebenfalls eine Liste von Features mit Verweisen auf die Stellen, an denen sie implementiert sind.
+Außerdem muss eine Nummer für die Anzahl an erwarteten Microservices angegeben werden.
+Mit dem daraus entstehendem Eingabe-Graphen wird durch einen auf dem modernem evolutionären Algorithmus \emph{NSGA-III} \cite{NSGA-III} basierenden Algorithmus eine Menge an möglichen Lösungen berechnet.
+Eine mögliche Lösung besteht aus einer Liste von Microservices, wobei jeder Microservice eine Liste von Funktionen beinhaltet.
+Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet werden kann, sondern nur als Vorlage und Startpunkt für eine mögliche Umgestaltung dienen soll.
+ 
+In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefert als die Durchführung mit \emph{Random Search}.
 
 \subsubsection{Vergleich}
 
