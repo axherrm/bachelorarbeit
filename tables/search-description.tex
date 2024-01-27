@@ -1,15 +1,15 @@
 \begin{table}[!ht]
 	\centering
-	\begin{tabular}{|c| c c c|}
-		\toprule
-    \textbf{\diagbox{Filter}{Suche}} & \textbf{Alle Filter} & \textbf{Wichtigste Filter} & \textbf{Keine Filter} \\ \midrule
-    \textbf{\glspl{qa}} & Ja & Ja & Ja \\
-    \textbf{Filter Priorität 1} & Ja & Ja & Nein \\
-    \textbf{Filter Priorität 2} & Ja & Nein & Nein \\
-    \bottomrule
+	\begin{tabular}{|c| c | c c | c|}
+	\toprule
+	\multirow{2}{*}[0cm]{\textbf{\diagbox{Filter}{Suche}}} & \textbf{Wichtigste Filter} & \textbf{Alle Filter} & \textbf{Keine Filter} & \textbf{Keine \glspl{qa}} \\
+	& Realistischste Eingabe & \multicolumn{2}{c|}{Dimension Filter} & Dimension \glspl{qa} \\ \midrule
+	\textbf{\glspl{qa}}& Ja  & Ja & Ja & Nein \\
+	\textbf{Filter Priorität 1} & Ja & Ja & Nein & Ja \\
+	\textbf{Filter Priorität 2} & Nein & Ja & Nein & Nein \\ \bottomrule 
 	\end{tabular}
-	\caption[Filtermengen für die Suchen nach Migrationsverfahren]{
-    Filtermengen und deren Nutzung in den Suchen nach Migrationsverfahren in Phase 2 des \gls{mmf}.
+	\caption[Suchkonfigurationen für die Suchen nach Migrationsverfahren]{
+    Konfigurationen der verschiedenen Suchen nach Migrationsverfahren in Phase 2 des \gls{mmf}.
   }
 	\label{tab:phase2-search-description}
 \end{table}

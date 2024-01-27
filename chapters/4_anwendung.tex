@@ -154,22 +154,23 @@ Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine dieser dr
 	\item \textbf{Neutral:} Ob Methoden die jeweilige Eigenschaft besitzen oder nicht, wirkt sich nicht auf ihre Platzierung aus.
 	\item \textbf{Exclude:} Methoden, die die jeweilige Eigenschaft nicht besitzen, werden höher platziert.
 \end{itemize}
+
+\input{tables/all-filter}
+
 Es wird empfohlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nicht zu verwenden, da der Ausschluss einer Eigenschaft typischerweise nicht das Ziel ist.
 Wenn eine Eigenschaft nicht erwünscht ist, kann es in vielen Fällen möglich sein, die Methode minimal abzuändern oder einen Teil der Methode zu ignorieren.
 Dadurch sollte eine solche unerwünschte Eigenschaft trotzdem kein Problem darstellen und die Methode nicht schlechter bewertet werden.
-
-\input{tables/all-filter}
 
 Für die Wahl der Filter für das Refactoring von \emph{jadice flow} wurden alle Filter betrachtet und die wichtigsten für diesen Fall ausgewählt (\cref{feldnotiz:1,feldnotiz:2}).
 Ausgewählt bedeutet folgend in diesem Kontext immer, dass der entsprechende Filter auf \emph{include} gesetzt wurde.
 Die Option \emph{exclude} wurde nicht verwendet.
 Dabei wurden die ausgewählten Filter in zwei Prioritätsstufen unterteilt (\cref{feldnotiz:3}).
 Filter mit Priorität 1 sind dabei die höher priorisierten Filter.
-Diese Unterteilung ermöglicht es, Suchvorgänge mit verschiedenen Filterkonfigurationen durchzuführen, um mehrere mögliche Anwendungsfälle zu testen.
-Wie aus \cref{tab:phase2-search-description} hervorgeht, wird eine Suche mit allen Filtern, eine Suche mit den höher priorisierten Filtern und eine Suche ausschließlich mit den \glspl{qa} durchgeführt.
-\input{tables/search-description}
-Dies soll einerseits zu besseren Ergebnissen führen und andererseits die Filterfunktion untersuchen. 
+Diese bilden die realistische Auswahl an Filtern ab, die verwendet worden wären, wenn nur ein Suchdurchgang durchgeführt werden würde.
+Diese Unterteilung in mehrere Prioritätsstufen ist dazu konzipiert, Suchvorgänge mit verschiedenen Filterkonfigurationen durchführen zu können, um mehrere mögliche Anwendungsfälle zu testen.
 Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \cref{tab:phase2-selected-filter} einzeln aufgelistet.
+
+\input{tables/selected-filter}
 
 Die \glspl{sp} wurden als besonders wichtig erachtet, weshalb viele Filter dieser Kategorie aufgenommen wurden.
 Bei den anderen Kategorien wurden nur die nötigsten Filter verwendet, da eine zu große Anzahl an Filtern die Aussagekraft verringern könnte.
@@ -178,8 +179,6 @@ Daher wurde als einziger Filter in diesen Kategorien bei der Prozess-Strategie d
 Da bereits eine \gls{msa} vorliegt wären die anderen Optionen wie \emph{Rewrite/Rebuild} wenig sinnvoll.
 Die \emph{Input Preferences} und \emph{Output Preferences} hängen ebenfalls stark vom System ab und betreffen die Ausgangslage sowie das gewünschte Ergebnis.
 Deswegen wurden sie neben den \glspl{sp} ebenfalls als besonders bedeutend eingestuft. 
-
-\input{tables/selected-filter}
 
 Die Ergebnisse der Suchen mit diesen Filtern werden im Folgenden erläutert.
 
@@ -190,23 +189,38 @@ Die im vorherigen Abschnitt gewählten Filter werden nun angewendet, um geordnet
 Ziel dieser Fallstudie ist es, eine Migrationsmethode zu finden und durchzuführen. 
 Dabei sollen nur eine begrenzte Anzahl an Optionen manuell betrachtet werden, da der \gls{arh} eine großflächigere Betrachtung der Verfahren vermeiden können sollte.
 Um eine realistisch begrenzte Auswahl der Verfahren für die detaillierte Betrachtung sicherzustellen, wurden folgende Schritte unternommen:
-Es wurden drei Suchen mit den im vorherigen Abschnitt erläuterten Filtern durchgeführt.
-Die ersten fünf Ergebnisse jeder Suche wurden in die Auswahl aufgenommen.
+
+Es wurden vier Suchen mit verschiedenen Konfigurationen der Filter und \glspl{qa} (Übersicht in \cref{tab:phase2-search-description}) durchgeführt.
+Dabei wurde ausgehend von der realistischsten Eingabe in zwei Di\-men\-sio\-nen variiert: die der Filter und die der \glspl{qa}.
+Die realistischste Eingabe ist die Verwendung aller \glspl{qa} und der wichtigsten Filter.
+In der ersten Dimension wurden ausgehend davon die Filter variiert.
+Es wurde zusätzlich eine Suche mit allen Filtern und eine ohne Filter durchgeführt.
+In der zweiten Dimension wurden ausgehend von der realistischen Eingabe der Filter (höchst priorisierte Filter) die \glspl{qa} variiert.
+Da das Entfernen von bis zu 4 Szenarien keine anderen Ergebnisse ergab, wird in dieser Dimension nur eine zusätzliche Suche komplett ohne \glspl{qa} aufgeführt, um die Ergebnisse übersichtlicher zu halten.
+Die Verwendung mehrerer Suchen soll einerseits zu besseren Ergebnissen führen und andererseits die Suchfunktion auf Basis der Filter und \glspl{qa} untersuchen. 
+
+\input{tables/search-description}
+
+Die ersten fünf Ergebnisse jeder Suche wurden in die Auswahl für weitere Betrachtung aufgenommen.
 Außerdem wurden alle dem fünftem Ergebnis folgenden Ergebnisse übernommen, die die gleiche Anzahl an Übereinstimmungen aufweisen wie das fünfte.
 Dadurch soll die Anzahl an Übereinstimmung als einziges Kriterium für die Ordnung und Auswahl sichergestellt werden, damit andere Faktoren wie eine mögliche lexikalische Ordnung oder Ordnung nach Identifikationsnummer keinen Einfluss erhalten.
+Eine Ausnahme bildet dabei die Suche ohne \glspl{qa}.
+Bei dieser Suche folgten dem dritten Ergebnis zwölf weitere Ergebnisse mit derselben Punktzahl.
+Um die Zahl der Ergebnisse nicht unnötig zu vergrößern wurde hierbei eine Ausnahme gemacht und nur die ersten beiden Ergebnisse übernommen.
+Da die Suche eine relativ unrealistische Suche abbildet, wird darin keine Gefahr für die Validität der Ergebnisse gesehen.
 Die Ergebnisse sind in \cref{tab:phase2-filter-results} zu sehen.
 \input{tables/filter-results}
 
 Um eine Ordnung der Ergebnisse aller Suchen zu erhalten, wurde eine Metrik für die Gesamtwertung jedes Verfahrens erstellt.
 Diese wird mit $m_{gesamt}$ wie folgt berechnet:
 \[
-m_{gesamt} = \frac{2 \cdot m_{Wichtigste \text{ } Filter} + 1,5 \cdot  m_{Alle \text{ } Filter} +  m_{Keine \text{ } Filter}}{4,5}
+m_{gesamt} = \frac{m_{Wichtigste \text{ } Filter} + 0,75 \cdot  m_{Alle \text{ } Filter} +  0,5 \cdot m_{Keine \text{ } Filter} + 0,25 \cdot m_{Keine \text{ } \glspl{qa}}}{2,5}
 \]
 wobei $m_{gesamt}$ die gesamte prozentuale Übereinstimmung darstellt, also das Ergebnis, das in \cref{tab:phase2-ranking} angezeigt wird.
-$m_{Wichtigste \text{ } Filter}$, $m_{Alle \text{ } Filter}$ und $m_{Keine \text{ } Filter}$ sind dabei die prozentualen Matches, die in \cref{tab:phase2-filter-results} vorne stehen.
+$m_{Wichtigste \text{ } Filter}$, $m_{Alle \text{ } Filter}$, $m_{Keine \text{ } Filter}$ und $m_{Keine \text{ } \glspl{qa}}$ sind dabei die prozentualen Matches, die in \cref{tab:phase2-filter-results} vorne stehen.
 Das wären beispielsweise im Fall \Citet{arh-result-no-filter-1} $m_{Wichtigste \text{ } Filter} = \frac{14}{26} \approx 53,8\%$.
-Es wurde eine Gewichtung gewählt, sodass die Matches der Suche mit den wichtigsten Filtern doppelt so stark und die mit allen Filtern 1,5-fach gewichtet werden im Vergleich zu den Matches der Suche ohne Filter.
-Diese Gewichtung wurde so konzipiert, dass die Suchen ungefähr proportional zu Gewichtung realistischste Eingaben abbilden.
+Die Gewichtung der verschiedenen Suchen wurde so gewählt, dass die realistischste Suche das Gewicht 1 hat und die anderen Suchen (mit $0,75$, $0,5$ und $0,25$) weniger stark gewichtet werden.
+Hierbei wurde konzipiert, dass die Suchen ungefähr proportional zu Gewichtung realistischste Eingaben abbilden.
 Damit soll die Relevanz der Suche in die Metrik einfließen.
 Die Ordnung der Ergebnisse nach dieser Metrik ist in \cref{tab:phase2-ranking} zu sehen.
 \input{tables/phase2-result-matches}
@@ -328,7 +342,19 @@ Mit dem daraus entstehendem Eingabe-Graphen wird durch einen auf dem modernem ev
 Eine mögliche Lösung besteht aus einer Liste von Microservices, wobei jeder Microservice eine Liste von Funktionen beinhaltet.
 Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet werden kann, sondern nur als Vorlage und Startpunkt für eine mögliche Umgestaltung dienen soll.
  
-In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefert als die Durchführung mit \emph{Random Search}.
+In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefern als bei der Durchführung mit \emph{Random Search}.
+
+\subsubsection{Ergebnis 8: \citetitle{arh-result-no-qas} \cite{arh-result-no-qas}}
+
+\citeauthor{arh-result-no-qas} stellen einen Ansatz vor, mit dem in Objekt-orientierte Applikationen Microservices identifiziert werden können.
+Die Besonderheit dieses Ansatz ist der optionale Einsatz von Expertenwissen.
+Die Autoren heben hervor, dass anderen Ansätzen, der Einsatz von Empfehlungen von Architekten fehlt oder sie diesen voraussetzen.
+Der vorgestellt Ansatz soll in diesem Aspekt flexibler sein und dieses Expertenwissen nur zusätzlich zu den ebenfalls vorgestellten Qua\-li\-täts\-metriken verwenden.
+Die atomare Einheit sind dabei Klassen.
+Das Verfahren wird zwar semi-automatisch genannt, da Algorithmen für das Clustering von Klassen bei Experteninformationen vorgestellt werden.
+Eine Implementierung dieser ist allerdings nicht veröffentlicht.
+
+Die Methode wurde durch Anwendung an drei kleinen Applikationen validiert, allerdings hatte die größte dieser Anwendungen nur 13449 \gls{loc}.
 
 \subsubsection{Vergleich}
 
