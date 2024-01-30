@@ -129,4 +129,23 @@
 \newcommand{\prioOne}[1]{\ul{\textbf{#1}}}
 \newcommand{\prioTwo}[1]{\ul{#1}}
 
-\newcommand{\jf}{\emph{jadice flow} }
+% command for jadice flow
+\newcommand{\jf}{\emph{jadice flow}\xspace}
+
+% commands for results of search
+\newcommand{\resultref}[1]{%
+\hyperref[res:#1]{#1}\xspace%
+}
+
+\newcommand{\result}[1]{%
+\hyperref[res:#1]{Er\-geb\-nis #1}%
+\ifx1#1 \cite{arh-result-no-filter-1}\fi%
+\ifx2#1 \cite{arh-result-no-filter-3}\fi%
+\ifx3#1 \cite{arh-result-no-filter-2}\fi%
+\ifx4#1 \cite{arh-result-no-filter-4}\fi%
+\ifx5#1 \cite{arh-result-no-filter-5}\fi%
+\ifx6#1 \cite{arh-result-important-filter-4}\fi%
+\ifx7#1 \cite{arh-result-important-filter-7}\fi%
+\ifx8#1 \cite{arh-result-no-qas}\fi%
+\xspace%
+}

@@ -228,6 +228,8 @@ Die Ordnung der Ergebnisse nach dieser Metrik ist in \cref{tab:phase2-ranking} z
 In dieser Reihenfolge werden die einzelnen Methoden im Folgenden kurz zusammengefasst und anschließend ihre Anwendbarkeit verglichen.
 
 \subsubsection{Ergebnis 1: \citetitle{arh-result-no-filter-1}  \cite{arh-result-no-filter-1}}
+\label{sec:phase2-result-1}
+\label[res]{res:1}
 
 In dieser Arbeit stellen \citeauthor{arh-result-no-filter-1} ein konzeptuelles Evolutions-Framework vor, das mithilfe von Trans\-for\-ma\-tions\-re\-geln die Migration von Legacy-Systemen zu Microservices unterstützen soll.
 Das Vorgehen ist in drei Teilabschnitte unterteilt. 
@@ -255,6 +257,8 @@ Die Autoren weisen jedoch darauf hin, dass diese Ergebnisse nur bedingt aussagek
 %Insgesamt wirkt die Methode sehr abstrakt und oberflächlich und wenig spezifisch.
 
 \subsubsection{Ergebnis 2: \citetitle{arh-result-no-filter-3} \cite{arh-result-no-filter-3}}
+\label{sec:phase2-result-2}
+\label[res]{res:2}
 
 In diesem Artikel stellen die Autoren eine Methode vor, die sie anhand einer Fallstudie mit Barcelonas Fahrradvermietungssystem \emph{Bicing} erklären und validieren.
 Die Methode besteht aus drei übergeordneten Schritten.
@@ -272,6 +276,8 @@ Das Ziel besteht darin, dass Aktivitäten innerhalb eines Clusters eine hohe Koh
 % TODO Einfügen der Übersicht: TODO get license: https://www.sciencedirect.com/science/article/pii/S1383762121001442?via%3Dihub
 
 \subsubsection{Ergebnis 3: \citetitle{arh-result-no-filter-2} \cite{arh-result-no-filter-2}}
+\label{sec:phase2-result-3}
+\label[res]{res:3}
 
 \citeauthor{arh-result-no-filter-2} beschreiben die Methode \gls{mb}, ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa}.
 Im Gegensatz zu den meisten anderen  im Rahmen dieser Thesis betrachteten Methoden liegt hier der Kontext eines Refactorings statt einer Migration vor.
@@ -285,6 +291,8 @@ Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es 
 % TODO Einfügen der Übersicht: TODO get license: https://ieeexplore.ieee.org/document/9519691
 
 \subsubsection{Ergebnis 4: \citetitle{arh-result-no-filter-4} \cite{arh-result-no-filter-4}}
+\label{sec:phase2-result-4}
+\label[res]{res:4}
 
 In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Werkzeug \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
 Als Eingabe der Methode fungieren der Quellcode des Monolithen sowie ein Vorschlag für die Microservices-Aufteilung. Dieser wird in Form von Klassen pro Microservice angegeben, wobei jede Klasse nur einem Microservice angehören kann.
@@ -304,6 +312,8 @@ Es wurde jedoch nur die technische Durchführbarkeit bestätigt und nicht überp
 %Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org
 
 \subsubsection{Ergebnis 5: \citetitle{arh-result-no-filter-5} \cite{arh-result-no-filter-5}}
+\label{sec:phase2-result-5}
+\label[res]{res:5}
 
 In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-5} eine systematische Methode zur Dekomposition von Monolithen in Microservices mit einer eingeschränkten Umsetzung im zugehörigen Werkzeug \emph{MonoBreaker}.
 Dabei wird durch eine statische und dynamische Analyse des Systems ein Graph der Komponenten des Systems aufgebaut.
@@ -319,6 +329,8 @@ Das Ergebnis des Fragebogens war eine positive Bewertung der erhaltenen Dekompos
 % TODO Übersicht, TODO get license under "Rights and permissions" https://link.springer.com/chapter/10.1007/978-3-030-58923-3_21
 
 \subsubsection{Ergebnis 6: \citetitle{arh-result-important-filter-4} \cite{arh-result-important-filter-4}}
+\label{sec:phase2-result-6}
+\label[res]{res:6}
 
 \citeauthor{arh-result-important-filter-4} beschreiben eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
 Dabei wird sowohl semantische Kenntnis des Systems sowie syntaktisches Wissen über den Code verwendet.
@@ -332,6 +344,8 @@ Dabei wurde das quelloffene professionelle System \emph{Dolibarr} zu einer \gls{
 Es konnten Erfolge in Performance und Effizienz gemessen werden.
 
 \subsubsection{Ergebnis 7: \citetitle{arh-result-important-filter-7} \cite{arh-result-important-filter-7}}
+\label{sec:phase2-result-7}
+\label[res]{res:7}
 
 \citeauthor{arh-result-important-filter-7} stellen das \emph{Mulit-Objective}-Optimierungsproblem-basierte Verfahren \emph{toMicroservices} vor.
 Als Ziele des Problems definieren sie die Kriterien \emph{Coupling}, \emph{Cohesion}, \emph{Feature Modularization}, \emph{Network Overhead} und \emph{Reuse}.
@@ -345,6 +359,8 @@ Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet
 In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefern als bei der Durchführung mit \emph{Random Search}.
 
 \subsubsection{Ergebnis 8: \citetitle{arh-result-no-qas} \cite{arh-result-no-qas}}
+\label{sec:phase2-result-8}
+\label[res]{res:8}
 
 \citeauthor{arh-result-no-qas} stellen einen Ansatz vor, mit dem in Objekt-orientierte Applikationen Microservices identifiziert werden können.
 Die Besonderheit dieses Ansatz ist der optionale Einsatz von Expertenwissen.
@@ -358,53 +374,118 @@ Die Methode wurde durch Anwendung an drei kleinen Applikationen validiert, aller
 
 \subsubsection{Vergleich}
 
-Nach Betrachtung der sechs beschriebenen Ergebnisse werden diese nun verglichen, um eine geeignete Methode für das weitere Vorgehen auszuwählen.
-Es ist dabei möglich, das generelle Prinzip einer oder mehrerer dieser Methoden zu verwenden, ohne sie komplett originalgetreu umzusetzen.
+Nach Betrachtung der acht beschriebenen Ergebnisse werden diese nun bezüglich ihrer Eignung für das weitere Vorgehen verglichen.
+Um den Vergleich übersichtlicher zu gestalten, werden zu Beginn des Vergleichs direkt zwei Methoden ausgeschlossen, da sie offensichtlich nicht infrage kommen.
 
-Zu Beginn des Vergleichs werden direkt zwei Methoden ausgeschlossen, da sie offensichtlich nicht infrage kommen, um den Vergleich übersichtlicher zu gestalten. 
-Ergebnis 4, die Methode von \Citet{arh-result-no-filter-4} ermöglicht die automatische Umgestaltung eines Java-Monolithen in Microservices unter Angabe einer Dekomposition.
-
+\result{4} ermöglicht die automatische Umgestaltung eines Java-Monolithen in Microservices unter Angabe einer Dekomposition.
 Das Werkzeug setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch. 
 Das Ziel dieser Arbeit besteht jedoch darin, eine geeignete Dekomposition mit optimaler Service-Granularität zu finden. 
 Da die Methode dieses Ziel nicht behandelt, kann sie ausgeschlossen werden und wird zur Vereinfachung nachfolgend nicht aufgeführt.
 
-Aus ähnlichem Grund wird auch Ergebnis 1, die Methode von \Citet{arh-result-no-filter-1}, ausgeschlossen.
+Aus ähnlichem Grund wird auch \result{1} ausgeschlossen.
 Die Methode schlägt lediglich einen sehr abstrakten und allgemeinen Plan vor, nach dem bei der Migration mit den Transformations-Regelsammlungen vorgegangen werden kann.
 Diese Regeln sind nur sehr abstrakt und deswegen wenig hilfreich.
 Eine der Regeln bedeutet beispielsweise das Folgende:
 Solange das System ein Legacy-System ist, sollen Microservices erstellt werden, bis die Modularität und Skalierbarkeit maximal sind.
 Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfalls ausgeschlossen und nicht weiter betrachtet wird.
 
-Wie auch in der Übersicht über die restlichen Verfahren in \cref{tab:phase2-comparison} werden diese und die Anwendbarkeit dieser auf \jf im Folgenden nach Bewertung des Autors und \gls{po} geordnet (\cref{feldnotiz:7,feldnotiz:11}) diskutiert.
+%Nach Ausschluss dieser zwei Verfahren bleiben noch sechs Verfahren zum Vergleich übrig.
+% Diese werden im folgenden Abschnitt sowie in \cref{tab:phase2-comparison} unter mehreren Aspekten verglichen.
 
-\input{tables/phase2-method-comparison}
+Es folgt ein Vergleich der verbleibenden Methoden (Übersicht in \cref{tab:phase2-comparison}).%
+\input{tables/phase2-method-comparison}%
+Bevor die Unterschiede der restlichen sechs Verfahren erläutert werden, sollen die Gemeinsamkeiten aller hier gelisteten und allgemein der meisten existierenden Verfahren zur \gls{sia} beleuchtet werden.
+Während die Eingabe, die die Verfahren voraussetzen sehr unterschiedlich sein kann, ist die Funktionsweise, wie mit den eingegebenen Daten fortgefahren wird, oft sehr ähnlich.
+In der Regel wird aus den Eingaben ein Graph erstellt, der aus Knoten der atomaren Einheiten der Eingabe besteht.
+Diese sind mit Kanten verbunden, die die Abhängigkeit verschiedener atomarer Einheiten voneinander abbilden.
+Anschließend wird der Graph mithilfe verschiedener Algorithmen und Strategien gruppiert, wobei die resultierenden Gruppen potenzielle Microservices darstellen.
+Die Gruppierung wird anhand bestimmter Metriken optimiert, wobei Kohäsion und Coupling die häufigsten sind.
+Ziel ist es, dass Gruppen von Knoten möglichst viele und starke Abhängigkeiten innerhalb der Gruppe aufweisen und zwischen verschiedenen Gruppen eine möglichst geringe Abhängigkeit besteht.
+Je nach Verfahren werden auch andere Metriken wie Komplexität, semantische Ähnlichkeit oder Granularität berücksichtigt.
 
-Das favorisierte Verfahren ist Ergebnis 3, die Methode \gls{mb} von \Citet{arh-result-no-filter-2}.
-Ein großer Vorteil gegenüber den anderen Verfahren ist, dass die Ausgangslage einer vorhandenen \gls{msa} zu \emph{jadice flow} passt.
-Dadurch können Umwege in der Methodik zur Behandlung der Ausnahme einer bereits vorhandenen \gls{msa}, wo Monolithen als Startpunkt vorgesehen sind, vermieden werden.
-Außerdem ist die Eingabe von User Stories praktisch, da diese bei \emph{jadice flow} bereits vorliegen.
-Des Weiteren bietet die Methode große Flexibilität in der Wahl des Algorithmus zur Gruppierung zu Microservices.
-Es kann zwischen einem genetischen Algorithmus, einem semantischem Gruppierungs-Algorithmus und manuellem Eingreifen gewählt werden.
-Zudem bietet \gls{mb} eine Visualisierung der Gruppierung, in der die berechneten Metriken der einzelnen Microservices angezeigt werden können.
+Der erste und in diesem Fall entscheidendste Aspekt, in dem sich die Methoden unterschieden, ist die Art der Eingabe.
+Diese bestimmt die atomaren Einheiten in dem Verfahren.
+Die ausgewählten Verfahren weisen dabei drei verschiedene Ausprägungen auf.
+Am häufigsten ist die Analyse von Quellcode (Ergebnisse \resultref{5}, \resultref{6}, \resultref{7} und \resultref{8}).
+Dabei sind verschiedene Abstraktionsstufen und Her\-an\-ge\-hens\-wei\-sen möglich.
+Für manche Verfahren werden Funktionen als atomare Einheiten verwendet und für manche Klassen.
+In einem Ansatz werden außerdem gezielt \gls{sql}-Queries betrachtet, wodurch Beziehungen zwischen Datenbank-Objekten analysiert werden.
+Auch wenn Quellcode als Eingabemöglichkeit eine Mehrheit ausmacht, gibt es unter den sechs ausgewählten Methoden noch zwei, die andere Eingaben verwenden.
+Dabei handelt es sich um \emph{User Stories} (\result{3}) und \glspl{bp} (\result{2}).
+Im Gegensatz zu den meisten Quellcode-basierten Verfahren wird hier vermutlich mehr Subjektivität Einfluss in die Ergebnisse erhalten, da die Eingabe vollständig von Menschen erzeugt werden muss, wohingegen in den anderen Verfahren meist nur der Quellcode und keine manuellen Eingaben verwendet werden.
+Für den Anwendungsfall in dieser Arbeit wurden diese manuellen Eingabemöglichkeiten trotzdem als besser bewertet, da sie eine höhere Abstraktionsebene ermöglichen und somit der zeitliche Aufwand besser angepasst werden kann.
 
-Bei der Bewertung der weiteren Ergebnisse wurden weniger Präferenzen für die Funktionsweise der Methode berücksichtigt, sondern vielmehr inwiefern sie überhaupt sinnvoll und mit adäquatem Zeitaufwand anwendbar sind.
-Den zweiten Platz belegt das Verfahren von \Citet{arh-result-no-filter-3} (Ergebnis 2).
-Dabei werden \glspl{bp} als Eingabe erwartet, welche erst für \jf erstellt werden müssten.
-Der dafür nötige Zeitaufwand wird allerdings als überschaubar eingeschätzt und die Methode somit als anwendbar bewertet. 
+Nachdem durch die Eingabe ein Ausgangsgraph erstellt wurde, besteht der nächste Unterschied der Methoden darin, wie aus diesem hochqualitative Microservices identifiziert werden können.
+Hierbei werden im Allgemeinen hauptsächlich zwei Arten von Algorithmen verwendet: Clustering-Algorithmen (Ergebnisse \resultref{2}, \resultref{5}, \resultref{6} und \resultref{8}) sowie genetische beziehungsweise evolutionäre Algorithmen (Ergebnisse \resultref{3} und \resultref{7}).
+In dieser Fallstudie wurde entschieden, diesen Aspekt der internen Funktionsweise der Verfahren nicht in die Bewertung mit einzubeziehen.
+Auf der einen Seite ist unklar, inwiefern sich die unterschiedlichen Algorithmen auf das Ergebnis auswirken.
+Es konnte keine Forschung über den Vergleich der beiden Algorithmus-Arten gefunden werden. 
+Auf der anderen Seite wurden andere Aspekte höher priorisiert.
 
-Das nächste Ergebnis in Bewertungsreihenfolge ist \emph{MonoBreaker} (Ergebnis 5 \cite{arh-result-no-filter-5}).
-Im Kontext dieser Thesis ist \emph{MonoBreaker} nicht anwendbar, da es einen Python-Monolithen mit Django Framework voraussetzt.
-Es wäre jedoch potenziell möglich, die generelle Methodik zu verwenden oder je nach Struktur des Werkzeugs \emph{MonoBreaker} für einen Teil des Prozesses zu nutzen.
-Es ist allerdings fraglich, ob der erhöhte Aufwand, der sich aus der manuellen Umsetzung der Methode ergibt, sinnvoll ist.
-Es müsste entweder ein passendes Werkzeug für die statische und dynamische Analyse von \jf gefunden werden oder diese Analysen komplett manuell durchgeführt werden.
+Abgesehen von diesen beiden Hauptkategorien der Unterschiede in der Funktionsweise gibt es noch viele weitere Unterschiede in den Verfahren.
+Wie bereits erwähnt ist der zeitliche Aspekt in diesem Fall eines der entscheidendsten Kriterien für die Auswahl.
+Dafür wäre es sehr förderlich, ein Verfahren mit Werkzeug-Unterstützung zu verwenden, da manueller Aufwand tendenziell höher ist.
+Leider kann bei keinem der Verfahren Werkzeug-Unterstützung verwendet werden.
+Einige Verfahren erwähnen zwar die Entwicklung und Verwendung eines Werkzeugs.
+Doch entweder konnte das Werkzeug nicht öffentlich gefunden werden (Ergebnisse \resultref{2} und \resultref{3}), das Werkzeug ist nicht mit den Technologien von \jf kompatibel (\resultref{5}) oder es existiert kein Werkzeug (Ergebnisse \resultref{7} und \resultref{8}).
 
-Abgesehen von den ausgeschlossenen beiden Methoden wird damit Ergebnis 6 von \Citet{arh-result-important-filter-4} als am wenigsten passend bewertet.
-Die Methode basiert zum einen auf der Analyse von \gls{sql}-Abfragen und Datenbank-Schemata.
-Im Kontext von \jf würde das nicht gut funktionieren, da die Datenbank nicht die eigentlichen \glspl{bo} abbildet.
-Zum anderen ist das Ziel dieser Methode, Microservices für das Betreiben auf \gls{iiot}-Knoten zu identifizieren.
-Es ist unklar, inwiefern sich die Ergebnisse von den gewünschten Ergebnissen unterscheiden, wenn kein \gls{iiot} verwendet wird.
+Im Vergleich ist \result{3} ein Favorit.
+Es hat den Vorteil, dass der erwartete Aus\-gangs\-punkt im Gegensatz zum Standard eines Monolithen eine bereits vorhandene \gls{msa} ist.
+Im Vergleich zu anderen Methoden ermöglicht dieses Verfahren eine direktere Behandlung der Ausnahme, ohne Umwege in der Methodik.
+Zudem bietet es vergleichsweise viele Metriken sowie eine Visualisierung dieser an.
+Allerdings ist das Verfahren durch dieses Features vergleichsweise komplex.
+Da das erwähnte Tool \gls{mb} nicht gefunden werden konnte, wäre eine manuelle Durchführung des Verfahrens vermutlich zu zeitaufwendig.
+
+Neben \result{3} ist \result{2} das einzige andere Verfahren, bei dem durch die manuelle Eingabe ein regulierbarer Aufwand vermutet wird.
+Diese beiden Verfahren werden als Favoriten für die weitere Planung im nächsten Abschnitt verwendet.
+
+
+%Wie auch in der Übersicht über die restlichen Verfahren in \cref{tab:phase2-comparison} werden diese und die Anwendbarkeit dieser auf \jf im Folgenden nach Bewertung des Autors und \gls{po} geordnet (\cref{feldnotiz:7,feldnotiz:11,feldnotiz:14}) diskutiert.
+%
+%\input{tables/phase2-method-comparison}
+%
+%Das favorisierte Verfahren ist Ergebnis 3, die Methode \gls{mb} von \Citet{arh-result-no-filter-2}.
+%Ein großer Vorteil gegenüber den anderen Verfahren ist, dass die Ausgangslage einer vorhandenen \gls{msa} zu \emph{jadice flow} passt.
+%Dadurch können Umwege in der Methodik zur Behandlung der Ausnahme einer bereits vorhandenen \gls{msa}, wo Monolithen als Startpunkt vorgesehen sind, vermieden werden.
+%Außerdem ist die Eingabe von User Stories praktisch, da diese bei \emph{jadice flow} bereits vorliegen.
+%Des Weiteren bietet die Methode große Flexibilität in der Wahl des Algorithmus zur Gruppierung zu Microservices.
+%Es kann zwischen einem genetischen Algorithmus, einem semantischem Gruppierungs-Algorithmus und manuellem Eingreifen gewählt werden.
+%Zudem bietet \gls{mb} eine Visualisierung der Gruppierung, in der die berechneten Metriken der einzelnen Microservices angezeigt werden können.
+%
+%Bei der Bewertung der weiteren Ergebnisse wurden weniger Präferenzen für die Funktionsweise der Methode berücksichtigt, sondern vielmehr inwiefern sie überhaupt sinnvoll und mit adäquatem Zeitaufwand anwendbar sind.
+%Den zweiten Platz belegt das Verfahren von \Citet{arh-result-no-filter-3} (Ergebnis 2).
+%Dabei werden \glspl{bp} als Eingabe erwartet, welche erst für \jf erstellt werden müssten.
+%Der dafür nötige Zeitaufwand wird allerdings als überschaubar eingeschätzt und die Methode somit als anwendbar bewertet. 
+%
+%Das nächste Ergebnis in Bewertungsreihenfolge ist \emph{MonoBreaker} (Ergebnis 5 \cite{arh-result-no-filter-5}).
+%Im Kontext dieser Thesis ist \emph{MonoBreaker} nicht anwendbar, da es einen Python-Monolithen mit Django Framework voraussetzt.
+%Es wäre jedoch potenziell möglich, die generelle Methodik zu verwenden oder je nach Struktur des Werkzeugs \emph{MonoBreaker} für einen Teil des Prozesses zu nutzen.
+%Es ist allerdings fraglich, ob der erhöhte Aufwand, der sich aus der manuellen Umsetzung der Methode ergibt, sinnvoll ist.
+%Es müsste entweder ein passendes Werkzeug für die statische und dynamische Analyse von \jf gefunden werden oder diese Analysen komplett manuell durchgeführt werden.
+%
+%Abgesehen von den ausgeschlossenen beiden Methoden wird damit Ergebnis 6 von \Citet{arh-result-important-filter-4} als am wenigsten passend bewertet.
+%Die Methode basiert zum einen auf der Analyse von \gls{sql}-Abfragen und Datenbank-Schemata.
+%Im Kontext von \jf würde das nicht gut funktionieren, da die Datenbank nicht die eigentlichen \glspl{bo} abbildet.
+%Zum anderen ist das Ziel dieser Methode, Microservices für das Betreiben auf \gls{iiot}-Knoten zu identifizieren.
+%Es ist unklar, inwiefern sich die Ergebnisse von den gewünschten Ergebnissen unterscheiden, wenn kein \gls{iiot} verwendet wird.
 
 \subsection{Planung der Dekompositionsmethodik}
+
+Im vorherigen Abschnitt wurden die verschiedenen Verfahren nach Eignung geordnet.
+In diesem Abschnitt wird die Planung des weiteren Vorgehens beschrieben.
+%In dieser Reihenfolge werden sie in diesem Abschnitt detaillierter betrachtet.
+Dabei ist zu beachten, dass das Ziel in dieser Arbeit nicht ist, einen der Ansätze originalgetreu umzusetzen und diesen spezifisch zu testen, sondern ein geeignetes Vorgehen für den Spezialfall zu finden.
+Dieses kann aus der Abwandlung eines Verfahrens entstehen, aber auch durch die Kombination mehrerer Verfahren oder die zusätzliche Verwendung eines Tools.
+Wegen des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
+
+Begonnen wurde mit der Suche nach dem Tool \gls{mb} des Ergebnisses \resultref{3}.
+Dieses konnte nicht in dem Artikel oder auf anderen offiziellen Wegen gefunden werden.
+Bei der Suche auf GitHub wurde ein Projekt von einem der Autoren mit passendem Namen gefunden\footnote{\url{https://github.com/ivanmviveros/microservicesbacklog}}.
+Dieses konnte allerdings auch nach der Behebung mehrerer Fehler beim Starten nicht verwendet werden, da bei jeder Navigation von der Startseite des Web-basierten Projekts Datenbank-Fehler auftraten.
+Da keine Dokumentation vorhanden ist, der Code in Teilen auf Brasilianisch geschrieben ist und die Autoren nicht auf Nachfrage per E-Mail reagierten, wird die Verwendung von \gls{mb} ausgeschlossen.
+Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wurde allerdings ohne funktionierendes Werkzeug als zu aufwendig eingeschätzt.
+
+Die nächstbeste Option ist dadurch die Verwendung von \result{2}.
 
 \section{Phase 3a - Architekturplanung}
 \label{sec:durchführung-phase3}

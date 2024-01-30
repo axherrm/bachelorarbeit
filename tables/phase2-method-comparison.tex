@@ -1,17 +1,18 @@
 \begin{table}[!h]
   \centering
-  \begin{tabular}{l m{1.9cm} m{3.1cm} m{3.1cm} m{3.1cm}}
+  \begin{tabular}{m{1.6cm} m{1.9cm} m{3.1cm} m{3.1cm} m{3.1cm}}
     \toprule
     \textbf{Methode}                     & \textbf{Eingabe} & \textbf{Dekompositions-Funktionsweise} & \textbf{Vorteile} & \textbf{Nachteile} \\ \midrule
-    \cite{arh-result-no-filter-2}        & User Stories & Genetischer Algorithmus, Semantic Grouping, Manuell & Ausgangsarchitektur passend, mehrere Dekompositions-Methoden, Visualisierung möglich & Keine Implementierung des Werkzeugs gefunden, ohne Visualisierung nutzlos \\ \hline
-    \cite{arh-result-no-filter-3}        & \glspl{bp} & Clustering & & \glspl{bp} liegen nicht vor und müssten erst erstellt werden  \\ \hline
-    \cite{arh-result-no-filter-5}        & Quellcode & Clustering & & Werkzeug kann nicht verwendet wer\-den \\ \hline
-    \cite{arh-result-important-filter-4} & Quellcode, Daten\-bank\-schema & Clustering & & Datenbank als Ein\-ga\-be unpassend, Kontext \gls{iiot} unpassend \\ \hline
-    \cite{arh-result-important-filter-7} & Klassen\-dia\-gramm oder Quell\-code auf Funk\-tions\-ebene & Evolutionärer Algorithmus \emph{NSGA-III} & & Kein Tool dazu, Extraktion der Funktionen manuell, \emph{NSGA-III} ist in Python implementiert und könnte verwendet werden \\ \bottomrule
+    \result{3} & User Stories & Genetischer Algorithmus & Ausgangsarchitektur passend, Vi\-sua\-li\-sie\-rung möglich, hohe Abs\-trak\-ti\-ons\-ebe\-ne er\-mög\-licht An\-wen\-dung auf Teil\-sys\-tem & Werkzeug nicht öf\-fent\-lich, ohne Vi\-sua\-li\-sie\-rung nutzlos \\ \hline
+    \result{2} & \glspl{bp} & Clustering & Hohe Abs\-trak\-ti\-ons\-ebe\-ne er\-mög\-licht An\-wen\-dung auf Teil\-sys\-tem & Werkzeug nicht öf\-fent\-lich  \\ \hline
+    \result{5} & Quellcode & Clustering & & Werkzeug kann nicht verwendet wer\-den \\ \hline
+     \result{7} & Klassen\-dia\-gramm oder Quell\-code auf Funk\-tions\-ebene & Evolutionärer Algorithmus & Clus\-te\-ring-Al\-go\-rith\-mus ist in Py\-thon im\-ple\-men\-tiert & Kein Werk\-zeug, Ex\-trak\-tion der Funk\-tio\-nen ma\-nu\-ell \\ \hline
+     \result{8} & Klassen, Experten\-meinung & Clustering & & Kein Werk\-zeug, Clus\-te\-ring-Al\-go\-rith\-mus nur bei Zu\-ga\-be von Ar\-chi\-tekt\-en\-em\-pfeh\-lung\-en mög\-lich, An\-wen\-dung sehr ma\-nu\-ell \\ \hline
+    \result{6} & Quellcode, Daten\-bank\-schema & Clustering & & Datenbank als Ein\-ga\-be unpassend, Kontext \gls{iiot} un\-pas\-send \\ \bottomrule
   \end{tabular}
   \caption[Vergleich der Suchergebnisse in Phase 2 des \gls{mmf}]{
     Vergleich der Suchergebnisse in Phase 2 des \gls{mmf}.
-    Diese sind nach der subjektiven Platzierung der Methoden sortiert (\cref{feldnotiz:7,feldnotiz:11}).
+    Diese sind nach der subjektiven Platzierung der Methoden sortiert (\cref{feldnotiz:7,feldnotiz:11,feldnotiz:14}).
   }
   \label{tab:phase2-comparison}
 \end{table}
