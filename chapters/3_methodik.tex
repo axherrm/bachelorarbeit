@@ -7,6 +7,15 @@ Diese Fallstudie besteht aus zwei Hauptbestandteilen.
 Im ersten Teil wird ein Refactoring des Produktes \emph{jadice flow} nach Anleitung des Frameworks durchgeführt.
 Im zweiten Teil wird das Ergebnis dieses Refactorings verwendet, um eine Evaluation des Frameworks und Werkzeugs abzuschließen.
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{methodology.drawio}
+	\caption[Überblick über die Methodik dieser Fallstudie]{
+		Überblick über die Methodik dieser Fallstudie.
+	}
+	\label{fig:methodology}
+\end{figure}
+
 \section{Refactoring mit \gls{mmf}}
 
 Die Vorgehensweise beim Refactoring ist durch das Framework sehr genau vorgegeben.
@@ -133,15 +142,16 @@ Trotz des Mangels des Bewertungsschritts der Methodik wird sie folgend zur Verei
 \label{sec:structured-field-notes}
 
 Während Phase 1 also in einer Fokusgruppe durchgeführt wurde, findet die Bearbeitung in den folgenden Phasen größtenteils in Einzelarbeit statt.
-Um dabei strukturiert zu protokollieren, welche Aktivitäten im Rahmen dieser Phasen durchgeführt wurden, werden systematisch durchgeführte Aktivitäten mit gemachten Erfahrungen und Herausforderungen dokumentiert und am Ende ausgewertet.
-Dazu werden strukturierte Feldnotizen verwendet~\cite{seaman2008qualitative}.
-Dabei können die involvierten Stakeholder zur Rate gezogen werden.
+Um dabei strukturiert zu protokollieren, welche Aktivitäten im Rahmen dieser Phasen durchgeführt wurden, wurden systematisch durchgeführte Aktivitäten mit gemachten Erfahrungen und Herausforderungen dokumentiert und am Ende aus\-ge\-wer\-tet.
+Dazu werden wie in der ähnlichen Arbeit von \Citet{master-marvin-knodel} strukturierte Feldnotizen nach \Citet{seaman2008qualitative} verwendet.
+
+Jede Feldnotiz wurde zeitnah nach Beobachtung in einer zugehörigen Datei mit dem Namensschema F\emph{Nummer}\_P\emph{Phase\gls{mmf}}\_\emph{Datum}\_\emph{Name}.tex erstellt.
+Dabei wurden also Nummer der Feldnotiz, Phase des \gls{mmf}, Datum (im Format \emph{MM\_DD\_JJJJ}) und Name der Feldnotiz im Dateinamen festgehalten.
+\cref{feldnotiz:1} hat beispielsweise den Namen \emph{F01\_P2\_11\_20\_2023\_FilterAuswahl.tex}.
+\cref{tab:field-notes} gibt einen Überblick über die Eintrags-Felder und welchem Feld nach \Citet{seaman2008qualitative} sie entsprechen.
 
 \input{tables/field-notes}
 
 \section{Evaluation des \gls{mmf}}
 
-Das bis inklusive Phase 3a geplante Refactoring soll dann in Phase 3b im Rahmen eines minimalen Prototyps umgesetzt und simuliert werden, da ein Refactoring des kompletten Systems im zeitlichen Rahmen dieser Arbeit nicht möglich wäre.
-Dabei entstehende Prototypen könnten Vorläufer von \emph{jadice flow 2.0} werden.
 
-Im Nachgang sollen die Ergebnisse dieses Experiments ausgewertet werden. Um quantitativ vergleichbare Ergebnisse zu erhalten, sollen im Vorlauf des Experiments Vergleichskriterien und Messmethoden definiert werden, die es möglich machen, gleichartige Anwendungsfälle von \emph{jadice flow 1.0} und neuen Prototypen zu vergleichen.
