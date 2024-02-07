@@ -149,3 +149,7 @@
 \ifx8#1 \cite{arh-result-no-qas}\fi%
 \xspace%
 }
+
+% remove whitespace before paragraph
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\vspace*{-0.5cm}\oldparagraph{#1}}
