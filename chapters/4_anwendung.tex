@@ -101,7 +101,7 @@ Nach etwa 15 Minuten Diskussion waren alle Szenarien behandelt und für jedes ei
 Diese werden folgend im Bezug auf die jeweiligen Szenarios sekundäre \glspl{qa} genannt, wohingegen ein \gls{qa}, für das das Szenario erstellt wurde, primäres \gls{qa} genannt wird.
 Die resultierenden Assoziationen sind in der \cref{tab:scenarios} aufgeführt.
 
-\input{tables/scenarios}
+\input{tables/phase1/scenarios}
 
 Damit wurde der für die Extraktion der Qualitätsanforderungen des Systems relevante Teil des Architekturreviews abgeschlossen.
 Zusammenfassend kann gesagt werden, dass die Phase größtenteils wie geplant durchgeführt werden konnte.
@@ -155,7 +155,7 @@ Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine dieser dr
 	\item \textbf{Exclude:} Methoden, die die jeweilige Eigenschaft nicht besitzen, werden höher platziert.
 \end{itemize}
 
-\input{tables/all-filter}
+\input{tables/phase2/filter-all}
 
 Es wird empfohlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nicht zu verwenden, da der Ausschluss einer Eigenschaft typischerweise nicht das Ziel ist.
 Wenn eine Eigenschaft nicht erwünscht ist, kann es in vielen Fällen möglich sein, die Methode minimal abzuändern oder einen Teil der Methode zu ignorieren.
@@ -171,7 +171,7 @@ Diese Unterteilung in mehrere Prioritätsstufen ist dazu konzipiert, Suchvorgän
 Eine ausführlichere Beschreibung dazu ist in \cref{sec:phase2-suchconfig} gegeben.
 Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \cref{tab:phase2-selected-filter} einzeln aufgelistet.
 
-\input{tables/selected-filter}
+\input{tables/phase2/filter-selected}
 
 Bei der Auswahl der Filter, die von Autor und \gls{po} durchgeführt wurde, haben die folgenden Begründungen zur schlussendlichen Filterwahl geführt:
 Allgemein wurde darauf geachtet, nur die notwendigsten Filter auszuwählen, um den Einfluss einzelner Filter nicht zu verringern.
@@ -188,7 +188,7 @@ Da bereits eine \gls{msa} vorliegt wären die anderen Optionen wie \emph{Rewrite
 \label{sec:phase2-suchconfig}
 
 Die im vorherigen Abschnitt gewählten und in zwei Prioritäten unterteilten Filter werden nun verwendet, um mehrere Suchdurchgänge zu definieren.
-Das Ziel des Einsatzes mehrerer Suchen ist die nachfolgende Evaluation der Filter- und Suchfunktion durch die Verwendung unterschiedlicher Eingaben für jede Suche. 
+Das Ziel des Einsatzes mehrerer Suchen ist die nachfolgende Evaluation der Filter- und Suchfunktion durch die Verwendung unterschiedlicher Eingaben für jede Suche.
 Um mehrere Suchen zu definieren, wurde die Konfiguration ausgehend von der realistischen Suchkonfiguration, die folgend \emph{Wichtigste Filter} genannt wird, variiert.
 Realistisch bedeutet dabei, dass diese Konfiguration verwendet worden wäre, wenn nur eine Suche durchgeführt worden wäre.
 
@@ -208,46 +208,56 @@ Dadurch soll die Zahl der Suchen begrenzt werden.
 %Es wurde zusätzlich eine Suche mit allen Filtern und eine ohne Filter durchgeführt.
 %In der zweiten Dimension wurden ausgehend von der realistischen Eingabe der Filter (höchst priorisierte Filter) die \glspl{qa} variiert.
 %Da das Entfernen von bis zu 4 Szenarien keine anderen Ergebnisse ergab, wird in dieser Dimension nur eine zusätzliche Suche komplett ohne \glspl{qa} aufgeführt, um die Ergebnisse übersichtlicher zu halten.
-%Die Verwendung mehrerer Suchen soll einerseits zu besseren Ergebnissen führen und andererseits die Suchfunktion auf Basis der Filter und \glspl{qa} untersuchen. 
+%Die Verwendung mehrerer Suchen soll einerseits zu besseren Ergebnissen führen und andererseits die Suchfunktion auf Basis der Filter und \glspl{qa} untersuchen.
 
-\input{tables/search-description}
+\input{tables/phase2/search-description}
 
-\subsection{Suchergebnisbetrachtung}
+\subsection{Selektions- und Aggregationsstrategie}
+\label{sec:phase2-suchaggregation}
 
-Die im vorherigen Abschnitt definierten Suchen werden nun im \gls{arh} angewendet, um geordnete Listen von Ergebnissen zu erhalten. 
-Um die Auswahl der Ergebnisse, die manuell betrachtet werden sollen, auf eine adäquate Größe einzugrenzen, wurden die ersten fünf Ergebnisse jeder Suche ausgewählt.
-Außerdem wurden alle dem fünften Ergebnis folgenden Ergebnisse übernommen, die die gleiche Anzahl an Übereinstimmungen aufweisen wie das fünfte.
+Bei Anwendung der im vorherigen Abschnitt definierten Suchen werden sich vier Listen von Er\-gebnissen ergeben.
+Um ein strukturiertes Vorgehen bei der Auswahl der Ergebnisse, die manuell betrachtet werden sollen, zu gewährleisten, werden diese Listen vor Betrachtung zu einer Liste aggregiert.
+Folgend wird beschrieben, wie diese Aggregation entworfen und durchgeführt wurde.
+
+Um die Auswahl der Ergebnisse, die manuell betrachtet werden sollen, auf eine adäquate Größe einzugrenzen, werden nur die ersten fünf Ergebnisse jeder Suche in die aggregierte Liste übernommen.
+Außerdem werden alle dem fünften Ergebnis folgenden Ergebnisse übernommen, die die gleiche Anzahl an Übereinstimmungen aufweisen wie das fünfte.
 Dadurch soll die Anzahl an Übereinstimmung als einziges Kriterium für die Ordnung und Auswahl sichergestellt werden, damit andere Faktoren wie eine mögliche lexikalische Ordnung oder Ordnung nach Identifikationsnummer keinen Einfluss erhalten.
-Eine Ausnahme bildet dabei die Suche ohne \glspl{qa}.
-Bei dieser Suche folgten dem dritten Ergebnis zwölf weitere Ergebnisse mit derselben Punktzahl.
-Um die Zahl der Ergebnisse nicht unnötig zu vergrößern wurde hierbei eine Ausnahme gemacht und nur die ersten beiden Ergebnisse übernommen.
-Da die Suche in dieser Form experimentell ist und durch das Fehlen von \glspl{qa} nur geringe Relevanz hat, wird darin keine Gefahr für die Validität der Ergebnisse gesehen.
-Die Ergebnisse dessen sind in \cref{tab:phase2-filter-results} zu sehen.
-\input{tables/filter-results}
 
-Um eine Ordnung der Ergebnisse aller Suchen zu erhalten, wurde eine Metrik für die Gesamtwertung jedes Verfahrens erstellt.
+Für eine bessere Übersicht über die selektierten Ergebnisse werden diese anschließend geordnet.
+Dafür wird die Metrik $m_{gesamt}$ für die Gesamtwertung jedes Verfahrens definiert.
 Diese gesamte prozentuale Übereinstimmung jedes Verfahrens $m_{gesamt}$ ist ein gewichtetes arithmetisches Mittel der prozentualen Übereinstimmungen des Verfahrens in jeder der vier Suchen.
 Diese sind $m_{Wichtigste \text{ } Filter}$, $m_{Alle \text{ } Filter}$, $m_{Keine \text{ } Filter}$ und $m_{Keine \text{ } \glspl{qa}}$, wobei die Namen sich nach \cref{tab:phase2-search-description} richten und die Werte in der Spalte \emph{Matches, Insgesamt} der \cref{tab:phase2-filter-results} gefunden werden können.
 Das wären beispielsweise im Fall \Citet{arh-result-no-filter-1} $m_{Wichtigste \text{ } Filter} = \frac{14}{26} \approx 53,8\%$.
+
 $m_{gesamt}$ wird wie folgt berechnet:
 \[
 m_{gesamt} = \frac{m_{Wichtigste \text{ } Filter} + 0,75 \cdot  m_{Alle \text{ } Filter} +  0,5 \cdot m_{Keine \text{ } Filter} + 0,25 \cdot m_{Keine \text{ } \glspl{qa}}}{2,5}
 \]
-Die Gewichtung der verschiedenen Suchen wurde so gewählt, dass die realistische Suche das Gewicht 1 hat und die anderen Suchen (mit $0,75$, $0,5$ und $0,25$) weniger stark gewichtet werden.
+Die Gewichtung der verschiedenen Suchen ist so gewählt, dass die realistische Suche das Gewicht 1 hat und die anderen Suchen (mit $0,75$, $0,5$ und $0,25$) weniger stark gewichtet werden.
 Damit soll die Relevanz der Suche (eingeschätzt durch den Autor) in die Metrik einfließen.
 Für das reine Ordnen der Ergebnisse ist eine Division durch $2,5$ theoretisch nicht nötig.
 Um das Ergebnis allerdings eine prozentuale Übereinstimmung nennen zu können, wird durch die Summe der Gewichtungen geteilt.
-Die Ordnung der Ergebnisse nach dieser Metrik ist in \cref{tab:phase2-ranking} zu sehen.
-\input{tables/phase2-result-matches}
 
-In dieser Reihenfolge werden die einzelnen Methoden im Folgenden kurz zusammengefasst und anschließend ihre Anwendbarkeit verglichen.
+\subsection{Suchergebnisbetrachtung}
+
+Die Suchen nach Migrationsverfahren wurden wie in \cref{sec:phase2-suchconfig} beschrieben durchgeführt und wie in \cref{sec:phase2-suchaggregation} aggregiert.
+Daraus resultieren die Suchergebnisse, die in \cref{tab:phase2-filter-results} dargestellt sind.
+\input{tables/phase2/search-results} % TODO Verschiebung beachten
+Die Aggregation der Ergebnisse nach der beschriebenen Aggregations-Metrik ist in \cref{tab:phase2-ranking} zu sehen.
+\input{tables/phase2/search-results-aggregated}
+Dabei wurde eine Ausnahme im Bezug auf die beschriebene Selektions- und Aggregationsstrategie bei der Suche ohne \glspl{qa} gemacht.
+Bei dieser Suche folgten dem dritten Ergebnis zwölf weitere Ergebnisse mit derselben Punktzahl.
+Um die Zahl der Ergebnisse nicht unnötig zu vergrößern wurde hierbei eine Ausnahme gemacht und nur die ersten beiden Ergebnisse übernommen.
+Da die Suche in dieser Form experimentell ist und durch das Fehlen von \glspl{qa} nur geringe Relevanz hat, wird darin keine Gefahr für die Validität der Ergebnisse gesehen.
+
+In der Reihenfolge werden die einzelnen Methoden im Folgenden kurz zusammengefasst und anschließend ihre Anwendbarkeit verglichen.
 
 \subsubsection{Ergebnis 1: \citetitle{arh-result-no-filter-1}  \cite{arh-result-no-filter-1}}
 \label{sec:phase2-result-1}
 \label[res]{res:1}
 
 In dieser Arbeit stellen \citeauthor{arh-result-no-filter-1} ein konzeptuelles Evolutions-Framework vor, das mithilfe von Trans\-for\-ma\-tions\-re\-geln die Migration von Legacy-Systemen zu Microservices unterstützen soll.
-Das Vorgehen ist in drei Teilabschnitte unterteilt. 
+Das Vorgehen ist in drei Teilabschnitte unterteilt.
 
 \paragraph{Funktionsweise:} Das \emph{Core System} besteht aus dem Legacy System und einer Auswahl von Transformationsregeln.
 Diese können aus der Sammlung der vorgestellten Regeln der Autoren stammen, aber auch durch eigene ergänzt werden.
@@ -326,7 +336,7 @@ In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-5} eine systemati
 \paragraph{Funktionsweise:} Anfangs wird durch eine statische und dynamische Analyse des Systems ein Graph der Komponenten des Systems aufgebaut.
 Die gewichteten Kanten bilden die Stärke der Abhängigkeiten zwischen den Komponenten ab.
 Dieser Graph kann dann durch einen Clustering-Algorithmus gruppiert werden, um stark abhängige Komponenten zu einem Microservice zusammenzufassen.
-Dabei sollten sie für geringes \emph{Coupling} möglichst schwach mit anderen Komponenten verbunden sein. 
+Dabei sollten sie für geringes \emph{Coupling} möglichst schwach mit anderen Komponenten verbunden sein.
 Es wird nicht festgelegt, welcher Algorithmus dafür verwendet werden soll.
 
 \paragraph{Evaluation:} In einer anschließenden industriellen Fallstudie wurde \emph{MonoBreaker} an einer Webapplikation getestet.
@@ -363,7 +373,7 @@ Außerdem muss eine Nummer für die Anzahl an erwarteten Microservices angegeben
 Mit dem daraus entstehendem Eingabe-Graphen wird durch einen auf dem modernem evolutionären Algorithmus \emph{NSGA-III} \cite{NSGA-III} basierenden Algorithmus eine Menge an möglichen Lösungen berechnet.
 Eine mögliche Lösung besteht aus einer Liste von Microservices, wobei jeder Microservice eine Liste von Funktionen beinhaltet.
 Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet werden kann, sondern nur als Vorlage und Startpunkt für eine mögliche Umgestaltung dienen soll.
- 
+
 \paragraph{Evaluation:} In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefern als bei der Durchführung mit \emph{Random Search}.
 
 \subsubsection{Ergebnis 8: \citetitle{arh-result-no-qas} \cite{arh-result-no-qas}}
@@ -380,14 +390,14 @@ Eine Implementierung dieser ist allerdings nicht veröffentlicht.
 
 \paragraph{Evaluation:} Die Methode wurde durch Anwendung an drei kleinen Applikationen validiert, allerdings hatte die größte dieser Anwendungen nur 13449 \gls{loc}.
 
-\subsubsection{Vergleich}
+\subsubsection{Vergleich der Ergebnisse}
 
 Nach Betrachtung der acht beschriebenen Ergebnisse werden diese nun bezüglich ihrer Eignung für das weitere Vorgehen verglichen.
 Um den Vergleich übersichtlicher zu gestalten, werden zu Beginn des Vergleichs direkt zwei Methoden ausgeschlossen, da sie offensichtlich nicht infrage kommen.
 
 \paragraph{Ausschluss:} \result{4} ermöglicht die automatische Umgestaltung eines Java-Monolithen in Microservices unter Angabe einer Dekomposition.
-Das Werkzeug setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch. 
-Das Ziel dieser Arbeit besteht jedoch darin, eine geeignete Dekomposition mit optimaler Service-Granularität zu finden. 
+Das Werkzeug setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch.
+Das Ziel dieser Arbeit besteht jedoch darin, eine geeignete Dekomposition mit optimaler Service-Granularität zu finden.
 Da die Methode dieses Ziel nicht behandelt, kann sie ausgeschlossen werden und wird zur Vereinfachung nachfolgend nicht aufgeführt.
 Aus ähnlichem Grund wird auch \result{1} ausgeschlossen.
 Die Methode schlägt lediglich einen sehr abstrakten und allgemeinen Plan vor, nach dem bei der Migration mit den Transformations-Regelsammlungen vorgegangen werden kann.
@@ -400,7 +410,7 @@ Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfall
 % Diese werden im folgenden Abschnitt sowie in \cref{tab:phase2-comparison} unter mehreren Aspekten verglichen.
 
 Es folgt ein Vergleich der verbleibenden Methoden (Übersicht in \cref{tab:phase2-comparison}).%
-\input{tables/phase2-method-comparison}%
+\input{tables/phase2/method-comparison}%
 Bevor die Unterschiede der restlichen sechs Verfahren erläutert werden, sollen die Gemeinsamkeiten aller hier gelisteten und allgemein der meisten existierenden Verfahren zur \gls{sia} beleuchtet werden.
 \paragraph{Generelle Funktionsweise:} Während die Eingabe, die die Verfahren voraussetzen sehr unterschiedlich sein kann, ist die Funktionsweise, wie mit den eingegebenen Daten fortgefahren wird, oft sehr ähnlich.
 In der Regel wird aus den Eingaben ein Graph erstellt, der aus Knoten der atomaren Einheiten der Eingabe besteht.
@@ -427,7 +437,7 @@ Außerdem ist bei einigen Verfahren, die Quellcode als Eingabe verwenden die ber
 Hierbei werden im Allgemeinen hauptsächlich zwei Arten von Algorithmen verwendet: Clustering-Algorithmen (Ergebnisse \resultref{2}, \resultref{5}, \resultref{6} und \resultref{8}) sowie genetische beziehungsweise evolutionäre Algorithmen (Ergebnisse \resultref{3} und \resultref{7}).
 In dieser Fallstudie wurde entschieden, diesen Aspekt der internen Funktionsweise der Verfahren nicht in die Bewertung mit einzubeziehen.
 Auf der einen Seite ist unklar, inwiefern sich die unterschiedlichen Algorithmen auf das Ergebnis auswirken.
-Es konnte keine Forschung über den Vergleich der beiden Algorithmus-Arten gefunden werden. 
+Es konnte keine Forschung über den Vergleich der beiden Algorithmus-Arten gefunden werden.
 Auf der anderen Seite wurden andere Aspekte höher priorisiert.
 
 \paragraph{Weitere Unterschiede:} Abgesehen von diesen beiden Hauptkategorien der Unterschiede in der Funktionsweise gibt es noch viele weitere Unterschiede in den Verfahren.
@@ -445,43 +455,18 @@ Allerdings ist das Verfahren durch dieses Features vergleichsweise komplex.
 Da das erwähnte Tool \gls{mb} nicht gefunden werden konnte, wäre eine manuelle Durchführung des Verfahrens vermutlich zu zeitaufwendig.
 
 Neben \result{3} ist \result{2} das einzige andere Verfahren, bei dem durch die manuelle Eingabe ein regulierbarer Aufwand vermutet wird.
-Diese beiden Verfahren werden als Favoriten für die weitere Planung im nächsten Abschnitt verwendet.
+Diese beiden Verfahren werden als Favoriten für die Anwendung in der nächsten Phase verwendet.
 
+\section{Phase 3a - Architekturplanung}
+\label{sec:durchführung-phase3}
 
-%Wie auch in der Übersicht über die restlichen Verfahren in \cref{tab:phase2-comparison} werden diese und die Anwendbarkeit dieser auf \jf im Folgenden nach Bewertung des Autors und \gls{po} geordnet (\cref{feldnotiz:7,feldnotiz:11,feldnotiz:14}) diskutiert.
-%
-%\input{tables/phase2-method-comparison}
-%
-%Das favorisierte Verfahren ist Ergebnis 3, die Methode \gls{mb} von \Citet{arh-result-no-filter-2}.
-%Ein großer Vorteil gegenüber den anderen Verfahren ist, dass die Ausgangslage einer vorhandenen \gls{msa} zu \emph{jadice flow} passt.
-%Dadurch können Umwege in der Methodik zur Behandlung der Ausnahme einer bereits vorhandenen \gls{msa}, wo Monolithen als Startpunkt vorgesehen sind, vermieden werden.
-%Außerdem ist die Eingabe von User Stories praktisch, da diese bei \emph{jadice flow} bereits vorliegen.
-%Des Weiteren bietet die Methode große Flexibilität in der Wahl des Algorithmus zur Gruppierung zu Microservices.
-%Es kann zwischen einem genetischen Algorithmus, einem semantischem Gruppierungs-Algorithmus und manuellem Eingreifen gewählt werden.
-%Zudem bietet \gls{mb} eine Visualisierung der Gruppierung, in der die berechneten Metriken der einzelnen Microservices angezeigt werden können.
-%
-%Bei der Bewertung der weiteren Ergebnisse wurden weniger Präferenzen für die Funktionsweise der Methode berücksichtigt, sondern vielmehr inwiefern sie überhaupt sinnvoll und mit adäquatem Zeitaufwand anwendbar sind.
-%Den zweiten Platz belegt das Verfahren von \Citet{arh-result-no-filter-3} (Ergebnis 2).
-%Dabei werden \glspl{bp} als Eingabe erwartet, welche erst für \jf erstellt werden müssten.
-%Der dafür nötige Zeitaufwand wird allerdings als überschaubar eingeschätzt und die Methode somit als anwendbar bewertet. 
-%
-%Das nächste Ergebnis in Bewertungsreihenfolge ist \emph{MonoBreaker} (Ergebnis 5 \cite{arh-result-no-filter-5}).
-%Im Kontext dieser Thesis ist \emph{MonoBreaker} nicht anwendbar, da es einen Python-Monolithen mit Django Framework voraussetzt.
-%Es wäre jedoch potenziell möglich, die generelle Methodik zu verwenden oder je nach Struktur des Werkzeugs \emph{MonoBreaker} für einen Teil des Prozesses zu nutzen.
-%Es ist allerdings fraglich, ob der erhöhte Aufwand, der sich aus der manuellen Umsetzung der Methode ergibt, sinnvoll ist.
-%Es müsste entweder ein passendes Werkzeug für die statische und dynamische Analyse von \jf gefunden werden oder diese Analysen komplett manuell durchgeführt werden.
-%
-%Abgesehen von den ausgeschlossenen beiden Methoden wird damit Ergebnis 6 von \Citet{arh-result-important-filter-4} als am wenigsten passend bewertet.
-%Die Methode basiert zum einen auf der Analyse von \gls{sql}-Abfragen und Datenbank-Schemata.
-%Im Kontext von \jf würde das nicht gut funktionieren, da die Datenbank nicht die eigentlichen \glspl{bo} abbildet.
-%Zum anderen ist das Ziel dieser Methode, Microservices für das Betreiben auf \gls{iiot}-Knoten zu identifizieren.
-%Es ist unklar, inwiefern sich die Ergebnisse von den gewünschten Ergebnissen unterscheiden, wenn kein \gls{iiot} verwendet wird.
+In dieser Phase des \acrfull{mmf} wird der in der vorherigen Phase entworfene Migrationsplan durchgeführt.
+Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet, um geeignete Best Practices und Patterns zu finden, die möglicherweise in die neue Architektur eingebaut werden.
 
-\subsection{Planung der Dekompositionsmethodik}
+\subsection{Anwendung Migrationsverfahren}
 
 Im vorherigen Abschnitt wurden die verschiedenen Verfahren nach Eignung geordnet.
 In diesem Abschnitt wird die Planung des weiteren Vorgehens beschrieben.
-%In dieser Reihenfolge werden sie in diesem Abschnitt detaillierter betrachtet.
 Dabei ist zu beachten, dass das Ziel in dieser Arbeit nicht ist, einen der Ansätze originalgetreu umzusetzen und diesen spezifisch zu testen, sondern ein geeignetes Vorgehen für den Spezialfall zu finden.
 Dieses kann aus der Abwandlung eines Verfahrens entstehen, aber auch durch die Kombination mehrerer Verfahren oder die zusätzliche Verwendung eines Tools.
 Wegen des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
@@ -495,5 +480,9 @@ Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wur
 
 Die nächstbeste Option ist dadurch die Verwendung von \result{2}.
 
-\section{Phase 3a - Architekturplanung}
-\label{sec:durchführung-phase3}
+\subsection{Suche nach Best Practices und Patterns}
+
+Die Suche nach \bpp wird wie auch die Suche nach Migrationsverfahren durch die \glspl{qa} und Filter konfiguriert.
+Das bedeutet, dass alle nötigen Eingaben durch die Durchführung von Phase 1 und 2 bereits vorliegen und die Suche ohne weitere Beschreibung durchgeführt wird.
+Ausführliche Erläuterungen zu der Konfiguration und Aggregation der Suchen sind in \cref{sec:phase2-suchconfig} und \cref{sec:phase2-suchaggregation} gegeben.
+
