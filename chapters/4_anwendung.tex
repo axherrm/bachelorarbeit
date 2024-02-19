@@ -19,7 +19,7 @@ Das ist zum einen auf Seite der Stakeholder wichtig.
 Diese sollten spätestens nach dieser Phase wissen, welche \acrfullpl{qa} besonders wichtig für das System sind.
 Zum anderen sollte der \gls{arh} nach dieser Phase durch Eingabe der \glspl{qa} ein Verständnis des Systems erlangen, das er in den nächsten Phasen zur Unterstützung der Entwickler bei Migration verwenden kann.
 Um das Systemverständnis zu erlangen, wurde in dieser Phase am 6. November 2023 ein Architekturreview wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt und am 14. November 2023 fortgesetzt.
-Teilgenommen haben vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} und der Autor selbst in der Rolle des Moderators.
+Teilgenommen haben vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} nach Definition des SCRUM von \Citet{SCRUM} und der Autor selbst in der Rolle des Moderators.
 Leider war es nicht möglich, einen Kunden oder Nutzer des Produkts als Stakeholder für dieses Review zu organisieren.
 Da das Entwicklungsteam jedoch regelmäßigen Kontakt mit Kunden hat, haben sie bestmöglich versucht, auch die Interessen der Kunden zu repräsentieren.
 Der Zeitrahmen für diese Besprechung war durch die Planung, die in \cref{sec:methodik-architekturreview} beschrieben ist, auf zwei Stunden festgelegt.
@@ -465,25 +465,44 @@ Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet
 
 \subsection{Anwendung Migrationsverfahren}
 
-Im vorherigen Abschnitt wurden die verschiedenen Verfahren nach Eignung geordnet.
+Im vorherigen Abschnitt wurden die verschiedenen Verfahren nach ihrer Eignung geordnet.
 In diesem Abschnitt wird die Planung des weiteren Vorgehens beschrieben.
-Dabei ist zu beachten, dass das Ziel in dieser Arbeit nicht ist, einen der Ansätze originalgetreu umzusetzen und diesen spezifisch zu testen, sondern ein geeignetes Vorgehen für den Spezialfall zu finden.
-Dieses kann aus der Abwandlung eines Verfahrens entstehen, aber auch durch die Kombination mehrerer Verfahren oder die zusätzliche Verwendung eines Tools.
-Wegen des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
+Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden. 
+Dies kann durch die Modifikation eines Verfahrens, aber auch durch die Kombination mehrerer Verfahren oder den zusätzlichen Einsatz eines Werkzeugs geschehen.
+Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
 
-Begonnen wurde mit der Suche nach dem Tool \gls{mb} des Ergebnisses \resultref{3}.
-Dieses konnte nicht in dem Artikel oder auf anderen offiziellen Wegen gefunden werden.
+\paragraph{Favorit 1:} Begonnen wurde mit der Suche nach dem Tool \gls{mb} des Ergebnisses \resultref{3} (\cref{feldnotiz:15}).
+Dieses konnte weder im Artikel noch auf anderen offiziellen Wegen gefunden werden.
 Bei der Suche auf GitHub wurde ein Projekt von einem der Autoren mit passendem Namen gefunden\footnote{\url{https://github.com/ivanmviveros/microservicesbacklog}}.
-Dieses konnte allerdings auch nach der Behebung mehrerer Fehler beim Starten nicht verwendet werden, da bei jeder Navigation von der Startseite des Web-basierten Projekts Datenbank-Fehler auftraten.
-Da keine Dokumentation vorhanden ist, der Code in Teilen auf Brasilianisch geschrieben ist und die Autoren nicht auf Nachfrage per E-Mail reagierten, wird die Verwendung von \gls{mb} ausgeschlossen.
-Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wurde allerdings ohne funktionierendes Werkzeug als zu aufwendig eingeschätzt.
+Dieses konnte jedoch auch nach der Behebung mehrerer Startfehler nicht verwendet werden, da bei jeder Navigation von der Startseite des webbasierten Projekts Datenbankfehler auftraten.
+Da keine Dokumentation vorliegt, der Code teilweise in brasilianischer Sprache geschrieben ist und die Autoren auf Anfrage per E-Mail nicht reagierten, scheidet die Verwendung von \gls{mb} aus.
+Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wurde aber ohne funktionierendes Werkzeug als zu aufwendig erachtet.
 
-Die nächstbeste Option ist dadurch die Verwendung von \result{2}.
+\paragraph{Favorit 2:} Als nächstbeste Option wurde folgend die mögliche Verwendung von \result{2} untersucht (\cref{feldnotiz:16,feldnotiz:17,feldnotiz:18}).
+Auch hier wurde eine Implementierung des Verfahrens in einem Prototyp beschrieben.
+Diesem wurde kein Name gegeben, die Suche danach blieb erfolglos.
+Auch eine Anfrage per E-Mail brachte keine Antwort.
+Dieses Verfahren wurde im Vergleich zu  \result{3} als leichter manuell umsetzbar eingeschätzt, weswegen folgend aufgrund mangelnder Methoden mit Werkzeugunterstützung eine manuelle Umsetzung dieses Verfahrens begonnen wurde.
+
+Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Algorithmus \emph{cHAC} genannt, weshalb mit dessen Umsetzung begonnen wurde.
+Es wurde versucht, diesen mit Top-Down Vorgehen in Java zu implementieren.
+Für einige Details des Pseudocodes wurden Java-spezifische Konstrukte anstelle der im Algorithmus spezifizierten verwendet.
+Beispielsweise wurde die Synchronisationsvariable \emph{@SIC} des Algorithmus durch eine CyclicBarrier\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html}} implementiert.
+Die abstrakte Funktionsweise des Algorithmus konnte erfolgreich umgesetzt werden (\cref{feldnotiz:16}).
+
+Die Implementierung einiger atomarer Bestandteile des Algorithmus war jedoch nicht erfolgreich (\cref{feldnotiz:17}).
+Die wenig detaillierte Dokumentation und Beschreibung der Formeln und Funktionen des Algorithmus machten eine Umsetzung des Algorithmus in der zur Verfügung stehenden Zeit letztlich unmöglich.
+An einigen Stellen wurden die erwähnten Schritte des Algorithmus nicht definiert, sondern nur oberflächlich das Ziel der Methode beschrieben und die Umsetzung offengelassen.
+An anderen Stellen wurden im Algorithmus erwähnte Methoden im Text durch Formeln definiert, wobei teilweise unklar war, ob diese Formeln korrekt sind.
+Es werden einige Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet, die mit der relativ dürftigen Beschreibung im Artikel nicht geklärt werden konnten.
+Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt. 
+Da die anderen Suchergebnisse des \gls{arh} bereits in den vorangegangenen Schritten als deutlich weniger geeignet bewertet wurden, wird aus diesem Grund und aus Zeitgründen keine weitere Anwendung angestrebt.
 
 \subsection{Suche nach Best Practices und Patterns}
 
-Die Suche nach \bpp wird wie auch die Suche nach Migrationsverfahren durch die \glspl{qa} und Filter konfiguriert.
-Das bedeutet, dass alle nötigen Eingaben durch die Durchführung von Phase 1 und 2 bereits vorliegen und die Suche ohne weitere Beschreibung durchgeführt wird.
-Ausführliche Erläuterungen zu der Konfiguration und Aggregation der Suchen sind in \cref{sec:phase2-suchconfig} und \cref{sec:phase2-suchaggregation} gegeben.
+Die Suche nach \bpp wird wie auch die Suche nach Migrationsverfahren lediglich durch die definierten \glspl{qa} beeinflusst.
+Das bedeutet, dass alle nötigen Eingaben durch die Durchführung von Phase 1 bereits vorliegen und die Suche ohne weitere Vorbereitungen durchgeführt werden kann.
+Insgesamt stehen 51 Patterns und 43 Best Practices zur Auswahl.
+Im Folgenden werden jeweils ersten 20 Suchergebnisse aufgelistet.
 
 \input{tables/phase3/search-results.tex}
