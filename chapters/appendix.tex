@@ -130,11 +130,114 @@ Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und g
 
 \chapter{Material Experteninterviews}
 
+Sowohl um Zeit in den eigentlichen Experteninterviews zu sparen als auch damit alle Experten bei der Befragung möglichst auf dem gleichen Wissensstand sind, wurde dieser Informationsbogen erstellt, der allen Experten im Vorhinein ausgehändigt wird.
+Es wird eine Überblick über das \acrfull{mmf} und den \acrfull{arh} gegeben.
+Außerdem werden zwei Migrationsverfahren, die in den Interviews behandelt werden, vorgestellt.
 
+\section{MMF/ARH}
 
+Die Abteilung \emph{Empirical Software Engineering} des \emph{Institute of Software Engineering} der Universität Stuttgart arbeitet seit einigen Jahren an einem Microservices Migration Framework und damit verbunden auch an der Umsetzung dessen in einem webbasierten Tool, dem \gls{arh}.
+Dieses soll Entwickler dabei anleiten und unterstützen, Migrationen von Monolithen zu Microservices durchzuführen.
+Das Framework unterteilt die Durchführung in drei Phasen:
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{mmf-overview}
+	\caption[\acrfull{mmf} Übersicht]{
+		Übersicht über das \gls{mmf} des \gls{ese}
+	}
+	\label{fig:expert-material-mmf-overview}
+\end{figure}
 
+\begin{itemize}
+	\item \textbf{Phase 1: System Comprehension:}
+	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
+	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \glspl{qa} und gewünschte Szenarien identifiziert.
+	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
+	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
+	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
+	\item \textbf{Phase 2: Strategy Definition:}
+	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
+	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
+	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
+	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
+	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
+	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
+	\item \textbf{Phase 3a: Architecture Definition:}
+	Phase 3 ist in zwei Teile aufgeteilt.
+	Im ersten Abschnitt wird die neue Architektur definiert.
+	Hier wird, basierend auf der Methode zur Migration, die in der Planungsphase gewählt wurde, der \gls{sia} durchgeführt.
+	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
+	Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
+	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
+	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
+	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
+	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
+	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
+\end{itemize}
 
+\section{Migrationsverfahren}
+
+In dieser Thesis wurde in Phase 2 des \gls{mmf} eine Suche nach Migrationsverfahren durchgeführt, bei der im Voraus gezielt auf \jf abgestimmte Filter konfiguriert wurden.
+Dazu gehören die in Phase 1 des Frameworks erhobenen Szenarien/\glspl{qa} sowie zusätzlich definierte Filter. 
+Insgesamt acht dieser Suchergebnisse wurden von mir analysiert und auf ihre Eignung für \jf überprüft.
+Davon wurden zwei als potentiell für \jf geeignet bewertet.
+In den Interviews sollen Sie ebenfalls eine Einschätzung über die Eignung dieser abgeben.
+Deshalb wird deren Funktionsweise im Folgenden beschrieben.
+
+\subsection{Migrationsverfahren 1}
+
+Dieses Verfahren besteht aus drei übergeordneten Schritten (Übersicht in \cref{fig:interviews-migrationsverfahren1}).
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{2_DEF+21_overview}
+	\caption[Funktionsweise Migrationsverfahren 1]{
+		Funktionsweise des Migrationsverfahren 1. Quelle: \url{https://doi.org/10.1016/j.sysarc.2021.102200}
+	}
+	\label{fig:interviews-migrationsverfahren1}
+\end{figure}
+Im ersten Schritt werden die Eingaben für die Methode in Form von \glspl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms (Beispielhafte Eingabe für \jf in \cref{fig:interview-eingabe-verfahren1}).
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{toPDF_workflow}
+	\caption[Mögliche Eingabe Migrationsverfahren 1]{
+		Mögliche Eingabe für Migrationsverfahren 1
+	}
+	\label{fig:interview-eingabe-verfahren1}
+\end{figure}
+
+Für die Bestandteile dieser Eingabe (genannt Aktivitäten) werden im zweiten Schritt Abhängigkeiten in drei verschiedenen Formen analysiert: \emph{control dependencies}, \emph{data dependencies} und \emph{semantic dependencies}.
+\begin{itemize}
+	\item Eine \emph{control dependency} beschreibt eine Abhängigkeit zweier Aktivitäten im Kontrollfluss, also dass eine der Aktivitäten mit hoher Wahrscheinlichkeit auf die andere folgt.
+	\item Eine \emph{data dependency} bildet einen Datenfluss zwischen den Ein- oder Ausgaben zweier Aktivitäten ab.
+	\item Eine \emph{semantic dependency} gibt die Verwandtschaft des Zwecks zweier Aktivitäten an.
+	Die Messung solcher Abhängigkeiten kann anhand der Ähnlichkeit der Namen der Aktivitäten erfolgen.
+\end{itemize}
+
+Schließlich wird die \emph{Machine Learning}-Technik \emph{Collaborative Clustering} verwendet, um die Menge von Aktivitäten in Gruppen (genannt \emph{Cluster}) zu unterteilen.
+Dabei werden die beschriebenen Metriken verwendet, um die Gruppierung anhand dieser zu optimieren.
+Das bedeutet, dass Abhängigkeiten zwischen Aktivitäten des gleichen Clusters gering sein sollten und clusterübergreifend größer sein sollten.
+
+\subsection{Migrationsverfahren 2}
+
+In diesem Verfahren wird das Tool \emph{\acrfull{mb}} vorgestellt, das ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa} anbietet (Übersicht in \cref{fig:interviews-migrationsverfahren2}).
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{3_VPAG21-overview}
+	\caption[Funktionsweise Migrationsverfahren 2]{
+		Funktionsweise des Migrationsverfahren 2. Quelle: \url{https://doi.org/10.1109/ACCESS.2021.3106342}, lizensiert mit \hyperref{https://creativecommons.org/licenses/by/4.0/}{}{}{CCBY} 
+	}
+	\label{fig:interviews-migrationsverfahren2}
+\end{figure}
+
+Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
+Diese haben im Vergleich zum ersten Verfahren eine etwas andere Form, aber die Eingaben sind trotzdem mit denen des ersten Verfahrens vergleichbar; mit den User Stories werden auch übliche Workflows beschrieben.
+Deswegen wird hier keine Beispielhafte Eingabe vorgestellt.
+Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen. 
+Diese können ebenfalls visualisiert und so übersichtlich betrachtet werden.
+Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen. 
 
 \chapter{Feldnotizen}
 \label{chap:field-notes}
