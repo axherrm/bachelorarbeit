@@ -1,0 +1,182 @@
+\chapter{Leitfaden Experteninterviews}
+\label{chap:expert-interviews-leitfaden}
+
+Dieser Leitfaden beschreibt den Plan, nach dem in den Experteninterviews vorgegangen wird.
+
+\section{Übersicht}
+
+Eine Übersicht über den Rahmen der Experteninterviews ist in \cref{tab:expert-interviews-übersicht} gegeben sowie ein Zeitplan in \cref{tab:expert-interviews-zeitplan}.
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|l | p{9cm}|}
+    \hline
+    Ziel & Bewertung der Nützlichkeit des MMF/ARH bei Migration zu Microservices im Spezialfall jadice flow \\ \hline
+    Art des Interviews & Semi-Strukturiert, Einzelinterviews \\ \hline
+    Interviewte & Product Owner, Softwarearchitekt, Softwareentwickler \\ \hline
+    Interviewer & Axel Herrmann \\ \hline
+    Dauer &ca. 45 min \\ \hline
+    Datum & 26.02.2024 \& 29.02.2024 \\ \hline
+    Ort & Büro levigo/ Online-Meeting TODO \\ \hline
+  \end{tabular}
+  \caption[Übersicht Experteninterviews]{
+    Übersicht über die Experteninterviews
+  }
+  \label{tab:expert-interviews-übersicht}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{m{4.1cm} m{8cm} c}
+		\toprule
+		\textbf{Schritt} & \textbf{Ziel} & \textbf{Dauer} \\ \midrule
+		Einleitung & Begrüßung, Zustimmung zur Verarbeitung und Auf\-zeich\-nung, Erfassung grundlegender Daten & 5 min \\
+		Gewünschte Qualitäten ei\-nes \gls{mmf} allgemein & Einschätzung ohne Bezug auf MMF/ARH & 10 min \\
+		Verständnisfragen zu MMF/\-ARH & Verständnisprobleme eliminieren, damit spätere Fra\-gen auf vergleichbarem Wissensstand durchgeführt werden können & 10 min \\
+		Evaluation MMF/ARH & Hauptteil. Bewertung der in dieser Arbeit durch\-ge\-führ\-ten Anwendung des ARH auf \jf & 20 min \\
+		\bottomrule
+	\end{tabular}
+	\caption[Zeitplan Experteninterviews]{
+		Zeitplan der Experteninterviews
+	}
+	\label{tab:expert-interviews-zeitplan}
+\end{table}
+
+
+\section{Einleitung}
+
+Zu Beginn oder je nach Betrachtung vor Beginn der Experteninterviews werden einige Formalitäten geklärt.
+Dabei wird nach einem klaren, strukturiertem Plan vorgegangen:
+
+\begin{enumerate}
+	\item Zustimmung zur Aufzeichnung des Interviews und zur Verarbeitung der Daten
+	\item Übersicht über die Präambel
+	\item Start der Aufzeichnung
+	\item Dem Interviewten seine Rolle nennen (da einzelne Interviewte teilweise mehrere Rollen innehaben)
+	\item Professionelle Erfahrung in der Informatik in Jahren
+	\item Erfahrung mit Microservices in Jahren
+	\item Arbeit an dem Produkt (\emph{jadice server} zählt als Vorgänger ebenfalls zu \jf) in Jahren
+\end{enumerate}
+
+\section{Evaluation}
+
+Nach der Einleitung kann der Hauptteil der Experteninterviews beginnen.
+Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen sind.
+Deswegen werden die Fragen so wie hier beschrieben gestellt.
+
+\subsection{Gewünschte Qualitäten eines MMF allgemein}
+
+Versetzen Sie sich zurück in die Zeit, in der die Planung der Migration von \emph{jadice server} zu einer \acrlong{msa} bevorstand, aus der dann \jf entstanden ist.
+Sie suchen nach einem Werkzeug, einer Software in einer beliebigen Form, das Sie bei der Migration zu Microservices unterstützen soll.
+
+\begin{enumerate}
+	\item Welche Aufgaben soll ein solches Werkzeug für Sie übernehmen bzw. bei welchen soll es Sie unterstützen?
+	\item Falls noch nicht in der letzten Frage erläutert: Welche Qualitäten soll das Werkzeug mich sich bringen?
+\end{enumerate}
+
+\subsection{Verständnisfragen zu MMF/ARH}
+
+\begin{enumerate}
+	\item Hatten Sie Probleme, Teile des Informationsmaterials zu verstehen, soll ich bestimmte Details genauer erläutern?
+	\item Falls Probleme bestehen: Was sollte am Informationsmaterial verbessert werden?
+	\item Falls nicht durch Besprechung der Probleme bereits geschehen: Kurze Zusammenfassung über die zwei enthaltenen Migrationsverfahren.
+\end{enumerate}
+
+\subsection{Evaluation MMF/ARH}
+
+\begin{enumerate}
+	\item Wie schätzen Sie die Nützlichkeit der vorgestellten Methoden im Bezug auf das Refactoring von \jf mit diesen mit Ziel der Verbesserung der Granularität, des Kommunikationsmodells und des Netzwerk-Overheads ein?
+	\item Wie passend schätzen Sie die folgenden Best Practices und Patterns für \jf ein?
+	\item Würden Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für \jf zum jetzigen Zeitpunkt als sinnvoll und potentiell gewinnbringend betrachten?
+	\item Hätten Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für die Migration von \emph{jadice server} zu Microservices in der Vergangenheit  als sinnvoll und potentiell gewinnbringend betrachten?
+\end{enumerate}
+
+
+
+
+
+\chapter{Präambel Experteninterviews}
+\label{chap:expert-interviews-preamble}
+
+In diesem Dokument werden die allgemeinen Richtlinien und ethischen Erwägungen für die Experteninterviews dieser Fallstudie beschrieben.
+
+\section{Ziel der Studie}
+
+Wir erforschen das toolunterstützte Refactoring von Microservices mit dem Tool \emph{\acrlong{arh}} nach dem \emph{\acrlong{mmf}}.
+Ziel dieser Fallstudie ist es, diese am Produkt \jf der Firma \emph{levigo solutions} zu testen und diesen Test zu evaluieren.
+Damit soll auf der einen Seite eine potentielle Überarbeitung von \jf angestoßen werden und auf der anderen Seite Erkenntnisse über die Effektivität des Frameworks und Tools gewonnen werden, die in Zukunft bei der Weiterentwicklung dieser helfen sollen.
+
+Das Framework hat allgemein das Ziel, die Lücke zwischen Industrie und Akademie zu verringern, indem wissenschaftliche Methoden für die Migration zu Microservices-Architekturen in einem webbasierten Tool kategorisiert und so für die Industrie zugänglich gemacht werden.
+
+\section{Ziel der Experteninterviews}
+
+In diesen Interviews soll Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
+Dabei soll sowohl eine allgemeine Bewertung des Konzepts des Frameworks durchgeführt werden als auch die spezielle Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat.
+
+\section{Vertraulichkeit und Anonymität}
+Alles, was in den Interviews gesagt wird, wird streng vertraulich behandelt und ohne die Erlaubnis der Teilnehmer an niemanden außerhalb unseres Forschungsteams weitergegeben.
+Die Ergebnisse werden vor der Veröffentlichung aggregiert und anonymisiert.
+Einzelne Aussagen können in keinster Weise auf einen Mitarbeiter zurückgeführt werden.
+Auch nach dem Interview haben die Teilnehmer die Möglichkeit, Aussagen vor der Auswertung auszuschließen oder zu schwärzen.
+Die vollständigen Interviewtranskripte werden NICHT veröffentlicht.
+
+\section{Interviewprozess und Analyse}
+Die Befragten werden über das allgemeine Thema der Studie informiert, so dass sie damit vertraut sind und sich vorab informieren können, falls sie dies wünschen.
+Die Dauer des Interviews wird auf 45 Minuten geschätzt.
+Ich bitte Sie um Ihre Erlaubnis, das Interview für die Transkription aufzuzeichnen.
+Die schriftliche Abschrift wird dem Teilnehmer zur endgültigen Genehmigung zurückgeschickt.
+Dies ist die letzte Möglichkeit, Aussagen aus dem Interview zu entfernen oder zu kürzen.
+Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und genehmigte Transkript wird die einzige Grundlage für die qualitative Inhaltsanalyse sein.
+
+\chapter{Material Experteninterviews}
+
+
+
+
+
+
+
+\chapter{Feldnotizen}
+\label{chap:field-notes}
+
+%\fieldnote
+%{F1\_P2\_11\_20\_2023\_Activity}
+%{test}
+%{Datum, Uhrzeit}
+%{Ort}
+%{Personen}
+%{Phase Schritt MMF}
+%{
+%	aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa aaaaaa aaaaaa aaaaaaa
+%}
+%{
+%	Kommentare
+%}
+%{
+%	Was lief gut
+%}
+%{
+%	Probleme
+%}
+%{
+%	Empfindungen
+%}
+
+\input{field_notes/F01_P2_11_20_2023_FilterAuswahl}
+\input{field_notes/F02_P2_11_22_2023_FilterAuswahl}
+\input{field_notes/F03_P2_11_27_2023_FilterPrio}
+\input{field_notes/F04_P2_12_13_2023_Ergebnisbetrachtung}
+\input{field_notes/F05_P2_12_20_2023_Ergebnisbetrachtung_2}
+\input{field_notes/F06_P2_12_20_2023_Ergebnisbetrachtung_3}
+\input{field_notes/F07_P2_12_21_2023_Ergebnisbetrachtung_4}
+\input{field_notes/F08_P2_01_10_2024_Ergebnisbetrachtung_5}
+\input{field_notes/F09_P2_01_10_2024_Ergebnisbetrachtung_6}
+\input{field_notes/F10_P2_01_11_2024_Ergebnisbetrachtung_7}
+\input{field_notes/F11_P2_01_11_2024_Ergebnisbetrachtung_8}
+\input{field_notes/F12_P2_01_17_2024_Ergebnisbetrachtung_9}
+\input{field_notes/F13_P2_01_18_2024_Ergebnisbetrachtung_10}
+\input{field_notes/F14_P2_01_18_2024_Ergebnisbetrachtung_11}
+\input{field_notes/F15_P3_01_30_2024_Methodenanwendung}
+\input{field_notes/F16_P3_02_07_2024_Methodenanwendung_2}
+\input{field_notes/F17_P3_02_08_2024_Methodenanwendung_3}
+\input{field_notes/F18_P3_02_09_2024_Besprechung_Methodenanwendung}
