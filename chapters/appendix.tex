@@ -11,12 +11,12 @@ Eine Übersicht über den Rahmen der Experteninterviews ist in \cref{tab:expert-
   \centering
   \begin{tabular}{|l | p{9cm}|}
     \hline
-    Ziel & Bewertung der Nützlichkeit des MMF/ARH bei Migration zu Microservices im Spezialfall jadice flow \\ \hline
+    Ziel & Bewertung der Nützlichkeit des MMF/ARH bei Migration zu Microservices im Spezialfall \jf \\ \hline
     Art des Interviews & Semi-Strukturiert, Einzelinterviews \\ \hline
     Interviewte & Product Owner, Softwarearchitekt, Softwareentwickler \\ \hline
     Interviewer & Axel Herrmann \\ \hline
     Dauer &ca. 45 min \\ \hline
-    Datum & 26.02.2024 \& 29.02.2024 \\ \hline
+    Datum & 26.02.2024 und 29.02.2024 \\ \hline
     Ort & Büro levigo/ Online-Meeting TODO \\ \hline
   \end{tabular}
   \caption[Übersicht Experteninterviews]{
@@ -27,13 +27,13 @@ Eine Übersicht über den Rahmen der Experteninterviews ist in \cref{tab:expert-
 
 \begin{table}[!ht]
 	\centering
-	\begin{tabular}{m{4.1cm} m{8cm} c}
+	\begin{tabular}{m{4.2cm} m{8cm} c}
 		\toprule
 		\textbf{Schritt} & \textbf{Ziel} & \textbf{Dauer} \\ \midrule
-		Einleitung & Begrüßung, Zustimmung zur Verarbeitung und Auf\-zeich\-nung, Erfassung grundlegender Daten & 5 min \\
-		Gewünschte Qualitäten ei\-nes \gls{mmf} allgemein & Einschätzung ohne Bezug auf MMF/ARH & 10 min \\
-		Verständnisfragen zu MMF/\-ARH & Verständnisprobleme eliminieren, damit spätere Fra\-gen auf vergleichbarem Wissensstand durchgeführt werden können & 10 min \\
-		Evaluation MMF/ARH & Hauptteil. Bewertung der in dieser Arbeit durch\-ge\-führ\-ten Anwendung des ARH auf \jf & 20 min \\
+		Einführung & Begrüßung, Zustimmung zur Verarbeitung und Auf\-zeich\-nung, Erfassung grundlegender Daten & 5 min \\
+		Gewünschte Qualitäten ei\-nes \gls{mmf} allgemein & Einschätzung ohne Bezug auf \gls{mmf}/\gls{arh} & 10 min \\
+		Verständnisfragen zu \gls{mmf}/ \gls{arh} & Verständnisprobleme eliminieren, damit spätere Fra\-gen auf vergleichbarem Wissensstand durchgeführt werden können & 10 min \\
+		Evaluation \gls{mmf}/\gls{arh} & Hauptteil. Bewertung der in dieser Arbeit durch\-ge\-führ\-ten Anwendung des \gls{arh} auf \jf & 20 min \\
 		\bottomrule
 	\end{tabular}
 	\caption[Zeitplan Experteninterviews]{
@@ -43,7 +43,7 @@ Eine Übersicht über den Rahmen der Experteninterviews ist in \cref{tab:expert-
 \end{table}
 
 
-\section{Einleitung}
+\section{Einführung}
 
 Zu Beginn oder je nach Betrachtung vor Beginn der Experteninterviews werden einige Formalitäten geklärt.
 Dabei wird nach einem klaren, strukturiertem Plan vorgegangen:
@@ -53,15 +53,15 @@ Dabei wird nach einem klaren, strukturiertem Plan vorgegangen:
 	\item Übersicht über die Präambel
 	\item Start der Aufzeichnung
 	\item Dem Interviewten seine Rolle nennen (da einzelne Interviewte teilweise mehrere Rollen innehaben)
-	\item Professionelle Erfahrung in der Informatik in Jahren
-	\item Erfahrung mit Microservices in Jahren
-	\item Arbeit an dem Produkt (\emph{jadice server} zählt als Vorgänger ebenfalls zu \jf) in Jahren
+	\item Professionelle Erfahrung in der Informatik (in Jahren)
+	\item Erfahrung mit Microservices (in Jahren)
+	\item Arbeit an dem Produkt (in Jahren, \emph{jadice server} zählt als Vorgänger ebenfalls zu \jf)
 \end{enumerate}
 
 \section{Evaluation}
 
 Nach der Einleitung kann der Hauptteil der Experteninterviews beginnen.
-Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen sind.
+Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen gestellt sind.
 Deswegen werden die Fragen so wie hier beschrieben gestellt.
 
 \subsection{Gewünschte Qualitäten eines MMF allgemein}
@@ -71,7 +71,7 @@ Sie suchen nach einem Werkzeug, einer Software in einer beliebigen Form, das Sie
 
 \begin{enumerate}
 	\item Welche Aufgaben soll ein solches Werkzeug für Sie übernehmen bzw. bei welchen soll es Sie unterstützen?
-	\item Falls noch nicht in der letzten Frage erläutert: Welche Qualitäten soll das Werkzeug mich sich bringen?
+	\item Falls noch nicht in der letzten Frage erläutert: Welche Qualitäten soll das Werkzeug mit sich bringen?
 \end{enumerate}
 
 \subsection{Verständnisfragen zu MMF/ARH}
@@ -85,8 +85,8 @@ Sie suchen nach einem Werkzeug, einer Software in einer beliebigen Form, das Sie
 \subsection{Evaluation MMF/ARH}
 
 \begin{enumerate}
-	\item Wie schätzen Sie die Nützlichkeit der vorgestellten Methoden im Bezug auf das Refactoring von \jf mit diesen mit Ziel der Verbesserung der Granularität, des Kommunikationsmodells und des Netzwerk-Overheads ein?
-	\item Wie passend schätzen Sie die folgenden Best Practices und Patterns für \jf ein?
+	\item Sie kennen nun zwei der vorgeschlagenen Migrationsmethoden. Wie würden Sie die Nützlichkeit dieser im Bezug auf das Refactoring von \jf mit Ziel der Verbesserung der Granularität, des Kommunikationsmodells und des Netzwerk-Overheads ein?
+	\item Wie passend schätzen Sie die vorgelegten Best Practices und Patterns für \jf ein?
 	\item Würden Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für \jf zum jetzigen Zeitpunkt als sinnvoll und potentiell gewinnbringend betrachten?
 	\item Hätten Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für die Migration von \emph{jadice server} zu Microservices in der Vergangenheit  als sinnvoll und potentiell gewinnbringend betrachten?
 \end{enumerate}
@@ -102,7 +102,7 @@ In diesem Dokument werden die allgemeinen Richtlinien und ethischen Erwägungen 
 
 \section{Ziel der Studie}
 
-Wir erforschen das toolunterstützte Refactoring von Microservices mit dem Tool \emph{\acrlong{arh}} nach dem \emph{\acrlong{mmf}}.
+In dieser Arbeit wird das toolunterstützte Refactoring von Microservices mit dem Tool \emph{\acrlong{arh}} nach dem \emph{\acrlong{mmf}} erforscht.
 Ziel dieser Fallstudie ist es, diese am Produkt \jf der Firma \emph{levigo solutions} zu testen und diesen Test zu evaluieren.
 Damit soll auf der einen Seite eine potentielle Überarbeitung von \jf angestoßen werden und auf der anderen Seite Erkenntnisse über die Effektivität des Frameworks und Tools gewonnen werden, die in Zukunft bei der Weiterentwicklung dieser helfen sollen.
 
@@ -110,8 +110,8 @@ Das Framework hat allgemein das Ziel, die Lücke zwischen Industrie und Akademie
 
 \section{Ziel der Experteninterviews}
 
-In diesen Interviews soll Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
-Dabei soll sowohl eine allgemeine Bewertung des Konzepts des Frameworks durchgeführt werden als auch die spezielle Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat.
+In diesen Interviews soll eine Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
+Dabei soll sowohl eine allgemeine Bewertung des Konzepts des Frameworks, als auch die spezielle Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat, durchgeführt werden.
 
 \section{Vertraulichkeit und Anonymität}
 Alles, was in den Interviews gesagt wird, wird streng vertraulich behandelt und ohne die Erlaubnis der Teilnehmer an niemanden außerhalb unseres Forschungsteams weitergegeben.
@@ -123,7 +123,7 @@ Die vollständigen Interviewtranskripte werden NICHT veröffentlicht.
 \section{Interviewprozess und Analyse}
 Die Befragten werden über das allgemeine Thema der Studie informiert, so dass sie damit vertraut sind und sich vorab informieren können, falls sie dies wünschen.
 Die Dauer des Interviews wird auf 45 Minuten geschätzt.
-Ich bitte Sie um Ihre Erlaubnis, das Interview für die Transkription aufzuzeichnen.
+Sie werden um Erlaubnis gebeten, das Interview für die Transkription aufzuzeichnen.
 Die schriftliche Abschrift wird dem Teilnehmer zur endgültigen Genehmigung zurückgeschickt.
 Dies ist die letzte Möglichkeit, Aussagen aus dem Interview zu entfernen oder zu kürzen.
 Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und genehmigte Transkript wird die einzige Grundlage für die qualitative Inhaltsanalyse sein.
@@ -131,7 +131,7 @@ Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und g
 \chapter{Material Experteninterviews}
 
 Sowohl um Zeit in den eigentlichen Experteninterviews zu sparen als auch damit alle Experten bei der Befragung möglichst auf dem gleichen Wissensstand sind, wurde dieser Informationsbogen erstellt, der allen Experten im Vorhinein ausgehändigt wird.
-Es wird eine Überblick über das \acrfull{mmf} und den \acrfull{arh} gegeben.
+Es wird ein Überblick über das \acrfull{mmf} und den \acrfull{arh} gegeben.
 Außerdem werden zwei Migrationsverfahren, die in den Interviews behandelt werden, vorgestellt.
 
 \section{MMF/ARH}
@@ -180,7 +180,7 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 
 In dieser Thesis wurde in Phase 2 des \gls{mmf} eine Suche nach Migrationsverfahren durchgeführt, bei der im Voraus gezielt auf \jf abgestimmte Filter konfiguriert wurden.
 Dazu gehören die in Phase 1 des Frameworks erhobenen Szenarien/\glspl{qa} sowie zusätzlich definierte Filter. 
-Insgesamt acht dieser Suchergebnisse wurden von mir analysiert und auf ihre Eignung für \jf überprüft.
+Insgesamt acht dieser Suchergebnisse wurden im Rahmen dieser Thesis analysiert und auf ihre Eignung für \jf überprüft.
 Davon wurden zwei als potentiell für \jf geeignet bewertet.
 In den Interviews sollen Sie ebenfalls eine Einschätzung über die Eignung dieser abgeben.
 Deshalb wird deren Funktionsweise im Folgenden beschrieben.
@@ -195,7 +195,7 @@ Dieses Verfahren besteht aus drei übergeordneten Schritten (Übersicht in \cref
 		Funktionsweise des Migrationsverfahren 1. Quelle: \url{https://doi.org/10.1016/j.sysarc.2021.102200}
 	}
 	\label{fig:interviews-migrationsverfahren1}
-\end{figure}
+\end{figure} \\
 Im ersten Schritt werden die Eingaben für die Methode in Form von \glspl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms (Beispielhafte Eingabe für \jf in \cref{fig:interview-eingabe-verfahren1}).
 
 \begin{figure}[!ht]
@@ -234,10 +234,80 @@ In diesem Verfahren wird das Tool \emph{\acrfull{mb}} vorgestellt, das ein semia
 
 Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
 Diese haben im Vergleich zum ersten Verfahren eine etwas andere Form, aber die Eingaben sind trotzdem mit denen des ersten Verfahrens vergleichbar; mit den User Stories werden auch übliche Workflows beschrieben.
-Deswegen wird hier keine Beispielhafte Eingabe vorgestellt.
+Deswegen wird hier keine beispielhafte Eingabe vorgestellt.
 Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen. 
 Diese können ebenfalls visualisiert und so übersichtlich betrachtet werden.
 Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen. 
+
+\section{Best Practices und Patterns}
+
+Neben der Wahl von Migrationsmethoden unterstützt der \gls{arh} Entwickler außerdem bei der Wahl zu implementierender Best Practices und Patterns.
+Für \jf wurden von dem Tool die in \cref{tab:interviews-patterns} sichtbaren \bpp vorgeschlagen.
+Auch über diese wird von Ihnen eine Bewertung im Interview abgefragt.
+
+\begin{table}[!htb]
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{p{5cm} c}
+			\toprule
+			\textbf{Pattern} & \textbf{Matches} \\ \midrule
+			Service Registry                            & 11/17 \\ \hline
+			CQRS                                        & 10/17 \\ \hline
+			Pipes and Filters                           & 10/17 \\ \hline
+			Asynchronous Messaging                      & 9/17 \\ \hline
+			Gateway Offloading                          & 9/17 \\ \hline
+			Load Balancer                               & 9/17 \\ \hline
+			Ambassador                                  & 7/17 \\ \hline
+			Backend for Frontend                        & 7/17 \\ \hline
+			Container                                   & 7/17 \\ \hline
+			Database is the Service                     & 7/17 \\ \hline
+			Scalable Store                              & 7/17 \\ \hline
+			API Gateway                                 & 6/17 \\ \hline
+			Circuit Breaker                             & 6/17 \\ \hline
+			Deploy clusters and orchestrate containers  & 6/17 \\ \hline
+			Edge Server                                 & 6/17 \\ \hline
+			External Load Balancer                      & 6/17 \\ \hline
+			Gateway Aggregation                         & 6/17 \\ \hline
+			Internal Load Balancer                      & 6/17 \\ \hline
+			Local Database Proxy                        & 6/17 \\ \hline
+			Local Sharding-based Router                 & 6/17 \\ \bottomrule
+		\end{tabular}
+	\end{minipage}%
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\begin{tabular}{p{5cm} c}
+			\toprule
+			\textbf{Best Practices} & \textbf{Matches} \\ \midrule
+			Isolated State                        & 11/17 \\ \hline
+			Dynamic Scheduling                    & 9/17 \\ \hline
+			Infrastructure Abstraction            & 8/17 \\ \hline
+			Use Infrastructure as Code            & 8/17 \\ \hline
+			Acyclic Calls                         & 7/17 \\ \hline
+			Automated Infrastructure              & 6/17 \\ \hline
+			Automated Monitoring                  & 6/17 \\ \hline
+			Operation Outsourcing                 & 6/17 \\ \hline
+			Cloud Vendor Abstraction              & 5/17 \\ \hline
+			Immutable Artifacts                   & 5/17 \\ \hline
+			Standardized Deployment Unit          & 5/17 \\ \hline
+			Built-in Autoscaling                  & 4/17 \\ \hline
+			Persistent Communication              & 4/17 \\ \hline
+			API-based Communication               & 3/17 \\ \hline
+			Automated Restarts                    & 3/17 \\ \hline
+			Autonomous Fault Handling             & 3/17 \\ \hline
+			Coarse-Grained Microservices          & 3/17 \\ \hline
+			Communication Indirection             & 3/17 \\ \hline
+			Guarded Ingress                       & 3/17 \\ \hline
+			Loose Coupling                        & 3/17 \\ \bottomrule
+			\\
+		\end{tabular}
+	\end{minipage}
+	
+	\caption[Ergebnisse der Suche mit ARH nach Best Practices und Patterns]{
+		Ergebnisse der Suche mit ARH nach Best Practices und Patterns, nach Matches sortiert.
+		Die Matches entsprechen den im \gls{arh} angezeigten Matches.
+	}
+	\label{tab:interviews-patterns}
+\end{table}
 
 \chapter{Feldnotizen}
 \label{chap:field-notes}
