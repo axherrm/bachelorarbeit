@@ -31,9 +31,9 @@ Eine Übersicht über den Rahmen der Experteninterviews ist in \cref{tab:expert-
 		\toprule
 		\textbf{Schritt} & \textbf{Ziel} & \textbf{Dauer} \\ \midrule
 		Einführung & Begrüßung, Zustimmung zur Verarbeitung und Auf\-zeich\-nung, Erfassung grundlegender Daten & 5 min \\
-		Gewünschte Qualitäten ei\-nes \gls{mmf} allgemein & Einschätzung ohne Bezug auf \gls{mmf}/\gls{arh} & 10 min \\
 		Verständnisfragen zu \gls{mmf}/ \gls{arh} & Verständnisprobleme eliminieren, damit spätere Fra\-gen auf vergleichbarem Wissensstand durchgeführt werden können & 10 min \\
-		Evaluation \gls{mmf}/\gls{arh} & Hauptteil. Bewertung der in dieser Arbeit durch\-ge\-führ\-ten Anwendung des \gls{arh} auf \jf & 20 min \\
+		Allgemeine Vorgehensweise eines/des \gls{mmf} & Sehr abstrakte Bewertung \gls{mmf}/\gls{arh}  & 10 min \\
+		Evaluation eines po\-ten\-ti\-el\-len Refactorings von \jf mit \gls{mmf}/\gls{arh} & Hauptteil. Bewertung der in dieser Arbeit durch\-ge\-führ\-ten Anwendung des \gls{arh} auf \jf & 20 min \\
 		\bottomrule
 	\end{tabular}
 	\caption[Zeitplan Experteninterviews]{
@@ -61,34 +61,52 @@ Dabei wird nach einem klaren, strukturiertem Plan vorgegangen:
 \section{Evaluation}
 
 Nach der Einleitung kann der Hauptteil der Experteninterviews beginnen.
-Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen gestellt sind.
+Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen gestellt werden.
 Deswegen werden die Fragen so wie hier beschrieben gestellt.
-
-\subsection{Gewünschte Qualitäten eines MMF allgemein}
-
-Versetzen Sie sich zurück in die Zeit, in der die Planung der Migration von \emph{jadice server} zu einer \acrlong{msa} bevorstand, aus der dann \jf entstanden ist.
-Sie suchen nach einem Werkzeug, einer Software in einer beliebigen Form, das Sie bei der Migration zu Microservices unterstützen soll.
-
-\begin{enumerate}
-	\item Welche Aufgaben soll ein solches Werkzeug für Sie übernehmen bzw. bei welchen soll es Sie unterstützen?
-	\item Falls noch nicht in der letzten Frage erläutert: Welche Qualitäten soll das Werkzeug mit sich bringen?
-\end{enumerate}
 
 \subsection{Verständnisfragen zu MMF/ARH}
 
+Da der Informationsbogen relativ komplexe Konstrukte enthält, ist die Erwartung nicht, dass jeder Teilnehmer zu Beginn des Interviews alles darauf verstanden hat.
+Deswegen werden wir anfangs etwas über die enthaltenen Informationen sprechen, um mögliche Lücken zu schließen.
+
 \begin{enumerate}
 	\item Hatten Sie Probleme, Teile des Informationsmaterials zu verstehen, soll ich bestimmte Details genauer erläutern?
-	\item Falls Probleme bestehen: Was sollte am Informationsmaterial verbessert werden?
 	\item Falls nicht durch Besprechung der Probleme bereits geschehen: Kurze Zusammenfassung über die zwei enthaltenen Migrationsverfahren.
 \end{enumerate}
 
-\subsection{Evaluation MMF/ARH}
+\subsection{Allgemeine Vorgehensweise eines/des \gls{mmf}}
+
+Versetzen Sie sich zurück in die Zeit, in der die Planung der Migration von \emph{jadice server} zu einer \acrlong{msa} bevorstand, aus der dann \jf entstanden ist.
+Sie suchen nach einem Werkzeug oder einer Software in einer beliebigen Form, das oder die Sie bei der Migration zu Microservices unterstützen soll.
 
 \begin{enumerate}
-	\item Sie kennen nun zwei der vorgeschlagenen Migrationsmethoden. Wie würden Sie die Nützlichkeit dieser im Bezug auf das Refactoring von \jf mit Ziel der Verbesserung der Granularität, des Kommunikationsmodells und des Netzwerk-Overheads ein?
-	\item Wie passend schätzen Sie die vorgelegten Best Practices und Patterns für \jf ein?
+	\item Welche Aufgaben könnten Sie sich vorstellen, bei denen Sie ein solches Werkzeug sinnvoll unterstützen könnte?
+	\begin{itemize}
+		\item Falls noch nicht in der Antwort erläutert: Welche Qualitäten soll das Werkzeug mit sich bringen?
+	\end{itemize}
+	\item Finden Sie die allgemeine Funktions- und Vorgehensweise des \gls{mmf}/\gls{arh} sinnvoll?
+	\item Welche Probleme sehen Sie bei der Funktionsweise des Frameworks?
+\end{enumerate}
+
+\subsection{Evaluation eines potentiellen Refactorings von \jf mit \gls{mmf}/\gls{arh}}
+
+Sie kennen zwei der vorgeschlagenen Migrationsmethoden.
+Nun soll eine potentielle Anwendung dieser Methoden mit \jf bewertet werden.
+
+\begin{enumerate}
+	\item Jeweils für Methode 1 und 2:
+	\begin{itemize}
+		\item Wie nützlich schätzen sie diese Methode bei einer potentiellen Anwendung mit \jf ein?
+		\item Falls nicht bereits erwähnt: Wie passend wäre Vorgehensweise der Methode auf einer abstrakten Ebene (Art der Eingabe, Bestimmung der Metriken, Extraktion von Microservices)?
+		\item Falls nicht bereits erwähnt: Auf einer weniger abstrakten Ebene: Welche konkreten Probleme könnten Sie sich bei der Anwendung mit \jf vorstellen?
+	\end{itemize}
+	\item  Jeweils für \bpp
+	\begin{itemize}
+		\item Wie viele der gezeigten Best Practices/Patterns sind bereits in \jf angewendet/teilweise angewendet?
+		\item Wie viele der gezeigten Best Practices/Patterns würden Sie als potentiell sinnvoll für die Implementierung einschätzen?
+	\end{itemize}
 	\item Würden Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für \jf zum jetzigen Zeitpunkt als sinnvoll und potentiell gewinnbringend betrachten?
-	\item Hätten Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für die Migration von \emph{jadice server} zu Microservices in der Vergangenheit  als sinnvoll und potentiell gewinnbringend betrachten?
+	\item Hätten Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für die Migration von \emph{jadice server} zu Microservices in der Vergangenheit  als sinnvoll und potentiell gewinnbringend betrachtet?
 \end{enumerate}
 
 
@@ -102,21 +120,21 @@ In diesem Dokument werden die allgemeinen Richtlinien und ethischen Erwägungen 
 
 \section{Ziel der Studie}
 
-In dieser Arbeit wird das toolunterstützte Refactoring von Microservices mit dem Tool \emph{\acrlong{arh}} nach dem \emph{\acrlong{mmf}} erforscht.
-Ziel dieser Fallstudie ist es, diese am Produkt \jf der Firma \emph{levigo solutions} zu testen und diesen Test zu evaluieren.
+In der Thesis wird das toolunterstützte Refactoring von Microservices mit dem Tool \emph{\acrlong{arh}} nach dem \emph{\acrlong{mmf}} erforscht.
+Ziel der Fallstudie ist es, diese am Produkt \jf der Firma \emph{levigo solutions} zu testen und diesen Test zu evaluieren.
 Damit soll auf der einen Seite eine potentielle Überarbeitung von \jf angestoßen werden und auf der anderen Seite Erkenntnisse über die Effektivität des Frameworks und Tools gewonnen werden, die in Zukunft bei der Weiterentwicklung dieser helfen sollen.
 
-Das Framework hat allgemein das Ziel, die Lücke zwischen Industrie und Akademie zu verringern, indem wissenschaftliche Methoden für die Migration zu Microservices-Architekturen in einem webbasierten Tool kategorisiert und so für die Industrie zugänglich gemacht werden.
+Das Framework hat allgemein das Ziel, die Lücke zwischen Industrie und Forschung zu verringern, indem wissenschaftliche Methoden für die Migration zu Microservices-Architekturen in einem webbasierten Tool kategorisiert und so für die Industrie zugänglich gemacht werden.
 
 \section{Ziel der Experteninterviews}
 
-In diesen Interviews soll eine Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
+In den Interviews soll eine Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
 Dabei soll sowohl eine allgemeine Bewertung des Konzepts des Frameworks, als auch die spezielle Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat, durchgeführt werden.
 
 \section{Vertraulichkeit und Anonymität}
 Alles, was in den Interviews gesagt wird, wird streng vertraulich behandelt und ohne die Erlaubnis der Teilnehmer an niemanden außerhalb unseres Forschungsteams weitergegeben.
 Die Ergebnisse werden vor der Veröffentlichung aggregiert und anonymisiert.
-Einzelne Aussagen können in keinster Weise auf einen Mitarbeiter zurückgeführt werden.
+Einzelne Aussagen können in keinster Weise auf einen Teilnehmer zurückgeführt werden.
 Auch nach dem Interview haben die Teilnehmer die Möglichkeit, Aussagen vor der Auswertung auszuschließen oder zu schwärzen.
 Die vollständigen Interviewtranskripte werden NICHT veröffentlicht.
 
@@ -129,10 +147,11 @@ Dies ist die letzte Möglichkeit, Aussagen aus dem Interview zu entfernen oder z
 Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und genehmigte Transkript wird die einzige Grundlage für die qualitative Inhaltsanalyse sein.
 
 \chapter{Material Experteninterviews}
-
-Sowohl um Zeit in den eigentlichen Experteninterviews zu sparen als auch damit alle Experten bei der Befragung möglichst auf dem gleichen Wissensstand sind, wurde dieser Informationsbogen erstellt, der allen Experten im Vorhinein ausgehändigt wird.
+Dieser Informationsbogen wurde erstellt, sowohl um Zeit in den eigentlichen Experteninterviews zu sparen, als auch damit alle Experten bei der Befragung möglichst auf dem gleichen Wissensstand sind.
 Es wird ein Überblick über das \acrfull{mmf} und den \acrfull{arh} gegeben.
 Außerdem werden zwei Migrationsverfahren, die in den Interviews behandelt werden, vorgestellt.
+Der Bogen wird allen Experten im Vorhinein ausgehändigt, es wird aber kein vollständiges Verständnis der Informationen erwartet.
+Im Vorfeld des Interviews werden die enthaltenen Informationen nochmals kurz zusammen besprochen, um mögliche Unklarheiten und Verständnisprobleme zu beseitigen.
 
 \section{MMF/ARH}
 
@@ -152,24 +171,24 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 \begin{itemize}
 	\item \textbf{Phase 1: System Comprehension:}
 	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
-	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \glspl{qa} und gewünschte Szenarien identifiziert.
+	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \acrfull{qa} und gewünschte Szenarien identifiziert.
 	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
 	\item \textbf{Phase 2: Strategy Definition:}
-	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
 	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
 	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
-	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
+	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf den in Phase 1 eingegebenen \acrlongpl{qa} Methoden empfiehlt.
 	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
 	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
-	Hier wird, basierend auf der Methode zur Migration, die in der Planungsphase gewählt wurde, der \gls{sia} durchgeführt.
-	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
+	Hier wird die in Phase 2 gewählte Migrationsmethode durchgeführt, wodurch eine Aufteilung in Microservices entsteht.
+	Das Tool unterstützt Entwickler in dieser Phase durch das Vorschlagen von geeigneten \bpp, deren Implementierung potentiell wertvoll für die in Phase 1 definierten \glspl{qa} wäre.
+	\item \textbf{Phase 3b: Service Implementation:} 
 	Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
-	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
+	In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
 	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
 	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
 	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
@@ -188,15 +207,23 @@ Deshalb wird deren Funktionsweise im Folgenden beschrieben.
 \subsection{Migrationsverfahren 1}
 
 Dieses Verfahren besteht aus drei übergeordneten Schritten (Übersicht in \cref{fig:interviews-migrationsverfahren1}).
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=1.0\textwidth]{2_DEF+21_overview}
+%	\caption[Funktionsweise Migrationsverfahren 1]{
+%		Funktionsweise des Migrationsverfahren 1. Quelle: \url{https://doi.org/10.1016/j.sysarc.2021.102200}
+%	}
+%	\label{fig:interviews-migrationsverfahren1}
+%\end{figure} \\
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{2_DEF+21_overview}
+	\includegraphics[width=1.0\textwidth]{verfahren1-übersicht.drawio}
 	\caption[Funktionsweise Migrationsverfahren 1]{
-		Funktionsweise des Migrationsverfahren 1. Quelle: \url{https://doi.org/10.1016/j.sysarc.2021.102200}
+		Funktionsweise des ersten Migrationsverfahrens
 	}
 	\label{fig:interviews-migrationsverfahren1}
 \end{figure} \\
-Im ersten Schritt werden die Eingaben für die Methode in Form von \glspl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms (Beispielhafte Eingabe für \jf in \cref{fig:interview-eingabe-verfahren1}).
+Im ersten Schritt werden die Eingaben für die Methode in Form von \acrfullpl{bp} gesammelt und logisch verbunden, beispielsweise in Form eines \gls{bpmn}-Diagramms (Beispielhafte Eingabe für \jf in \cref{fig:interview-eingabe-verfahren1}).
 
 \begin{figure}[!ht]
 	\centering
@@ -223,14 +250,22 @@ Das bedeutet, dass Abhängigkeiten zwischen Aktivitäten des gleichen Clusters g
 
 In diesem Verfahren wird das Tool \emph{\acrfull{mb}} vorgestellt, das ein semiautomatisches Modell zur Bewertung der Granularität einer \gls{msa} anbietet (Übersicht in \cref{fig:interviews-migrationsverfahren2}).
 
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{3_VPAG21-overview}
+%	\caption[Funktionsweise Migrationsverfahren 2]{
+%		Funktionsweise des Migrationsverfahren 2. Quelle: \url{https://doi.org/10.1109/ACCESS.2021.3106342}, lizensiert mit \hyperref{https://creativecommons.org/licenses/by/4.0/}{}{}{CCBY} 
+%	}
+%	\label{fig:interviews-migrationsverfahren2}
+%\end{figure}
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.7\textwidth]{3_VPAG21-overview}
+	\includegraphics[width=1.0\textwidth]{verfahren2-übersicht.drawio}
 	\caption[Funktionsweise Migrationsverfahren 2]{
-		Funktionsweise des Migrationsverfahren 2. Quelle: \url{https://doi.org/10.1109/ACCESS.2021.3106342}, lizensiert mit \hyperref{https://creativecommons.org/licenses/by/4.0/}{}{}{CCBY} 
+		Funktionsweise des zweiten Migrationsverfahrens
 	}
 	\label{fig:interviews-migrationsverfahren2}
-\end{figure}
+\end{figure} 
 
 Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
 Diese haben im Vergleich zum ersten Verfahren eine etwas andere Form, aber die Eingaben sind trotzdem mit denen des ersten Verfahrens vergleichbar; mit den User Stories werden auch übliche Workflows beschrieben.
@@ -241,7 +276,7 @@ Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilun
 
 \section{Best Practices und Patterns}
 
-Neben der Wahl von Migrationsmethoden unterstützt der \gls{arh} Entwickler außerdem bei der Wahl zu implementierender Best Practices und Patterns.
+Neben der Wahl von Migrationsmethoden unterstützt der \gls{arh} Entwickler außerdem bei der Wahl zu implementierender Best Practices und Patterns auf Basis der in Phase 1 konfigurierten \glspl{qa}.
 Für \jf wurden von dem Tool die in \cref{tab:interviews-patterns} sichtbaren \bpp vorgeschlagen.
 Auch über diese wird von Ihnen eine Bewertung im Interview abgefragt.
 
