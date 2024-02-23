@@ -466,8 +466,7 @@ Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet
 
 \subsection{Anwendung Migrationsverfahren}
 
-In Phase 2 wurden die verschiedenen Verfahren nach ihrer Eignung geordnet.
-In diesem Abschnitt wird die Planung des weiteren Vorgehens beschrieben.
+In diesem Abschnitt wird, anknüpfend an die Ordnung der Verfahren nach ihrer Eignung in Phase 2, die Planung des weiteren Vorgehens beschrieben.
 Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden. 
 Dies kann durch die Modifikation eines Verfahrens, aber auch durch die Kombination mehrerer Verfahren oder den zusätzlichen Einsatz eines Werkzeugs geschehen.
 Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
@@ -476,26 +475,27 @@ Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesi
 Dieses konnte weder im Artikel noch auf anderen offiziellen Wegen gefunden werden.
 Bei der Suche auf GitHub wurde ein Projekt von einem der Autoren mit passendem Namen gefunden\footnote{\url{https://github.com/ivanmviveros/microservicesbacklog}}.
 Dieses konnte jedoch auch nach der Behebung mehrerer Startfehler nicht verwendet werden, da bei jeder Navigation von der Startseite des webbasierten Projekts Datenbankfehler auftraten.
-Da keine Dokumentation vorliegt, der Code teilweise in brasilianischer Sprache geschrieben ist und die Autoren auf Anfrage per E-Mail nicht reagierten, scheidet die Verwendung von \gls{mb} aus.
-Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wurde aber ohne funktionierendes Werkzeug als zu aufwendig erachtet.
+Da keine Dokumentation vorliegt, der Code teilweise in brasilianischer Sprache geschrieben ist und die Autoren des Artikels auf Anfrage per E-Mail nicht reagierten, scheidet die Verwendung von \gls{mb} aus.
+Wie bereits im vorherigen Abschnitt erwähnt, war \gls{mb} zwar der Favorit, wurde aber ohne funktionierendes Werkzeug als zu aufwendig für diese Thesis erachtet.
 
 \paragraph{Favorit 2:} Als nächstbeste Option wurde folgend die mögliche Verwendung von \result{2} untersucht (\cref{feldnotiz:16,feldnotiz:17,feldnotiz:18}).
 Auch hier wurde eine Implementierung des Verfahrens in einem Prototyp beschrieben.
 Diesem wurde kein Name gegeben, die Suche danach blieb erfolglos.
-Auch eine Anfrage per E-Mail brachte keine Antwort.
+Auch eine Anfrage per E-Mail blieb ohne Antwort.
 Dieses Verfahren wurde im Vergleich zu  \result{3} als leichter manuell umsetzbar eingeschätzt, weswegen folgend aufgrund mangelnder Methoden mit Werkzeugunterstützung eine manuelle Umsetzung dieses Verfahrens begonnen wurde.
 
-Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Algorithmus \emph{cHAC} genannt, weshalb mit dessen Umsetzung begonnen wurde.
-Es wurde versucht, diesen mit Top-Down Vorgehen in Java zu implementieren.
+Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Algorithmus \emph{cHAC} genannt, weshalb mit dessen Implementierung begonnen wurde.
+Es wurde versucht, diesen mit Top-Down Vorgehen in Java zu umzusetzen.
 Für einige Details des Pseudocodes wurden Java-spezifische Konstrukte anstelle der im Algorithmus spezifizierten verwendet.
 Beispielsweise wurde die Synchronisationsvariable \emph{@SIC} des Algorithmus durch eine CyclicBarrier\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html}} implementiert.
 Die abstrakte Funktionsweise des Algorithmus konnte erfolgreich umgesetzt werden (\cref{feldnotiz:16}).
 
 Die Implementierung einiger atomarer Bestandteile des Algorithmus war jedoch nicht erfolgreich (\cref{feldnotiz:17}).
 Die wenig detaillierte Dokumentation und Beschreibung der Formeln und Funktionen des Algorithmus machten eine Umsetzung des Algorithmus in der zur Verfügung stehenden Zeit letztlich unmöglich.
-An einigen Stellen wurden die erwähnten Schritte des Algorithmus nicht definiert, sondern nur oberflächlich das Ziel der Methode beschrieben und die Umsetzung offengelassen.
-An anderen Stellen wurden im Algorithmus erwähnte Methoden im Text durch Formeln definiert, wobei teilweise unklar war, ob diese Formeln korrekt sind.
-Es werden einige Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet, die mit der relativ dürftigen Beschreibung im Artikel nicht geklärt werden konnten.
+An einigen Stellen wurden Funktionen des Algorithmus nicht definiert, sondern nur oberflächlich das Ziel der Funktion beschrieben und die Umsetzung offengelassen.
+An anderen Stellen wurden im Algorithmus erwähnte Funktion im Text durch Formeln beschrieben, wobei teilweise unklar war, ob diese Formeln korrekt sind.
+Hierbei werden Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet.
+Diese konnten mit der sehr kurzen Beschreibung im Artikel nicht geklärt werden.
 Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt. 
 
 \paragraph{Werkzeuge:} Zusätzlich zu den untersuchten Verfahren wurden die vom \gls{arh} gelisteten Werkzeuge betrachtet, vor allem aufgrund des Mangels von Werkzeugunterstützung bei den ausgewählten Verfahren.
@@ -503,7 +503,7 @@ Dabei wurden insbesondere die fünf Werkzeuge, die in der Arbeit von \Citet{frit
 Letztendlich konnte allerdings jedes der Werkzeuge aus verschiedenen Gründen nicht verwendet werden.
 Eines ist durch die Eingabeanforderungen explizit nicht kompatibel, die meisten anderen wären nur mit der monolithischen, älteren Version von \jf kompatibel gewesen.
 Außerdem werden viele der Projekte nicht weiterentwickelt oder instandgehalten, wodurch sich die meisten nicht einfach starten ließen.
-Mit größerem Zeitaufwand wäre bei einigen mit Sicherheit eine Anwendung möglich gewesen, doch in diesem Fall haben gegen jedes der Werkzeuge zu viele Punkte gesprochen, als dass der nötige Aufwand in einem sinnvollen Verhältnis zu der verfügbaren Zeit gestanden hätte.
+Mit größerem zeitlichen Rahmen wäre bei einigen vermutet eine Anwendung möglich gewesen, doch in diesem Fall haben gegen jedes der Werkzeuge zu viele Punkte gesprochen, als dass der nötige Aufwand in einem sinnvollen Verhältnis zu der verfügbaren Zeit gestanden hätte.
 
 \paragraph{Abschluss der Anwendung:} Da die Anwendung der zwei favorisierten Verfahren als (im Zeitrahmen) nicht erfolgversprechend bewertet wurde und auch die gezielte Suche nach Werkzeugen für die Anwendung an \jf keine passende Lösung bieten konnte, wird das Refactoring von \jf im Rahmen dieser Thesis abgebrochen.
 Folgend wird in der Auswertung dieser Thesis nicht die durchgeführte Anwendung eines Migrationsverfahrens, sondern die hypothetische Durchführbarkeit der Verfahren bewertet.
