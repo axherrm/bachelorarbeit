@@ -1,17 +1,17 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
 
-In einer Zeit, in der viele Softwarelösungen auf Cloud Computing basieren, ist auch die Microservices-Architektur immer gebräuchlicher geworden.
+In einer Zeit, in der viele Softwarelösungen auf Cloud Computing basieren, ist auch die Mi\-cro\-services-Architektur immer gebräuchlicher geworden.
 Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektur übergeführt, hauptsächlich mit dem Ziel, von Vorteilen wie besserer Skalierbarkeit, Wartbarkeit und Flexibilität zu profitieren~\cite{Fritzsch_2019,taibi2017processmotivations}.
 Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme, kann die Migration in eine Microservices-Architektur jedoch sehr zeitaufwendig, kostenintensiv und kompliziert sein.
-Es liegt aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, deren Erkenntnisse jedoch nur selten in der Industrie eingesetzt werden~\cite{fritzsch2022architecturecentric}.
+Es liegt aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, deren Erkenntnisse jedoch nur selten in der Industrie eingesetzt werden \cite{fritzsch2022architecturecentric}.
 
-Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat die Abteilung \gls{ese} des \gls{iste} das \gls{mmf} entwickelt.
+Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat die Abteilung \gls{ese} des \gls{iste} das \acrfull{mmf} entwickelt.
 Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
-Offen ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden kann.
-Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} daher erstmalig für das Refactoring eines realen Produkts, \emph{jadice flow}, zur Optimierung der bestehenden Microservices-basierten Architektur evaluiert.
-Dazu wird das Framework zum Refactoring des Produktes verwendet.
+Ausbaufähig ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden sol\-len.
+In der Arbeit von \Citet{master-marvin-knodel} wurde eine erste industrielle Fallstudie zu dem Framework und Werkzeug mit der (Teil-)Migration eines Monolithen durchgeführt.
+Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} erstmalig für das Refactoring der bereits vorhandenen \gls{msa} des realen Produkts \jf verwendet.
 Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Frameworks und Werkzeuges verwendet, wodurch diese in Zukunft weiter verbessert werden sollen.
 
 Bei der Analyse des Produkts mithilfe des Frameworks werden vor allem drei Designaspekte von Microservices betrachtet:
@@ -30,16 +30,16 @@ Daraus folgen die Forschungsfragen, die in dieser Thesis untersucht werden:
 	\end{enumerate}
 \end{itemize}
 
-Um die definierten Forschungsfragen zu beantworten, werden zwei Ziele für diese Arbeit definiert:
-Im ersten Teil wird das \gls{mmf} benutzt, um die Architektur von \emph{jadice flow} zu überarbeiten.
-Dabei wird innerhalb von drei Phasen ein Plan für eine neue Architektur des Produkts entworfen.
-Diese Phasen kategorisieren und verweisen auf eine Sammlung wissenschaftlich untersuchter Methoden zur Migration zu Microservices sowie passender Pattern und Best Practices.
+%Um die definierten Forschungsfragen zu beantworten, werden zwei Ziele für diese Arbeit definiert:
+%Im ersten Teil wird das \gls{mmf} benutzt, um die Architektur von \jf zu überarbeiten.
+%Dabei wird innerhalb von drei Phasen ein Plan für eine neue Architektur des Produkts entworfen.
+%Diese Phasen kategorisieren und verweisen auf eine Sammlung wissenschaftlich untersuchter Methoden zur Migration zu Microservices sowie passender Patterns und Best Practices.
+%
+%Im zweiten Teil wird diese neue Architektur praktisch umgesetzt.
+%Da ein komplettes Refactoring des Systems nicht dem Rahmen dieser Arbeit angemessen wäre, wird lediglich ein Prototyp mit der neuen Architektur umgesetzt.
+%Bestandteil des zweiten Teils ist deswegen ebenfalls, einen geeigneten Umfang für diesen Prototyp zu finden, sowie Messmethoden festzulegen, die einen Vergleich des Produkts vor und nach dem Refactoring ermöglichen.
 
-Im zweiten Teil wird diese neue Architektur praktisch umgesetzt.
-Da ein komplettes Refactoring des Systems nicht dem Rahmen dieser Arbeit angemessen wäre, wird lediglich ein Prototyp mit der neuen Architektur umgesetzt.
-Bestandteil des zweiten Teils ist deswegen ebenfalls, einen geeigneten Umfang für diesen Prototyp zu finden, sowie Messmethoden festzulegen, die einen Vergleich des Produkts vor und nach dem Refactoring ermöglichen.
-
-Um die gesetzten Ziele zu erreichen und damit die Forschungsfragen zu beantworten, ist diese Thesis in die folgenden Kapitel aufgeteilt:
+Um die Forschungsfragen zu beantworten, ist diese Thesis in die folgenden Kapitel aufgeteilt:
 Anfangs wird in \textbf{\cref{chap:theoretischer-hintergrund}} in den theoretischen Hintergrund eingeführt, der für diese Arbeit relevant ist. 
 Es werden auch das \gls{mmf} und \emph{jadice flow} kurz beschrieben. 
 Ebenfalls werden ähnliche Arbeiten vorgestellt.

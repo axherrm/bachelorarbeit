@@ -8,7 +8,7 @@ Sehr abstrahiert und vereinfacht bestehen die Phasen aus den folgenden Aktivitä
 \begin{itemize}
 	\item In \cref{sec:durchführung-phase1} wird die Durchführung der ersten Phase in Form eines Architekturreviews mit den wichtigsten Stakeholdern beschreiben.
 	\item Im Rahmen der zweiten Phase wird in \cref{sec:durchführung-phase2} nach adäquaten Migrationsstrategien gesucht.
-	\item In \cref{sec:durchführung-phase3} wird in der dritten Phase nach profitablen Patterns und Best Practices gesucht.
+	\item In \cref{sec:durchführung-phase3} wird in der dritten Phase nach adäquaten Patterns und Best Practices gesucht.
 \end{itemize}
 
 \section{Phase 1 - Systemverständnis}
@@ -137,10 +137,10 @@ Nachdem nun erwünschte Szenarien und \glspl{qa} erhoben wurden und die Wahl ein
 \section{Phase 2 - Strategieplanung}
 \label{sec:durchführung-phase2}
 
-In dieser Phase wird die Suchfunktion des \gls{arh} verwendet, um eine geeignete Migrationsstrategie zu finden.
+In dieser Phase wird die Suchfunktion des \gls{arh} verwendet, um geeignete Migrationsstrategien zu finden.
 Diese Suche wird dabei von zwei Faktoren beeinflusst: dem Ergebnis der Phase 1 in Form von \glspl{qa} beziehungsweise Szenarien und zusätzlichen Filtern, die vor der Suche konfiguriert werden müssen.
-Im Folgenden werden diese Filter konfiguriert, die Suche mit ihnen und den \glspl{qa} aus Phase 1 durchgeführt und die Ergebnisse dessen analysiert.
-Abschließend wird dadurch eine Migrationsstrategie für diese Fallstudie ausgewählt.
+Im Folgenden werden diese Filter in konfiguriert, mehrere Suche mit ihnen und den \glspl{qa} aus Phase 1 definiert, durchgeführt und dann aggregiert.
+Abschließend werden die Ergebnisse dessen analysiert.
 
 \subsection{Filterselektion}
 \label{sec:filterselektion}
@@ -466,7 +466,7 @@ Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet
 
 \subsection{Anwendung Migrationsverfahren}
 
-Im vorherigen Abschnitt wurden die verschiedenen Verfahren nach ihrer Eignung geordnet.
+In Phase 2 wurden die verschiedenen Verfahren nach ihrer Eignung geordnet.
 In diesem Abschnitt wird die Planung des weiteren Vorgehens beschrieben.
 Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden. 
 Dies kann durch die Modifikation eines Verfahrens, aber auch durch die Kombination mehrerer Verfahren oder den zusätzlichen Einsatz eines Werkzeugs geschehen.
@@ -497,11 +497,20 @@ An einigen Stellen wurden die erwähnten Schritte des Algorithmus nicht definier
 An anderen Stellen wurden im Algorithmus erwähnte Methoden im Text durch Formeln definiert, wobei teilweise unklar war, ob diese Formeln korrekt sind.
 Es werden einige Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet, die mit der relativ dürftigen Beschreibung im Artikel nicht geklärt werden konnten.
 Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt. 
-Da die anderen Suchergebnisse des \gls{arh} bereits in den vorangegangenen Schritten als deutlich weniger geeignet bewertet wurden, wird aus diesem Grund und aus Zeitgründen keine weitere Anwendung angestrebt.
+
+\paragraph{Werkzeuge:} Zusätzlich zu den untersuchten Verfahren wurden die vom \gls{arh} gelisteten Werkzeuge betrachtet, vor allem aufgrund des Mangels von Werkzeugunterstützung bei den ausgewählten Verfahren.
+Dabei wurden insbesondere die fünf Werkzeuge, die in der Arbeit von \Citet{fritzsch2023tools} beschrieben wurden, näher untersucht.
+Letztendlich konnte allerdings jedes der Werkzeuge aus verschiedenen Gründen nicht verwendet werden.
+Eines ist durch die Eingabeanforderungen explizit nicht kompatibel, die meisten anderen wären nur mit der monolithischen, älteren Version von \jf kompatibel gewesen.
+Außerdem werden viele der Projekte nicht weiterentwickelt oder instandgehalten, wodurch sich die meisten nicht einfach starten ließen.
+Mit größerem Zeitaufwand wäre bei einigen mit Sicherheit eine Anwendung möglich gewesen, doch in diesem Fall haben gegen jedes der Werkzeuge zu viele Punkte gesprochen, als dass der nötige Aufwand in einem sinnvollen Verhältnis zu der verfügbaren Zeit gestanden hätte.
+
+\paragraph{Abschluss der Anwendung:} Da die Anwendung der zwei favorisierten Verfahren als (im Zeitrahmen) nicht erfolgversprechend bewertet wurde und auch die gezielte Suche nach Werkzeugen für die Anwendung an \jf keine passende Lösung bieten konnte, wird das Refactoring von \jf im Rahmen dieser Thesis abgebrochen.
+Folgend wird in der Auswertung dieser Thesis nicht die durchgeführte Anwendung eines Migrationsverfahrens, sondern die hypothetische Durchführbarkeit der Verfahren bewertet.
 
 \subsection{Suche nach Best Practices und Patterns}
 
-Die Suche nach \bpp wird wie auch die Suche nach Migrationsverfahren lediglich durch die definierten \glspl{qa} beeinflusst.
+Die Suche nach \bpp wird wie auch die Suche nach Migrationsverfahren durch die definierten \glspl{qa} beeinflusst.
 Das bedeutet, dass alle nötigen Eingaben durch die Durchführung von Phase 1 bereits vorliegen und die Suche ohne weitere Vorbereitungen durchgeführt werden kann.
 Insgesamt stehen 51 Patterns und 43 Best Practices zur Auswahl.
 Im Folgenden werden jeweils ersten 20 Suchergebnisse aufgelistet.
