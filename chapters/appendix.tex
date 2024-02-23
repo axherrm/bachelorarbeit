@@ -60,9 +60,7 @@ Dabei wird nach einem klaren, strukturiertem Plan vorgegangen:
 
 \section{Evaluation}
 
-Nach der Einleitung kann der Hauptteil der Experteninterviews beginnen.
-Im Gegensatz zu den Aussagen und Fragen in der Einleitung ist bei den folgenden Fragen der Wortlaut wichtig, da die Fragen teilweise offen gestellt werden.
-Deswegen werden die Fragen so wie hier beschrieben gestellt.
+Nach der Einleitung, in der keine inhaltlichen Fragen gestellt werden, kann der Hauptteil der Experteninterviews beginnen.
 
 \subsection{Verständnisfragen zu MMF/ARH}
 
@@ -71,7 +69,11 @@ Deswegen werden wir anfangs etwas über die enthaltenen Informationen sprechen, 
 
 \begin{enumerate}
 	\item Hatten Sie Probleme, Teile des Informationsmaterials zu verstehen, soll ich bestimmte Details genauer erläutern?
-	\item Falls nicht durch Besprechung der Probleme bereits geschehen: Kurze Zusammenfassung über die zwei enthaltenen Migrationsverfahren.
+	\item Falls nicht durch Besprechung der Probleme bereits geschehen: 
+	\begin{itemize}
+		\item Kurze Zusammenfassung über \gls{mmf}/\gls{arh}
+		\item Kurze Zusammenfassung über die zwei enthaltenen Migrationsverfahren
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Allgemeine Vorgehensweise eines/des \gls{mmf}}
@@ -84,8 +86,8 @@ Sie suchen nach einem Werkzeug oder einer Software in einer beliebigen Form, das
 	\begin{itemize}
 		\item Falls noch nicht in der Antwort erläutert: Welche Qualitäten soll das Werkzeug mit sich bringen?
 	\end{itemize}
-	\item Finden Sie die allgemeine Funktions- und Vorgehensweise des \gls{mmf}/\gls{arh} sinnvoll?
-	\item Welche Probleme sehen Sie bei der Funktionsweise des Frameworks?
+	\item Finden Sie die allgemeine Funktions- und Vorgehensweise des \gls{mmf}/\gls{arh}, \textbf{bezogen auf die einzelnen Phasen}, sinnvoll? 
+	\item Sehen Sie \textbf{Probleme} bei der Funktionsweise des Frameworks?
 \end{enumerate}
 
 \subsection{Evaluation eines potentiellen Refactorings von \jf mit \gls{mmf}/\gls{arh}}
@@ -96,17 +98,20 @@ Nun soll eine potentielle Anwendung dieser Methoden mit \jf bewertet werden.
 \begin{enumerate}
 	\item Jeweils für Methode 1 und 2:
 	\begin{itemize}
-		\item Wie nützlich schätzen sie diese Methode bei einer potentiellen Anwendung mit \jf ein?
-		\item Falls nicht bereits erwähnt: Wie passend wäre Vorgehensweise der Methode auf einer abstrakten Ebene (Art der Eingabe, Bestimmung der Metriken, Extraktion von Microservices)?
-		\item Falls nicht bereits erwähnt: Auf einer weniger abstrakten Ebene: Welche konkreten Probleme könnten Sie sich bei der Anwendung mit \jf vorstellen?
+		\item \textbf{Allgemein:} Wie nützlich schätzen sie diese Methode bei einer potentiellen Anwendung mit \jf ein?
+		\item Falls nicht bereits erwähnt: Wie passend wäre Vorgehensweise der Methode auf einer \textbf{abstrakten Ebene} (Art der Eingabe, Bestimmung der Metriken, Extraktion von Microservices)?
+		\item Falls nicht bereits erwähnt: Auf einer \textbf{weniger abstrakten} Ebene: Welche konkreten Probleme könnten Sie sich bei der Anwendung mit \jf vorstellen?
+		\item Denken Sie, die \textbf{Granularität} der Microservices von \jf könnte potentiell verbessert werden durch die Anwendung dieser Methode?
 	\end{itemize}
 	\item  Jeweils für \bpp
 	\begin{itemize}
-		\item Wie viele der gezeigten Best Practices/Patterns sind bereits in \jf angewendet/teilweise angewendet?
-		\item Wie viele der gezeigten Best Practices/Patterns würden Sie als potentiell sinnvoll für die Implementierung einschätzen?
+		\item Finden Sie die \textbf{Sortierung passend} zu den \glspl{qa} \emph{Scalability}, \emph{Maintainability}, \emph{Performance} und \emph{Portability}?
+		\item Wie viele der gezeigten Best Practices/Patterns sind in \jf  \textbf{bereits angewendet}/teilweise angewendet?
+		\item Wie viele der gezeigten Best Practices/Patterns würden Sie als \textbf{potentiell sinnvoll} für die Implementierung einschätzen?
+		\item Sind in der Liste Best Practices/Patterns enthalten, die Sie als potentiell geeignet für die \textbf{Optimierung des Kommunikationsmodells bzw. des Netzwerk-Overheads} von \jf einschätzen würden?
 	\end{itemize}
-	\item Würden Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für \jf zum jetzigen Zeitpunkt als sinnvoll und potentiell gewinnbringend betrachten?
-	\item Hätten Sie nach den Ihnen verfügbaren Informationen die Verwendung des MMF/ARH für die Migration von \emph{jadice server} zu Microservices in der Vergangenheit  als sinnvoll und potentiell gewinnbringend betrachtet?
+	\item Würden Sie die Verwendung des MMF/ARH für \jf zum jetzigen Zeitpunkt als sinnvoll und potentiell gewinnbringend betrachten?
+	\item Hätten Sie die Verwendung des MMF/ARH für die damalige Migration von \emph{jadice server} zu Microservices  als sinnvoll und potentiell gewinnbringend betrachtet?
 \end{enumerate}
 
 
@@ -277,7 +282,8 @@ Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilun
 \section{Best Practices und Patterns}
 
 Neben der Wahl von Migrationsmethoden unterstützt der \gls{arh} Entwickler außerdem bei der Wahl zu implementierender Best Practices und Patterns auf Basis der in Phase 1 konfigurierten \glspl{qa}.
-Für \jf wurden von dem Tool die in \cref{tab:interviews-patterns} sichtbaren \bpp vorgeschlagen.
+Diese waren \emph{Scalability}, \emph{Maintainability}, \emph{Performance} und \emph{Portability}.
+Auf deren Basis wurden für \jf die in \cref{tab:interviews-patterns} sichtbaren \bpp vorgeschlagen.
 Auch über diese wird von Ihnen eine Bewertung im Interview abgefragt.
 
 \begin{table}[!htb]
