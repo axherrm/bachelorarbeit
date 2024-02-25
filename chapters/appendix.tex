@@ -134,22 +134,22 @@ Das Framework hat allgemein das Ziel, die Lücke zwischen Industrie und Forschun
 \section{Ziel der Experteninterviews}
 
 In den Interviews soll eine Evaluation der Anwendung des Frameworks und Tools auf \jf in dieser Arbeit stattfinden.
-Dabei soll sowohl eine allgemeine Bewertung des Konzepts des Frameworks, als auch die spezielle Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat, durchgeführt werden.
+Dabei wird sowohl eine allgemeine Bewertung des Konzepts des Frameworks, als auch der speziellen Anwendung des Tools mit \jf, die in dieser Arbeit stattgefunden hat, durchgeführt.
 
 \section{Vertraulichkeit und Anonymität}
 Alles, was in den Interviews gesagt wird, wird streng vertraulich behandelt und ohne die Erlaubnis der Teilnehmer an niemanden außerhalb unseres Forschungsteams weitergegeben.
-Die Ergebnisse werden vor der Veröffentlichung aggregiert und anonymisiert.
-Einzelne Aussagen können in keinster Weise auf einen Teilnehmer zurückgeführt werden.
+Die Ergebnisse werden vor der Veröffentlichung anonymisiert.
+Aufgrund der geringen Teilnehmerzahl und der Bekanntgabe der Rollen könnten jedoch Aussagen von einem Personenkreis, der die Personen hinter den Rollen kennt, auf Teilnehmer zurückgeführt werden.
 Auch nach dem Interview haben die Teilnehmer die Möglichkeit, Aussagen vor der Auswertung auszuschließen oder zu schwärzen.
 Die vollständigen Interviewtranskripte werden NICHT veröffentlicht.
 
 \section{Interviewprozess und Analyse}
-Die Befragten werden über das allgemeine Thema der Studie informiert, so dass sie damit vertraut sind und sich vorab informieren können, falls sie dies wünschen.
+Die Befragten werden über das allgemeine Thema der Studie sowie speziell für das Interview relevante Details informiert, so dass sie damit vertraut sind und sich vorab informieren können.
 Die Dauer des Interviews wird auf 45 Minuten geschätzt.
 Sie werden um Erlaubnis gebeten, das Interview für die Transkription aufzuzeichnen.
-Die schriftliche Abschrift wird dem Teilnehmer zur endgültigen Genehmigung zurückgeschickt.
-Dies ist die letzte Möglichkeit, Aussagen aus dem Interview zu entfernen oder zu kürzen.
-Danach wird die Tonaufnahme vernichtet, und das möglicherweise redigierte und genehmigte Transkript wird die einzige Grundlage für die qualitative Inhaltsanalyse sein.
+%Die schriftliche Abschrift wird dem Teilnehmer zur endgültigen Genehmigung zurückgeschickt.
+%Dies ist die letzte Möglichkeit, Aussagen aus dem Interview zu entfernen oder zu kürzen.
+Nach der Transkription wird die Tonaufnahme vernichtet, und das Transkript wird die einzige Grundlage für die qualitative Inhaltsanalyse sein.
 
 \chapter{Informationsbogen Experteninterviews}
 \label{chap:expert-interviews-infobogen}
@@ -179,8 +179,8 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 	\item \textbf{Phase 1: System Comprehension:}
 	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
 	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \acrfull{qa} und gewünschte Szenarien identifiziert.
-	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
-	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
+	Diese \glspl{qa} und Szenarien sind besonders wichtig für die späteren Phasen, in denen sie als Suchkriterium verwendet werden.
+	Außerdem sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
 	\item \textbf{Phase 2: Strategy Definition:}
 	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
@@ -197,8 +197,8 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 	Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
 	In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
 	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
-	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
-	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
+%	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
+%	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
 	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
 \end{itemize}
 
@@ -250,8 +250,9 @@ Für die Bestandteile dieser Eingabe (genannt Aktivitäten) werden im zweiten Sc
 \end{itemize}
 
 Schließlich wird die \emph{Machine Learning}-Technik \emph{Collaborative Clustering} verwendet, um die Menge von Aktivitäten in Gruppen (genannt \emph{Cluster}) zu unterteilen.
-Dabei werden die beschriebenen Metriken verwendet, um die Gruppierung anhand dieser zu optimieren.
+Dabei werden die beschriebenen Dependencies verwendet, um die Gruppierung anhand dieser zu optimieren.
 Das bedeutet, dass Abhängigkeiten zwischen Aktivitäten des gleichen Clusters stark sein und clusterübergreifend geringer sein sollten.
+Entstandene Gruppen sind Vorschläge für eine Aufteilung in Microservices.
 
 \subsection{Migrationsverfahren 2}
 
