@@ -149,7 +149,7 @@ Dabei wurden dementsprechend Nummer der Feldnotiz, Phase des \gls{mmf}, Datum (i
 \cref{feldnotiz:1} hat beispielsweise den Namen \emph{F01\_P2\_11\_20\_2023\_FilterAuswahl.tex}.
 \cref{tab:field-notes} gibt einen Überblick über die Eintrags-Felder und welchem Feld nach \Citet{seaman2008qualitative} sie entsprechen.
 
-\input{tables/field-notes}
+\input{tables/methodology/field-notes}
 
 \section{Evaluation des \gls{mmf}}
 
@@ -158,7 +158,7 @@ Nach dem Refactoring von \jf mit dem Framework wird evaluiert, als wie hilfreich
 Dafür werden Experteninterviews durchgeführt sowie die im Verlauf der Anwendung erstellten Feldnotizen ausgewertet.
 
 \subsection{Experteninterviews}
-
+\label{sec:methodik-interviews}
 Im Rahmen dieser Arbeit werden Experteninterviews durchgeführt, um die Nützlichkeit des \gls{mmf} und \gls{arh} bei der Migration zu Microservices im Spezialfall \jf zu evaluieren.
 Interviews im Software Engineering allgemein werden oft genutzt, um Softwareprozesse zu bewerten \cite{seaman2008qualitative}.
 
@@ -179,7 +179,7 @@ Als Experten wurden Mitarbeiter mit guter Kenntnis des Produkts \jf ausgewählt,
 Aus diesem Grund wurde bei der Wahl der Mitarbeiter nach ihrer Rolle in der Produktentwicklung von \jf differenziert.
 Für die abstrakteste Perspektive auf das Produkt wurde der \acrlong{po} (nach Definition des SCRUM von \Citet{SCRUM}) ausgewählt.
 Für die technische Perspektive wurde der \gls{se} hinzugezogen.
-Als weitere Meinung einer Person, die zwischen den beiden genannten Rollen liegt, wurde der \gls{sa} herangezogen. 
+Als weitere Meinung einer Person, die zwischen den beiden genannten Rollen liegt, wurde der \gls{sa} herangezogen.
 Eine Übersicht über die drei ausgewählten Teilnehmer ist in \cref{tab:expert-interviewees} zu finden.
 \input{tables/methodology/expert-interviewees}
 
@@ -195,7 +195,7 @@ Der für diese Interviews konzipierte Leitfaden ist in \cref{chap:expert-intervi
 Er besteht aus hauptsächlich drei Teilen.
 Im ersten Abschnitt werden Verständnisfragen gestellt.
 Diese sollen absichern, dass die Informationen aus dem Informationsbogen ausreichend verstanden wurden, um die folgenden Fragen sinnvoll beantworten zu können.
-Im zweiten Teil werden allgemeine inhaltliche Fragen zur Evaluation des \gls{mmf} gestellt, ohne Bezug zur Anwendung in dieser Thesis. 
+Im zweiten Teil werden allgemeine inhaltliche Fragen zur Evaluation des \gls{mmf} gestellt, ohne Bezug zur Anwendung in dieser Thesis.
 Mithilfe mehrerer Fragen sollen mögliche alternative Funktionsweisen, die Phasen des Frameworks und potenzielle Probleme dessen evaluiert werden.
 Der letzte Teil dient der Bewertung der spezifischen Anwendung des Frameworks in dieser Thesis.
 Dazu werden zunächst Fragen zu den mit dem \gls{arh} ermittelten Migrationsverfahren gestellt.
@@ -203,10 +203,10 @@ Da ein gutes Verständnis der Verfahren dafür nötig ist, werden die Fragen wei
 Außerdem wird für Bezug zur \hyperref[forschungsfrage:1]{Forschungsfrage} die Auswirkung der Verfahren auf die Granularität des Systems befragt.
 Anschließend werden die mit \gls{arh} erhaltenen \bpp bewertet.
 Auch hier werden zunächst offene Fragen gestellt und am Ende eine Frage mit Bezug zu den Qualitätsaspekten aus der \hyperref[forschungsfrage:1]{Forschungsfrage} gestellt.
-Zum Abschluss werden dem Interviewten noch zwei Fragen zur Gesamtbewertung der Anwendung des Frameworks gestellt. 
+Zum Abschluss werden dem Interviewten noch zwei Fragen zur Gesamtbewertung der Anwendung des Frameworks gestellt.
 Dabei soll er seine Einzelbewertungen der letzten Schritte zusammenfassen und ein Fazit ziehen.
 
-\paragraph{Vorbereitungsmaterial:} 
+\paragraph{Vorbereitungsmaterial:}
 Die Einleitung eines Interviews sollte nur einen kleinen Teil ausmachen, da Zeit in Interviews wertvoll und oft knapp bemessen ist \cite{Runeson2009,hove-anda-2005,seaman2008qualitative}.
 Aus diesem Grund wurden für die Interviews eine Präambel und ein Informationsbogen erstellt, welche die Teilnehmer im Voraus erhalten haben.
 Diese sind in \cref{chap:expert-interviews-preamble,chap:expert-interviews-infobogen} zu finden.
@@ -214,7 +214,7 @@ Die Präambel fasst die generellen Richtlinien für die Experteninterviews zusam
 Dabei diente die Präambel von Bogner et al.\footnote{\url{https://github.com/xJREB/research-microservices-interviews/blob/master/interview-preamble.md}} als Vorlage.
 Da der thematische Kontext des Interviews durch die Voraussetzung des Verständnisses von zwei Migrationsmethoden relativ komplex ist, wurde außerdem ein Informationsbogen erstellt, der bei der thematischen Einarbeitung helfen soll.
 Darin werden alle wichtigen Konzepte erklärt, die in den Interviews behandelt werden.
-Der Bogen enthält einen generellen Überblick über  \gls{mmf}/\gls{arh} sowie die Funktionsweisen der zwei diskutierten Migrationsverfahren. 
+Der Bogen enthält einen generellen Überblick über  \gls{mmf}/\gls{arh} sowie die Funktionsweisen der zwei diskutierten Migrationsverfahren.
 Es wird jedoch nicht erwartet, dass die Teilnehmer alle Inhalte im Voraus vollständig verstehen, da (wie im Leitfaden beschrieben) anfangs eine Runde zur Klärung der Verständnisfragen stattfindet.
 
 \subsubsection{Analyse der Daten}
@@ -235,7 +235,7 @@ Eine Übersicht über die dadurch entstandenen aggregierten Zusammenfassungen is
 
 %Diese enthalten Sammlungen von langen Texten, welche folgend auf einen geringeren Umfang gekürzt werden, ohne dabei relevante Informationen zu verlieren.
 %Dabei werden die Techniken \emph{Zusammenfassen}, \emph{Explikation} und \emph{Strukturierung} nach \Citet{Mayring2019} verwendet.
-%Das Ergebnis daraus ist jeweils eine textuelle Zusammenfassung der aggregierten Ergebnisse pro Fragenabschnitt: 
+%Das Ergebnis daraus ist jeweils eine textuelle Zusammenfassung der aggregierten Ergebnisse pro Fragenabschnitt:
 %\begin{itemize}
 %	\item Evaluation des \gls{mmf}/\gls{arh} allgemein
 %	\item Evaluation der ausgewählten Migrationsmethoden für \jf
@@ -265,4 +265,18 @@ Eine Übersicht über die dadurch entstandenen aggregierten Zusammenfassungen is
 \input{tables/methodology/expert-analyse}
 
 \subsection{Strukturierte Feldnotizen}
+\label{sec:methodik-auswertung-feldnotizen}
+
+Nachdem alle Feldnotizen erstellt sind, werden diese qualitativ ausgewertet.
+Auch hier wird die Strukturierung nach \Citet{Mayring2019} verwendet.
+Dafür wurde eine Kodierung erstellt, welche in \cref{tab:methodik-feldnitzen-kodierung} zu sehen ist und an vielen Stellen von der Kodierung aus der ähnlichen Arbeit von \Citet{master-marvin-knodel} inspiriert ist.
+
+\input{tables/methodology/feldnotizen-codierung}
+
+Bewusst wurde an einigen Stellen vom Original abgewichen.
+Die Definition der Codes \glqq Mehr gut gelaufen\grqq{} und \glqq Mehr schlecht gelaufen\grqq{} über die Anzahl der positiven Aspekte im Vergleich zur Anzahl der negativen Aspekte wurde zum Beispiel nicht übernommen.
+Es wurde sich stattdessen für eine Definition dieser über die Wahrnehmung des Autors nach Betrachtung der positiven und negativen Aspekte der jeweiligen Feldnotiz entschieden.
+Das hat natürlich den Nachteil einer geringeren Objektivität.
+Trotzdem wurde es als sinnvoller eingeschätzt, da sonst keine Gewichtung der positiven und negativen Aspekte stattfindet.
+Dass die Ergebnisse je nach Definition dieser Kodierung abweichen wurde bei Betrachtung erkannt und sich deswegen für die angepasste Variante entschieden.
 

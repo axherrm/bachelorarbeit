@@ -63,21 +63,21 @@
 		\begin{longtable}{|p{2.5cm}|p{11cm}|}
 			%\caption{#1} \label{tab:field-notes-long-#2} \\
 			\caption{#1} \label[feldnotiz]{feldnotiz:#2} \\
-			
+
 			\hline \textbf{Eintragstyp} & \textbf{Inhalt} \\ \hline
 			\endfirsthead
-			
+
 			\multicolumn{2}{c}%
 			{{\bfseries \tablename\ \thetable{} -- von der vorherigen Seite weitergeführt}} \\
 			\hline \textbf{Eintragstyp} & \textbf{Inhalt}
 			\endhead
-			
+
 			\hline \multicolumn{2}{|r|}{{Wird auf der n\"achsten Seite fortgef\"uhrt}} \\ \hline
 			\endfoot
-			
+
 			\hline
 			\endlastfoot
-			
+
 			Feldnotitz Nr. & #2 \\ \hline
 			Datum, Uhrzeit & #3 \\ \hline
 			Ort &  #4 \\ \hline
@@ -85,10 +85,10 @@
 			Phase \& Schritt des MMF & #6 \\ \hline
 			Aktionen und Entscheidungen &  #7 \\ \hline
 			Kommentare &  #8 \\ \hline
-			Was lief gut &  #9 \\ \hline
-			Probleme &  ##1 \\ \hline
+			Gut gelaufen & #9 \\ \hline
+			Schlecht gelaufen &  ##1 \\ \hline
 			Empfindungen & ##2 \\ \hline
-			
+
 		\end{longtable}
 	}
 	\fieldnoteextended
@@ -111,7 +111,7 @@
 %				Probleme &  ##1 \\ \hline
 %				Empfindungen & ##2 \\ \hline
 %			\end{tabular}
-%			\caption{#1} \label{tab:field-notes-#2}			
+%			\caption{#1} \label{tab:field-notes-#2}
 %		\end{table}
 %	}
 %	\fieldnoteextended
@@ -123,7 +123,7 @@
 		\setlength{\itemsep}{0pt}
 		\setlength{\parskip}{0pt}
 		\setlength{\parsep}{0pt}     }
-	{ \end{itemize}                  } 
+	{ \end{itemize}                  }
 
 % Mark content of the filter table with prio 1 and prio 2
 \newcommand{\prioOne}[1]{\ul{\textbf{#1}}}
@@ -156,3 +156,22 @@
 % remove whitespace before paragraph
 \let\oldparagraph\paragraph
 \renewcommand{\paragraph}[1]{\vspace*{-0.5cm}\oldparagraph{#1}}
+
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+% enable horizontal centering in p{} cells, see https://tex.stackexchange.com/a/157400
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+% command for field notes
+\newcommand{\fn}[1]{%
+  \hyperref[feldnotiz:#1]{#1}\xspace%
+}
+
+% multicolumn two: default 2 column mulitcolumn
+\newcommand{\mcTwo}[1]{%
+  \multicolumn{2}{c}{#1}\xspace%
+}
+\newcommand{\mcTwoEnd}[1]{%
+  \multicolumn{2}{c|}{#1}\xspace%
+}
