@@ -1,42 +1,14 @@
 \chapter{Auswertung}
 \label{chap:auswertung}
 
-Die Auswertung dieser Fallstudie erfolgt mithilfe drei verschiedener Methoden.
-Zu Beginn wird eine qualitative Bewertung des Gesamtprozesses vom Autor vorgenommen. 
-Diese kann subjektiv sein und soll daher nur als erste Orientierung dienen und durch Experteninterviews unterstützt werden.
-Dabei wurden drei andere an \jf beteiligte Personen über die Verwendung des \gls{arh} mit dem Produkt befragt.
-Außerdem werden abschließend die Feldnotizen ausgewertet.
-
-\section{Qualitative Bewertung des Refactoringprozesses}
-
-In diesem Abschnitt soll der gesamte Refactoringprozess, den das \gls{mmf} leitet, bewertet werden.
-Dabei werden die einzelnen Funktionen des \gls{arh} qualitativ evaluiert.
-Der Prozess besteht aus den folgenden wesentlichen Funktionen:
-\begin{itemize}
-	\item Erfassen der \glspl{qa} in Phase 1
-	\item Einstellen von Suchfiltern in Phase 2
-	\item Suche nach Migrationsverfahren in Phase 2
-	\item Suche nach Patterns und Best Practices in Phase 3
-\end{itemize}
-
-Diese Qualität dieser Funktionen kann über die Ergebnisse der Suchen ausgewertet werden, da die ersten beiden Punkte in die Ergebnisse der letzten beiden Punkte einfließen.
-Eine hypothetisch optimale Filterfunktion würde erreichen, dass Nutzer die Suchergebnisse nach Einstellen seiner Filter hinsichtlich der Nützlichkeit für sein Ziel genau gleich ordnen würde wie der \gls{arh} es tut.
-Natürlich ist eine so genaue Filterfunktion unrealistisch und nicht erreichbar.
-Im Folgenden wird versucht, von den Problemen mit Ergebnissen der Suchen Rückschlüsse auf Probleme in Filterfunktion durch Filter und \glspl{qa} zu ziehen.
-Wenn beispielsweise hoch platzierte Suchergebnisse vom Nutzer als schlecht bewertet werden, könnte ein Zusammenhang mit fehlenden Filtermöglichkeiten oder zu stark bewerteten Filtern bestehen.
-
-\subsection{Phase 2}
-
-Bei Betrachtung der Ergebnisse in Phase 2 ist auffällig, dass das am höchsten bewertete Ergebnis von \Citet{arh-result-no-filter-1} eine der am wenigsten passenden Methoden beinhaltet.
-Das Verfahren wurde aufgrund des Fehlens eines konkreten \gls{sia} ausgeschlossen.
-Eine Filterfunktion für das Ziel der Verfahren wäre sinnvoll, um solche Ergebnisse gar nicht erst vorgeschlagen zu bekommen.
-
- - Fehlende quantitative Einordnung, wie stark die Methode den jeweiligen Filter erfüllt (Ergebnis 1 so oberflächlich, dass es viele SPs anreist, aber keins wirklich spezifisch lösen kann)
-
-\subsection{Phase 3}
-
+Die Auswertung dieser Fallstudie erfolgt mithilfe zwei verschiedener wissenschaftlicher Methoden.
+Eine detaillierte Beschreibung der Methodik kann in \cref{chap:methodik} gefunden werden.
+Zuerst werden in \cref{sec:auswertung-interviews} die durchgeführten Experteninterviews ausgewertet.
+Außerdem werden in \cref{sec:auswertung-feldnotizen} die im Verlauf der Anwendung des \gls{mmf} in dieser Thesis erstellten Feldnotizen ausgewertet.
+Zum Abschluss dieses Kapitels werden die Ergebnisse dessen in \cref{sec:auswertung-diskussion} diskutiert und durch eine qualitative Bewertung des Refactoringprozesses durch den Autor ergänzt.
 
 \section{Experteninterviews}
+\label{sec:auswertung-interviews}
 
 In diesem Abschnitt werden die Ergebnisse der Experteninterviews beschrieben.
 Die Experteninterviews wurden mit dem Ziel durchgeführt, die Anwendung des \gls{mmf}/\gls{arh} auf \jf von weiteren Personen, die nicht an der Durchführung beteiligt waren, evaluieren zu lassen.
@@ -58,6 +30,8 @@ Der hauptsächliche Teil der Auswertung findet dann in \cref{sec:evaluation-mmf-
 \label{sec:evaluation-mmf-anwendung-insgesamt}
 
 \section{Feldnotizen}
+\label{sec:auswertung-feldnotizen}
+
 Während der Anwendung des Frameworks auf \jf in dieser Arbeit wurden in den Phasen 2 und 3 strukturierte Feldnotizen erstellt, die wichtige Schritte dieser Phasen festhalten.
 Die Methodik für die Erstellung der Feldnotizen ist in \cref{sec:structured-field-notes} beschrieben.
 In diesem Abschnitt wird die Auswertung dieser Feldnotizen mit der in \cref{sec:methodik-auswertung-feldnotizen} erläuterten Codierung  durchgeführt.
@@ -163,3 +137,37 @@ Daraus kann geschlossen werden, dass der \gls{arh} einen Migrationsprozess dort,
 Es gibt immer Optimierungspotenzial.
 Aus der Perspektive dieser Arbeit waren die Verfahren sowie deren etwaige Qualität am kritischsten. 
 Daher scheint es am wichtigsten, die Sammlung von Verfahren zu optimieren.
+
+\section{Diskussion}
+\label{sec:auswertung-diskussion}
+
+\subsection{Qualitative Bewertung des Refactoringprozesses}
+
+%Zu Beginn wird eine qualitative Bewertung des Gesamtprozesses vom Autor vorgenommen. 
+%Diese kann subjektiv sein und soll daher nur als erste Orientierung dienen und durch Experteninterviews unterstützt werden.
+
+In diesem Abschnitt soll der gesamte Refactoringprozess, den das \gls{mmf} leitet, bewertet werden.
+Dabei werden die einzelnen Funktionen des \gls{arh} qualitativ evaluiert.
+Der Prozess besteht aus den folgenden wesentlichen Funktionen:
+\begin{itemize}
+	\item Erfassen der \glspl{qa} in Phase 1
+	\item Einstellen von Suchfiltern in Phase 2
+	\item Suche nach Migrationsverfahren in Phase 2
+	\item Suche nach Patterns und Best Practices in Phase 3
+\end{itemize}
+
+Diese Qualität dieser Funktionen kann über die Ergebnisse der Suchen ausgewertet werden, da die ersten beiden Punkte in die Ergebnisse der letzten beiden Punkte einfließen.
+Eine hypothetisch optimale Filterfunktion würde erreichen, dass Nutzer die Suchergebnisse nach Einstellen seiner Filter hinsichtlich der Nützlichkeit für sein Ziel genau gleich ordnen würde wie der \gls{arh} es tut.
+Natürlich ist eine so genaue Filterfunktion unrealistisch und nicht erreichbar.
+Im Folgenden wird versucht, von den Problemen mit Ergebnissen der Suchen Rückschlüsse auf Probleme in Filterfunktion durch Filter und \glspl{qa} zu ziehen.
+Wenn beispielsweise hoch platzierte Suchergebnisse vom Nutzer als schlecht bewertet werden, könnte ein Zusammenhang mit fehlenden Filtermöglichkeiten oder zu stark bewerteten Filtern bestehen.
+
+\subsubsection{Phase 2}
+
+Bei Betrachtung der Ergebnisse in Phase 2 ist auffällig, dass das am höchsten bewertete Ergebnis von \Citet{arh-result-no-filter-1} eine der am wenigsten passenden Methoden beinhaltet.
+Das Verfahren wurde aufgrund des Fehlens eines konkreten \gls{sia} ausgeschlossen.
+Eine Filterfunktion für das Ziel der Verfahren wäre sinnvoll, um solche Ergebnisse gar nicht erst vorgeschlagen zu bekommen.
+
+- Fehlende quantitative Einordnung, wie stark die Methode den jeweiligen Filter erfüllt (Ergebnis 1 so oberflächlich, dass es viele SPs anreist, aber keins wirklich spezifisch lösen kann)
+
+\subsubsection{Phase 3}
