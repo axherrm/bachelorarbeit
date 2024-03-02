@@ -2,7 +2,7 @@
 \label{chap:auswertung}
 
 Die Auswertung dieser Fallstudie erfolgt mithilfe zwei verschiedener wissenschaftlicher Methoden.
-Eine detaillierte Beschreibung der Methodik kann in \cref{chap:methodik} gefunden werden.
+Eine detaillierte Erläuterung der Methodik ist in \cref{chap:methodik} gegeben.
 Zuerst werden in \cref{sec:auswertung-interviews} die durchgeführten Experteninterviews ausgewertet.
 Außerdem werden in \cref{sec:auswertung-feldnotizen} die im Verlauf der Anwendung des \gls{mmf} in dieser Thesis erstellten Feldnotizen ausgewertet.
 Zum Abschluss dieses Kapitels werden die Ergebnisse dessen in \cref{sec:auswertung-diskussion} diskutiert und durch eine qualitative Bewertung des Refactoringprozesses durch den Autor ergänzt.
@@ -10,24 +10,163 @@ Zum Abschluss dieses Kapitels werden die Ergebnisse dessen in \cref{sec:auswertu
 \section{Experteninterviews}
 \label{sec:auswertung-interviews}
 
-In diesem Abschnitt werden die Ergebnisse der Experteninterviews beschrieben.
-Die Experteninterviews wurden mit dem Ziel durchgeführt, die Anwendung des \gls{mmf}/\gls{arh} auf \jf von weiteren Personen, die nicht an der Durchführung beteiligt waren, evaluieren zu lassen.
-Die genaue Methodik der Interviews ist in \cref{sec:methodik-interviews} zu finden.
-Im Groben sind die Fragen der Interviews auf zwei Abschnitte unterteilt, deren Ergebnisse im Folgenden getrennt beschrieben werden.
-In \cref{sec:evaluation-mmf-allgemein} wird die Auswertung der Fragen, die sich auf die Evaluation des \gls{mmf}/\gls{arh} allgemein beziehen, vollzogen.
-Der hauptsächliche Teil der Auswertung findet dann in \cref{sec:evaluation-mmf-anwendung} statt, wo die spezifische Anwendung des Frameworks in dieser Arbeit evaluiert wird.
+In diesem Abschnitt werden die Ergebnisse der Experteninterviews beschrieben und diskutiert.
+Die Ex\-per\-ten\-inter\-views wurden mit dem Ziel durchgeführt, eine Evaluation der Anwendung des \gls{mmf}/\gls{arh} auf \jf von weiteren Personen zu erhalten, die nicht an der Durchführung beteiligt waren.
+Die genaue Methodik der Interviews ist in \cref{sec:methodik-interviews} gegeben und der Leitfaden kann in \cref{chap:expert-interviews-leitfaden} gefunden werden.
+
+Vier Tage vor den Interviews wurden den Teilnehmern, die nicht bereits mit dem Inhalt der Thesis vertraut waren, eine Präambel (\cref{chap:expert-interviews-preamble}) und fachliches Informationsmaterial (\cref{chap:expert-interviews-infobogen}) zur Verfügung gestellt.
+Gezielt wurde das erste Interview mit dem \gls{po} von \jf durchgeführt, der alle Phasen der Thesis begleitet hat.
+Deswegen sollte es kein Problem sein, dass die Präambel und das Informationsmaterial erst wenige Stunden vor dem Interview erhalten hat, da er keine thematische Einweisung benötigte.
+Dadurch konnte in einer Art Probedurchlauf evaluiert werden, ob die Verständnisfragen, inhaltlichen Fragen und der Zeitrahmen passend gewählt wurden.
+Die Interviews konnten ohne größere Probleme oder Änderungen im Vergleich zu Planung durchgeführt werden.
+Um einen Puffer zu haben, wurde für jedes Interview eine Stunde Zeit eingeplant, obwohl der Zeitaufwand auf 45 Minuten geschätzt worden war.
+Die durchgeführten Interviews dauerten im Durchschnitt 50 Minuten.
+Durch diese Zeitplanung entstand kein Zeitdruck und die Teilnehmer mussten zu keinem Zeitpunkt in ihren Antworten unterbrochen werden.
+
+Die Antworten der Teilnehmer wurden in \cref{fig:auswertung-interviews-kodierung} hinsichtlich der Nützlichkeit des \gls{arh} kodiert (Kodierleitfaden in \cref{fig:kodierleitfaden}).
+In den folgenden Abschnitten werden die Ergebnisse dessen sowie explizierte und aggregierte Zusammenfassungen der Aussagen der Teilnehmer dar\-ge\-legt und diskutiert.
+
+\begin{figure}%[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{interview-kodierung-auswertung.drawio}
+	\caption[Auswertung Kodierung Experteninterviews]{
+		Auswertung der Kodierung der Experteninterviews.
+	}
+	\label{fig:auswertung-interviews-kodierung}
+\end{figure}
+%Die Fragen der Interviews auf zwei Abschnitte unterteilt, deren Ergebnisse im Folgenden getrennt beschrieben werden.
+%In \cref{sec:evaluation-mmf-allgemein} wird die Auswertung der Fragen, die sich auf die Evaluation des \gls{mmf}/\gls{arh} allgemein beziehen, vollzogen.
+%Der hauptsächliche Teil der Auswertung findet dann in \cref{sec:evaluation-mmf-anwendung} statt, wo die spezifische Anwendung des Frameworks in Rahmen dieser Arbeit evaluiert wird.
+
 
 \subsection{Evaluation des \gls{mmf}/\gls{arh} allgemein}
 \label{sec:evaluation-mmf-allgemein}
+
+Dieser Teil der Interviews diente der allgemeinen Bewertung des Frameworks und des Werkzeugs.
+Die Fragen wurden insbesondere ohne Bezug auf die in dieser Arbeit durchgeführte Migration gestellt.
+Hierfür wurde ein Zeitrahmen von zehn Minuten vorgesehen, der mit durchschnittlich neun Minuten pro Interview auch eingehalten wurde.
+
+\paragraph{Gewünschte Features eines \gls{mmf}:} In der ersten Frage sollte ohne Bezug zum \gls{mmf} oder \gls{arh} untersucht werden, welche Aufgaben ein \acrlong{mmf} allgemein für Entwickler bei der Migration von Monolithen zu Microservices übernehmen könnte.
+Das Ziel ist es, die Antworten mit den tatsächlichen Funktionen des \gls{arh} abzugleichen und ggf. Ideen für zukünftige Funktionen des \gls{arh} zu sammeln. 
+In den Interviews hat sich herausgestellt, dass die Frage schwer verständlich ist und die, da zwei von drei Teilnehmern oft Konzepte eines Meta-Frameworks wie dem \gls{arh} mit konkreten Migrationsverfahren vermischt haben.
+In einem Interview wurde daher die Frage schlussendlich übersprungen, da auch eine Wiederholung und Vertiefung der Frage keine Antwort erbrachte.
+In nur einem Interview wurde die Frage gut genug verstanden und beantwortet, um sinnvoll die zweite Frage stellen zu können.
+Diese wurde in den anderen beiden Fällen schlicht übersprungen.
+
+Zu großen Teilen wurden in den Antworten auf die erste Frage Funktionen genannt, die der \gls{arh} anbietet.
+Dazu gehören das Sammeln von Informationen und die Definition von Anforderungen (umgesetzt in Phase 1)  sowie die Suche nach Verfahren durch die primär die Granularität der Microservices optimiert werden kann (umgesetzt in Phase 2).
+Als gewünschte Qualität wurde dabei genannt, dass eine große Auswahl an Verfahren bevorzugt wird, von denen dann mehrere manuell verglichen werden können.
+Weitere Ideen sind die Visualisierung der gesammelten Informationen, ein Teilen der Informationen, um besser im Team arbeiten zu können und Tipps für den Prozess.
+Letzteres könnte als teilweise umgesetzt bewertet werden, da das gesamte Framework als Leitfaden für die Migration gesehen werden kann.
+Generell ist die Aussagekraft dieses Fragenabschnittes dadurch eingeschränkt, dass die Teilnehmer im Vorfeld über die Funktionsweise des \gls{arh} informiert wurden und somit diese Fragen nicht mehr völlig unbeeinflusst beantworten konnten.
+
+\paragraph{Funktionsweise des \gls{mmf}:} Anschließend folgen Fragen zur Bewertung der generellen Funktionsweise des \gls{mmf} in Phasen.
+Alle Experten haben angegeben, dass sie die Phasenaufteilung als sinnvoll ansehen.
+Dass Phase 1 eine Analyse des Systems und die Planung der Ziele durchgeführt wird, wurde als sehr natürlich für allgemeine Refactoringprozesse wahrgenommen.
+Vorschläge von Migrationsverfahren in der zweiten Phase wurden ebenfalls als positiv bewertet.
+Es wird vermutet, dass so Verfahren gefunden werden können, die sonst nicht betrachtet worden wären.
+Das Zusammenspiel der Phasen wurde ebenfalls als sinnvoll bewertet.
+Es würde eine stetige Evaluierung der gewählten Vorgehensweise begünstigt und angestoßen werden.
+
+\paragraph{Probleme des \gls{mmf}/\gls{arh}:} Auf die Frage nach Problemen am \gls{mmf} oder \gls{arh} wurden einige potentielle Probleme identifiziert.
+Ein Teilnehmer kritisierte die Dokumentation des \gls{arh}, es sei nicht alles selbsterklärend.
+Ein Beispiel dafür sei die Beschreibung der Filteroptionen für die Suche nach Migrationsverfahren.
+Diese Kritik wurde vom Teilnehmer selbst direkt im Bezug auf das junge Entwicklungsstadium des Werkzeugs und die wissenschaftliche Orientierung relativiert.
+Außerdem wurde von einem Experten hervorgehoben, dass der Haupteinflussfaktor auf die Nützlichkeit des Werkzeugs die Datenbasis ist, die verfügbar ist. 
+Diese müsse stetig aktualisiert und gut kategorisiert werden.
+Eine weitere Kritik bezieht sich auf die Einschränkung auf bestimmte \glspl{qa} in der ersten Phase.
+Da die verfügbaren \glspl{qa} auch in der Kategorisierung der Verfahren vorhanden sein müssen, ist das Modell nicht erweiterbar und bildet möglicherweise in bestimmten Anwendungsfällen nicht die nötigen Anforderungen ab.
+Die Schwere dieser Kritiken wurde sowohl von den Teilnehmern als auch vom Autor als relativ gering eingeschätzt.
+
 \subsection{Evaluation der Anwendung des \gls{mmf}/\gls{arh} auf \jf}
 \label{sec:evaluation-mmf-anwendung}
 
+Während im ersten Teil der Fragen der Fokus auf der allgemeinen Funktionsweise des \gls{mmf} und \gls{arh} lag, wurde in diesem Teil ein Bezug zu der in dieser Arbeit durchgeführten Anwendung des Frameworks auf \jf hergestellt.
+Dafür wurden erst Fragen zu zwei ausgewählten Migrationsmethoden und dann zu der Liste von \bpp, die der \gls{arh} für \jf anbietet, gestellt.
+Als Hauptteil wurde in diesem Teil der Interviews die Größte Dauer vermutet, jedoch mit 20 Minuten trotzdem zu gering kalkuliert.
+In nur einem Interview konnte diese Zeit eingehalten werden, im Durchschnitt dauerte dieser Abschnitt 27 Minuten.
+Vor allem die Befragung zu den \bpp dauerte mit durchschnittlich 14 Minuten länger als erwartet.
+Durch das Einhalten des allgemeinen Zeitrahmens stellt das jedoch kein Problem dar. 
+
 \subsubsection{Evaluation der ausgewählten Migrationsmethoden für \jf}
 \label{sec:evaluation-mmf-anwendung-methoden}
+
+In diesem Fragenabschnitt wurden den Teilnehmern Fragen zu den ausgewählten Mi\-gra\-ti\-ons\-ver\-fah\-ren gestellt.
+Diese wurden vor Beginn der ersten inhaltlichen Fragen im Rahmen der Verständnisfragen (siehe \cref{sec:verständnisfragen}) mit den Teilnehmern besprochen, um sicherzustellen, dass das Verständnis der Verfahren für eine Bewertung dieser ausreicht.
+Als Einstieg dieses Teils wurde eine allgemeine Bewertung der Nützlichkeit der Verfahren im Bezug auf \jf abgefragt.
+Oft wurden dadurch die folgenden Fragen zur Bewertung auf abstrakter und auf weniger abstrakter, technischer Ebene bereits teilweise beantwortet.
+
+\paragraph{Abstrakte Funktionsweise:} Auf abstrakter Ebene wurden beide Verfahren von allen Teilnehmern als potentiell geeignet bewertet.
+Vor allem die Art der Eingabe(n) und Ausgaben der Verfahren stand bei den Antworten im Fokus.
+Ein Experte favorisierte das zweite vor dem ersten Verfahren, die anderen beiden umgekehrt.
+Als Grund für die Bevorzugung des  zweiten Verfahrens wurde die besser passende Eingabe einer bereits vorhandenen \gls{msa} sowie die Visualisierung der Metriken für eine manuelle Überarbeitung der Architektur neben der Optimierung mit Algorithmus, die auch das zweite Verfahren bietet, genannt.
+Die anderen Experten bewerteten diese Vorteile des ersten Verfahrens als weniger wichtig und gaben an, dass sie die Eingabe in Form von einem \gls{bpmn}-Diagramm den User Stories vorziehen würden.
+Das liegt vor allem daran, dass die User Stories eine weniger technische Ebene abbilden und damit schwerer greifbar ist, wie die Verbindung zwischen verschiedenen Einheiten analysiert und die Architektur verbessert werden soll.
+Sie evaluierten die zweite Methode dennoch als potentiell sinnvoll anwendbar, nur eben als Ergänzung zur ersten Methode.
+
+\paragraph{Technische Ebene:} Auf abstrakter Ebenen kann ein Konzept sinnvoll klingen und in der Realität trotzdem nicht funktionieren.
+Deshalb wurde gefragt, ob die Experten sich konkrete Probleme bei Umsetzung der Verfahren vorstellen können.
+Hierbei muss beachtet werden, dass die Antwortmöglichkeiten der Experten bei der Frage sehr beschränkt sind, da sie die Verfahren nicht im Detail kennen.
+Selbst bei besserer Informationslage über die Verfahren kann es passieren, dass bestimmte Probleme erst in der Praxis auffallen.
+Die Evaluation dieser Frage soll deshalb nicht als Beweis für das sichere Gelingen der Verfahren in einer Anwendung mit \jf dienen, sondern nur beleuchten, ob die Verfahren schon bei anfänglicher Betrachtung Probleme aufwerfen, die den Versuch einer Anwendung sinnlos machen.
+
+Insgesamt wurden auf diese Frage wenige Probleme von den Experten genannt.
+Ein Experte sah gar keine Probleme und konnte auf die kritische Nachfrage des Interviewers, der ein potentielles Problem benannte, sinnvoll argumentieren, dass er dieses nicht als Problem sieht.
+Die anderen Experten nannten einige Probleme, von denen sie aber keines als zu kritisch für eine Anwendung der Verfahren einschätzten.
+Unter anderem wurde für die Eingabe von \gls{bpmn}-Diagrammen argumentiert, dass man \glqq nur das bekommt, was man hereingibt\grqq{}.
+Damit wird kritisiert, dass manuell erstellte Eingaben nicht objektiv sind und diese Subjektivität das Ergebnis beeinflussen kann.
+Außerdem merkte ein anderer Experte allgemeiner an, dass nie komplett vollständige Eingabedaten vorliegen und durch fehlende Daten unvorhergesehene Probleme entstehen können.
+Als Beispiel wurden \emph{Edge Cases} genannt, die womöglich nicht vom Verfahren berücksichtigt werden können, aber einen großen Einfluss auf den Erfolg einer Architektur haben können.
+
+\paragraph{Bezug zur Forschungsfrage:} Abschließend zu den Verfahren wurde jeweils die Frage gestellt, ob summa summarum eine Anwendung der Verfahren als potentiell gewinnbringend im Bezug auf die Granularität der Microservices von \jf erachtet wird.
+Da die Frage sehr hypothetisch ist, waren sich einige Teilnehmer etwas unsicher, insgesamt wurde aber von zwei Teilnehmern eine positive Tendenz verzeichnet und vom anderen Teilnehmer ein klares \glqq Ja\grqq{}.
+
+
 \subsubsection{Evaluation der \bpp für \jf}
 \label{sec:evaluation-mmf-anwendung-bp-patterns}
+
+Als ebenfalls wichtiger Bestandteil des Frameworks wurde in den Interviews auch konkreter zur dritten Phase befragt.
+Da im Gegensatz zu den Migrationsverfahren die Namen von \bpp in vielen Fällen genug Aussagekraft haben, damit die Teilnehmer das Konzept verstehen, wurde hier keine Vorselektion getroffen, sondern alle Einträge des \gls{arh} den Teilnehmern gezeigt.
+Dabei ist klar, dass den Experten nicht alle Ansätze im Voraus bekannt sind oder durch den Namen klar werden.
+Die einzige zeitlich sinnvolle Lösung dafür ist, alle nicht verstandenen \bpp zu ignorieren, was den Experten so auch gesagt wurde.
+Das Ziel dieses Teils ist dabei die Bewertung der Experten, ob das Werkzeug für Findung und Wahl von passenden \bpp zielführend ist und auch einen Vorteil gegenüber manueller Recherche bieten kann.
+
+\paragraph{Ordnung der Ergebnisse:} Im ersten Schritt sollten die Experten die Sortierung der \bpp bewerten.
+Dabei wurde hervorgehoben, dass diese auf Basis der \glspl{qa} \emph{Scalability}, \emph{Maintainability}, \emph{Performance} und \emph{Portability} entsteht.
+Die Sortierung wurde grundlegend von allen Teilnehmern als sinnvoll bewertet.
+An wenigen Stellen wurden Ergebnisse in einer anderen Priorisierung eingeschätzt, größtenteils wurden dabei aber Einwände wieder relativiert, nachdem erneut über die eingegebenen \glspl{qa} nachgedacht wurde.
+Ein Teilnehmer erwähnte auch, dass man mit anderer Erwartungshaltung an diese Liste herangehen sollte, als an die Liste der Migrationsverfahren beispielsweise.
+Das liegt daran, dass sich nicht auf einzelne \bpp festgelegt werden muss, sondern mehrere kombinierbar sind.
+Es wurde speziell hervorgehoben, dass auch zum Beispiel manche Ergebnisse mit nur einer Übereinstimmung gewinnbringend sein können, wenn sie für ein bestimmtes \gls{qa} sehr gut sind, aber kein anderes bedienen.
+
+\paragraph{Bereits umgesetzte und potentiell sinnvolle \bpp:} 
+Als nächstes wurden die Einschätzung der Experten abgefragt, wie viele der \bpp bereits in \jf umgesetzt sind und wie viele noch nicht umgesetzt sind, aber potentiell sinnvoll wären.
+Im Durchschnitt wurde eingeschätzt, dass 13 Patterns und 15 Best Practices bereits in \jf (teilweise) umgesetzt sind und  5 Patterns sowie 4 Best Practices für die zukünftige Implementierung potentiell sinnvoll wären.
+Die Abweichung der verschiedenen Antworten war dabei sehr hoch.
+Das liegt vermutlich daran, dass die Frage sehr spekulativ ist und wenn lediglich die Namen der Ergebnisse betrachtet werden, eine Einschätzung schwierig ist.
+Ein vorsichtiger Teilnehmer, der keine falschen Ergebnisse mit einschließen will könnte auf geringere Zahlen kommen als ein selbstsicherer, optimistischer Teilnehmer.
+Es wurde beobachtet, dass der Teilnehmer, der die größte Abweichung generierte, die Anweisung nur eine grobe Einschätzung abzugeben und nicht eine knapp 100 Ergebnis lange Liste genau zu betrachten, am ernstesten nahm und nach relativ kurzer Zeit antwortete.
+Außerdem war bei diesen Antworten auffällig, dass in Prozentanteil von der Listegröße geantwortet wurde statt in absoluten Zahlen.
+Das könnte auf eine erhöhte Ungenauigkeit der Einschätzung dieses Teilnehmers hindeuten.
+
+\paragraph{Bezug zur Forschungsfrage:} Abschließend wurde gefragt, ob eine Verbesserung des Kommunikationsmodells beziehungsweise des Netzwerk-Overheads durch die \bpp der Liste für möglich gehalten wird.
+Die Resonanz dabei war positiv, aber nicht übermäßig positiv.
+Es wurden von den Experten jeweils ein bis zwei Möglichkeiten genannt, aber auch betont, dass die Zahl relativ gering ist und die Möglichkeiten nicht hoch priorisiert sind in der Liste.
+Ein Experte erwähnte allerdings auch, dass die \glspl{qa} nicht unbedingt auf dieses Ziel ausgerichtet wurden und dadurch vermutlich diese Sortierung zustande kommt.
+
 \subsubsection{Evaluation der Anwendung des \gls{mmf}/\gls{arh} auf \jf insgesamt}
 \label{sec:evaluation-mmf-anwendung-insgesamt}
+
+Zum Abschluss der Interviews wurden jeweils zwei Fragen gestellt, die die Ergebnisse aller vorherigen Fragen aufsummieren sollten.
+Es sollte insgesamt eingeschätzt werden, ob die Verwendung des Frameworks und des Werkzeugs zum momentanen Zeitpunkt gewinnbringend für \jf wäre.
+Dieselbe Frage wurde anschließend im Bezug auf das Vorgängerprodukt mit monolithischer Architektur eine Verwendung in der Vergangenheit wiederholt.
+
+Zwei der Teilnehmer schätzten die Verwendung zum jetzigen Zeitpunkt als gewinnbringend ein.
+Der andere Teilnehmer war sich unsicherer, tendierte aber auch dazu.
+Alle waren sich darin einig, dass eine Anwendung für die Migration in der Vergangenheit noch wertvoller gewesen wäre.
+Ein Experte war etwas unsicher, inwieweit die Verwendung des \gls{mmf} neues Optimierungspotential aufzeigt, das noch nicht bekannt ist.
+Die Liste von \bpp sei zwar eine schöne Übersicht, aber wirklich neue Ansätze hätte er nicht gesehen.
+Ein anderer Experte hob dagegen hervor, dass das Werkzeug eine gute Übersicht für Architekten bietet und neue Anregungen fördert.
 
 \section{Feldnotizen}
 \label{sec:auswertung-feldnotizen}
