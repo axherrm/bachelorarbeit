@@ -5,7 +5,7 @@ Eine umfassende Berücksichtigung der Validitätseinschränkungen ist für die B
 Jede Arbeit hat durch die verwendete Methodik Einschränkungen hinsichtlich ihrer Validität \cite{campbell2015experimental}.
 Auch diese Arbeit hat gewisse Limitationen, die in diesem Kapitel erörtert werden.
 \Citet{Runeson2009} stellen eine mögliche Klassifizierung der verschiedenen Faktoren vor, die Einfluss auf die Validität haben.
-Dieses Kapitel ist entsprechend dieser Klassen strukturiert.
+Dieses Kapitel ist entsprechend die vier Klassen \emph{onstruktionsbedingte Validität}, \emph{Interne Validität}, \emph{Reliabilität} und \emph{Externe Validität} strukturiert.
 
 \section{Konstruktionsbedingte Validität}
 
@@ -21,7 +21,7 @@ Für die erste Teilfrage wurden in einem dedizierten Teil (mit Bezug zur Granula
 Für die zweite Unterfrage wurden in einem weiteren Teil Fragen zur Eignung der vom \gls{arh} vorgeschlagenen \bpp für \jf gestellt.
 Auch hier bezieht sich eine Frage speziell auf den in der \ff genannten Qualitätsaspekt.
 
-Die Auswertung der Feldnotizen ist dagegen nur indirekter auf die \ff ausgerichtet.
+Die Auswertung der Feldnotizen ist dagegen nur in indirekterer Form auf die \ff ausgerichtet.
 Aus den Feldnotizen geht nicht direkt hervor, ob und wie gut die \gls{arh} für das Refactoring von \jf geeignet ist. 
 Vielmehr geben sie einen Einblick in die Durchführung des Prozesses und die damit verbundenen Probleme, Emotionen und Anmerkungen. 
 Diese Stellung der Methodik ist bei der Betrachtung der Ergebnisse zu berücksichtigen.
@@ -31,7 +31,7 @@ Diese Stellung der Methodik ist bei der Betrachtung der Ergebnisse zu berücksic
 Die interne Validität ist gegeben, wenn die untersuchten Kausalbeziehungen isoliert sind und andere Kausalitäten, die das Ergebnis ebenfalls beeinflussen, bekannt sind und berücksichtigt werden \cite{Runeson2009}.
 
 In \cref{fig:limitations} wurde versucht, mögliche Auswirkungen von erwünschten Messfaktoren auf die Schritte in dieser Arbeit sowie von unerwünschten Störfaktoren auf diese zu skizzieren.
-Als Hauptstörfaktoren werden die \emph{beteiligten Personen} und die \emph{verwendete Methodik und Vorgehensweise} vermutet. 
+Als Hauptstörfaktoren werden die \emph{beteiligten Personen} sowie die \emph{verwendete Methodik und Vorgehensweise} vermutet. 
 Dies sind jeweils nur Oberbegriffe für Sammlungen von möglichen Einflüssen.
 
 \emph{Beteiligte Personen} bezieht sich primär darauf, welche Personen beteiligt waren.
@@ -40,7 +40,7 @@ Es kann auch den Grad der Erfahrung der Personen, menschliches Versagen und viel
 
 Der Begriff \emph{Verwendete Methodik und Vorgehensweise} bezieht sich auf den gewählten Ansatz zur Durchführung der Maßnahme.
 Im Falle der Wahl der \glspl{qa} ist dies die in \cref{sec:methodik-architekturreview} beschriebene Methodik des Architekturreviews.
-In den anderen Schritten bezieht es sich auf weniger formale Vorgehensweisen, beispielsweise die gemeinsame Filterwahl oder die Art und Weise, wie verschiedene Suchergebnisse aggregiert werden.
+In den anderen Schritten bezieht es sich auf weniger formale Vorgehensweisen, beispielsweise auf die gemeinsame Filterwahl oder die Art und Weise, wie verschiedene Suchergebnisse aggregiert werden.
 All diese Vorgehensweisen können Auswirkungen auf die Ergebnisse haben, die es zu minimieren gilt. 
 
 \begin{figure}
@@ -58,22 +58,25 @@ All diese Vorgehensweisen können Auswirkungen auf die Ergebnisse haben, die es 
 Für eine hohe Verlässlichkeit (original \emph{Reliability}) ist es wichtig, dass die Subjektivität des Autors möglichst wenig Einfluss auf die Ergebnisse der Studie hat \cite{Runeson2009}.
 Im Falle dieser Arbeit ist die Reliabilität in einigen Punkten eingeschränkt.
 
-Zum einen wurden die meisten Schritte in dieser Arbeit von nur einem Studenten durchgeführt, der relativ unerfahren in Software Engineering und Wissenschaft ist.
+Zum einen wurden die meisten Schritte in dieser Arbeit von nur einem Studenten durchgeführt, der relativ unerfahren in Software Engineering und wissenschaftlichem Arbeiten ist.
 Dieses Risiko wurde versucht zu minimieren, indem regelmäßig mit dem \gls{po} von \jf und dem universitären Betreuer die durchgeführten und nächsten Schritte besprochen wurden.
 Außerdem wurde das Architekturreview zur Erfassung der \glspl{qa}, die die späteren Ergebnisse maßgeblich beeinflussen, mit insgesamt fünf wichtigen Mitgliedern des Entwicklungsteams durchgeführt.
 Damit sollte eine möglichst hohe Qualität der \glspl{qa} sichergestellt werden.
 Insbesondere bei zu komplexen Details ist diese Strategie des Vier-Augen-Prinzips nicht möglich, da eventuell helfende Personen keine Zeit für die notwendige Einarbeitung hätten. 
 Konkret ist dieses Problem in der Arbeit bei der Anwendung des Migrationsverfahrens in \cref{sec:anwendung-verfahren} aufgetreten.
-Hier haben ein Algorithmus und Formeln auf einer sehr tiefen Detailebene zu Problemen geführt, die vom Autor nicht gelöst werden konnten, die aber für andere Personen zu komplex waren, um zu helfen.
+Hier haben ein Algorithmus und Formeln auf einer sehr tiefen Detailebene zu Problemen geführt, die vom Autor nicht gelöst werden konnten.
+Gleichzeitig waren sie jedoch zu komplex für andere Personen, um zu helfen.
 
 Die gleiche Kritik gilt für die Methodik der Feldnotizen.
-Diese wurden nur von einer Person erstellt und ausgewertet, die keine Erfahrung mit diesen Methoden hatte.
+Diese wurden nur von einer Person erstellt und ausgewertet, die keine Erfahrung mit dieser Methode hatte.
+Unabhängig von der Unerfahrenheit ist die Erstellung von Feldnotizen generell mit einem gewissen Maß an Subjektivität verbunden.
 Um diese Einschränkung zu minimieren, wurden für die Erhebung und Auswertung der Feldnotizen etablierte Methoden ausgewählt und vor der Anwendung umfangreiche Recherchen durchgeführt.
 
-Eine weitere Einschränkung der Zuverlässigkeit ergibt sich bei der Durchführung der Interviews. 
+Eine weitere Einschränkung der Verlässlichkeit ergibt sich bei der Durchführung der Interviews. 
 Sowohl die Befragten als auch der Interviewer könnten an einer positiven Bewertung der Arbeit interessiert sein, wodurch gewollt oder ungewollt mehr positive Ergebnisse produziert werden könnten.
-Dieser Punkt wurde versucht einzugrenzen, indem die Befragten explizit aufgefordert wurden, ehrliche Antworten zu geben. 
-Eine solche Einschränkung kann jedoch nicht vollständig ausgeschlossen werden.
+Außerdem können die persönlichen Beziehungen zu den Interviewteilnehmern und damit verbundene Sympathien und Antipathien Auswirkungen auf die Ergebnisse haben.
+Um die Objektivität zu erhöhen, wurden die Befragten explizit aufgefordert, ehrliche Antworten zu geben. 
+Trotzdem kann eine gewisse Einschränkung nicht ausgeschlossen werden.
 
 Darüber hinaus stellt die Auswertung der Daten generell ein Risiko für die Zuverlässigkeit dar. 
 Diese wurde nur von einer unerfahrenen Person durchgeführt. 
@@ -85,7 +88,7 @@ Da die Kodierung in diesem Fall aber auch nicht das Hauptergebnis ist, sondern d
 \section{Externe Validität}
 
 Die externe Validität beschreibt das Ausmaß, in dem die Ergebnisse der Studie verallgemeinert werden können \cite{Runeson2009}. 
-In diesem Fallbeispiel bedeutet dies vor allem, inwieweit von den Ergebnissen dieser Arbeit auf mögliche andere Anwendungen der \gls{arh} geschlossen werden kann.
+In diesem Fallbeispiel bedeutet dies konkret, inwieweit von den Ergebnissen dieser Arbeit auf mögliche andere Anwendungen der \gls{arh} geschlossen werden kann.
 Externe Validität kann in der Regel nicht durch logische Maßnahmen sichergestellt werden, sondern nur durch die Annahme von Gesetzmäßigkeiten optimiert werden \cite{campbell2015experimental}.
 
 Die externe Validität ist hoch, wenn andere Anwendungen unter ähnlichen Bedingungen stattfinden \cite{campbell2015experimental}.
@@ -97,7 +100,7 @@ Darüber hinaus wird die externe Validität im Bezug auf die allgemeine Anwendun
 Dadurch besteht eine geringere Ähnlichkeit zu anderen Anwendungsfällen mit Monolithen als Ausgangsarchitektur, was nach \Citet{campbell2015experimental} zu einer schlechteren externen Validität in diesen Fällen führt.
 Auf der anderen Seite erhöht genau diese Bedingung die externe Validität in Bezug auf die Verwendung des \gls{arh} mit \glspl{msa} im Vergleich zu beispielsweise der Fallstudie von \Citet{master-marvin-knodel}.
 
-Die einzige Maßnahme, die zur Verbesserung der externen Validität ergriffen werden kann, ist die Sicherstellung einer möglichst hohen Konstruktvalidität, internen Validität und Reliabilität, so dass zumindest die Voraussetzungen für die externe Validität optimiert sind.
+Die einzige Maßnahme, die zur Verbesserung der externen Validität ergriffen werden kann, ist die Sicherstellung einer möglichst hohen Konstruktvalidität, internen Validität und Reliabilität, sodass zumindest die Voraussetzungen für die externe Validität optimiert sind.
 
 %Neben der Qualität des \gls{mmf} und \gls{arh} gibt es viele andere Faktoren, die das Ergebnis im Einzelfall und auch in dieser Fallstudie beeinflussen können:
 %
