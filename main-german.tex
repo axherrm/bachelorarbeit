@@ -97,14 +97,22 @@ logo=uni-logo.png
   \section*{Abstract}
 \fi
 
-Aufgrund zahlreicher Vorteile gegenüber monolithischen Anwendungen hat sich das Architekturprinzip von Microservices im letzten Jahrzehnt immer weiter verbreitet.
-Faktoren wie die einfachere Skalierbarkeit oder größere Flexibilität bei der Kombination von Technologien können es für viele Produkte sinnvoll machen, von einer monolithischen zu einer Microservices-basierten Architektur zu migrieren.
-Die grundlegende Architektur eines Produkts zu ändern, ist jedoch ein sehr zeit- und kostenintensiver Prozess, der viele Risiken birgt.
+Aufgrund zahlreicher Vorteile gegenüber monolithischen Anwendungen hat sich das Ar\-chi\-tek\-tur\-prin\-zip von Microservices im letzten Jahrzehnt immer weiter verbreitet.
+Faktoren wie die bes\-sere Skalierbarkeit oder größere Flexibilität bei der Kombination von Technologien können es für viele Produkte sinnvoll machen, von einer monolithischen zu einer Microservices-basierten Architektur zu migrieren.
+Es ist jedoch ein sehr zeit- und kostenintensiver Prozess und mit vielen Risiken verbunden, die grundlegende Architektur eines Produkts zu ändern.
 Eine klare Vorgehensweise für diesen Migrationsprozess zu finden, ist eine schwierige Aufgabe.
-Da viele Entwickler dabei nicht auf wissenschaftliche Literatur zurückgreifen, wurde in früheren Arbeiten ein Werkzeug entwickelt, das den Migrationsprozess mit wissenschaftlichen Erkenntnissen unterstützen soll.
-Im Rahmen dieser Thesis wird dieses Werkzeug erstmalig für das Refactoring eines realen Produktes hinsichtlich spezifischer Designaspekte eingesetzt.
-Dabei konnten quantitative Ergebnisse durch den Vergleich der resultierenden Prototypen mit dem Ausgangsprodukt über vordefinierte Vergleichskriterien und Messmethoden erfasst werden.
-Außerdem wurde der Migrationsprozess als Ganzes qualitativ evaluiert.
+Da viele Entwickler dabei nicht auf wissenschaftliche Literatur zurückgreifen, wurde in früheren Arbeiten das Werkzeug \acrfull{arh} auf Basis des Frameworks \acrfull{mmf} entwickelt, das den Migrationsprozess mit wissenschaftlichen Erkenntnissen unterstützen soll.
+Im Rahmen dieser Thesis wurde das Werkzeug erstmalig für das Refactoring eines industriellen Produkts mit \acrlong{msa} eingesetzt.
+In der Arbeit wurde mithilfe des Frameworks eine Architekturreview zur szenarienbasierten Erfassung von \acrlongpl{qa} durchgeführt.
+Diese und weitere Filtereinstellungen dienen als Basis für die Suche mit Werkzeug nach Migrationsverfahren.
+Die resultierenden Suchergebnisse wurden manuell evaluiert.
+Die beiden bevorzugten Migrationsverfahren sowie die Suchergebnisse der dritten Phase in Form von \bpp wurden in Experteninterviews bewertet.
+Aus der Auswertung dieser und der während des Refactoringprozesses gemachten Feldnotizen ergibt sich eine positive Evaluation des \acrshort{mmf}.
+Es wird geschlossen, dass die Anwendung des Frameworks in dieser Fallstudie erfolgreich war und die gewonnen Migrationsansätze potentiell wertvoll für des Produkt sind.
+Es gilt, diese in der Zukunft einzusetzen, sowie weitere Untersuchungen zum und Verbesserungen am \acrshort{arh} durchzuführen.
+
+%Dabei konnten quantitative Ergebnisse durch den Vergleich der resultierenden Prototypen mit dem Ausgangsprodukt über vordefinierte Vergleichskriterien und Messmethoden erfasst werden.
+%Außerdem wurde der Migrationsprozess als Ganzes qualitativ evaluiert.
 
 \cleardoublepage
 
