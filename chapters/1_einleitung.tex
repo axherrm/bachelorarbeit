@@ -2,33 +2,37 @@
 \label{chap:einleitung}
 
 In einer Zeit, in der viele Softwarelösungen auf Cloud Computing basieren, ist auch die Mi\-cro\-services-Architektur immer gebräuchlicher geworden.
-Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektur übergeführt, hauptsächlich mit dem Ziel, von Vorteilen wie besserer Skalierbarkeit, Wartbarkeit und Flexibilität zu profitieren~\cite{Fritzsch_2019,taibi2017processmotivations}.
-Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme, kann die Migration in eine Microservices-Architektur jedoch sehr zeitaufwendig, kostenintensiv und kompliziert sein.
+Viele Produkte wurden innerhalb des letzten Jahrzehnts schon in diese Architektur übergeführt.
+Das Hauptziel ist, von Vorteilen wie besserer Skalierbarkeit, Wartbarkeit und Flexibilität zu profitieren~\cite{Fritzsch_2019,taibi2017processmotivations}.
+Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme kann die Migration in eine Microservices-Architektur jedoch sehr zeitaufwendig, kostenintensiv und kompliziert sein.
 Es liegt aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, deren Erkenntnisse jedoch nur selten in der Industrie eingesetzt werden \cite{fritzsch2022architecturecentric}.
 
-Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat die Abteilung \gls{ese} des \gls{iste} das \acrfull{mmf} entwickelt.
+Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat die Abteilung \gls{ese} des \gls{iste} das \gls{mmf} entwickelt.
 Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
-Ausbaufähig ist bisher jedoch die Anwendung des auf dem Framework basierenden Werkzeugs in der Industrie, durch die das Framework und Werkzeug weiterentwickelt und verbessert werden sol\-len.
-In der Arbeit von \Citet{master-marvin-knodel} wurde eine erste industrielle Fallstudie zu dem Framework und Werkzeug mit der (Teil-)Migration eines Monolithen durchgeführt.
-Im Rahmen dieser Bachelorarbeit wird das \acrshort{mmf} erstmalig für das Refactoring der bereits vorhandenen \gls{msa} des realen Produkts \jf verwendet.
+Bei der Anwendung des auf dem Framework basierenden Tools in der Industrie gibt es jedoch noch Raum für Verbesserungen.
+Praktische Anwendungen sind wichtig für die Weiterentwicklung und Verbesserung des Frameworks und des Werkzeugs.
+In der Arbeit von \Citet{master-marvin-knodel} wurde eine erste industrielle Fallstudie zu dem Framework und dem Werkzeug mit der (Teil-)Migration eines Monolithen durchgeführt.
+Diese Bachelorarbeit bildet die Fortsetzung der Fallstudien zum \gls{mmf}.
+Das Framework wird erstmalig für das Refactoring der bereits vorhandenen \gls{msa} des realen Produkts \jf verwendet.
 Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Frameworks und Werkzeuges verwendet, wodurch diese in Zukunft weiter verbessert werden sollen.
 
-Bei der Analyse des Produkts mithilfe des Frameworks werden vor allem drei Designaspekte von Microservices betrachtet:
-[1] Die optimale Service Granularität, bei der zwischen Overhead durch zu viele Einheiten und Overhead durch zu große Einheiten abgewogen werden muss.
-[2] Paradigma der Ansteuerung der einzelnen Einheiten, Kommunikationsmodell zwischen den Einheiten.
-[3] Reduktion des IO-Flaschenhalses, Art des Payload-Transfers.
-Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ihre Arbeit verrichten können, immer die Eingangsdokumente herunterladen und anschließend die Ergebnisse wieder hochladen müssen.
+Bei der Analyse von \jf mithilfe des Frameworks werden vor allem drei Designaspekte von Microservices betrachtet:
+\begin{enumerate}
+	\item[{[1]}] Die optimale Service Granularität. Bei dieser muss zwischen Overhead durch zu viele Einheiten und Overhead durch zu große Einheiten abgewogen werden.
+	\item[{[2]}] Paradigma der Ansteuerung der einzelnen Einheiten, Kommunikationsmodell zwischen den Einheiten.
+	\item[{[3]}] Reduktion des IO-Flaschenhalses, Art des Payload-Transfers. % TODO ausführlicher beschreiben
+	Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ihre Arbeit verrichten können, immer die Eingangsdokumente herunterladen und anschließend die Ergebnisse wieder hochladen müssen.
+\end{enumerate}
 
 Daraus folgt die Forschungsfrage, die in dieser Thesis untersucht wird:
 
-\begin{itemize}
-	\item \label[forschungsfrage]{forschungsfrage:1} \textbf{FF:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
-	\begin{enumerate}[i.]
-		\item Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
-		\item Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kom\-mu\-ni\-ka\-tions\-mo\-dells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
-	\end{enumerate}
-\end{itemize}
+\label[forschungsfrage]{forschungsfrage:1} \textbf{FF:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
+\begin{enumerate}[i.]
+	\item Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
+	\item Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kom\-mu\-ni\-ka\-tions\-mo\-dells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
+\end{enumerate}
+
 
 %Um die definierten Forschungsfragen zu beantworten, werden zwei Ziele für diese Arbeit definiert:
 %Im ersten Teil wird das \gls{mmf} benutzt, um die Architektur von \jf zu überarbeiten.
@@ -40,11 +44,11 @@ Daraus folgt die Forschungsfrage, die in dieser Thesis untersucht wird:
 %Bestandteil des zweiten Teils ist deswegen ebenfalls, einen geeigneten Umfang für diesen Prototyp zu finden, sowie Messmethoden festzulegen, die einen Vergleich des Produkts vor und nach dem Refactoring ermöglichen.
 
 Um die Forschungsfragen zu beantworten, ist diese Thesis in die folgenden Kapitel aufgeteilt:
-Anfangs wird in \textbf{\cref{chap:theoretischer-hintergrund}} in den theoretischen Hintergrund eingeführt, der für diese Arbeit relevant ist. 
-Es werden auch das \gls{mmf} und \emph{jadice flow} kurz beschrieben. 
-Ebenfalls werden ähnliche Arbeiten vorgestellt.
-In \textbf{\cref{chap:methodik}} wird die Methodik beschrieben, mit der diese Thesis durchgeführt wird und die Forschungsfragen beantwortet werden.
-Mit Verwendung des \gls{mmf} wird in \textbf{\cref{chap:anwendung}} am Produkt \emph{jadice flow} die Planung eines Refactorings durchgeführt. 
-Es werden die drei Phasen des Frameworks ausgeführt, welche einen Großteil der Arbeit dieser Thesis ausmachen. 
+
+\textbf{\cref{chap:theoretischer-hintergrund}} führt in den theoretischen Hintergrund ein, der für diese Arbeit relevant ist. 
+Dabei werden auch das \gls{mmf} und \jf kurz beschrieben und ähnliche Arbeiten vorgestellt.
+\textbf{\cref{chap:methodik}} beschreibt die Methodik, mit der diese Thesis durchgeführt wird und die Forschungsfrage beantwortet wird.
+Unter Verwendung des \gls{mmf} wird in \textbf{\cref{chap:anwendung}} am Produkt \jf die Planung eines Refactorings durchgeführt. 
+Dabei werden die drei Phasen des Frameworks ausgeführt, welche einen Großteil der Arbeit dieser Thesis ausmachen. 
 Eine Bewertung der Ergebnisse dieser Anwendung wird in \textbf{\cref{chap:auswertung}} beschrieben.
-Abschließend werden in \textbf{\cref{chap:gueltigkeit}} Einschränkungen und Gültigkeit dieser Arbeit diskutiert und in \textbf{\cref{chap:fazit}} ein Fazit gezogen und ein Ausblick gegeben.  
+Abschließend werden in \textbf{\cref{chap:gueltigkeit}} Einschränkungen und die Gültigkeit dieser Arbeit diskutiert und in \textbf{\cref{chap:fazit}} ein Fazit gezogen sowie ein Ausblick gegeben.  

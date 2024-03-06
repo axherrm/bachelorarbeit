@@ -16,7 +16,7 @@ Im zweiten Teil wird das Ergebnis dieses Refactorings verwendet, um eine Evaluat
 	\label{fig:methodology}
 \end{figure}
 
-\section{Anwendung des \gls{mmf}}
+\section{Anwendung des MMF}
 
 Die Vorgehensweise beim Refactoring ist durch das Framework sehr genau vorgegeben.
 Daher wird das Refactoring in dieser Thesis in die gleichen drei Phasen unterteilt wie in \cref{sec:mmf} beschrieben.
@@ -25,7 +25,7 @@ Diese Methode wird in \cref{sec:methodik-architekturreview} näher beschrieben.
 Das wesentliche Ergebnis dieses Reviews sind die gewünschten \glspl{qa} des Systems.
 Diese Attribute sind die Basis für Phase 2 und 3 und werden in den \gls{arh} eingegeben.
 Dieser führt Berechnungen mit den \glspl{qa} durch und kann so eine Liste von Refactoring-Methoden vorschlagen, die nach ihrer Eignung für die \glspl{qa} sortiert sind.
-Als weitere Eingabe dafür dienen bestimmte Filter, die in \cref{sec:durchführung-phase2} näher erläutert werden.
+Als weitere Eingabe für diese Suche dienen bestimmte Filter, die in \cref{sec:durchführung-phase2} näher erläutert werden.
 Aus der resultierenden Liste von Migrationsmethoden werden die besten Vorschläge betrachtet und bewertet, bevor einer davon ausgewählt und in den folgenden Phasen verwendet wird.
 Analog dazu wird in Phase 3a auf Basis der \glspl{qa} und Filter aus Phase 2 eine sortierte Liste von Patterns und Best Practices vorgeschlagen.
 Das Vorgehen bei der Auswahl der Filter sowie die spätere Inspektion der Vorschläge des \gls{arh} werden in Form von strukturierten Feldnotizen protokolliert.
@@ -35,7 +35,7 @@ Deren genauere Funktion und Form dieser wird in \cref{sec:structured-field-notes
 \label{sec:methodik-architekturreview}
 
 Die Methodik eines Architekturreviews wird in dieser Thesis nach Vorschlag des \gls{mmf}/\gls{arh} dazu verwendet, Qualitätsanforderungen an das System, sogenannte \acrfullpl{qa}, zu sammeln.
-Für Konformität mit dem Werkzeug \gls{arh}, das als Ergebnis des Architekturreviews Szenarien benötigt, die \acrfullpl{qa} beschreiben, beschränkt sich die Auswahl möglicher Verfahren für die erste Phase auf Szenarien-basierte Architekturreviews.
+Für Konformität mit dem Werkzeug \gls{arh}, das als Ergebnis des Architekturreviews Szenarien benötigt, die \acrfullpl{qa} beschreiben, beschränkt sich die Auswahl möglicher Verfahren für die erste Phase auf szenarienbasierte Architekturreviews.
 Das bedeutet, dass die gewünschten \glspl{qa} des Systems in Form von Szenarien erfasst und dokumentiert werden.
 Ein Szenario beschreibt dabei eine Interaktion eines Stakeholders mit dem Produkt \cite{kazman_2000}.
 Diese Konkretisierung von Qualitäten soll vor allem die Verständlichkeit fördern.
@@ -49,13 +49,13 @@ Folgend werden verschiedene akademische Methoden beschrieben und verglichen und 
 \subsubsection{Vergleich verschiedener Methoden}
 \label{sec:atam-saam-svahnberg}
 
-Geläufige Szenarien-basierte Verfahren sind die \gls{saam} nach \Citet{saam} und die \gls{atam} nach \Citet{kazman_2000}.
+Geläufige szenarienbasierte Verfahren sind die \gls{saam} nach \Citet{saam} und die \gls{atam} nach \Citet{kazman_2000}.
 \gls{atam} ist der Nachfolger und eine Überarbeitung von \gls{saam}, weshalb folgend lediglich \gls{atam} näher betrachtet wird.
 Die Autoren beschreiben mit \gls{atam} eine Methode, die aus insgesamt neun Schritten besteht.
 Diese Schritte sollen mit den Stakeholdern des Produkts innerhalb von drei Arbeitstagen durchgeführt werden.
 Da das Ausmaß dieser allerdings nicht angemessen für den Rahmen einer Thesis ist \cite{master-marvin-knodel}, würde für diese Arbeit höchstens eine stark abgewandelte Version dieser infrage kommen.
 Stattdessen wurde sich in dieser Thesis für eine Modifikation des Architekturreviews nach \Citet{SVAHNBERG20071893} entschieden.
-Es handelt sich dabei ebenfalls um eine Szenarien-basierte Methode, die auf \gls{saam} und \gls{atam} basiert, jedoch spezieller für kleinere Anwendungsfälle entwickelt wurde.
+Es handelt sich dabei ebenfalls um eine szenarienbasierte Methode, die auf \gls{saam} und \gls{atam} basiert, jedoch spezieller für kleinere Anwendungsfälle entwickelt wurde.
 Die Autoren erläutern die Verwendung dieser zur Evaluation von Studentenprojekten, die ein reales Softwareentwicklungsprojekt mit Industriekunden simulieren und einen Rahmen von 10-15 Teilnehmern und 20 Wochen Arbeitszeit vorsehen.
 
 \subsubsection{Architekturreview nach \Citet{SVAHNBERG20071893}}
@@ -78,21 +78,22 @@ Vielmehr entfällt das Hauptziel eines herkömmlichen Architekturreviews: die Be
 Stattdessen wurde die in \cref{tab:architekturreview-plan} dargestellte Methodik zur Extraktion von Szenarien und \glspl{qa} entworfen.
 \input{tables/methodology/architektur-review-plan}
 
-Wie in der Tabelle angemerkt, dienen als Vorlage für die Methodik die ersten Schritte des Architekturreviews nach \Citet{SVAHNBERG20071893}.
+Wie in der Tabelle angemerkt, dienen als Vorlage für die Methodik die ersten Schritte des Ar\-chi\-tek\-turreviews nach \Citet{SVAHNBERG20071893}.
 Außerdem werden auch einzelne Aspekte von \gls{atam} \cite{kazman_2000} verwendet.
 Die einzelnen Schritte werden folgend näher beschrieben.
 
 Im ersten Schritt ist die Einleitung in die Methodik geplant.
-Dabei handelt es sich um eine Modifikation des nach \Citet{SVAHNBERG20071893} geplanten ersten Schritts, bei dem stattdessen eine Einleitung in das Projekt erfolgt.
+Dabei handelt es sich um eine Mo\-di\-fi\-ka\-ti\-on des nach \Citet{SVAHNBERG20071893} geplanten ersten Schritts, bei dem stattdessen eine Einleitung in das Projekt erfolgt.
 Dieser stammt vermutlich aus dem Kontext der Studentenprojekte, bei denen mehrere Architekturreviews am selben Tag von den gleichen Personen durchgeführt werden und somit eine Einleitung in das Projekt nötig ist.
 In den meisten Fällen in der Industrie, und so auch in diesem, ist dieser Schritt nicht notwendig, da die Teilnehmer der Besprechung, die Stakeholder, bereits mit dem Produkt vertraut sind.
 Stattdessen wird (wie in \gls{atam} \cite{kazman_2000}) im ersten Schritt eine Einleitung in die verwendete Methodik gegeben, da diese dem Team noch unbekannt war.
 
-Mit Schritt 2 beginnt dann der eigentliche Inhalt das Architekturreviews.
-Dabei werden die wichtigsten \glspl{qa} durch zwei Sub-Schritte gesammelt:
-Erst erfolgt eine Umfrage, bei der die Teilnehmer jeweils eine Einschätzung über die wichtigsten drei Sub-\glspl{qa} abgeben.
-Danach wird in gemeinsamer Diskussion eine Priorisierung der Sub-\glspl{qa} finalisiert.
-Dabei werden als Basis-\glspl{qa} statt der ISO 9126~\cite{ISO-9126} nach \Citet{SVAHNBERG20071893} die von \Citet{master-daniel-koch} speziell für Microservices-Architekturen identifizierten \glspl{qa} (siehe \cref{fig:qas}) verwendet.
+Mit Schritt 2 beginnt das eigentliche Architekturreview.
+Dabei werden die wichtigsten \glspl{qa} in zwei Sub-Schritten gesammelt:
+Zunächst erfolgt eine Umfrage, bei der die Teilnehmer jeweils eine Einschätzung über die drei wichtigsten Sub-\glspl{qa} abgeben.
+Anschließend wird in einer gemeinsamen Diskussion eine Priorisierung der Sub-\glspl{qa} finalisiert.
+Als Basis-\glspl{qa} werden statt der ISO 9126~\cite{ISO-9126} nach \Citet{SVAHNBERG20071893} die von \Citet{master-daniel-koch} speziell für Microservices-Architekturen identifizierten \glspl{qa} verwendet.
+Diese \glspl{qa} sind in \cref{fig:qas} dargestellt.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{qas}
@@ -102,8 +103,8 @@ Dabei werden als Basis-\glspl{qa} statt der ISO 9126~\cite{ISO-9126} nach \Citet
 	}
 	\label{fig:qas}
 \end{figure}
-Dabei handelt es sich zu großen Teilen um die nach der Literaturrecherche wichtigsten \glspl{qa} aus der ISO 25010~\cite{ISO-25010}, die durch wenige Microservices-spezifische \glspl{qa} ergänzt wurden.
-Durch die Verwendung des \gls{arh} ist die einzig sinnvolle Option, diese zu verwenden, da der \gls{arh} nur die Eingabe dieser erlaubt.
+Es handelt sich hierbei größtenteils um die wichtigsten \glspl{qa} aus der ISO 25010 \cite{ISO-25010}, die durch einige spezifische \glspl{qa} für Microservices ergänzt wurden.
+Aufgrund der Verwendung des \gls{arh} ist es die einzige sinnvolle Option, diese zu nutzen, da der \gls{arh} nur die Verwendung dieser zulässt.
 
 Die im zweiten Schritt erstellte Priorisierung der \glspl{qa} wird im dritten Schritt dann verwendet, um Szenarien zu erstellen.
 Dieser ist in drei Sub-Schritte unterteilt:
@@ -123,35 +124,35 @@ Wie in \cref{fig:utility-tree} zu sehen ist, enthält die in dieser Thesis verwe
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{utility-tree.drawio}
-	\caption[Utility Tree nach \gls{atam} \cite{kazman_2000}]{
-		Utility Tree nach \gls{atam} \cite{kazman_2000} auf die Verwendung mit \gls{arh} angepasst.
+	\caption[Utility Tree nach \acrshort{atam}]{
+		Utility Tree nach \gls{atam} \cite{kazman_2000}, der auf die Verwendung mit dem \gls{arh} angepasst ist.
 	}
 	\label{fig:utility-tree}
 \end{figure}
 
 
-Im letzten Schritt, erfolgt eine Bewertung, bei der jedem Szenario zugeordnet wird, ob eine \gls{msa} für es vorteilhaft ist.
+Im letzten Schritt erfolgt eine Bewertung, bei der jedem Szenario zugeordnet wird, ob eine \gls{msa} dafür vorteilhaft ist.
 Diese Bewertung kann als Teil des fünften Schritts nach \Citet{SVAHNBERG20071893} gesehen werden.
 Abgesehen davon wird allerdings der Teil der Bewertung der Architektur unter den Szenarien im Architekturreview komplett ausgelassen und der Rest der Schritte 4, 5 und 6 nach \Citet{SVAHNBERG20071893} nicht durchgeführt.
-Das liegt daran, dass während bei allen erwähnten Szenarien-basierten Verfahren die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zu Bewertung der Architektur des Systems sind, sie im im Architekturreview, das im Rahmen dieser Thesis durchgeführt wird, das erwünschte Endprodukt darstellen.
+Während bei allen genannten szenarienbasierten Verfahren die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zu Bewertung der Systemarchitektur sind, stellen sie bei dem im Rahmen dieser Thesis durchgeführten Architekturreview das gewünschte Endprodukt dar.
 
 Die vorgestellte Methodik kann als neue Methodik zur Extraktion von Szenarien und \glspl{qa} betrachtet werden und könnte in Zukunft als Vorlage für die Anwendung mit dem \gls{arh} verwendet werden.
-Trotz des Mangels des Bewertungsschritts der Methodik wird sie folgend zur Vereinfachung als Architekturreview bezeichnet.
+Trotz des Fehlens des Bewertungsschritts der Methodik wird sie folgend zur Vereinfachung als Architekturreview bezeichnet.
 
 \subsection{Strukturierte Feldnotizen}
 \label{sec:structured-field-notes}
-Während Phase 1 mit der Methodik einer Fokusgruppe durchgeführt wird, findet die Bearbeitung in den folgenden Phasen größtenteils in Einzelarbeit statt.
+Während Phase 1 mit der Methodik einer Fokusgruppe durchgeführt wird, findet die Bearbeitung in den fol\-gen\-den Phasen größtenteils in Einzelarbeit statt.
 Um dabei strukturiert zu protokollieren, welche Aktivitäten im Rahmen dieser Phasen durchgeführt werden, werden systematisch durchgeführte Aktivitäten mit gemachten Erfahrungen und Herausforderungen dokumentiert. %und am Ende aus\-ge\-wer\-tet.
 Dazu werden wie in der ähnlichen Arbeit von \Citet{master-marvin-knodel} strukturierte Feldnotizen nach \Citet{seaman2008qualitative} verwendet.
 
-Jede Feldnotiz wurde zeitnah nach Beobachtung in einer zugehörigen Datei mit dem Namensschema F\emph{Nummer}\_P\emph{Phase\gls{mmf}}\_\emph{Datum}\_\emph{Name}.tex erstellt.
+Jede Feldnotiz wurde zeitnah nach Beobachtung in einer zugehörigen Datei mit dem Na\-mens\-sche\-ma F\emph{Nummer}\_P\emph{Phase\gls{mmf}}\_\emph{Datum}\_\emph{Name}.tex erstellt.
 Dabei wurden dementsprechend Nummer der Feldnotiz, Phase des \gls{mmf}, Datum (im Format \emph{MM\_DD\_JJJJ}) und Name der Feldnotiz im Dateinamen festgehalten.
 \cref{feldnotiz:1} hat beispielsweise den Namen \emph{F01\_P2\_11\_20\_2023\_FilterAuswahl.tex}.
 \cref{tab:field-notes} gibt einen Überblick über die Eintrags-Felder und welchem Feld nach \Citet{seaman2008qualitative} sie entsprechen.
 
 \input{tables/methodology/field-notes}
 
-\section{Evaluation des \gls{mmf}}
+\section{Evaluation des MMF}
 
 Das Forschungsziel dieser Arbeit ist die Evaluation des \gls{mmf} und des \gls{arh}.
 Nach dem Refactoring von \jf mit dem Framework wird evaluiert, als wie hilfreich sich dieses bei der Optimierung einer bereits vorhandenen \gls{msa} herausgestellt hat.
@@ -183,7 +184,7 @@ Als weitere Meinung einer Person, die zwischen den beiden genannten Rollen liegt
 Eine Übersicht über die drei ausgewählten Teilnehmer ist in \cref{tab:expert-interviewees} zu finden.
 \input{tables/methodology/expert-interviewees}
 
-\paragraph{Protokollierung:} Zwei geläufige Optionen für die Aufnahme eines Interviews sind die Protokollierung während des Interviews, entweder durch den Interviewer oder einen separaten Protokollant \cite{seaman2008qualitative,Runeson2009}.
+\paragraph{Protokollierung:} Zwei geläufige Optionen für die Aufnahme eines Interviews sind die Pro\-to\-kol\-lie\-rung während des Interviews, entweder durch den Interviewer oder einen separaten Protokollant \cite{seaman2008qualitative,Runeson2009}.
 Der Interviewer selbst ist besonders im Fall von Unerfahrenheit keine gute Wahl, da es kompliziert sein kann, zwei Aufgaben gleichzeitig zu bewältigen und die Leitung des Interviews somit leiden kann.
 Die Lösung durch einen Protokollanten ist auch nicht optimal, da ein solcher nicht immer zur Verfügung steht.
 Außerdem kann es zu Interpretationsunterschieden kommen, welche Informationen relevant sind.
@@ -209,8 +210,9 @@ Dabei soll er seine Einzelbewertungen der letzten Schritte zusammenfassen und ei
 \paragraph{Vorbereitungsmaterial:}
 Die Einleitung eines Interviews sollte nur einen kleinen Teil ausmachen, da Zeit in Interviews wertvoll und oft knapp bemessen ist \cite{Runeson2009,hove-anda-2005,seaman2008qualitative}.
 Aus diesem Grund wurden für die Interviews eine Präambel und ein Informationsbogen erstellt, welche die Teilnehmer im Voraus erhalten haben.
-Diese sind in \cref{chap:expert-interviews-preamble,chap:expert-interviews-infobogen} zu finden.
-Die Präambel fasst die generellen Richtlinien für die Experteninterviews zusammen.
+%Diese sind in \cref{chap:expert-interviews-preamble,chap:expert-interviews-infobogen} zu finden.
+Diese sind in den Anhängen \hyperref[chap:expert-interviews-preamble]{B} und \hyperref[chap:expert-interviews-infobogen]{C} zu finden.
+Die Prä\-am\-bel fasst die generellen Richtlinien für die Experteninterviews zusammen.
 Dabei diente die Präambel von Bogner et al.\footnote{\url{https://github.com/xJREB/research-microservices-interviews/blob/master/interview-preamble.md}} als Vorlage.
 Da der thematische Kontext des Interviews durch die Voraussetzung des Verständnisses von zwei Migrationsmethoden relativ komplex ist, wurde außerdem ein Informationsbogen erstellt, der bei der thematischen Einarbeitung helfen soll.
 Darin werden alle wichtigen Konzepte erklärt, die in den Interviews behandelt werden.
@@ -224,7 +226,7 @@ Es ist wichtig, einen gut strukturierten und systematischen Plan für die Datena
 Wie \Citet{seaman2008qualitative} empfiehlt, wurde die Datenanalyse deswegen im Voraus geplant.
 Obwohl es empfehlenswert ist, die Auswertung durch mehrere Forschende durchzuführen, um Voreingenommenheit zu reduzieren \cite{Runeson2009}, wird sie in dieser Arbeit aufgrund mangelnder Ressourcen nur vom Autor durchgeführt.
 
-Die Rohdaten liegen in Form von drei Audioaufnahmen vor, die jeweils etwa drei Stunden lang sind.
+Die Rohdaten liegen in Form von drei Audioaufnahmen vor, die jeweils etwa eine Stunde lang sind.
 Die Audioaufnahmen werden mithilfe der von \Citet{Mayring2019} vorgestellten Techniken  \emph{Zusammenfassen} und \emph{Explikation} getrennt transkribiert (siehe \cref{fig:datenanalyse}).
 Die Ergebnisse dieser Transkription werden auf zwei verschiedene Arten in diese Thesis übernommen.
 Zum einen wird eine \emph{Strukturierung} nach \Citet{Mayring2019} durchgeführt.

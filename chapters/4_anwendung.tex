@@ -60,14 +60,14 @@ Der gesamte Prozess der Umfrage und anschließender Diskussion, um die Prioritä
 \subsection{Szenarienerhebung (Schritt 3)}
 
 Im nächsten Schritt war die Aufgabe, für jedes dieser (Sub-) \glspl{qa} zwei Szenarien zu definieren, die das Attribut gut und auf verschiedene Arten beschreiben.
-Es wurde keine spezielle Methodik angewandt, sondern in einer offenen Diskussion der gesamten Gruppe von verschiedenen Teilnehmern nacheinander für die Attribute Szenarien vorgeschlagen und anschließend überarbeitet oder teilweise auch abgelehnt.
+Es wurde keine spezielle Methodik an\-ge\-wandt, sondern in einer offenen Diskussion der gesamten Gruppe von verschiedenen Teil\-neh\-mern nacheinander für die Attribute Szenarien vorgeschlagen und anschließend überarbeitet oder teilweise auch abgelehnt.
 Diese Szenarien wurden in Form eines \emph{Utility Trees}, beschrieben in \cref{sec:atam-saam-svahnberg}, festgehalten.
 Nach einer Diskussionszeit von etwa 35 Minuten ergaben sich die Szenarien, die in  \cref{fig:scenarios} abgebildet sind.
 
 \begin{figure}
 	\centering
 	\includegraphics[angle=270,width=\textwidth]{scenarios.drawio}
-	\caption[Utility Tree mit im Architekturreview ermittelten Qualitätsanforderungen und Szenarien]{
+	\caption[Utility Tree des Architekturreviews mit \acrshortpl{qa} und Szenarien]{
 		Der Utility Tree mit Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
 		Von oben nach unten enthält der Baum folgende Elementarten: [1] Wurzel (ohne Bedeutung), [2] \gls{qa}, [3] Subattribut, [4] Beurteilung des Szenarios hinsichtlich Wichtigkeit und technischer Schwierigkeit, [5] Szenariobeschreibung.
 	}
@@ -299,9 +299,9 @@ Im Gegensatz zu den meisten anderen  im Rahmen dieser Thesis betrachteten Method
 Es wird als Ausgangsarchitektur eine \gls{msa} erwartet.
 
 \paragraph{Funktionsweise:} Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
-Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen. 
+Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{se\-man\-ti\-sche Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen.
 Diese können ebenfalls visualisiert und so übersichtlich betrachtet werden.
-Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen. 
+Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen.
 
 \paragraph{Evaluation:} Diese Methode wurde in drei Fallstudien überprüft, bei einer davon handelt es sich um eine industrielle Anwendung.
 
@@ -350,7 +350,7 @@ Das Ergebnis des Fragebogens war eine positive Bewertung der erhaltenen Dekompos
 \label{sec:phase2-result-6}
 \label[res]{res:6}
 
-\citeauthor{arh-result-important-filter-4} beschreiben eine Methode zur Erkennung von Microservices in großen, monolithischen Systemen, die auf \gls{iiot} Knoten laufen können.
+\citeauthor{arh-result-important-filter-4} beschreiben eine Methode zur Erkennung von Microservices in großen, mo\-no\-li\-thisch\-en Systemen, die auf \gls{iiot} Knoten laufen können.
 Dabei wird sowohl semantische Kenntnis des Systems sowie syntaktisches Wissen über den Code verwendet.
 \paragraph{Funktionsweise:} Im ersten Schritt werden durch die Analyse von \gls{sql}-Queries und Datenbankschemas \glspl{bo} abgeleitet.
 Im zweiten Schritt werden semantische und strukturelle Beziehungen durch Analyse der \gls{bo}- und Methodenbeziehungen identifiziert.
@@ -365,7 +365,7 @@ Es konnten Erfolge in Performance und Effizienz gemessen werden.
 \label{sec:phase2-result-7}
 \label[res]{res:7}
 
-\citeauthor{arh-result-important-filter-7} stellen das \emph{Mulit-Objective}-Optimierungsproblem-basierte Verfahren \emph{toMicroservices} vor.
+\citeauthor{arh-result-important-filter-7} stellen das Verfahren \emph{toMicroservices} vor, das auf \emph{Mulit-Objective}-Optimierung basiert.
 
 \paragraph{Funktionsweise:} Als Ziele des Problems werden die Kriterien \emph{Coupling}, \emph{Cohesion}, \emph{Feature Modularization}, \emph{Network Overhead} und \emph{Reuse} definiert.
 Die Eingabe wird dabei auf Funktionsebene erwartet, beispielsweise durch ein Klassendiagramm.
@@ -396,7 +396,7 @@ Eine Implementierung dieser ist allerdings nicht veröffentlicht.
 Nach Betrachtung der acht beschriebenen Ergebnisse werden diese nun bezüglich ihrer Eignung für das weitere Vorgehen verglichen.
 Um den Vergleich übersichtlicher zu gestalten, werden zu Beginn des Vergleichs direkt zwei Methoden ausgeschlossen, da sie offensichtlich nicht infrage kommen.
 
-\paragraph{Ausschluss:} \result{4} ermöglicht die automatische Umgestaltung eines Java-Monolithen in Microservices unter Angabe einer Dekomposition.
+\paragraph{Ausschluss:} \result{4} ermöglicht die automatische Umgestaltung eines Java-Mo\-no\-li\-then in Microservices unter Angabe einer Dekomposition.
 Das Werkzeug setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch.
 Das Ziel dieser Arbeit besteht jedoch darin, eine geeignete Dekomposition mit optimaler Service-Granularität zu finden.
 Da die Methode dieses Ziel nicht behandelt, kann sie ausgeschlossen werden und wird zur Vereinfachung nachfolgend nicht aufgeführt.
@@ -413,7 +413,7 @@ Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfall
 Es folgt ein Vergleich der verbleibenden Methoden (Übersicht in \cref{tab:phase2-comparison}).%
 \input{tables/phase2/method-comparison}%
 Bevor die Unterschiede der restlichen sechs Verfahren erläutert werden, sollen die Gemeinsamkeiten aller hier gelisteten und allgemein der meisten existierenden Verfahren zur \gls{sia} beleuchtet werden.
-\paragraph{Generelle Funktionsweise:} Während die Eingabe, die die Verfahren voraussetzen sehr unterschiedlich sein kann, ist die Funktionsweise, wie mit den eingegebenen Daten fortgefahren wird, oft sehr ähnlich.
+\paragraph{Generelle Funktionsweise:} Während die Eingabe, die die Verfahren voraussetzen sehr un\-ter\-schied\-lich sein kann, ist die Funktionsweise, wie mit den eingegebenen Daten fortgefahren wird, oft sehr ähnlich.
 In der Regel wird aus den Eingaben ein Graph erstellt, der aus Knoten der atomaren Einheiten der Eingabe besteht.
 Diese sind mit Kanten verbunden, die die Abhängigkeit verschiedener atomarer Einheiten voneinander abbilden.
 Anschließend wird der Graph mithilfe verschiedener Algorithmen und Strategien gruppiert, wobei die resultierenden Gruppen potenzielle Microservices darstellen.
@@ -430,7 +430,7 @@ Für manche Verfahren werden Funktionen als atomare Einheiten verwendet und für
 In einem Ansatz werden außerdem gezielt \gls{sql}-Queries betrachtet, wodurch Beziehungen zwischen Datenbank-Objekten analysiert werden.
 Auch wenn Quellcode als Eingabemöglichkeit eine Mehrheit ausmacht, gibt es unter den sechs ausgewählten Methoden noch zwei, die andere Eingaben verwenden.
 Dabei handelt es sich um \emph{User Stories} (\result{3}) und \glspl{bp} (\result{2}).
-Im Gegensatz zu den meisten Quellcode-basierten Verfahren wird hier vermutlich mehr Subjektivität Einfluss in die Ergebnisse erhalten, da die Eingabe vollständig von Menschen erzeugt werden muss, wohingegen in den anderen Verfahren meist nur der Quellcode und keine manuellen Eingaben verwendet werden.
+Im Gegensatz zu den meisten quellcodebasierten Verfahren wird hier vermutlich mehr Subjektivität Einfluss in die Ergebnisse erhalten, da die Eingabe vollständig von Menschen erzeugt werden muss, wohingegen in den anderen Verfahren meist nur der Quellcode und keine manuellen Eingaben verwendet werden.
 Für den Anwendungsfall in dieser Arbeit wurden diese manuellen Eingabemöglichkeiten trotzdem als besser bewertet, da sie eine höhere Abstraktionsebene ermöglichen und somit der zeitliche Aufwand besser angepasst werden kann.
 Außerdem ist bei einigen Verfahren, die Quellcode als Eingabe verwenden die bereits vorhandene \gls{msa} von \jf von Nachteil, wenn diese beispielsweise statische Codeanalysen auf einem Monolithen vorsehen.
 
@@ -467,7 +467,7 @@ Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet
 \subsection{Anwendung Migrationsverfahren}
 \label{sec:anwendung-verfahren}
 In diesem Abschnitt wird, anknüpfend an die Ordnung der Verfahren nach ihrer Eignung in Phase 2, die Planung des weiteren Vorgehens beschrieben.
-Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden. 
+Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden.
 Dies kann durch die Modifikation eines Verfahrens, aber auch durch die Kombination mehrerer Verfahren oder den zusätzlichen Einsatz eines Werkzeugs geschehen.
 Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
 
@@ -484,7 +484,7 @@ Diesem wurde kein Name gegeben, die Suche danach blieb erfolglos.
 Auch eine Anfrage per E-Mail blieb ohne Antwort.
 Dieses Verfahren wurde im Vergleich zu  \result{3} als leichter manuell umsetzbar eingeschätzt, weswegen folgend aufgrund mangelnder Methoden mit Werkzeugunterstützung eine manuelle Umsetzung dieses Verfahrens begonnen wurde.
 
-Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Algorithmus \emph{cHAC} genannt, weshalb mit dessen Implementierung begonnen wurde.
+Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Al\-go\-rith\-mus \emph{cHAC} genannt, weshalb mit dessen Implementierung begonnen wurde.
 Es wurde versucht, diesen mit Top-Down Vorgehen in Java zu umzusetzen.
 Für einige Details des Pseudocodes wurden Java-spezifische Konstrukte anstelle der im Algorithmus spezifizierten verwendet.
 Beispielsweise wurde die Synchronisationsvariable \emph{@SIC} des Algorithmus durch eine CyclicBarrier\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html}} implementiert.
@@ -496,9 +496,9 @@ An einigen Stellen wurden Funktionen des Algorithmus nicht definiert, sondern nu
 An anderen Stellen wurden im Algorithmus erwähnte Funktion im Text durch Formeln beschrieben, wobei teilweise unklar war, ob diese Formeln korrekt sind.
 Hierbei werden Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet.
 Diese konnten mit der sehr kurzen Beschreibung im Artikel nicht geklärt werden.
-Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt. 
+Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt.
 
-\paragraph{Werkzeuge:} Zusätzlich zu den untersuchten Verfahren wurden die vom \gls{arh} gelisteten Werkzeuge betrachtet, vor allem aufgrund des Mangels von Werkzeugunterstützung bei den ausgewählten Verfahren.
+\paragraph{Werkzeuge:} Zusätzlich zu den untersuchten Verfahren wurden die vom \gls{arh} gelisteten Werk\-zeu\-ge betrachtet, vor allem aufgrund des Mangels von Werkzeugunterstützung bei den aus\-ge\-wähl\-ten Verfahren.
 Dabei wurden insbesondere die fünf Werkzeuge, die in der Arbeit von \Citet{fritzsch2023tools} beschrieben wurden, näher untersucht.
 Letztendlich konnte allerdings jedes der Werkzeuge aus verschiedenen Gründen nicht verwendet werden.
 Eines ist durch die Eingabeanforderungen explizit nicht kompatibel, die meisten anderen wären nur mit der monolithischen, älteren Version von \jf kompatibel gewesen.

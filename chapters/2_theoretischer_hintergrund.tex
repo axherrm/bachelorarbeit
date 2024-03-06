@@ -2,7 +2,7 @@
 \label{chap:theoretischer-hintergrund}
 Zum Architekturprinzip der Microservices gibt es bereits eine Vielzahl akademischer Publikationen.
 In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis relevanten Literatur eingeführt.
-Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten neuen Architekturprinzip \emph{Microservices} gezogen.
+Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten, modernen Architekturprinzip \emph{Microservices} gezogen.
 Anschließend werden aktuelle Arbeiten zur Migration zu Microservices-Architekturen beschrieben.
 Des Weiteren wird das \acrfull{mmf} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
 Abschließend wird ein Überblick über das Produkt gegeben, das in dieser Thesis mithilfe des \gls{mmf} überarbeitet wird.
@@ -64,21 +64,21 @@ Für diesen entscheidenden Prozess wäre es also wichtig für Entwicklerteams, w
 
 Ebenfalls ist die Konzipierung der Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
 Das liegt daran, dass im Vergleich zu monolithischen Systemen die Kommunikation zwischen den Services die Latenz für gleichartige Aufgaben erhöht.
-Um diesen Effekt zu minimieren, sollte möglichst wissenschaftlich gestützt vorgegangen werden und Best Practices sowie beliebte Pattern evaluiert und verwendet werden.
+Um diesen Effekt zu minimieren, sollte möglichst wissenschaftlich gestützt vorgegangen werden und bewährte Best Practices sowie Patterns evaluiert und verwendet werden.
 
 Bei der Migration zu Microservices gibt es neben den zwei genannten viele andere Her\-aus\-for\-de\-run\-gen, wie Mangel an Verständnis, Identifikation der Service-Grenzen, Testing, Fehlertoleranz, Serviceintegration, Datenkonsistenz, hohes Coupling im Legacy-System, organisatorische Her\-aus\-for\-de\-run\-gen, Sicherheit, Datenbank-Migration, Datenmanagement und Monitoring \cite{migration-challanges2023}.
 Um diese verschiedenen Her\-aus\-for\-de\-run\-gen nicht einzeln angehen zu müssen, kann ein Framework hilfreich sein, das den gesamten Refactoring-Prozess in mehreren Phasen begleitet.
 Ein solches wird im nächsten Kapitel vorgestellt und anschließend in dieser Arbeit untersucht.
 
-\section{\acrfull{mmf}}
+\section{Microservices Migration Framework (MMF)}
 \label{sec:mmf}
 
-Es wurden bereits viele Gründe für die sehr häufig durchgeführte Migration zu Microservices, sowie die Risiken und Herausforderungen dabei beschrieben.
-Dass der Migrationsprozess sehr komplex, risikoreich und fehleranfällig ist, sollte klar sein.
+Es wurden bereits viele Gründe für die häufige Migration zu Microservices beschrieben, sowie die damit verbundenen Risiken und Herausforderungen.
+Der Migrationsprozess ist sehr komplex, riskant und fehleranfällig.
 Erschwert wird er durch das Fehlen klarer und strukturierter Anleitungen.
 Mehrere Metastudien haben bereits versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein können.
 Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Literatur schnell ändert und Metastudien dadurch teilweise obsolet werden.
-Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt, gelöst werden.
+Dieses Problem könnte gelöst werden durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt.
 Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
 
 Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Werkzeug \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
@@ -87,14 +87,24 @@ Der \gls{arh} ist eine webbasierte Anleitung, die Entwickler durch drei Phasen d
 Eine Übersicht über diese Phasen und die Funktionsweise des Frameworks ist in \cref{fig:mmf-overview} zu sehen.
 Im Folgenden werden diese drei Phasen genauer beschrieben:
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{mmf-overview}
+	\caption[Übersicht über \acrshort{mmf}]{
+		Übersicht über das \gls{mmf} des \gls{ese} \cite{fritzsch2022architecturecentric}. Es sind die drei Phasen des Prozesses zu erkennen, sowie einige Schritte der einzelnen Phasen.
+	}
+	\label{fig:mmf-overview}
+\end{figure}
+
 \begin{itemize}
 	\item \textbf{Phase 1: System Comprehension:}
-	In Phase 1 wird das Verständnis des Systems, das migriert werden soll, angestrebt.
+	In Phase 1 wird das Verständnis des zu migrierenden Systems angestrebt.
 	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \glspl{qa} und gewünschte Szenarien identifiziert.
 	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
-	Im Werkzeug konnte zum Zeitpunkt der Durchführung dieser Arbeit in dieser Phase nur die Eingabe der Szenarien mit zugehörigen \glspl{qa} vorgenommen werden.
+	Zum Zeitpunkt der Durchführung dieser Arbeit konnte im Werkzeug nur die Eingabe der Szenarien mit den zugehörigen \glspl{qa} erfolgen.
+	Die restlichen Schritte dieser Phase wurden erst nach Abschluss der Arbeit zum Werkzeug hinzugefügt.
 	\item \textbf{Phase 2: Strategy Definition:}
 	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
 	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
@@ -105,9 +115,9 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
-	Hier wird, basierend auf der Methode zur Migration, die in der Planungsphase gewählt wurde, der \gls{sia} durchgeführt.
+	Basierend auf der in der Planungsphase ausgewählten Methode zur Migration wird hier der \gls{sia} durchgeführt.
 	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
-	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
+	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Iteration der Implementierung begonnen werden.
 	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
 	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
 	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
@@ -115,47 +125,38 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
 \end{itemize}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{mmf-overview}
-	\caption[\acrfull{mmf} Übersicht]{
-		Übersicht über das \gls{mmf} des \gls{ese} \cite{fritzsch2022architecturecentric}. Es sind die drei Phasen des Prozesses zu erkennen, sowie einige Schritte der einzelnen Phasen.
-	}
-	\label{fig:mmf-overview}
-\end{figure}
-
 \section{jadice flow}
 
-Das vorgestellte Framework soll in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden Microservices-Architektur in der Industrie benutzt werden.
-Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow}\footnote{\url{https://www.levigo.de/jadice-flow/}} eingegangen, welches mit dem \gls{mmf} überarbeitet werden soll.
+Das vorgestellte Framework wird in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden Microservices-Architektur in der Industrie benutzt.
+Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow}\footnote{\url{https://www.levigo.de/jadice-flow/}} eingegangen, welches mit dem \gls{mmf} überarbeitet wird.
 
-\emph{jadice flow} ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://www.levigo.de/dokumentenmanagement/}}.
-\emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an \emph{jadice flow} arbeiten.
-\emph{jadice flow} basiert bereits auf einer Microservices-Architektur, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monoliths \emph{jadice server}\footnote{\url{https://www.levigo.de/jadice-server/}}.
-Beide Produkte bieten Workflow-basierte Dokumentenverarbeitung an, bei der mit komplexen Datenströmen umgegangen werden kann.
+\jf ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://www.levigo.de/dokumentenmanagement/}}.
+\emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an der Anwendung arbeiten.
+\jf basiert bereits auf einer Microservices-Architektur, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monolithen \emph{jadice server}\footnote{\url{https://www.levigo.de/jadice-server/}}.
+Beide Produkte bieten workflowbasierte Dokumentenverarbeitung an, bei der mit komplexen Datenströmen umgegangen werden kann.
 Durch den Umstieg auf eine Microservices-Architektur können in der neuen Generation einzelne Verarbeitungsschritte skaliert werden.
-Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Containern ist \emph{jadice flow} prinzipiell unabhängig von der Programmiersprache.
+Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Containern ist \jf prinzipiell unabhängig von der Programmiersprache.
 
 Einen beispielhaften Workflow stellt der \emph{E-Mail converter} dar.
 Dabei werden E-Mails in Einzelteile aufgeteilt (Körper, Anhänge) und diese dann einzeln in das Zielformat konvertiert.
 Die einzelnen Arbeitsschritte dabei können parallelisiert und separat skaliert werden.
 Am Ende werden die Ergebnisse kombiniert.
-Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \emph{jadice flow} zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
+Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \jf zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
-Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch architektonisches Verbesserungspotential vermutet.
-Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit soll ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
+Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch ar­chi­tek­tu­relles Verbesserungspotential vermutet.
+Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
-Obwohl das Framework für die Anwendung auf Monolithen gedacht ist, soll in dieser Arbeit die Anwendung des Frameworks auf ein bereits migriertes System angewendet werden, um dessen Eigenschaften weiter zu verbessern.
-Dadurch wird erforscht, inwiefern sich Framework und Werkzeug auf eine bereits existierende Microservice-Architektur anwenden lassen.
-Falls es deshalb für diesen Anwendungsfall zielführend ist, wird zusätzlich die ursprüngliche monolithische Anwendung von \emph{jadice flow} (\emph{jadice server}) hinzugezogen.
-Die Ergebnisse dessen könnten dann mit \emph{jadice flow} verglichen werden.
+Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wird es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
+Dadurch wird erforscht, inwiefern das Framework und das Werkzeug für diesen Spezialfall einer bereits existierenden Microservices-Architektur geeignet sind.
+Falls es deshalb für diesen Anwendungsfall zielführend gewesen wäre, hätte zusätzlich die ursprüngliche monolithische Anwendung von \jf (\emph{jadice server}) hinzugezogen werden können.
+Die Ergebnisse dessen hätten dann mit \jf verglichen werden können.
 
 \section{Ähnliche Forschung}
 
 Aufgrund vieler Vorteile von Microservices vor allem direkt gegenüber traditionellen Monolithen (ausführlicher im \cref{sec:monolith-vs-microservices} diskutiert) ist die Migration zu Microservices zu einem großen Forschungsfeld geworden.
 In diesem Abschnitt wird ein Überblick über für diese Arbeit relevante Publikationen gegeben.
 
-\subsection{Grundlagen zum \gls{mmf}}
+\subsection{Grundlagen zum MMF}
 
 Das Hauptuntersuchungsobjekt dieser Thesis sind das \gls{mmf} und der \gls{arh} des \gls{ese}.
 Obwohl das Werkzeug sich noch in einer prototypischen Phase befindet, wurde es bereits durch mehrere akademische Publikationen weiterentwickelt.
@@ -164,21 +165,24 @@ Im Jahr 2019 kategorisierten \Citet{10.1007/978-3-030-06019-0_10} zehn verschied
 Dabei wird ein Mangel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
 Als Folge darauf stellten \Citet{fritzsch2022architecturecentric} die Planung eines solchen Frameworks vor.
 Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird beschrieben.
-Außerdem wird die Entwicklung eines Werkzeugs erwähnt, das das Framework in Form einer Web-basierten Lösung umsetzt und Entwickler bei der Migration unterstützt.
+Außerdem wird die Entwicklung eines Werkzeugs erwähnt, dass das Framework in Form einer webbasierten Lösung umsetzt und Entwickler bei der Migration unterstützt.
 Die Entwicklung des Werkzeugs fand im Rahmen der Masterarbeiten von \Citet{master-tobias-haller} und \Citet{master-daniel-koch} statt.
 \citeauthor{master-tobias-haller} forscht dabei an der erweiterbaren Speicherung von verschiedenen Migrationsmethoden und der Darstellung dieser in der Web-Applikation, dem \gls{arh}.
 Damit wurde größtenteils das Backend und Phase 2 des Werkzeugs umgesetzt.
 Schlussendlich wird außerdem eine empirische Bewertung des entstandenen Prototyps vorgenommen, die den Nutzen des Werkzeugs bestätigt und weiterführende Arbeit daran vorschlägt.
 \Citet{master-daniel-koch} setzt die Arbeit an dem Werkzeug fort, indem Phase 1 und 3 ergänzt werden.
 Dabei wird viel an \glspl{qa} in der Migration zu Microservices geforscht.
-Zu Beginn werden relevante \glspl{qa} gesammelt, wobei ein Großteil davon aus ISO 25010~\cite{ISO-25010} stammt, welche durch weitere, oft Microservices-kontextuelle \glspl{qa}, ergänzt werden.
+Zu Beginn werden relevante \glspl{qa} gesammelt, wobei ein Großteil davon aus ISO 25010~\cite{ISO-25010} stammt.
+Diese werden durch weitere, oft Microservices-kontextuelle \glspl{qa}, ergänzt.
 Außerdem wird der Einfluss der \glspl{qa} auf Systemeigenschaften untersucht.
-Sehr relevant für den \gls{arh} ist ebenfalls die durchgeführte Untersuchung, wie durch den Nutzer definierte \glspl{qa} den Vorschlag passender Migrationsmethoden in Phase 2, sowie profitabler Design Patterns und Best Practices in Phase 3 unterstützen kann.
+Eine weitere durchgeführte Untersuchung ist für den \gls{arh} ebenfalls sehr relevant.
+Dabei wird gezeigt, wie \glspl{qa} genutzt werden können, um für die \glspl{qa} geeignete Migrationsverfahren sowie \bpp vorzuschlagen.
+Die Ergebnisse wurden später verwendet, um die Suchfunktionen in Phase 2 und 3 des \gls{arh} auf Basis der vom Nutzer in Phase 1 definierten \glspl{qa} zu implementieren.
 
 In 2023 führt \citeauthor{master-marvin-knodel} im Rahmen einer Masterarbeit \cite{master-marvin-knodel} eine erste Fallstudie zur Anwendung des \gls{mmf} durch.
 Dabei wird das Framework im Ganzen als geeignet für die Migration im Einzelfall der Fallstudie bestätigt.
 Außerdem werden kleinere Mängel hervorgehoben, die weitere Arbeit am Framework und Tool nahelegen.
-Diese Fallstudie unterscheidet sich von der in dieser Arbeit durchgeführten Fallstudie in einigen Punkten.
+Knodels Fallstudie unterscheidet sich von der in dieser Arbeit durchgeführten Fallstudie in einigen Punkten.
 Zum einen bilden die Arbeiten verschiedene Anwendungsfälle ab.
 Während in \Citet{master-marvin-knodel} der vermutlich gewöhnlichere Fall vorliegt, bei dem ein Monolith zu einer \gls{msa} umstrukturiert werden soll, fügt diese Arbeit einen neuen Anwendungsfall hinzu.
 Die Evaluierung und Verbesserung einer bereits vorhandenen \gls{msa} erfordert möglicherweise andere Qualitäten des Frameworks, insbesondere bei der gezielten Suche nach Verfahren, die für diesen speziellen Fall überhaupt anwendbar sind.
@@ -237,7 +241,8 @@ Dies umfasst hauptsächlich Merkmale, die die Funktionsweise der Verfahren betre
 Eine erste Unterscheidung kann bezüglich der Form der Eingabe in die Methoden gemacht werden.
 Während einige mit Source-Code oder Laufzeit-Artefakten arbeiten und darauf statische und dynamische Analysen ausführen \cite{arh-result-no-filter-5}, erwarten andere Eingaben auf \acrlong{bp} Ebene \cite{arh-result-no-filter-3} oder \emph{User Stories} \cite{arh-result-no-filter-2}.
 
-Die meisten Verfahren erstellen dann aufgrund dieser Eingaben einen Graphen mit unterschiedlichen atomaren Einheiten als Knoten (abhängig von der Eingabe).
+Die meisten Verfahren erstellen dann aufgrund dieser Eingaben einen Graphen mit verschiedenen atomaren Einheiten als Knoten.
+Die Definition der atomaren Einheiten hängt dabei in der Regel von der Eingabe ab.
 Anschließend wird bei verschiedenen Methoden mit unterschiedlichen Algorithmen versucht, eine bestmögliche Gruppierung in dem Graph zu finden.
 Viele Verfahren verwenden unterschiedliche Versionen von \emph{Clustering}-Algorithmen \cite{arh-result-no-filter-3,arh-result-no-filter-5,arh-result-important-filter-4}, andere lösen das Problem mit evolutionären beziehungsweise genetischen Algorithmen \cite{arh-result-no-filter-2,arh-result-important-filter-7}.
 
