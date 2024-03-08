@@ -70,7 +70,7 @@ Deswegen werden wir anfangs etwas über die enthaltenen Informationen sprechen, 
 
 \begin{enumerate}
 	\item Hatten Sie Probleme, Teile des Informationsmaterials zu verstehen, soll ich bestimmte Details genauer erläutern?
-	\item Falls nicht durch Besprechung der Probleme bereits geschehen: 
+	\item Falls nicht durch Besprechung der Probleme bereits geschehen:
 	\begin{itemize}
 		\item Kurze Zusammenfassung über \gls{mmf}/\gls{arh}
 		\item Kurze Zusammenfassung über die zwei enthaltenen Migrationsverfahren
@@ -80,12 +80,12 @@ Deswegen werden wir anfangs etwas über die enthaltenen Informationen sprechen, 
 \subsection{Evaluation des MMF/ARH all\-ge\-mein}
 
 Versetzen Sie sich zurück in die Zeit, in der die Planung der Migration von \emph{jadice server} zu einer \acrlong{msa} bevorstand, aus der dann \jf entstanden ist.
-Sie suchen nach einem Werkzeug oder einer Software in einer beliebigen Form, das oder die Sie bei der Migration zu Microservices unterstützen soll.
+Sie suchen nach einem Tool oder einer Software in einer beliebigen Form, das oder die Sie bei der Migration zu Microservices unterstützen soll.
 
 \begin{enumerate}
-	\item Welche Aufgaben könnten Sie sich vorstellen, bei denen Sie ein solches Werkzeug sinnvoll unterstützen könnte?
-	\item Falls noch nicht in der Antwort erläutert: Welche Qualitäten soll das Werkzeug mit sich bringen?
-	\item Finden Sie die allgemeine Funktions- und Vorgehensweise des \gls{mmf}/\gls{arh}, \textbf{bezogen auf die einzelnen Phasen}, sinnvoll? 
+	\item Welche Aufgaben könnten Sie sich vorstellen, bei denen Sie ein solches Tool sinnvoll unterstützen könnte?
+	\item Falls noch nicht in der Antwort erläutert: Welche Qualitäten soll das Tool mit sich bringen?
+	\item Finden Sie die allgemeine Funktions- und Vorgehensweise des \gls{mmf}/\gls{arh}, \textbf{bezogen auf die einzelnen Phasen}, sinnvoll?
 	\item Sehen Sie \textbf{Probleme} bei der Funktionsweise des Frameworks?
 \end{enumerate}
 
@@ -184,18 +184,18 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 	\item \textbf{Phase 2: Strategy Definition:}
 	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
 	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
-	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf den in Phase 1 eingegebenen \acrlongpl{qa} Methoden empfiehlt.
-	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
-	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
+	Das Tool kann Entwickler dabei unterstützen, indem es basierend auf den in Phase 1 eingegebenen \acrlongpl{qa} Methoden empfiehlt.
+	Einige dieser Methoden beinhalten die Nutzung von Tools, welche auch gesondert durchsucht werden können.
+	Die verschiedenen Migrationsmethoden und Tools können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
 	Hier wird die in Phase 2 gewählte Migrationsmethode durchgeführt, wodurch eine Aufteilung in Microservices entsteht.
 	Das Tool unterstützt Entwickler in dieser Phase durch das Vorschlagen von geeigneten \bpp, deren Implementierung potentiell wertvoll für die in Phase 1 definierten \glspl{qa} wäre.
-	\item \textbf{Phase 3b: Service Implementation:} 
+	\item \textbf{Phase 3b: Service Implementation:}
 	Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Implementierung begonnen werden.
 	In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
-	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
+	Bei Implementierung selbst kann das Tool Entwickler nicht unterstützen.
 %	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
 %	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
 	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
@@ -204,7 +204,7 @@ Das Framework unterteilt die Durchführung in drei Phasen:
 \section{Migrationsverfahren}
 
 In dieser Thesis wurde in Phase 2 des \gls{mmf} eine Suche nach Migrationsverfahren durchgeführt, bei der im Voraus gezielt auf \jf abgestimmte Filter konfiguriert wurden.
-Dazu gehören die in Phase 1 des Frameworks erhobenen Szenarien/\glspl{qa} sowie zusätzlich definierte Filter. 
+Dazu gehören die in Phase 1 des Frameworks erhobenen Szenarien/\glspl{qa} sowie zusätzlich definierte Filter.
 Insgesamt acht dieser Suchergebnisse wurden im Rahmen dieser Thesis analysiert und auf ihre Eignung für \jf überprüft.
 Davon wurden zwei als potentiell für \jf geeignet bewertet.
 In den Interviews sollen Sie ebenfalls eine Einschätzung über die Eignung dieser abgeben.
@@ -261,7 +261,7 @@ In diesem Verfahren wird das Tool \emph{\acrfull{mb}} vorgestellt, das ein semia
 %	\centering
 %	\includegraphics[width=0.7\textwidth]{3_VPAG21-overview}
 %	\caption[Funktionsweise Migrationsverfahren 2]{
-%		Funktionsweise des Migrationsverfahren 2. Quelle: \url{https://doi.org/10.1109/ACCESS.2021.3106342}, lizensiert mit \hyperref{https://creativecommons.org/licenses/by/4.0/}{}{}{CCBY} 
+%		Funktionsweise des Migrationsverfahren 2. Quelle: \url{https://doi.org/10.1109/ACCESS.2021.3106342}, lizensiert mit \hyperref{https://creativecommons.org/licenses/by/4.0/}{}{}{CCBY}
 %	}
 %	\label{fig:interviews-migrationsverfahren2}
 %\end{figure}
@@ -272,14 +272,14 @@ In diesem Verfahren wird das Tool \emph{\acrfull{mb}} vorgestellt, das ein semia
 		Funktionsweise des zweiten Migrationsverfahrens
 	}
 	\label{fig:interviews-migrationsverfahren2}
-\end{figure} 
+\end{figure}
 
 Als Eingabe werden \emph{User Stories} aus dem \emph{Product Backlog} oder der Release-Planung verwendet.
 Diese haben im Vergleich zum ersten Verfahren eine etwas andere Form, aber die Eingaben sind trotzdem mit denen des ersten Verfahrens vergleichbar; mit den User Stories werden auch übliche Workflows beschrieben.
 Deswegen wird hier keine beispielhafte Eingabe vorgestellt.
-Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen. 
+Außerdem kann \gls{mb} die Metriken  \emph{Coupling}, \emph{Kohäsion}, \emph{Granularität}, \emph{semantische Ähnlichkeit} und \emph{Komplexität} für das Gesamtsystem und für einzelne Microservices berechnen.
 Diese können ebenfalls visualisiert und so übersichtlich betrachtet werden.
-Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen. 
+Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilung angestoßen werden oder der genetische Algorithmus genutzt werden, der ebenfalls in dem Verfahren vorgestellt wird, um eine Verbesserung der Metriken zu erreichen.
 
 \section{Best Practices und Patterns}
 
@@ -344,7 +344,7 @@ Auch über diese wird von Ihnen eine Bewertung im Interview abgefragt.
 			\\
 		\end{tabular}
 	\end{minipage}
-	
+
 	\caption[Best Practices und Patterns Suchergebnisse]{
 		Ergebnisse der Suche mit \acrshort{arh} nach Best Practices und Patterns, nach Matches sortiert.
 		Die Matches entsprechen den im \gls{arh} angezeigten Matches.

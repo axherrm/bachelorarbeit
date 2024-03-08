@@ -41,7 +41,7 @@ Eine Microservices-Architektur ist allerdings nicht universell einer monolithisc
 Gründe dafür sind einige Nachteile von Microservices-Architekturen, die von \Citet{a-survey-on} zusammengetragen wurden.
 Dazu gehört vor allem die Komplexität des Systems, die bei einer Microservices-Architektur deutlich höher ist.
 Dies liegt an der Aufteilung des Systems in einzelne Services und der nichttrivialen Kommunikation zwischen den Services.
-Viele Entwickler müssen die neue Architektur mit ihrer erhöhten Komplexität, sowie die zugehörigen Werkzeuge und Mechanismen für automatisierte Tests, Deployments und Monitoring erst erlernen.
+Viele Entwickler müssen die neue Architektur mit ihrer erhöhten Komplexität, sowie die zugehörigen Tools und Mechanismen für automatisierte Tests, Deployments und Monitoring erst erlernen.
 Der resultierende Netzwerk-Overhead durch die Kommunikation zwischen den Komponenten kann zu höheren Latenzen führen und das System ineffizient machen, wohingegen bei Monolithen lediglich Funktionen innerhalb desselben laufenden Programms aufgerufen werden.
 Des Weiteren ist es empfehlenswert, dass Microservices jeweils eigene Datenbanken haben.
 Das fügt weitere Komplexität zum Design hinzu, da Daten dupliziert werden müssen und die Konsistenz der Datenbanken gewährleistet sein sollte.
@@ -59,7 +59,7 @@ Die sogenannte optimale Granularität der Services zu bestimmen, ist eine sehr w
 Der Nachteil zur großer Services ist, dass sie ineffizient werden und womöglich ähnliche unerwünschte Eigenschaften erhalten wie monolithische Systeme.
 Dagegen ist auch eine Aufteilung in zu kleine einzelne Einheiten problematisch, da dadurch der Kommunikationsbedarf zwischen den Microservices stark erhöht werden kann, was ebenfalls leistungsbezogene Nachteile hat.
 Für diesen entscheidenden Prozess wäre es also wichtig für Entwicklerteams, wissenschaftlich gestützte Entscheidungen treffen zu können.
-%Die existierenden Werkzeuge für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse~\cite{a-survey-on}.
+%Die existierenden Tools für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse~\cite{a-survey-on}.
 %Deswegen gibt es einige literarische Vorschläge für Frameworks zur Dekomposition~\cite{taibi2019decomposition,taibi2019monolithic}.
 
 Ebenfalls ist die Konzipierung der Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
@@ -78,11 +78,11 @@ Der Migrationsprozess ist sehr komplex, riskant und fehleranfällig.
 Erschwert wird er durch das Fehlen klarer und strukturierter Anleitungen.
 Mehrere Metastudien haben bereits versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein können.
 Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Literatur schnell ändert und Metastudien dadurch teilweise obsolet werden.
-Dieses Problem könnte gelöst werden durch die Umsetzung der Anleitung in Form eines Werkzeugs, das Entwickler bei der Migration unterstützt.
-Im Gegensatz zu Metastudien könnte dieses Werkzeug dynamisch an den neuesten Forschungsstand angepasst werden.
+Dieses Problem könnte gelöst werden durch die Umsetzung der Anleitung in Form eines Tools, das Entwickler bei der Migration unterstützt.
+Im Gegensatz zu Metastudien könnte dieses Tool dynamisch an den neuesten Forschungsstand angepasst werden.
 
-Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Werkzeug \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
-Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Werkzeug beschreiben, wurde das Werkzeug im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch,master-tobias-haller} und in einer ersten Fallstudie angewendet \cite{master-marvin-knodel}.
+Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Tool \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
+Während \Citet{fritzsch2022architecturecentric} den Entwurf des Frameworks für das Tool beschreiben, wurde das Tool im Rahmen von zwei Masterarbeiten entwickelt \cite{master-daniel-koch,master-tobias-haller} und in einer ersten Fallstudie angewendet \cite{master-marvin-knodel}.
 Der \gls{arh} ist eine webbasierte Anleitung, die Entwickler durch drei Phasen der Migrationsplanung führt.
 Eine Übersicht über diese Phasen und die Funktionsweise des Frameworks ist in \cref{fig:mmf-overview} zu sehen.
 Im Folgenden werden diese drei Phasen genauer beschrieben:
@@ -103,23 +103,23 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
 	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
-	Zum Zeitpunkt der Durchführung dieser Arbeit konnte im Werkzeug nur die Eingabe der Szenarien mit den zugehörigen \glspl{qa} erfolgen.
-	Die restlichen Schritte dieser Phase wurden erst nach Abschluss der Arbeit zum Werkzeug hinzugefügt.
+	Zum Zeitpunkt der Durchführung dieser Arbeit konnte im Tool nur die Eingabe der Szenarien mit den zugehörigen \glspl{qa} erfolgen.
+	Die restlichen Schritte dieser Phase wurden erst nach Abschluss der Arbeit zum Tool hinzugefügt.
 	\item \textbf{Phase 2: Strategy Definition:}
 	Falls sich in Phase 1 für die Migration zu Microservices entschieden wurde, wird in Phase 2 die Planung der Migration begonnen.
 	Die hauptsächliche Aufgabe in dieser Phase ist die Entscheidung, welche Migrationsstrategie benutzt werden soll, um das System zu modernisieren.
 	Dafür kann zwischen (momentan) 115 verschiedenen Methoden gewählt werden, die aus akademischen Publikationen stammen.
-	Das Werkzeug kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
-	Einige dieser Methoden beinhalten die Nutzung von Werkzeugen, welche auch gesondert durchsucht werden können.
-	Die verschiedenen Migrationsmethoden und Werkzeuge können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
+	Das Tool kann Entwickler dabei unterstützen, indem es basierend auf Eingaben aus Phase 1 empfohlene Methoden vorschlägt.
+	Einige dieser Methoden beinhalten die Nutzung von Tools, welche auch gesondert durchsucht werden können.
+	Die verschiedenen Migrationsmethoden und Tools können von Admins importiert, exportiert und bearbeitet werden, wodurch die Erweiterung in zukünftigen Arbeiten vereinfacht möglich ist.
 	\item \textbf{Phase 3a: Architecture Definition:}
 	Phase 3 ist in zwei Teile aufgeteilt.
 	Im ersten Abschnitt wird die neue Architektur definiert.
 	Basierend auf der in der Planungsphase ausgewählten Methode zur Migration wird hier der \gls{sia} durchgeführt.
-	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Werkzeug Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
+	Außerdem wird allgemeiner die Architektur des gesamten Systems geplant, wobei das Tool Entwickler durch eine Liste von vorgeschlagenen Patterns und Best Practices unterstützen kann.
 	 Phase 3a und 3b sind eng verbunden, denn durch Erkenntnisse in der Implementierung kann die Planung häufig noch mehrmals überarbeitet werden und dadurch eine neue Iteration der Implementierung begonnen werden.
 	\item \textbf{Phase 3b: Service Implementation:} In Phase 3b startet dann ein Zyklus von Im\-ple\-men\-tie\-rung\-en der in Phase 3a definierten Services.
-	Bei Implementierung selbst kann das Werkzeug Entwickler nicht unterstützen.
+	Bei Implementierung selbst kann das Tool Entwickler nicht unterstützen.
 	Doch Bestandteil der Entwicklungszyklen ist auch, dass das entstehende System anhand der Qualitätsmerkmale zu bewerten.
 	Dadurch kann eine unpassende Architekturdefinition oder auch eine unpassende Aufteilung in Services frühzeitig erkannt und korrigiert werden.
 	Ist diese Phase abgeschlossen, ist eine erste Version des migrierten Systems fertig.
@@ -144,10 +144,10 @@ Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \jf zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
 Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch ar­chi­tek­tu­relles Verbesserungspotential vermutet.
-Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Werkzeugs und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
+Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Tools und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
 Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wird es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
-Dadurch wird erforscht, inwiefern das Framework und das Werkzeug für diesen Spezialfall einer bereits existierenden Microservices-Architektur geeignet sind.
+Dadurch wird erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden Microservices-Architektur geeignet sind.
 Falls es deshalb für diesen Anwendungsfall zielführend gewesen wäre, hätte zusätzlich die ursprüngliche monolithische Anwendung von \jf (\emph{jadice server}) hinzugezogen werden können.
 Die Ergebnisse dessen hätten dann mit \jf verglichen werden können.
 
@@ -159,18 +159,18 @@ In diesem Abschnitt wird ein Überblick über für diese Arbeit relevante Publik
 \subsection{Grundlagen zum MMF}
 
 Das Hauptuntersuchungsobjekt dieser Thesis sind das \gls{mmf} und der \gls{arh} des \gls{ese}.
-Obwohl das Werkzeug sich noch in einer prototypischen Phase befindet, wurde es bereits durch mehrere akademische Publikationen weiterentwickelt.
+Obwohl das Tool sich noch in einer prototypischen Phase befindet, wurde es bereits durch mehrere akademische Publikationen weiterentwickelt.
 Im Folgenden wird ein Überblick über diese gegeben.
 Im Jahr 2019 kategorisierten \Citet{10.1007/978-3-030-06019-0_10} zehn verschiedene Microservices-Migrationsmethoden.
-Dabei wird ein Mangel an praktisch anwendbaren Methoden hervorgehoben, die gute Werkzeugunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
+Dabei wird ein Mangel an praktisch anwendbaren Methoden hervorgehoben, die gute Toolunterstützung und Metriken zur Verifikation der Ergebnisse bieten.
 Als Folge darauf stellten \Citet{fritzsch2022architecturecentric} die Planung eines solchen Frameworks vor.
 Der Migrationsprozess mit Framework und dessen Arbeitsweise in drei Phasen wird beschrieben.
-Außerdem wird die Entwicklung eines Werkzeugs erwähnt, dass das Framework in Form einer webbasierten Lösung umsetzt und Entwickler bei der Migration unterstützt.
-Die Entwicklung des Werkzeugs fand im Rahmen der Masterarbeiten von \Citet{master-tobias-haller} und \Citet{master-daniel-koch} statt.
+Außerdem wird die Entwicklung eines Tools erwähnt, dass das Framework in Form einer webbasierten Lösung umsetzt und Entwickler bei der Migration unterstützt.
+Die Entwicklung des Tools fand im Rahmen der Masterarbeiten von \Citet{master-tobias-haller} und \Citet{master-daniel-koch} statt.
 \citeauthor{master-tobias-haller} forscht dabei an der erweiterbaren Speicherung von verschiedenen Migrationsmethoden und der Darstellung dieser in der Web-Applikation, dem \gls{arh}.
-Damit wurde größtenteils das Backend und Phase 2 des Werkzeugs umgesetzt.
-Schlussendlich wird außerdem eine empirische Bewertung des entstandenen Prototyps vorgenommen, die den Nutzen des Werkzeugs bestätigt und weiterführende Arbeit daran vorschlägt.
-\Citet{master-daniel-koch} setzt die Arbeit an dem Werkzeug fort, indem Phase 1 und 3 ergänzt werden.
+Damit wurde größtenteils das Backend und Phase 2 des Tools umgesetzt.
+Schlussendlich wird außerdem eine empirische Bewertung des entstandenen Prototyps vorgenommen, die den Nutzen des Tools bestätigt und weiterführende Arbeit daran vorschlägt.
+\Citet{master-daniel-koch} setzt die Arbeit an dem Tool fort, indem Phase 1 und 3 ergänzt werden.
 Dabei wird viel an \glspl{qa} in der Migration zu Microservices geforscht.
 Zu Beginn werden relevante \glspl{qa} gesammelt, wobei ein Großteil davon aus ISO 25010~\cite{ISO-25010} stammt.
 Diese werden durch weitere, oft Microservices-kontextuelle \glspl{qa}, ergänzt.
@@ -186,21 +186,20 @@ Knodels Fallstudie unterscheidet sich von der in dieser Arbeit durchgeführten F
 Zum einen bilden die Arbeiten verschiedene Anwendungsfälle ab.
 Während in \Citet{master-marvin-knodel} der vermutlich gewöhnlichere Fall vorliegt, bei dem ein Monolith zu einer \gls{msa} umstrukturiert werden soll, fügt diese Arbeit einen neuen Anwendungsfall hinzu.
 Die Evaluierung und Verbesserung einer bereits vorhandenen \gls{msa} erfordert möglicherweise andere Qualitäten des Frameworks, insbesondere bei der gezielten Suche nach Verfahren, die für diesen speziellen Fall überhaupt anwendbar sind.
-Zum anderen steht eine weiter ausgeprägte Version des Werkzeugs \gls{arh} zur Verfügung.
+Zum anderen steht eine weiter ausgeprägte Version des Tools \gls{arh} zur Verfügung.
 Während die Suche nach Migrationsverfahren von in der Arbeit von \citeauthor{master-marvin-knodel} manuell ausgeführt wurde \cite{master-marvin-knodel}, kann zum Zeitpunkt dieser Arbeit die Suchfunktion des \gls{arh} dafür genutzt werden.
 
 \subsection{Andere Frameworks}
-%\subsection{Andere Frameworks mit Tool-Support}
 
 Im Gegensatz zu den im nächsten Abschnitt behandelten Refactoringverfahren, die in großer Zahl akademisch publiziert wurden, liegt nur sehr wenig Forschung zu Verfahren auf der Metaebene vor \cite{on-a-metaprocess}.
 Das Funktionsprinzip des \gls{mmf} ist dabei bisher einzigartig.
 Wie auch \Citet{master-marvin-knodel} beschreibt, ist kein Framework bekannt, das den Vergleich und die Suche über viele konkrete Migrationsverfahren aus der Metaebene anbietet und damit direkt mit dem \gls{mmf} vergleichbar ist.
 Es existieren nur wenige andere Frameworks, die im Gegensatz zu spezifischen Migrationsverfahren ebenfalls in der Metaebene Migrationsprozesse anleiten.
 Jene sollen unter diesem Aspekt mit dem \gls{mmf} in Relation gesetzt werden.
-%In diesem Abschnitt werden ähnliche Frameworks und Werkzeuge beschrieben, die Entwickler aus einer Meta-Perspektive bei der Migration unterstützen, wie es auch \gls{mmf}, beziehungsweise \gls{arh} machen.
+%In diesem Abschnitt werden ähnliche Frameworks und Tools beschrieben, die Entwickler aus einer Meta-Perspektive bei der Migration unterstützen, wie es auch \gls{mmf}, beziehungsweise \gls{arh} machen.
 
 \Citet{on-a-metaprocess} stellen die Methode \gls{m3k} vor, die auf dem OMG Essence Kernel~\cite{essence-kernel-omg} basiert.
-Dieses Werkzeug soll Ent\-wick\-ler\-teams beim Migrationvorgang helfen, indem ein allgemeiner Metaprozess definiert wird, der als Grundlage für spezifische Migrationsprozesse verwendet werden kann.
+Dieses Tool soll Ent\-wick\-ler\-teams beim Migrationvorgang helfen, indem ein allgemeiner Metaprozess definiert wird, der als Grundlage für spezifische Migrationsprozesse verwendet werden kann.
 Die Evaluation von \gls{m3k} steht noch aus, Fallstudien und Expertenumfragen sind jedoch geplant.
 Im Gegensatz zum \gls{mmf} liefert \gls{m3k} lediglich eine generische Prozessübersicht.
 Verweise auf konkrete Methoden, um die einzelnen Schritte jedes Teils des Migrationsprozesses umzusetzen, sind dabei nicht vorhanden.
@@ -221,7 +220,6 @@ Nutzer werden dadurch bei der Umsetzung der identifizierten Schritte weniger unt
 %\emph{Architect} ist allerdings noch relativ limitiert, da es nur Projekte von Grund auf unterstützt, also keine Unterstützung für Software-Evolution bietet, nur dotnet-basierte Services erstellt und nur relationale Datenbanken unterstützt.
 
 \subsection{Konkrete Refactoring-/Migrationsverfahren}
-%\subsection{Konkrete Refactoring-/Migrationsverfahren mit Tool-Support}
 
 Im Gegensatz zu dem, was in dieser Arbeit bisher als \emph{Frameworks} bezeichnet wurde, werden in diesem Abschnitt konkrete Refactoring-Verfahren betrachtet.
 Diese sind durch die Vorgabe einer spezifischen Strategie klar von Meta-Ansätzen wie dem \gls{mmf} abzugrenzen.

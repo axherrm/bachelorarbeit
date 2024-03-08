@@ -51,7 +51,7 @@ Im Folgenden werden diese erläutert.
 	\item \textbf{\emph{Modularity}} ist ein Subattribut von \emph{Maintainability}. Nach \Citet{master-daniel-koch} gibt es an, wie gut die Komplexität des Systems auf verschiedene Komponenten verteilt ist~\cite{ISO-25010}.
 	\item \textbf{\emph{Time Behavior}} ist Subattribut von \emph{Performance}. Nach \Citet{master-daniel-koch} gibt es an, wie schnell ein System oder Teile eines Systems ankommende Anfragen beantworten~\cite{ISO-25010,koch-time-behavior-1,koch-time-behavior-2}.
 	\item \textbf{\emph{Deployability}} ist ein Subattribut von \emph{Portability}. Nach \Citet{master-daniel-koch} gibt es an, wie einfach und schnell ein Produkt gebaut und ausgeliefert werden kann~\cite{koch-scalability-1,koch-deployability}.
-	\item \textbf{\emph{Fault Tolerance}} ist Subattribut von \emph{Reliability}. Nach \Citet{master-daniel-koch} gibt es an, inwieweit ein System wie erwartet funktionieren kann, obwohl in Teilen des Systems Fehler passieren~\cite{ISO-25010,koch-fault-tolerance}.
+	\item \textbf{\emph{Fault Tolerance}} ist Subattribut von \emph{Reliability}. Nach \Citet{master-daniel-koch} gibt es an, inwieweit ein System wie erwartet funktionieren kann, obwohl in Teilen des Systems Fehler auf\-tre\-ten~\cite{ISO-25010,koch-fault-tolerance}.
 	\item \textbf{\emph{Recoverability}} ist ebefalls Subattribut von \emph{Reliability}. Nach \Citet{master-daniel-koch} gibt es an, inwieweit ein System nach einem Ausfall wieder den Zustand vor dem Ausfall herstellen kann, sowie Daten erhalten kann~\cite{ISO-25010}.
 \end{enumerate}
 Die genaue Anzahl der wichtigsten (Sub-)Attribute war nicht vor dem Termin definiert, sondern wurde ebenfalls von der Gruppe diskutiert (in einem späteren Schritt) und gemeinsam auf sechs festgelegt.
@@ -69,7 +69,7 @@ Nach einer Diskussionszeit von etwa 35 Minuten ergaben sich die Szenarien, die i
 	\includegraphics[angle=270,width=\textwidth]{scenarios.drawio}
 	\caption[Utility Tree des Architekturreviews mit \acrshortpl{qa} und Szenarien]{
 		Der Utility Tree mit Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
-		Von oben nach unten enthält der Baum folgende Elementarten: [1] Wurzel (ohne Bedeutung), [2] \gls{qa}, [3] Subattribut, [4] Beurteilung des Szenarios hinsichtlich Wichtigkeit und technischer Schwierigkeit, [5] Szenariobeschreibung.
+		Von oben nach unten enthält der Baum folgende Elementarten: [1] Wurzel (ohne Bedeutung), [2] \gls{qa}, [3] Subattribut, [4] Be\-ur\-teilung des Szenarios hinsichtlich Wichtigkeit und technischer Schwierigkeit, [5] Szenariobeschreibung.
 	}
 	\label{fig:scenarios}
 \end{figure}
@@ -114,7 +114,7 @@ Es kann angenommen werden, dass das Ergebnis von allen Teilnehmern ausreichend g
 
 Neben der Erfassung der wichtigsten Szenarien und \glspl{qa} hatte die Fokusgruppe als sekundäres Ziel, die Wahl der Architektur für \emph{jadice flow} zu bewerten.
 Diese Bewertung wurde ebenfalls in der zweiten Sitzung des Architekturreviews durchgeführt und entspricht dem vierten Schritt \emph{Assessment} der ersten Phase des \gls{arh}.
-Da dieser Schritt jedoch noch nicht im Werkzeug implementiert ist, wurde er manuell durchgeführt.
+Da dieser Schritt jedoch noch nicht im Tool implementiert ist, wurde er manuell durchgeführt.
 Im Gegensatz zu vorherigen Schritten der ersten Phase ist dieser nicht relevant für die nächsten Phasen, weshalb es kein Problem ist, den \gls{arh} hierbei nicht zu verwenden.
 In diesem Schritt wurde die Frage diskutiert, ob eine \acrlong{msa} individuell für jedes Szenario vorteilhaft ist im Vergleich zu einer monolithischen Architektur.
 Hierbei wurde in drei Stufen unterschieden:
@@ -311,15 +311,15 @@ Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilun
 \label{sec:phase2-result-4}
 \label[res]{res:4}
 
-In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Werkzeug \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
+In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Tool \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
 \paragraph{Funktionsweise:} Als Eingabe der Methode fungieren der Quellcode des Monolithen sowie ein Vorschlag für die Microservices-Aufteilung. Dieser wird in Form von Klassen pro Microservice angegeben, wobei jede Klasse nur einem Microservice angehören kann.
-In der ersten Phase des Werkzeugs, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices ermitteln.
+In der ersten Phase des Tools, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices ermitteln.
 Diese Abhängigkeiten werden in der zweiten Phase (\emph{Database Refactoring}) dann verwendet, um die Entitäten des Systems und die Beziehungen zwischen diesen zu identifizieren und ein Refactoring der Beziehungen anzustoßen.
 In der letzten Phase werden die strukturellen Informationen und Abhängigkeiten zwischen den Microservices verwendet, um Abhängigkeiten zwischen den Klassen zu analysieren.
 Im Zuge dessen werden die Klassen überarbeitet, die abhängig von den Klassen anderer Microservices sind.
 Dabei werden für Kommunikation zwischen verschiedenen Microservices lokale Funktionsaufrufe durch \glspl{api} und Aufrufe auf diese ersetzt.
 
-\paragraph{Evaluation:} Um diese Methode beziehungsweise das Werkzeug zu validieren, wurde ein Experiment mit zehn passenden, zufällig ausgewählten GitHub-Projekten durchgeführt.
+\paragraph{Evaluation:} Um diese Methode beziehungsweise das Tool zu validieren, wurde ein Experiment mit zehn passenden, zufällig ausgewählten GitHub-Projekten durchgeführt.
 Die Verwendung von \emph{MicroRefact} zur Umstrukturierung dieser Projekte zu Microservices-Applikationen führte zu einer Erfolgsquote von 80\%.
 Es wurde jedoch nur die technische Durchführbarkeit bestätigt und nicht überprüft, ob die neue Architektur in irgendeiner Weise vorteilhaft für die Systeme ist.
 
@@ -397,7 +397,7 @@ Nach Betrachtung der acht beschriebenen Ergebnisse werden diese nun bezüglich i
 Um den Vergleich übersichtlicher zu gestalten, werden zu Beginn des Vergleichs direkt zwei Methoden ausgeschlossen, da sie offensichtlich nicht infrage kommen.
 
 \paragraph{Ausschluss:} \result{4} ermöglicht die automatische Umgestaltung eines Java-Mo\-no\-li\-then in Microservices unter Angabe einer Dekomposition.
-Das Werkzeug setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch.
+Das Tool setzt eine bereits vorgegebene Dekomposition in Microservices als Eingabe voraus und führt lediglich die technische Umwandlung des Monolithen in Microservices durch.
 Das Ziel dieser Arbeit besteht jedoch darin, eine geeignete Dekomposition mit optimaler Service-Granularität zu finden.
 Da die Methode dieses Ziel nicht behandelt, kann sie ausgeschlossen werden und wird zur Vereinfachung nachfolgend nicht aufgeführt.
 Aus ähnlichem Grund wird auch \result{1} ausgeschlossen.
@@ -443,10 +443,10 @@ Auf der anderen Seite wurden andere Aspekte höher priorisiert.
 
 \paragraph{Weitere Unterschiede:} Abgesehen von diesen beiden Hauptkategorien der Unterschiede in der Funktionsweise gibt es noch viele weitere Unterschiede in den Verfahren.
 Wie bereits erwähnt ist der zeitliche Aspekt in diesem Fall eines der entscheidendsten Kriterien für die Auswahl.
-Dafür wäre es sehr förderlich, ein Verfahren mit Werkzeug-Unterstützung zu verwenden, da manueller Aufwand tendenziell höher ist.
-Leider kann bei keinem der Verfahren Werkzeug-Unterstützung verwendet werden.
-Einige Verfahren erwähnen zwar die Entwicklung und Verwendung eines Werkzeugs.
-Doch entweder konnte das Werkzeug nicht öffentlich gefunden werden (Ergebnisse \resultref{2} und \resultref{3}), das Werkzeug ist nicht mit den Technologien von \jf kompatibel (\resultref{5}) oder es existiert kein Werkzeug (Ergebnisse \resultref{7} und \resultref{8}).
+Dafür wäre es sehr förderlich, ein Verfahren mit Toolunterstützung zu verwenden, da manueller Aufwand tendenziell höher ist.
+Leider kann bei keinem der Verfahren Toolunterstützung verwendet werden.
+Einige Verfahren erwähnen zwar die Entwicklung und Verwendung eines Tools.
+Doch entweder konnte das Tool nicht öffentlich gefunden werden (Ergebnisse \resultref{2} und \resultref{3}), das Tool ist nicht mit den Technologien von \jf kompatibel (\resultref{5}) oder es existiert kein Tool (Ergebnisse \resultref{7} und \resultref{8}).
 
 Im Vergleich ist \result{3} ein Favorit.
 Es hat den Vorteil, dass der erwartete Aus\-gangs\-punkt im Gegensatz zum Standard eines Monolithen eine bereits vorhandene \gls{msa} ist.
@@ -462,7 +462,7 @@ Diese beiden Verfahren werden als Favoriten für die Anwendung in der nächsten 
 \label{sec:durchführung-phase3}
 
 In dieser Phase des \acrfull{mmf} wird der in der vorherigen Phase entworfene Migrationsplan durchgeführt.
-Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet, um geeignete Best Practices und Patterns zu finden, die möglicherweise in die neue Architektur eingebaut werden.
+Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet, um geeignete \bpp zu finden, die möglicherweise in die neue Architektur eingebaut werden.
 
 \subsection{Anwendung Migrationsverfahren}
 \label{sec:anwendung-verfahren}
@@ -486,7 +486,7 @@ Dieses Verfahren wurde im Vergleich zu  \result{3} als leichter manuell umsetzba
 
 Als hauptsächliches Forschungsergebnis dieses Verfahrens wurde im Aritkel der entworfene Al\-go\-rith\-mus \emph{cHAC} genannt, weshalb mit dessen Implementierung begonnen wurde.
 Es wurde versucht, diesen mit Top-Down Vorgehen in Java zu umzusetzen.
-Für einige Details des Pseudocodes wurden Java-spezifische Konstrukte anstelle der im Algorithmus spezifizierten verwendet.
+Für einige Details des Pseu\-do\-codes wurden Java-spezifische Konstrukte anstelle der im Algorithmus spezifizierten verwendet.
 Beispielsweise wurde die Synchronisationsvariable \emph{@SIC} des Algorithmus durch eine CyclicBarrier\footnote{\url{https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CyclicBarrier.html}} implementiert.
 Die abstrakte Funktionsweise des Algorithmus konnte erfolgreich umgesetzt werden (\cref{feldnotiz:16}).
 
