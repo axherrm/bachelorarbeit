@@ -1,24 +1,25 @@
 \chapter{Anwendung des Frameworks auf jadice flow}
 \label{chap:anwendung}
 
-In diesem Kapitel wird ein Architektur-Refactoring am Produkt \emph{jadice flow} geplant und in theoretischer Ebene durchgeführt.
-Dazu werden \acrfull{mmf} und \acrfull{arh} verwendet, welche den Prozess sowie auch dieses Kapitel in drei Phasen unterteilen.
+In diesem Kapitel wird ein Architektur-Refactoring am Produkt \jf geplant und in theoretischer Ebene durchgeführt.
+Dazu werden das \acrfull{mmf} beziehungsweise der \acrfull{arh} verwendet, welche den Prozess in drei Phasen unterteilen.
 Eine genauere Beschreibung des Frameworks ist in \cref{sec:mmf} zu finden.
 Sehr abstrahiert und vereinfacht bestehen die Phasen aus den folgenden Aktivitäten:
 \begin{itemize}
 	\item In \cref{sec:durchführung-phase1} wird die Durchführung der ersten Phase in Form eines Architekturreviews mit den wichtigsten Stakeholdern beschreiben.
-	\item Im Rahmen der zweiten Phase wird in \cref{sec:durchführung-phase2} nach adäquaten Migrationsstrategien gesucht.
-	\item In \cref{sec:durchführung-phase3} wird in der dritten Phase nach adäquaten Patterns und Best Practices gesucht.
+	\item Im Rahmen der zweiten Phase werden in \cref{sec:durchführung-phase2} Filter konfiguriert und anschließend adäquaten Migrationsstrategien gesucht.
+	\item In \cref{sec:durchführung-phase3} wird in der dritten Phase eine Suche nach geeigneten \bpp beschrieben.
 \end{itemize}
 
 \section{Phase 1 - Systemverständnis}
 \label{sec:durchführung-phase1}
 
-Das Ziel dieser Phase ist es, ein Verständnis des Systems aufzubauen.
+Das Ziel der ersten Phase ist, ein Verständnis des Systems aufzubauen.
 Das ist zum einen auf Seite der Stakeholder wichtig.
 Diese sollten spätestens nach dieser Phase wissen, welche \acrfullpl{qa} besonders wichtig für das System sind.
 Zum anderen sollte der \gls{arh} nach dieser Phase durch Eingabe der \glspl{qa} ein Verständnis des Systems erlangen, das er in den nächsten Phasen zur Unterstützung der Entwickler bei Migration verwenden kann.
-Um das Systemverständnis zu erlangen, wurde in dieser Phase am 6. November 2023 ein Architekturreview wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt und am 14. November 2023 fortgesetzt.
+
+Um diese Eingaben für den \gls{arh} zu generieren, wurde am 6. November 2023 ein Architekturreview wie in \cref{sec:methodik-architekturreview} beschrieben durchgeführt und am 14. November 2023 fortgesetzt.
 Teilgenommen haben vier Softwareentwickler beziehungsweise -Architekten, der \acrlong{po} nach Definition des SCRUM von \Citet{SCRUM} und der Autor selbst in der Rolle des Moderators.
 Leider war es nicht möglich, einen Kunden oder Nutzer des Produkts als Stakeholder für dieses Review zu organisieren.
 Da das Entwicklungsteam jedoch regelmäßigen Kontakt mit Kunden hat, haben sie bestmöglich versucht, auch die Interessen der Kunden zu repräsentieren.
@@ -32,7 +33,8 @@ Im zweiten Schritt werden die gewünschten \glspl{qa} des Systems gesammelt.
 Im Rahmen dessen sollte jeder Teilnehmer seine Einschätzung darüber, welche die wichtigsten drei Sub-\glspl{qa} sind, per Nachricht mitteilen.
 Die daraus resultierende Anzahl von Stimmen pro Sub-\gls{qa} ist in \cref{fig:qas-priority} dargestellt.
 % \input{tables/qas-priority}
-\begin{figure}
+
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{qas-priority.drawio}
 	\caption[Umfrageergebnisse wichtigste (Sub-) QAs im Architekturreview]{
@@ -82,8 +84,8 @@ Darüber hinaus ist es das am geringsten priorisierte Attribut.
 
 Um zusätzliche eine Priorisierung der Szenarien vornehmen zu können, sieht der \gls{arh} jeweils eine dreistufige Bewertung der Szenarien hinsichtlich ihrer Wichtigkeit und ihrer technischen Schwierigkeit vor.
 Diese wurde im nächsten Schritt vorgenommen.
-Dabei haben die Teilnehmer die Szenarien der Reihe nach betrachtet und ihre Wichtigkeit und technische Schwierigkeit diskutiert.
-Nicht immer waren alle anfangs einer Meinung, doch schlussendlich konnte nach etwa 35 Minuten für jedes Szenario Konsens gefunden werden und diese Phase abgeschlossen werden.
+Dabei haben die Teilnehmer die Szenarien der Reihe nach betrachtet und die genannten Eigenschaften diskutiert.
+Nicht immer waren alle anfangs einer Meinung, doch schlussendlich konnte nach etwa 35 Minuten für jedes Szenario Konsens gefunden und dieser Schritt abgeschlossen werden.
 
 Da die Vollendung des dritten Schritts nach \Citet{SVAHNBERG20071893} länger gedauert hat als geplant, waren am Ende dieses Termins nur noch wenige Minuten übrig.
 Für alle Sub-Schritte dieses Schritts zusammen waren nur 60 Minuten eingeplant, das Sammeln der Szenarien und das Bewerten dieser (also zwei von drei Sub-Schritten) nahm jedoch schon 70 Minuten in Anspruch.
@@ -107,7 +109,7 @@ Damit wurde der für die Extraktion der Qualitätsanforderungen des Systems rele
 Zusammenfassend kann gesagt werden, dass die Phase größtenteils wie geplant durchgeführt werden konnte.
 An einigen Stellen sind die verschiedene Schritte etwas verschmolzen oder es wurde kurz zu vorherigen Schritten zurückgesprungen, was jedoch vollkommen normal ist und auch beispielsweise in \gls{atam} von \Citet{kazman_2000} als gängige Praxis beschrieben wird.
 So wurde in diesem Fall beim Erstellen der Szenarien entschieden, bis zu welcher Priorität die \glspl{qa} mit Szenarien versehen werden, obwohl die Wahl der Anzahl der wichtigsten tatsächlich für den vorherigen Schritt geplant war.
-Die Beteiligung der Teilnehmer war komplett ausgeglichen, aber jeder hat regelmäßig etwas beigetragen.
+Die Beteiligung der Teilnehmer war nicht komplett ausgeglichen, aber jeder hat regelmäßig etwas beigetragen.
 Es kann angenommen werden, dass das Ergebnis von allen Teilnehmern ausreichend geformt wurde und dass keine einseitige Beeinflussung vorliegt.
 
 \subsection{Architekturanalyse anhand Szenarien (Schritt 5)}
@@ -139,16 +141,15 @@ Nachdem nun erwünschte Szenarien und \glspl{qa} erhoben wurden und die Wahl ein
 
 In dieser Phase wird die Suchfunktion des \gls{arh} verwendet, um geeignete Migrationsstrategien zu finden.
 Diese Suche wird dabei von zwei Faktoren beeinflusst: dem Ergebnis der Phase 1 in Form von \glspl{qa} beziehungsweise Szenarien und zusätzlichen Filtern, die vor der Suche konfiguriert werden müssen.
-Im Folgenden werden diese Filter in konfiguriert, mehrere Suche mit ihnen und den \glspl{qa} aus Phase 1 definiert, durchgeführt und dann aggregiert.
+Im Folgenden werden diese Filter in konfiguriert, mehrere Suchen mit ihnen und den \glspl{qa} aus Phase 1 definiert, durchgeführt und dann aggregiert.
 Abschließend werden die Ergebnisse dessen analysiert.
 
 \subsection{Filterselektion}
 \label{sec:filterselektion}
 
-Um bei der Suche nach Migrationsmethoden möglichst Ergebnisse zu erhalten, die dem Zielsystem und den Vorstellungen der Architekten entsprechen, bietet der \gls{arh} neben der Konfiguration der Szenarien eine weitere Möglichkeit, die Ergebnisse zu filtern und zu sortieren:
-Die Filter, die in diesem Abschnitt konfiguriert werden.
-Der \gls{arh} bietet insgesamt 71 verschiedene Filter aus fünf Kategorien und 16 Unterkategorien an.
-Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine dieser drei Präferenzen angegeben werden:
+Um möglichst passende Ergebnisse bei der Suche nach Migrationsmethoden zu erhalten, die den Vorstellungen der Architekten und dem Zielsystem entsprechen, bietet der \gls{arh} neben der Konfiguration der Szenarien weitere Filtermöglichkeiten.
+In diesem Abschnitt werden Filter aus einer Auswahl von insgesamt  71 verschiedenen Filtern aus fünf Kategorien und 16 Unterkategorien ausgewählt.
+Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine der folgenden drei Präferenzen angegeben werden:
 \begin{itemize}
 	\item \textbf{Include:} Methoden, die die jeweilige Eigenschaft besitzen, werden höher platziert.
 	\item \textbf{Neutral:} Ob Methoden die jeweilige Eigenschaft besitzen oder nicht, wirkt sich nicht auf ihre Platzierung aus.
@@ -157,12 +158,12 @@ Für jede der Eigenschaften aus \cref{tab:phase2-all-filter} kann eine dieser dr
 
 \input{tables/phase2/filter-all}
 
-Es wird empfohlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nicht zu verwenden, da der Ausschluss einer Eigenschaft typischerweise nicht das Ziel ist.
+Die Entwickler des \gls{arh} empfehlen, präferierte Eigenschaften auf \emph{include} zu setzen und die anderen auf der Standardeinstellung \emph{neutral} zu belassen und die Einstellung \emph{exclude} nur selten zu verwenden, da der Ausschluss einer Eigenschaft typischerweise nicht das Ziel ist.
 Wenn eine Eigenschaft nicht erwünscht ist, kann es in vielen Fällen möglich sein, die Methode minimal abzuändern oder einen Teil der Methode zu ignorieren.
 Dadurch sollte eine solche unerwünschte Eigenschaft trotzdem kein Problem darstellen und die Methode nicht schlechter bewertet werden.
 
 Für die Wahl der Filter für das Refactoring von \emph{jadice flow} wurden alle Filter gemeinsam von Autor und \gls{po} betrachtet und dabei evaluiert, welche am besten auf diesen Fall zutreffen (\cref{feldnotiz:1,feldnotiz:2}).
-Ausgewählt bedeutet folgend in diesem Kontext immer, dass der entsprechende Filter auf \emph{include} gesetzt wurde.
+\emph{Ausgewählt} bedeutet in diesem Kontext, dass der entsprechende Filter auf \emph{include} gesetzt wurde.
 Die Option \emph{exclude} wurde nicht verwendet.
 Dabei wurden die ausgewählten Filter in zwei Prioritätsstufen unterteilt (\cref{feldnotiz:3}).
 Filter mit Priorität 1 sind dabei die höher priorisierten Filter.
@@ -173,7 +174,7 @@ Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \c
 
 \input{tables/phase2/filter-selected}
 
-Bei der Auswahl der Filter, die von Autor und \gls{po} durchgeführt wurde, haben die folgenden Begründungen zur schlussendlichen Filterwahl geführt:
+Bei der Auswahl der Filter, die vom Autor und \gls{po} durchgeführt wurde, haben die folgenden Begründungen zur schlussendlichen Filterwahl geführt:
 Allgemein wurde darauf geachtet, nur die notwendigsten Filter auszuwählen, um den Einfluss einzelner Filter nicht zu verringern.
 Als gewünschte Zieleigenschaften des Systems wurden die \glspl{sp} als besonders wichtig erachtet.
 Daher wurden insgesamt fünf von sieben verfügbaren Filtern aus dieser Kategorie aufgenommen.
@@ -181,22 +182,22 @@ Neben den Filtern dieser Kategorie wurden vor allem die Filter der Kategorien \e
 Diese hängen ebenfalls stark vom System ab und betreffen die Ausgangslage sowie das gewünschte Ergebnis.
 Deshalb wurden insgesamt sechs Filter aus der Kategorie \emph{Input Preferences} und vier aus der Kategorie \emph{Output Preferences} gewählt.
 Andere Kategorien, wie \emph{Process Preferences} und \emph{Usability Preferences}, welche die interne Funktionsweise der Methode betreffen, wurden als unwichtiger und vor allem unabhängiger vom betreffenden System eingestuft.
-Als einziger Filter in diesen Kategorien bei der Prozess-Strategie die Eigenschaft \emph{Refactoring} gewählt.
+Als einziger Filter in diesen Kategorien wurde bei der Prozess-Strategie die Eigenschaft \emph{Refactoring} gewählt.
 Da bereits eine \gls{msa} vorliegt wären die anderen Optionen wie \emph{Rewrite/Rebuild} in diesem Fall wenig sinnvoll.
 
 \subsection{Konfiguration der Suchen}
 \label{sec:phase2-suchconfig}
 
 Die im vorherigen Abschnitt gewählten und in zwei Prioritäten unterteilten Filter werden nun verwendet, um mehrere Suchdurchgänge zu definieren.
-Das Ziel des Einsatzes mehrerer Suchen ist die nachfolgende Evaluation der Filter- und Suchfunktion durch die Verwendung unterschiedlicher Eingaben für jede Suche.
+Das Ziel des Einsatzes mehrerer Suchen mit jeweils unterschiedlichen Eingaben besteht darin, die Filter- und Suchfunktion anhand der unterschiedlichen Ergebnisse zu evaluieren.
 Um mehrere Suchen zu definieren, wurde die Konfiguration ausgehend von der realistischen Suchkonfiguration, die folgend \emph{Wichtigste Filter} genannt wird, variiert.
 Realistisch bedeutet dabei, dass diese Konfiguration verwendet worden wäre, wenn nur eine Suche durchgeführt worden wäre.
 
-Wie in \cref{tab:phase2-search-description} in der zweiten Spalte dargestellt, beinhaltet diese alle \glspl{qa} und die Filter der Priorität 1.
+Wie in \cref{tab:phase2-search-description} in der zweiten Spalte dargestellt, beinhaltet diese \emph{wichtigste Suche} alle \glspl{qa} und die Filter der Priorität 1.
 Ausgehend davon wurde für die weiteren Suchkonfigurationen in zwei Dimensionen variiert.
-In der ersten Dimension wurden die \glspl{qa} gleich belassen und die Filter variiert (Spalten 2 und 3 der \cref{tab:phase2-search-description}).
+In der ersten wurden die \glspl{qa} gleich belassen und die Filter variiert (Spalten 2 und 3 der \cref{tab:phase2-search-description}).
 In der zweiten Dimension wurden ausgehend von der realistischen Eingabe der Filter (höchst priorisierte Filter) die \glspl{qa} variiert.
-Da die Anzahl der Szenarien mit zehn als relativ hoch eingeschätzt wurde und das Erschließen neuer Szenarien ein erneutes Architekturreview benötigt hätte, wurde entschlossen in dieser Dimension nur eine Reduktion der Anzahl der Szenarien durchzuführen.
+Da die Anzahl der Szenarien mit zehn als relativ hoch eingeschätzt wurde und das Erschließen neuer Szenarien ein erneutes Architekturreview benötigt hätte, wurde vom Autor beschlossen, in dieser Dimension lediglich eine Reduktion der Anzahl der Szenarien durchzuführen.
 Das Entfernen von bis zu 4 Szenarien ergab hierbei keine veränderten Ergebnisse, weswegen in dieser Dimension nur eine zusätzliche Suche komplett ohne \glspl{qa} aufgeführt wird.
 Dadurch soll die Zahl der Suchen begrenzt werden.
 
@@ -313,7 +314,7 @@ Anhand dieser Metriken könnte eine manuelle Überarbeitung der Serviceaufteilun
 
 In diesem Artikel beschreiben \citeauthor{arh-result-no-filter-4} eine automatisierte Methode mit zugehörigem Tool \emph{MicroRefact}, mit dem Java-Monolithen in funktional äquivalente Applikationen bestehend aus Microservices umgewandelt werden können.
 \paragraph{Funktionsweise:} Als Eingabe der Methode fungieren der Quellcode des Monolithen sowie ein Vorschlag für die Microservices-Aufteilung. Dieser wird in Form von Klassen pro Microservice angegeben, wobei jede Klasse nur einem Microservice angehören kann.
-In der ersten Phase des Tools, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices ermitteln.
+In der ersten Phase des Tools, der \emph{Information Extraction}, nutzt es den Quellcode, um strukturelle Informationen zu gewinnen und Abhängigkeiten zwischen den gegebenen Microservices zu ermitteln.
 Diese Abhängigkeiten werden in der zweiten Phase (\emph{Database Refactoring}) dann verwendet, um die Entitäten des Systems und die Beziehungen zwischen diesen zu identifizieren und ein Refactoring der Beziehungen anzustoßen.
 In der letzten Phase werden die strukturellen Informationen und Abhängigkeiten zwischen den Microservices verwendet, um Abhängigkeiten zwischen den Klassen zu analysieren.
 Im Zuge dessen werden die Klassen überarbeitet, die abhängig von den Klassen anderer Microservices sind.
@@ -372,7 +373,7 @@ Die Eingabe wird dabei auf Funktionsebene erwartet, beispielsweise durch ein Kla
 Dazu gehört ebenfalls eine Liste von Features mit Verweisen auf die Stellen, an denen sie implementiert sind.
 Außerdem muss eine Nummer für die Anzahl an erwarteten Microservices angegeben werden.
 Mit dem daraus entstehendem Eingabe-Graphen wird durch einen auf dem modernem evolutionären Algorithmus \emph{NSGA-III} \cite{NSGA-III} basierenden Algorithmus eine Menge an möglichen Lösungen berechnet.
-Eine mögliche Lösung besteht aus einer Liste von Microservices, wobei jeder Microservice eine Liste von Funktionen beinhaltet.
+Jede dieser besteht aus einer Liste von Microservices, wobei jeder Microservice eine Liste von Funktionen beinhaltet.
 Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet werden kann, sondern nur als Vorlage und Startpunkt für eine mögliche Umgestaltung dienen soll.
 
 \paragraph{Evaluation:} In der durchgeführten Fallstudie zeigen die Autoren, dass alle mit ihrem Ansatz produzierten Microservices-Kandidaten bessere Ergebnisse liefern als bei der Durchführung mit \emph{Random Search}.
@@ -381,9 +382,9 @@ Es wird hervorgehoben, dass das Ergebnis nicht direkt zur Umgestaltung verwendet
 \label{sec:phase2-result-8}
 \label[res]{res:8}
 
-\citeauthor{arh-result-no-qas} stellen einen Ansatz vor, mit dem in Objekt-orientierte Applikationen Microservices identifiziert werden können.
+\citeauthor{arh-result-no-qas} stellen einen Ansatz vor, mit dem in Objektorientierten Applikationen Microservices identifiziert werden können.
 \paragraph{Funktionsweise:} Die Besonderheit dieses Ansatzes ist der optionale Einsatz von Expertenwissen.
-Die Autoren heben hervor, dass anderen Ansätzen, der Einsatz von Empfehlungen von Architekten fehlt oder sie diesen voraussetzen.
+Die Autoren heben hervor, dass anderen Verfahren der Einsatz von Architektenempfehlungen fehlt oder sie diesen voraussetzen.
 Der vorgestellt Ansatz soll in diesem Aspekt flexibler sein und dieses Expertenwissen nur zusätzlich zu den ebenfalls vorgestellten Qua\-li\-täts\-metriken verwenden.
 Die atomare Einheit sind Klassen.
 Das Verfahren wird zwar semi-automatisch genannt, da Algorithmen für das Clustering von Klassen bei Experteninformationen vorgestellt werden.
@@ -410,16 +411,19 @@ Es fehlt also auch hier ein konkreter \gls{sia}, weswegen diese Methode ebenfall
 %Nach Ausschluss dieser zwei Verfahren bleiben noch sechs Verfahren zum Vergleich übrig.
 % Diese werden im folgenden Abschnitt sowie in \cref{tab:phase2-comparison} unter mehreren Aspekten verglichen.
 
-Es folgt ein Vergleich der verbleibenden Methoden (Übersicht in \cref{tab:phase2-comparison}).%
-\input{tables/phase2/method-comparison}%
+Es folgt ein Vergleich der verbleibenden Methoden (Übersicht in \cref{tab:phase2-comparison}).
 Bevor die Unterschiede der restlichen sechs Verfahren erläutert werden, sollen die Gemeinsamkeiten aller hier gelisteten und allgemein der meisten existierenden Verfahren zur \gls{sia} beleuchtet werden.
-\paragraph{Generelle Funktionsweise:} Während die Eingabe, die die Verfahren voraussetzen sehr un\-ter\-schied\-lich sein kann, ist die Funktionsweise, wie mit den eingegebenen Daten fortgefahren wird, oft sehr ähnlich.
+
+\input{tables/phase2/method-comparison}
+
+\paragraph{Generelle Funktionsweise:} 
+Während die Eingaben für die Verfahren sehr unterschiedlich sein können, ist die Funktionsweise zur weiteren Datenverarbeitung oft sehr ähnlich.
 In der Regel wird aus den Eingaben ein Graph erstellt, der aus Knoten der atomaren Einheiten der Eingabe besteht.
 Diese sind mit Kanten verbunden, die die Abhängigkeit verschiedener atomarer Einheiten voneinander abbilden.
-Anschließend wird der Graph mithilfe verschiedener Algorithmen und Strategien gruppiert, wobei die resultierenden Gruppen potenzielle Microservices darstellen.
-Die Gruppierung wird anhand bestimmter Metriken optimiert, wobei Cohesion und Coupling die häufigsten sind.
-Ziel ist es, dass Gruppen von Knoten möglichst viele und starke Abhängigkeiten innerhalb der Gruppe aufweisen und zwischen verschiedenen Gruppen eine möglichst geringe Abhängigkeit besteht.
-Je nach Verfahren werden auch andere Metriken wie Komplexität, semantische Ähnlichkeit oder Granularität berücksichtigt.
+Anschließend werden mithilfe verschiedener Algorithmen und Strategien in dem Graph Gruppen gebildet, die potenzielle Microservices darstellen.
+Die Gruppierung erfolgt anhand bestimmter Metriken, wobei Cohesion und Coupling die häufigsten sind.
+Das Ziel besteht darin, dass Knoten innerhalb einer Gruppe möglichst viele und starke Abhängigkeiten aufweisen und zwischen verschiedenen Gruppen eine möglichst geringe Abhängigkeit besteht.
+Je nach Verfahren können auch andere Metriken wie Komplexität, semantische Ähnlichkeit oder Granularität berücksichtigt werden.
 
 \paragraph{Eingaben:} Der erste und in diesem Fall entscheidendste Aspekt, in dem sich die Methoden unterschieden, ist die Art der Eingabe.
 Diese bestimmt die atomaren Einheiten in dem Verfahren.
@@ -434,7 +438,8 @@ Im Gegensatz zu den meisten quellcodebasierten Verfahren wird hier vermutlich me
 Für den Anwendungsfall in dieser Arbeit wurden diese manuellen Eingabemöglichkeiten trotzdem als besser bewertet, da sie eine höhere Abstraktionsebene ermöglichen und somit der zeitliche Aufwand besser angepasst werden kann.
 Außerdem ist bei einigen Verfahren, die Quellcode als Eingabe verwenden die bereits vorhandene \gls{msa} von \jf von Nachteil, wenn diese beispielsweise statische Codeanalysen auf einem Monolithen vorsehen.
 
-\paragraph{Gruppierungsalgorithmus:} Nachdem durch die Eingabe ein Ausgangsgraph erstellt wurde, besteht der nächste Unterschied der Methoden darin, wie aus diesem hochqualitative Microservices identifiziert werden können.
+\paragraph{Gruppierungsalgorithmus:} 
+Nachdem unter Anwendung der Eingabedaten ein Ausgangsgraph erstellt wurde, besteht der nächste Unterschied der Methoden darin, wie aus diesem hochqualitative Microservices identifiziert werden können.
 Hierbei werden im Allgemeinen hauptsächlich zwei Arten von Algorithmen verwendet: Clustering-Algorithmen (Ergebnisse \resultref{2}, \resultref{5}, \resultref{6} und \resultref{8}) sowie genetische beziehungsweise evolutionäre Algorithmen (Ergebnisse \resultref{3} und \resultref{7}).
 In dieser Fallstudie wurde entschieden, diesen Aspekt der internen Funktionsweise der Verfahren nicht in die Bewertung mit einzubeziehen.
 Auf der einen Seite ist unklar, inwiefern sich die unterschiedlichen Algorithmen auf das Ergebnis auswirken.
@@ -448,12 +453,14 @@ Leider kann bei keinem der Verfahren Toolunterstützung verwendet werden.
 Einige Verfahren erwähnen zwar die Entwicklung und Verwendung eines Tools.
 Doch entweder konnte das Tool nicht öffentlich gefunden werden (Ergebnisse \resultref{2} und \resultref{3}), das Tool ist nicht mit den Technologien von \jf kompatibel (\resultref{5}) oder es existiert kein Tool (Ergebnisse \resultref{7} und \resultref{8}).
 
-Im Vergleich ist \result{3} ein Favorit.
+Als Resultat des Vergleichs wurden zwei Methoden als Favoriten identifiziert.
+Diese sollen in den weiteren Phasen genauer untersucht werden.
+Am besten geeignet erscheint \result{3}. 
 Es hat den Vorteil, dass der erwartete Aus\-gangs\-punkt im Gegensatz zum Standard eines Monolithen eine bereits vorhandene \gls{msa} ist.
 Im Vergleich zu anderen Methoden ermöglicht dieses Verfahren eine direktere Behandlung der Ausnahme, ohne Umwege in der Methodik.
 Zudem bietet es vergleichsweise viele Metriken sowie eine Visualisierung dieser an.
-Allerdings ist das Verfahren durch dieses Features vergleichsweise komplex.
-Da das erwähnte Tool \gls{mb} nicht gefunden werden konnte, wäre eine manuelle Durchführung des Verfahrens vermutlich zu zeitaufwendig.
+Allerdings ist das Verfahren durch diese Features vergleichsweise komplex.
+Ohne das erwähnte Tool \gls{mb} wird eine manuelle Durchführung des Verfahrens vom Autor und \gls{po} als vermutlich zu zeitaufwendig eingeschätzt.
 
 Neben \result{3} ist \result{2} das einzige andere Verfahren, bei dem durch die manuelle Eingabe ein regulierbarer Aufwand vermutet wird.
 Diese beiden Verfahren werden als Favoriten für die Anwendung in der nächsten Phase verwendet.
@@ -461,7 +468,7 @@ Diese beiden Verfahren werden als Favoriten für die Anwendung in der nächsten 
 \section{Phase 3a - Architekturplanung}
 \label{sec:durchführung-phase3}
 
-In dieser Phase des \acrfull{mmf} wird der in der vorherigen Phase entworfene Migrationsplan durchgeführt.
+In dieser Phase des \acrfull{mmf} wird das in der vorherigen Phase gewählte Migrationsverfahren angewendet.
 Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet, um geeignete \bpp zu finden, die möglicherweise in die neue Architektur eingebaut werden.
 
 \subsection{Anwendung Migrationsverfahren}
@@ -469,7 +476,7 @@ Außerdem wird ähnlich wie in Phase 2 eine Suchfunktion des \gls{arh} verwendet
 In diesem Abschnitt wird, anknüpfend an die Ordnung der Verfahren nach ihrer Eignung in Phase 2, die Planung des weiteren Vorgehens beschrieben.
 Dabei ist zu beachten, dass es in dieser Arbeit nicht darum geht, eines der Verfahren originalgetreu umzusetzen und speziell zu testen, sondern ein für den Einzelfall geeignetes Verfahren zu finden.
 Dies kann durch die Modifikation eines Verfahrens, aber auch durch die Kombination mehrerer Verfahren oder den zusätzlichen Einsatz eines Werkzeugs geschehen.
-Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozess in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
+Aufgrund des zeitlich begrenzten Rahmens des Refactoring-Prozesses in dieser Thesis ist eines der wichtigsten Kriterien für die Planung des \gls{sia} der zeitliche Aufwand der Methode.
 
 \paragraph{Favorit 1:} Begonnen wurde mit der Suche nach dem Tool \gls{mb} des Ergebnisses \resultref{3} (\cref{feldnotiz:15}).
 Dieses konnte weder im Artikel noch auf anderen offiziellen Wegen gefunden werden.
@@ -493,17 +500,18 @@ Die abstrakte Funktionsweise des Algorithmus konnte erfolgreich umgesetzt werden
 Die Implementierung einiger atomarer Bestandteile des Algorithmus war jedoch nicht erfolgreich (\cref{feldnotiz:17}).
 Die wenig detaillierte Dokumentation und Beschreibung der Formeln und Funktionen des Algorithmus machten eine Umsetzung des Algorithmus in der zur Verfügung stehenden Zeit letztlich unmöglich.
 An einigen Stellen wurden Funktionen des Algorithmus nicht definiert, sondern nur oberflächlich das Ziel der Funktion beschrieben und die Umsetzung offengelassen.
-An anderen Stellen wurden im Algorithmus erwähnte Funktion im Text durch Formeln beschrieben, wobei teilweise unklar war, ob diese Formeln korrekt sind.
-Hierbei werden Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in einer Formel vermutet.
+An anderen Stellen wurden im Algorithmus erwähnte Funktionen im Text durch Formeln beschrieben.
+Hierbei werden Unklarheiten wie Schreib- und Logikfehler im Algorithmus und in mindestens einer Formel vermutet.
 Diese konnten mit der sehr kurzen Beschreibung im Artikel nicht geklärt werden.
-Aufgrund der Vielzahl dieser Probleme wurde die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt.
+Auch andere Details des Algorithmus waren schwer verständlich und oft nicht bis ins Detail erklärt.
+Aufgrund der Vielzahl dieser Probleme musste die Arbeit an der Implementierung des Algorithmus und damit auch die Implementierung des Verfahrens eingestellt werden.
 
 \paragraph{Werkzeuge:} Zusätzlich zu den untersuchten Verfahren wurden die vom \gls{arh} gelisteten Werk\-zeu\-ge betrachtet, vor allem aufgrund des Mangels von Werkzeugunterstützung bei den aus\-ge\-wähl\-ten Verfahren.
 Dabei wurden insbesondere die fünf Werkzeuge, die in der Arbeit von \Citet{fritzsch2023tools} beschrieben wurden, näher untersucht.
 Letztendlich konnte allerdings jedes der Werkzeuge aus verschiedenen Gründen nicht verwendet werden.
 Eines ist durch die Eingabeanforderungen explizit nicht kompatibel, die meisten anderen wären nur mit der monolithischen, älteren Version von \jf kompatibel gewesen.
 Außerdem werden viele der Projekte nicht weiterentwickelt oder instandgehalten, wodurch sich die meisten nicht einfach starten ließen.
-Mit größerem zeitlichen Rahmen wäre bei einigen vermutet eine Anwendung möglich gewesen, doch in diesem Fall haben gegen jedes der Werkzeuge zu viele Punkte gesprochen, als dass der nötige Aufwand in einem sinnvollen Verhältnis zu der verfügbaren Zeit gestanden hätte.
+Mit größerem zeitlichen Rahmen wäre bei einigen vermutlich eine Anwendung möglich gewesen, doch in diesem Fall haben gegen jedes der Werkzeuge zu viele Punkte gesprochen, als dass der nötige Aufwand in einem sinnvollen Verhältnis zu der verfügbaren Zeit gestanden hätte.
 
 \paragraph{Abschluss der Anwendung:} Da die Anwendung der zwei favorisierten Verfahren als (im Zeitrahmen) nicht erfolgversprechend bewertet wurde und auch die gezielte Suche nach Werkzeugen für die Anwendung an \jf keine passende Lösung bieten konnte, wird das Refactoring von \jf im Rahmen dieser Thesis abgebrochen.
 Folgend wird in der Auswertung dieser Thesis nicht die durchgeführte Anwendung eines Migrationsverfahrens, sondern die hypothetische Durchführbarkeit der Verfahren bewertet.
