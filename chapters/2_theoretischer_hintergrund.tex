@@ -62,7 +62,7 @@ Für diesen entscheidenden Prozess wäre es also wichtig für Entwicklerteams, w
 %Die existierenden Tools für die Dekomposition bieten allerdings nur beschränkte Funktionalität über statische Code- oder Abhängigkeiten-Analyse~\cite{a-survey-on}.
 %Deswegen gibt es einige literarische Vorschläge für Frameworks zur Dekomposition~\cite{taibi2019decomposition,taibi2019monolithic}.
 
-Ebenfalls ist die Konzipierung der Inter-Service Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
+Ebenfalls ist die Konzipierung der Inter-Service-Kommunikation ein wichtiger Bestandteil, der starke leistungsbezogene Auswirkungen haben kann.
 Das liegt daran, dass im Vergleich zu monolithischen Systemen die Kommunikation zwischen den Services die Latenz für gleichartige Aufgaben erhöht.
 Um diesen Effekt zu minimieren, sollte möglichst wissenschaftlich gestützt vorgegangen werden und bewährte Best Practices sowie Patterns evaluiert und verwendet werden.
 
@@ -143,13 +143,13 @@ Die einzelnen Arbeitsschritte dabei können parallelisiert und separat skaliert 
 Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \jf zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
-Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch ar­chi­tek­tu­relles Verbesserungspotential vermutet.
+Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch architekturelles Verbesserungspotential vermutet.
 Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Tools und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
 Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wird es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
 Dadurch wird erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden Microservices-Architektur geeignet sind.
 Falls es deshalb für diesen Anwendungsfall zielführend gewesen wäre, hätte zusätzlich die ursprüngliche monolithische Anwendung von \jf (\emph{jadice server}) hinzugezogen werden können.
-Die Ergebnisse dessen hätten dann mit \jf verglichen werden können.
+Ein Vergleich der Ergebnisse dessen mit \jf wäre dann möglich gewesen.
 
 \section{Ähnliche Forschung}
 
@@ -187,7 +187,7 @@ Zum einen bilden die Arbeiten verschiedene Anwendungsfälle ab.
 Während in \Citet{master-marvin-knodel} der vermutlich gewöhnlichere Fall vorliegt, bei dem ein Monolith zu einer \gls{msa} umstrukturiert werden soll, fügt diese Arbeit einen neuen Anwendungsfall hinzu.
 Die Evaluierung und Verbesserung einer bereits vorhandenen \gls{msa} erfordert möglicherweise andere Qualitäten des Frameworks, insbesondere bei der gezielten Suche nach Verfahren, die für diesen speziellen Fall überhaupt anwendbar sind.
 Zum anderen steht eine weiter ausgeprägte Version des Tools \gls{arh} zur Verfügung.
-Während die Suche nach Migrationsverfahren von in der Arbeit von \citeauthor{master-marvin-knodel} manuell ausgeführt wurde \cite{master-marvin-knodel}, kann zum Zeitpunkt dieser Arbeit die Suchfunktion des \gls{arh} dafür genutzt werden.
+Während die Suche nach Migrationsverfahren in der Arbeit von \citeauthor{master-marvin-knodel} manuell ausgeführt wurde \cite{master-marvin-knodel}, kann zum Zeitpunkt dieser Arbeit die Suchfunktion des \gls{arh} dafür genutzt werden.
 
 \subsection{Andere Frameworks}
 
@@ -244,9 +244,9 @@ Die Definition der atomaren Einheiten hängt dabei in der Regel von der Eingabe 
 Anschließend wird bei verschiedenen Methoden mit unterschiedlichen Algorithmen versucht, eine bestmögliche Gruppierung in dem Graph zu finden.
 Viele Verfahren verwenden unterschiedliche Versionen von \emph{Clustering}-Algorithmen \cite{arh-result-no-filter-3,arh-result-no-filter-5,arh-result-important-filter-4}, andere lösen das Problem mit evolutionären beziehungsweise genetischen Algorithmen \cite{arh-result-no-filter-2,arh-result-important-filter-7}.
 
-Unter anderem abhängig von den Eingabemöglichkeiten gibt es verschiedene Stufen der Au\-to\-ma\-ti\-sie\-rung.
-Vor allem Verfahren, die mit Code-Analysen arbeiten, sind teilweise voll-automatisiert \cite{Fil2023}.
-Für andere Eingabearten wie \acrfull{bp} oder \emph{User Stories} ist höchsten semi-Automatisierung möglich, da diese Eingaben manuell erstellt werden müssen.
+Es gibt verschiedene Stufen der Automatisierung, unter anderem abhängig von den Eingabemöglichkeiten.
+Vor allem Verfahren, die mit Code-Analysen arbeiten, sind teilweise voll automatisiert \cite{Fil2023}.
+Für andere Eingabearten wie \acrfull{bp} oder \emph{User Stories} ist höchstens eine semi-automatische Umsetzung möglich, da diese Eingaben manuell erstellt werden müssen.
 Die algorithmische Optimierung eines erzeugten Graphen ist in der Regel theoretisch automatisch möglich.
 Allerdings ist dies nicht immer umgesetzt oder es wird lediglich auf mögliche Algorithmen für die Umsetzung verwiesen.
 

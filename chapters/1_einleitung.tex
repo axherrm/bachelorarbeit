@@ -8,7 +8,7 @@ Abhängig von dem Ausmaß und der Komplexität monolithischer Systeme kann die M
 Es liegt aktuell eine Vielzahl akademischer Forschungsarbeiten zum Thema Microservices vor, deren Erkenntnisse jedoch nur selten in der Industrie eingesetzt werden \cite{fritzsch2022architecturecentric}.
 
 Um diese Migration zu vereinfachen und die wissenschaftliche Expertise der Industrie leichter zugänglich zu machen, hat die Abteilung \gls{ese} des \gls{iste} das \gls{mmf} entwickelt.
-Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das ESE erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
+Mit der Entwicklung des \gls{mmf}, das Erkenntnisse über die Migration von monolithischen Anwendungen hin zu Microservices in die Industrie bringen soll, hat das \gls{ese} erste Schritte unternommen, um die erwähnte Lücke zwischen Industrie und Forschung zu schließen.
 
 Bei der Anwendung des auf dem Framework basierenden Tools in der Industrie gibt es jedoch noch Raum für Verbesserungen.
 Praktische Anwendungen sind wichtig für die Weiterentwicklung und Verbesserung des Frameworks und des Tools.
@@ -19,7 +19,7 @@ Die Ergebnisse dieses Refactorings werden zur Bewertung der Effektivität des Fr
 
 Bei der Analyse von \jf mithilfe des Frameworks werden vor allem drei Designaspekte von Microservices betrachtet:
 \begin{enumerate}
-	\item[{[1]}] Die optimale Service Granularität. Bei dieser muss zwischen Overhead durch zu viele Einheiten und Overhead durch zu große Einheiten abgewogen werden.
+	\item[{[1]}] Die optimale Service-Granularität. Bei dieser muss zwischen Overhead durch zu viele Einheiten und Overhead durch zu große Einheiten abgewogen werden.
 	\item[{[2]}] Paradigma der Ansteuerung der einzelnen Einheiten, Kommunikationsmodell zwischen den Einheiten.
 	\item[{[3]}] Reduktion des IO-Flaschenhalses, Art des Payload-Transfers. % TODO ausführlicher beschreiben
 	Der IO-Flaschenhals entsteht dadurch, dass die einzelnen Einheiten, bevor sie ihre Arbeit verrichten können, immer die Eingangsdokumente herunterladen und anschließend die Ergebnisse wieder hochladen müssen.
@@ -29,7 +29,7 @@ Daraus folgt die Forschungsfrage, die in dieser Thesis untersucht wird:
 
 \label[forschungsfrage]{forschungsfrage:1} \textbf{FF:} Wie kann eine bereits bestehende Microservices-Architektur mit Hilfe des \acrfull{mmf} hinsichtlich konkreter Qualitätsaspekte weiter optimiert werden?
 \begin{enumerate}
-	\item[1.1] Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service Granularität einer bestehenden Microservices-Architektur?
+	\item[1.1] Welche Refactoring-Verfahren eignen sich zur Bestimmung der optimalen Service-Granularität einer bestehenden Microservices-Architektur?
 	\item[1.2] Welche Ansätze, Patterns oder Best Practices eignen sich zur Optimierung des Kom\-mu\-ni\-ka\-tions\-mo\-dells und der Verringerung des IO-Flaschenhalses zwischen den einzelnen Services?
 \end{enumerate}
 
