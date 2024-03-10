@@ -3,7 +3,7 @@
 Zum Architekturprinzip der Microservices gibt es bereits eine Vielzahl akademischer Publikationen.
 In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis relevanten Literatur eingeführt.
 Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten, modernen Architekturprinzip \emph{Microservices} gezogen.
-Anschließend werden aktuelle Arbeiten zur Migration zu Microservices-Architekturen beschrieben.
+Anschließend werden aktuelle Arbeiten zur Migration zu \acrlongpl{msa} beschrieben.
 Des Weiteren wird das \acrfull{mmf} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
 Abschließend wird ein Überblick über das Produkt gegeben, das in dieser Thesis mithilfe des \gls{mmf} überarbeitet wird.
 
@@ -23,7 +23,7 @@ Dies steht auch im Widerspruch zu modernen agilen Arbeitsprinzipien.
 Wenn nur einzelne Komponenten eines Monolithen eine hohe Last erfahren, muss trotzdem das gesamte System skaliert werden, was zu einer Verschwendung von Rechenleistung führen kann und die Anwendung ineffizient macht~\cite{Dragoni2017}.
 Außerdem kann schnell das Problem der \qq{Dependency Hell}~\cite{Dragoni2017} auftreten, wobei das Hinzufügen oder Ändern von Abhängigkeiten dazu führen kann, dass das gesamte Projekt nicht mehr kompiliert oder ausgeführt werden kann.
 
-Die meisten dieser Probleme werden durch die Microservices-Architektur gelöst.
+Die meisten dieser Probleme werden durch die \acrlong{msa} gelöst.
 Dabei besteht ein System aus vielen kleinen (Micro-) Services.
 Diese zeichnen sich dadurch aus, dass sie möglichst klein gehalten werden, genau eine Aufgabe haben und unabhängig ausgeführt werden können~\cite{a-survey-on}.
 Durch die Entkopplung der Services wird im Gegensatz zu Monolithen ein Kommunikationsmodell zwischen den Services notwendig.
@@ -37,9 +37,9 @@ Es ermöglicht auch, dass die Anwendung während eines Updates auf eine neue Ver
 Des Weiteren können Services abhängig von der Last einzeln skaliert werden, was die Effizienz in bestimmten Szenarien deutlich erhöht.
 Darüber hinaus sind Entwickler flexibel in der Wahl der Programmiersprache und des Frameworks für einzelne Services, da die einzige Anforderung die Umsetzung des gewählten Kommunikationsmodells ist.
 
-Eine Microservices-Architektur ist allerdings nicht universell einer monolithischen Architektur vorzuziehen.
-Gründe dafür sind einige Nachteile von Microservices-Architekturen, die von \Citet{a-survey-on} zusammengetragen wurden.
-Dazu gehört vor allem die Komplexität des Systems, die bei einer Microservices-Architektur deutlich höher ist.
+Eine \acrlong{msa} ist allerdings nicht universell einer monolithischen Architektur vorzuziehen.
+Gründe dafür sind einige Nachteile von \acrlongpl{msa}, die von \Citet{a-survey-on} zusammengetragen wurden.
+Dazu gehört vor allem die Komplexität des Systems, die bei einer \acrlong{msa} deutlich höher ist.
 Dies liegt an der Aufteilung des Systems in einzelne Services und der nichttrivialen Kommunikation zwischen den Services.
 Viele Entwickler müssen die neue Architektur mit ihrer erhöhten Komplexität, sowie die zugehörigen Tools und Mechanismen für automatisierte Tests, Deployments und Monitoring erst erlernen.
 Der resultierende Netzwerk-Overhead durch die Kommunikation zwischen den Komponenten kann zu höheren Latenzen führen und das System ineffizient machen, wohingegen bei Monolithen lediglich Funktionen innerhalb desselben laufenden Programms aufgerufen werden.
@@ -49,7 +49,7 @@ All dies führt dazu, dass Experten empfehlen, für kleine Anwendungen bei monol
 
 \section{Migration zu Microservices}
 
-Aufgrund der beschriebenen Vorteile von Microservices Architekturen ist es im Interesse vieler Unternehmen und Entwickler, existierende Applikationen und Systeme mit monolithischer Architektur zu Microservices-basierten Systemen zu migrieren.
+Aufgrund der beschriebenen Vorteile von \acrlongpl{msa} ist es im Interesse vieler Unternehmen und Entwickler, existierende Applikationen und Systeme mit monolithischer Architektur zu Microservices-basierten Systemen zu migrieren.
 Der Planungsprozess dieser Migration ist allerdings sehr zeit- und kostenintensiv und durch große Risiken geprägt, da dabei Systeme tiefliegend verändert werden.
 Deswegen ist die Migration zu Microservices seit etwa 2015 ein stark untersuchtes Thema.
 
@@ -100,8 +100,8 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 	\item \textbf{Phase 1: System Comprehension:}
 	In Phase 1 wird das Verständnis des zu migrierenden Systems angestrebt.
 	Mit den Stakeholdern werden dabei strategische Ziele für Produkt und Unternehmen definiert, sowie \glspl{qa} und gewünschte Szenarien identifiziert.
-	Es sollen sich dadurch mögliche Treiber für die neue Microservices-Architektur herauskristallisieren.
-	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen Microservices-Architektur möglich.
+	Es sollen sich dadurch mögliche Treiber für die neue \acrlong{msa} herauskristallisieren.
+	Durch das resultierende Verständnis des Systems wird ein Vergleich der alten monolithischen Architektur und einer potentiellen neuen \acrlong{msa} möglich.
 	Architekten sollen dann mithilfe dieser Informationen eine Entscheidung für oder gegen die Migration zu Microservices fällen.
 	Zum Zeitpunkt der Durchführung dieser Arbeit konnte im Tool nur die Eingabe der Szenarien mit den zugehörigen \glspl{qa} erfolgen.
 	Die restlichen Schritte dieser Phase wurden erst nach Abschluss der Arbeit zum Tool hinzugefügt.
@@ -127,14 +127,14 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \section{jadice flow}
 
-Das vorgestellte Framework wird in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden Microservices-Architektur in der Industrie benutzt.
+Das vorgestellte Framework wird in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden \acrlong{msa} in der Industrie benutzt.
 Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow}\footnote{\url{https://www.levigo.de/jadice-flow/}} eingegangen, welches mit dem \gls{mmf} überarbeitet wird.
 
 \jf ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://www.levigo.de/dokumentenmanagement/}}.
 \emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an der Anwendung arbeiten.
-\jf basiert bereits auf einer Microservices-Architektur, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monolithen \emph{jadice server}\footnote{\url{https://www.levigo.de/jadice-server/}}.
+\jf basiert bereits auf einer \acrlong{msa}, ist jedoch erst die erste Generation nach der Überführung des vorherigen Monolithen \emph{jadice server}\footnote{\url{https://www.levigo.de/jadice-server/}}.
 Beide Produkte bieten workflowbasierte Dokumentenverarbeitung an, bei der mit komplexen Datenströmen umgegangen werden kann.
-Durch den Umstieg auf eine Microservices-Architektur können in der neuen Generation einzelne Verarbeitungsschritte skaliert werden.
+Durch den Umstieg auf eine \acrlong{msa} können in der neuen Generation einzelne Verarbeitungsschritte skaliert werden.
 Der Großteil der Services ist in Java geschrieben, doch durch den Betrieb in Containern ist \jf prinzipiell unabhängig von der Programmiersprache.
 
 Einen beispielhaften Workflow stellt der \emph{E-Mail converter} dar.
@@ -143,11 +143,11 @@ Die einzelnen Arbeitsschritte dabei können parallelisiert und separat skaliert 
 Am Ende werden die Ergebnisse kombiniert.
 Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen bietet \jf zusätzliche Features, wie die tiefe Analyse und Darstellung von Archiven in Anhängen.
 
-Da \emph{jadice flow} die erste Generation in Microservices-Architektur ist, wird noch architekturelles Verbesserungspotential vermutet.
+Da \emph{jadice flow} die erste Generation in \acrlong{msa} ist, wird noch architekturelles Verbesserungspotential vermutet.
 Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Tools und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
 Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wird es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
-Dadurch wird erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden Microservices-Architektur geeignet sind.
+Dadurch wird erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden \acrlong{msa} geeignet sind.
 Falls es deshalb für diesen Anwendungsfall zielführend gewesen wäre, hätte zusätzlich die ursprüngliche monolithische Anwendung von \jf (\emph{jadice server}) hinzugezogen werden können.
 Ein Vergleich der Ergebnisse dessen mit \jf wäre dann möglich gewesen.
 
