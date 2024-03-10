@@ -131,7 +131,7 @@ Schlussendlich konnte jedoch in Form von offener  Diskussion für jedes Szenario
 
 Das Ergebnis dieser Einschätzungen ist ebenfalls in \cref{tab:scenarios} zu sehen.
 Insgesamt wurde eine \gls{msa} in fünf Fällen als vorteilhaft und nur in drei Fällen als unvorteilhaft bewertet.
-Des Weiteren ist zu beachten, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert sind und die obersten beiden Szenarien die Hauptfaktoren für die Migration zu einer \acrlong{msa} waren.
+Des Weiteren ist zu beachten, dass die Szenarien in der Tabelle nach der Wichtigkeit der primären \glspl{qa} sortiert sind und die obersten beiden Szenarien die Hauptfaktoren für die Migration zu einer Microservices-Architektur waren.
 Durch die Überlegenheit der \gls{msa}-Favorisierungen und dass diese verstärkt bei den höchst priorisierten \glspl{qa} (siehe \cref{tab:scenarios}) vorliegen, kann diese Auswertung die Entscheidung zur Migration zu einer \gls{msa} bestätigen.
 
 Nachdem nun erwünschte Szenarien und \glspl{qa} erhoben wurden und die Wahl einer \gls{msa} für \emph{jadice flow} bekräftigt wurde, kann mit Phase 2 fortgefahren werden.
@@ -416,7 +416,7 @@ Bevor die Unterschiede der restlichen sechs Verfahren erläutert werden, sollen 
 
 \input{tables/phase2/method-comparison}
 
-\paragraph{Generelle Funktionsweise:}
+\paragraph{Generelle Funktionsweise:} 
 Während die Eingaben für die Verfahren sehr unterschiedlich sein können, ist die Funktionsweise zur weiteren Datenverarbeitung oft sehr ähnlich.
 In der Regel wird aus den Eingaben ein Graph erstellt, der aus Knoten der atomaren Einheiten der Eingabe besteht.
 Diese sind mit Kanten verbunden, die die Abhängigkeit verschiedener atomarer Einheiten voneinander abbilden.
@@ -438,7 +438,7 @@ Im Gegensatz zu den meisten quellcodebasierten Verfahren wird hier vermutlich me
 Für den Anwendungsfall in dieser Arbeit wurden diese manuellen Eingabemöglichkeiten trotzdem als besser bewertet, da sie eine höhere Abstraktionsebene ermöglichen und somit der zeitliche Aufwand besser angepasst werden kann.
 Außerdem ist bei einigen Verfahren, die Quellcode als Eingabe verwenden die bereits vorhandene \gls{msa} von \jf von Nachteil, wenn diese beispielsweise statische Codeanalysen auf einem Monolithen vorsehen.
 
-\paragraph{Gruppierungsalgorithmus:}
+\paragraph{Gruppierungsalgorithmus:} 
 Nachdem unter Anwendung der Eingabedaten ein Ausgangsgraph erstellt wurde, besteht der nächste Unterschied der Methoden darin, wie aus diesem hochqualitative Microservices identifiziert werden können.
 Hierbei werden im Allgemeinen hauptsächlich zwei Arten von Algorithmen verwendet: Clustering-Algorithmen (Ergebnisse \resultref{2}, \resultref{5}, \resultref{6} und \resultref{8}) sowie genetische beziehungsweise evolutionäre Algorithmen (Ergebnisse \resultref{3} und \resultref{7}).
 In dieser Fallstudie wurde entschieden, diesen Aspekt der internen Funktionsweise der Verfahren nicht in die Bewertung mit einzubeziehen.
@@ -455,7 +455,7 @@ Doch entweder konnte das Tool nicht öffentlich gefunden werden (Ergebnisse \res
 
 Als Resultat des Vergleichs wurden zwei Methoden als Favoriten identifiziert.
 Diese sollen in den weiteren Phasen genauer untersucht werden.
-Am besten geeignet erscheint \result{3}.
+Am besten geeignet erscheint \result{3}. 
 Es hat den Vorteil, dass der erwartete Aus\-gangs\-punkt im Gegensatz zum Standard eines Monolithen eine bereits vorhandene \gls{msa} ist.
 Im Vergleich zu anderen Methoden ermöglicht dieses Verfahren eine direktere Behandlung der Ausnahme, ohne Umwege in der Methodik.
 Zudem bietet es vergleichsweise viele Metriken sowie eine Visualisierung dieser an.
@@ -524,3 +524,14 @@ Insgesamt stehen 51 Patterns und 43 Best Practices zur Auswahl.
 Im Folgenden werden jeweils ersten 20 Suchergebnisse aufgelistet.
 
 \input{tables/phase3/search-results.tex}
+
+Bei erster Betrachtung dieser Ergebnislisten konnten der Autor und der \gls{po} von \jf in einer vorläufigen Bewertung feststellen, dass die einzelnen \bpp für \jf wertvolle Ergebnisse enthalten.
+Detaillierter wurde die Qualität dieser Funktion in den Experteninterviews untersucht.
+Die darin enthaltene Evaluation der Ordnung der Ergebnisse in Bezug auf die definierten \glspl{qa} sowie das Vorkommen von für die \ff zentralen Ergebnissen wird in \cref{chap:auswertung} beschrieben.
+
+%Der Inhalt dieser Ergebnislisten wurde vom Autor sowie von befragten Experten als adäquat für \jf bewertet.
+%Hierbei wurden sowohl die Ordnung der Ergebnisse im Bezug auf die definierten \glspl{qa} als auch das Vorkommen von für die \ff zentralen Ergebnissen beleuchtet.
+%Mehr Informationen dazu werden in \cref{chap:auswertung} gegeben.
+
+%Eine ausführliche Bewertung der erhaltenen \bpp ist in \cref{chap:auswertung} gegeben.
+%Die dort erhaltenen Ergebnisse der Experten spiegeln die Meinung des Autors wieder.
