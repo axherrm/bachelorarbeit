@@ -4,8 +4,8 @@
 Die Auswertung dieser Fallstudie erfolgt mithilfe zwei verschiedener wissenschaftlicher Methoden.
 Eine detaillierte Erläuterung der Methodik ist in \cref{chap:methodik} gegeben.
 Zuerst werden in \cref{sec:auswertung-interviews} die durchgeführten Experteninterviews ausgewertet.
-Außerdem werden in \cref{sec:auswertung-feldnotizen} die im Ver\-lauf der Anwendung des \gls{mmf} in dieser Thesis erstellten Feldnotizen ausgewertet.
-Zum Abschluss dieses Kapitels werden die Ergebnisse dessen in \cref{sec:auswertung-diskussion} diskutiert und durch eine qualitative Bewertung des Refactoringprozesses durch den Autor ergänzt.
+Außerdem werden in \cref{sec:auswertung-feldnotizen} die im Ver\-lauf der Anwendung des \gls{mmf} in dieser Thesis erstellten Feldnotizen analysiert.
+Zum Abschluss dieses Kapitels werden die Ergebnisse dessen in \cref{sec:auswertung-diskussion} diskutiert und durch eine qualitative Bewertung des Refactoring-Prozesses durch den Autor ergänzt.
 
 \section{Experteninterviews}
 \label{sec:auswertung-interviews}
@@ -16,7 +16,7 @@ Die genaue Methodik der Interviews ist in \cref{sec:methodik-interviews} erläut
 
 Das erste Interview wurde gezielt mit dem \gls{po} von \jf durchgeführt.
 Er begleitete alle Phasen der Thesis und benötigte deshalb keine thematische Einweisung.
-der \gls{po} hat die Präambel und das Informationsmaterial erst wenige Stunden vor dem Interview erhalten.
+Der \gls{po} hat die Präambel und das Informationsmaterial erst wenige Stunden vor dem Interview erhalten.
 Durch die vorherige Mitarbeit des Teilnehmers an der Thesis konnte im ersten Interview zusätzlich evaluiert werden, ob die Verständnisfragen, inhaltlichen Fragen und der Zeitrahmen passend gewählt wurden.
 Den anderen Teilnehmern, die nicht mit dem Inhalt der Thesis vertraut waren, wurden vier Tage vor den Interviews eine Präambel (\cref{chap:expert-interviews-preamble}) und fachliches Informationsmaterial (\cref{chap:expert-interviews-infobogen}) zur Verfügung gestellt.
 Die Interviews konnten ohne größere Probleme oder Änderungen im Vergleich zur Planung durchgeführt werden.
@@ -57,7 +57,7 @@ In nur einem Interview wurde die Frage hinreichend verstanden und beantwortet, u
 Diese wurde in den anderen beiden Fällen schlicht übersprungen.
 
 Zu großen Teilen wurden in den Antworten auf die erste Frage Funktionen genannt, die der \gls{arh} anbietet.
-Dazu gehören das Sammeln von Informationen und die Definition von Anforderungen (umgesetzt in Phase 1)  sowie die Suche nach Verfahren durch die primär die Granularität der Microservices optimiert werden kann (umgesetzt in Phase 2).
+Dazu gehören das Sammeln von Informationen und die Definition von Anforderungen (umgesetzt in Phase 1)  sowie die Suche nach Verfahren, durch die primär die Granularität der Microservices optimiert werden kann (umgesetzt in Phase 2).
 Als gewünschte Qualität wurde dabei genannt, dass eine große Auswahl an Verfahren bevorzugt wird, von denen dann mehrere manuell verglichen werden können.
 Weitere Ideen sind die Visualisierung der gesammelten Informationen, ein Teilen der Informationen, um besser im Team arbeiten zu können und Tipps für den Migrationsprozess.
 Letzteres könnte als teilweise umgesetzt bewertet werden, da das gesamte Framework als Leitfaden für die Migration gesehen werden kann.
@@ -65,7 +65,7 @@ Generell ist die Aussagekraft dieses Fragenabschnittes dadurch eingeschränkt, d
 
 \paragraph{Funktionsweise des \gls{mmf}:} Anschließend folgen Fragen zur Bewertung der generellen Funk\-ti\-ons\-wei\-se des \gls{mmf} in Phasen.
 Alle Experten haben angegeben, dass sie die Phasenaufteilung als sinnvoll ansehen.
-Dass Phase 1 eine Analyse des Systems und die Planung der Ziele durchgeführt wird, wurde als sehr natürlich für allgemeine Refactoringprozesse wahrgenommen.
+Die Durchführung einer Analyse des Systems und der Planung der Ziele in Phase 1 wurde als natürlicher Ausgangspunkt für allgemeine Refactoring-Prozesse wahrgenommen.
 Vorschläge von Migrationsverfahren in der zweiten Phase wurden ebenfalls als positiv bewertet.
 Es wird vermutet, dass so Verfahren gefunden werden können, die sonst nicht betrachtet worden wären.
 Das Zusammenspiel der Phasen wurde ebenfalls als sinnvoll bewertet.
@@ -75,7 +75,7 @@ Es würde eine stetige Evaluierung der gewählten Vorgehensweise begünstigt und
 Ein Teilnehmer kritisierte die Dokumentation des \gls{arh}.
 Ein Beispiel dafür sei die Beschreibung der Filteroptionen für die Suche nach Migrationsverfahren.
 Diese Kritik wurde vom Teilnehmer selbst direkt im Bezug auf das junge Entwicklungsstadium des Tools und die wissenschaftliche Orientierung relativiert.
-Außerdem wurde von einem Experten hervorgehoben, dass der Haupteinflussfaktor auf die Nützlichkeit des Tools die Datenbasis ist, die verfügbar ist.
+Außerdem wurde von einem Experten hervorgehoben, dass der Haupteinflussfaktor auf die Nützlichkeit des Tools die verfügbare Datenbasis ist.
 Diese müsse stetig aktualisiert und gut kategorisiert werden.
 Eine weitere Kritik bezieht sich auf die Einschränkung auf bestimmte \glspl{qa} in der ersten Phase.
 Da die verfügbaren \glspl{qa} auch in der Kategorisierung der Verfahren vorhanden sein müssen, ist das Modell nicht erweiterbar und bildet möglicherweise in bestimmten Anwendungsfällen nicht die nötigen Anforderungen ab.
@@ -167,7 +167,7 @@ Ein Experte erwähnte allerdings auch, dass die \glspl{qa} nicht unbedingt auf d
 
 Zum Abschluss der Interviews wurden jeweils zwei Fragen gestellt, die die Ergebnisse aller vor\-he\-ri\-gen Fragen aggregieren sollten.
 Es sollte insgesamt eingeschätzt werden, ob die Verwendung des Frameworks und des Tools zum momentanen Zeitpunkt gewinnbringend für \jf wäre.
-Dieselbe Frage wurde anschließend im Bezug auf das Vorgängerprodukt mit monolithischer Architektur eine Verwendung in der Vergangenheit wiederholt.
+Dieselbe Frage wurde anschließend im Bezug auf eine Verwendung des \gls{arh} in der Vergangenheit mit dem Vorgängerprodukt mit monolithischer Architektur wiederholt.
 
 Zwei der Teilnehmer bewerteten die Verwendung zum jetzigen Zeitpunkt als sinnvoll.
 Der andere Teilnehmer war unsicherer, tendierte jedoch auch dazu.
@@ -202,7 +202,7 @@ Wie in der Tabelle erkennbar ist, verlief dieser Schritt sehr positiv.
 In jeder Feldnotiz wurde eine Sache vermerkt, die gut gelaufen ist und nur in einem Fall ein Problem.
 Das ist auch an der Häufigkeit von 100 Prozent der Kodierung \glqq Mehr gut gelaufen\grqq{} zu sehen.
 
-In den Einträgen der Empfindungen ist zu erkennen, dass trotz des positiven Verlaufs dieses Schritts ein Mal auch das schlechte Gefühl \glqq Unsicherheit\grqq{} festgehalten wurde.
+In den Einträgen der Empfindungen ist zu erkennen, dass trotz des positiven Verlaufs dieses Schritts einmal auch das schlechte Gefühl \glqq Unsicherheit\grqq{} festgehalten wurde.
 Das hängt in diesem Fall jedoch nicht mit dem \gls{arh} oder der Migration zusammen, sondern wird auf die Unerfahrenheit des Autors mit der Anwendung der Methodik von Feldnotizen zurückgeführt.
 Ansonsten wurde in 67 Prozent der Feldnotizen ein positives Gefühl vermerkt.
 Zudem wurde ein Verbesserungsvorschlag kodiert, der direkt mit der Kodierung \glqq Schlecht gelaufen\grqq{} der \cref{feldnotiz:1} zusammenhängt.
@@ -249,7 +249,7 @@ Es wird vorgeschlagen, eine Filteroption zu implementieren, um unpassende Ergebn
 In der dritten Phase des \gls{mmf} wurden lediglich vier Feldnotizen erstellt, da nur ein kleiner Teil der Phase durchgeführt wurde.
 Die Umsetzung der Phase 3b wurde frühzeitig ausgeschlossen.
 Der Hauptteil der Phase 3a, welcher die Anwendung eines Migrationsverfahrens beinhaltet, konnte aufgrund der zeitlichen Beschränkung einer Thesis und Problemen mit den Verfahren nur teilweise durchgeführt werden.
-Da in dieser Thesis nicht bis zur Planung einer neuen Architektur fortgeschritten wurde, wurden auch keine \bpp ausgewählt.
+Da in dieser Thesis nicht bis zur Planung einer neuen Architektur fortgeschritten wurde, fand auch keine Wahl von \bpp statt.
 
 Die vier vorhandenen Feldnotizen beschreiben den Versuch, die beiden als Favoriten identifizierten Migrationsverfahren anzuwenden.
 Wie in \cref{tab:auswertung-feldnotizen-3} zu sehen ist, war dieser Versuch nicht erfolgreich.
@@ -270,7 +270,7 @@ Für eine erfolgreiche Umsetzung dieses Verfahrens wird ein hoher Eigenentwicklu
 
 \subsection{Überblick über die Feldnotizen}
 
-Nachdem die Ergebnisse der Auswertung der Feldnotizen pro Phase beziehungsweise Schritt in einzelnen Abschnitten beschrieben wurden, wird in diesem Abschnitt aus einer übergeordneten Perspektive auf die Ergebnisse der Feldnotizen geblickt.
+Nachdem die Ergebnisse der Auswertung der Feldnotizen pro Phase beziehungsweise Schritt in einzelnen Abschnitten beschrieben wurden, erfolgt in diesem Abschnitt eine Betrachtung der Ergebnisse der Feldnotizen aus übergeordneter Perspektive.
 Für jeden übergeordneten Schritt wurde die Summe der Kodierung aller enthaltenen Feldnotizen zusammen in der \cref{tab:auswertung-feldnotizen} visualisiert.
 \input{tables/auswertung/feldnotizen}
 
@@ -280,10 +280,10 @@ Dort sind 75 Prozent mit \glqq Mehr schlecht gelaufen\grqq{} kodiert.
 Dabei lässt sich insbesondere folgendes beobachten: Mit abnehmendem Erfolg der Aktivitäten ist der \gls{arh} immer weniger involviert an den Aktivitäten.
 Der erste Schritt befasst sich noch komplett mit dem \gls{arh} und verläuft gut.
 Ab dem zweiten Schritt wird die Wertung schlechter und hier ist der \gls{arh} schon weniger involviert.
-Obwohl der \gls{arh} die Ergebnisse vorgibt, kann der er nur entfernter mit der Betrachtung der wissenschaftlichen Artikel assoziiert werden.
+Obwohl der \gls{arh} die Ergebnisse vorgibt, kann er nur entfernter mit der Betrachtung der wissenschaftlichen Artikel assoziiert werden.
 In der dritten Phase ist die Bewertung dann am schlechtesten, doch die Kritik in der dritten Phase kann fast nur auf die Verfahren bezogen werden und nur in sehr geringem Maße auf den \gls{arh}.
 
-Daraus kann geschlossen werden, dass der \gls{arh} einen Migrationsprozess dort, wo es die Grenzen seiner Funktionsweise es erlauben, gut begleitet.
+Daraus kann geschlossen werden, dass der \gls{arh} einen Migrationsprozess dort, wo es die Grenzen seiner Funktionsweise erlauben, gut begleitet.
 Es gibt immer Optimierungspotenzial.
 Aus der Perspektive dieser Arbeit waren die Verfahren sowie deren etwaige Qualität am kritischsten.
 Daher scheint es am wichtigsten, die Sammlung von Verfahren sowie die Bewertung und Kategorisierung dieser zu optimieren.
@@ -291,7 +291,7 @@ Daher scheint es am wichtigsten, die Sammlung von Verfahren sowie die Bewertung 
 \section{Diskussion}
 \label{sec:auswertung-diskussion}
 
-In diesem Abschnitt wird der gesamte Refactoringprozess, den das \gls{mmf} anleitet und der \gls{arh} umsetzt, bewertet.
+In diesem Abschnitt wird der gesamte Refactoring-Prozess, den das \gls{mmf} anleitet und der \gls{arh} umsetzt, bewertet.
 Dabei werden die vorangegangenen Auswertungen der Feldnotizen und Experteninterviews zusammengefasst und diskutiert.
 Zusätzlich fließt eine qualitative Bewertung des Gesamtprozesses durch den Autor ein, die sich aus den gesammelten Eindrücken ergibt.
 
@@ -347,12 +347,12 @@ Die Umsetzung des bevorzugten Verfahrens wurde aufgrund seiner zu großen Komple
 Beim zweiten Verfahren wurde eine Anwendung versucht, jedoch nach einiger Zeit abgebrochen.
 Einige Details des Algorithmus waren dem Autor unverständlich, da sie nicht ausreichend erklärt wurden.
 Diese Probleme traten bei der konkreten Umsetzung auf und waren im Voraus nicht wirklich abschätzbar.
-An dieser Stelle wäre es wünschenswert, im \gls{arh} mehr Informationen über die Verfahren zur besser Einschätzung zu erhalten, was in realistischer Abschätzung jedoch auch schwer umsetzbar ist.
+An dieser Stelle wäre es wünschenswert, im \gls{arh} mehr Informationen über die Verfahren zur besseren Einschätzung zu erhalten, was in realistischer Abschätzung jedoch auch schwer umsetzbar ist.
 
-Bei der fehlgeschlagenen Anwendung in dieser Thesis ist zu beachten, dass die Ressourcen für die Umsetzung der Verfahren anders begrenzt sind, als es in anderen Anwendungen in der Industrie der Fall wäre.
+Bei der fehlgeschlagenen Anwendung in dieser Thesis ist zu beachten, dass die Ressourcen für die Umsetzung der Verfahren anders begrenzt sind als es in anderen Anwendungen in der Industrie der Fall wäre.
 Die durchgeführten Experteninterviews haben gezeigt, dass die Migrationsverfahren, die durch den \gls{arh} erhalten wurden, als grundsätzlich gut und für die Anwendung mit \jf geeignet eingeschätzt wurden.
 Die Experten haben sowohl die beiden vorgestellten Migrationsverfahren als auch ihre spezifische Auswirkung auf die Optimierung der Service-Granularität von \jf als gewinnbringend bewertet.
-Die genannten Probleme könnten in Zukunft gelöst und Erfolg erzielt werden, wenn die Anwendung der Verfahren nicht so stark durch Zeit- und Mitarbeiterzahl eingeschränkt wäre.
+Die genannten Probleme könnten in Zukunft gelöst und Erfolg erzielt werden, wenn die Anwendung der Verfahren nicht so stark durch Zeit und Mitarbeiterzahl eingeschränkt wäre.
 
 Auch wenn eine Suche nach geeigneten Migrationsverfahren ohne den \gls{arh} nicht durchgeführt wurde, vermuten der Autor und der \gls{po} von \jf, dass diese der Suche der mit dem \gls{arh} durchgeführten nicht vorzuziehen gewesen wäre.
 Auch das könnten zukünftige Arbeiten untersuchen.
@@ -367,7 +367,7 @@ Als Basis sollte jedoch die in Phase 2 selektierte Migrationsmethode durchgefüh
 Da diese Voraussetzung in dieser Arbeit nicht gegeben war, wurde auch die Auswahl von \bpp nicht durchgeführt.
 
 Dieser Teil der  \hyperref[forschungsfrage:1]{Forschungsfrage} kann also nur durch die Ergebnisse der Experteninterviews erörtert werden, da keine Auswahl oder Anwendung von \bpp stattgefunden hat.
-Die vier Fragen, die in den Interviews mit Bezug auf die vom \gls{arh} für \jf vorgeschlagenen \bpp gestellt wurden, haben folgende Ergebnisse gezeigt.
+Die vier Fragen, die in den Interviews mit Bezug auf die vom \gls{arh} für \jf vorgeschlagenen \bpp gestellt wurden, haben folgende Ergebnisse gezeigt:
 Die Experten bewerteten die Sortierung der \bpp im Verhältnis zu den eingegebenen \glspl{qa} größtenteils als sinnvoll.
 Außerdem stellten sie fest, dass bereits etwa 13 Patterns und 15 Best Practices in \jf implementiert sind und dass es zusätzlich sinnvoll sein könnte, in Zukunft weitere 5 Patterns und 4 Best Practices zu implementieren.
 Dies ist ein Hinweis darauf, dass das Tool eine gute Auswahl an \bpp bietet und dass diese Funktion zumindest im konkreten Anwendungsfall als sinnvoll erachtet werden kann.
