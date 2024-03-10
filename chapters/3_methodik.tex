@@ -29,7 +29,7 @@ Als weitere Eingabe für diese Suche dienen bestimmte Filter, die in \cref{sec:d
 Aus der resultierenden Liste von Migrationsmethoden werden die besten Vorschläge betrachtet und bewertet, bevor einer davon ausgewählt und in den folgenden Phasen verwendet wird.
 Analog dazu wird in Phase 3a auf Basis der \glspl{qa} und Filter aus Phase 2 eine sortierte Liste von Patterns und Best Practices vorgeschlagen.
 Das Vorgehen bei der Auswahl der Filter sowie die spätere Inspektion der Vorschläge des \gls{arh} werden in Form von strukturierten Feldnotizen protokolliert.
-Deren genauere Funktion und Form dieser wird in \cref{sec:structured-field-notes} näher erläutert.
+Deren genauere Funktion und Form wird in \cref{sec:structured-field-notes} näher erläutert.
 
 \subsection{Architekturreview}
 \label{sec:methodik-architekturreview}
@@ -104,7 +104,7 @@ Diese \glspl{qa} sind in \cref{fig:qas} dargestellt.
 	\label{fig:qas}
 \end{figure}
 Es handelt sich hierbei größtenteils um die wichtigsten \glspl{qa} aus der ISO 25010 \cite{ISO-25010}, die durch einige spezifische \glspl{qa} für Microservices ergänzt wurden.
-Aufgrund der Verwendung des \gls{arh} ist es die einzige sinnvolle Option, diese zu nutzen, da der \gls{arh} nur die Verwendung dieser zulässt.
+Aufgrund der Verwendung des \gls{arh} ist es sinnvoll, diese zu nutzen, da der \gls{arh} nur diese zulässt.
 
 Die im zweiten Schritt erstellte Priorisierung der \glspl{qa} wird im dritten Schritt dann verwendet, um Szenarien zu erstellen.
 Dieser ist in drei Sub-Schritte unterteilt:
@@ -118,7 +118,7 @@ Dass bei der Vorlage von \Citet{SVAHNBERG20071893} keine vergleichbare Bewertung
 Im Kontext der qualitativen Bewertung durch Menschen sind diese nicht explizit notwendig.
 Im Vergleich dazu können bei der automatisierten Auswertung durch ein Werkzeug wie den \gls{arh} die Szenarien nicht selbstständig eingeschätzt werden.
 Außerdem stammt die Visualisierung durch einen Utility Tree aus \gls{atam} \cite{kazman_2000}.
-Ein solcher soll dabei helfen, Qualitätsziele zu konkretisieren und priorisieren~\cite{kazman_2000}.
+Ein solcher soll dabei helfen, Qualitätsziele zu konkretisieren und zu priorisieren \cite{kazman_2000}.
 Dabei werden nach einem semantisch unbedeutenden Wurzelknoten von links nach rechts die \glspl{qa} in Sub-\glspl{qa} verfeinert, worauf dann auf dritter Ebene Szenarien folgen.
 Wie in \cref{fig:utility-tree} zu sehen ist, enthält die in dieser Thesis verwendete Notation des Utility Trees auch die Einschätzung der Szenarien in Wichtigkeit und technische Schwierigkeit.
 \begin{figure}[!h]
@@ -134,7 +134,7 @@ Wie in \cref{fig:utility-tree} zu sehen ist, enthält die in dieser Thesis verwe
 Im letzten Schritt erfolgt eine Bewertung, bei der jedem Szenario zugeordnet wird, ob eine \gls{msa} dafür vorteilhaft ist.
 Diese Bewertung kann als Teil des fünften Schritts nach \Citet{SVAHNBERG20071893} gesehen werden.
 Abgesehen davon wird allerdings der Teil der Bewertung der Architektur unter den Szenarien im Architekturreview komplett ausgelassen und der Rest der Schritte 4, 5 und 6 nach \Citet{SVAHNBERG20071893} nicht durchgeführt.
-Während bei allen genannten szenarienbasierten Verfahren die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zu Bewertung der Systemarchitektur sind, stellen sie bei dem im Rahmen dieser Thesis durchgeführten Architekturreview das gewünschte Endprodukt dar.
+Während bei allen genannten szenarienbasierten Verfahren die Szenarien und \glspl{qa} lediglich ein Zwischenprodukt und Mittel zur Bewertung der Systemarchitektur sind, stellen sie bei dem im Rahmen dieser Thesis durchgeführten Architekturreview das gewünschte Endprodukt dar.
 
 Die vorgestellte Methodik kann als neue Methodik zur Extraktion von Szenarien und \glspl{qa} betrachtet werden und könnte in Zukunft als Vorlage für die Anwendung mit dem \gls{arh} verwendet werden.
 Trotz des Fehlens des Bewertungsschritts der Methodik wird sie folgend zur Vereinfachung als Architekturreview bezeichnet.
@@ -174,7 +174,7 @@ Um die Vorteile beider Varianten zu kombinieren, werden in dieser Arbeit semi-st
 Dabei werden spezifische Fragen gestellt, aber auch offene Fragen mit eingebunden, um die Flexibilität der potentiellen Ergebnisse zu erhöhen.
 
 \paragraph{Experten:} Wie aus dem Namen hervorgeht, ist die Auswahl der Experten eine wichtige Entscheidung bei der Planung von Experteninterviews.
-Die Expertise, die in diesem Fall für die Interviews von Bedeutung ist, ist \glqq Betriebswissen\grqq{} \cite{Meuser2009}.
+Die für die Interviews relevante Expertise ist \glqq Betriebswissen\grqq{} \cite{Meuser2009}.
 Als Experten wurden Mitarbeiter mit guter Kenntnis des Produkts \jf ausgewählt, da die Fragen einen besonderen Bezug zur Nützlichkeit des Frameworks für das Produkt haben.
 \Citet{Runeson2009} empfehlen, aufgrund der qualitativen Natur von Fallstudien, möglichst verschiedene Teilnehmer auszuwählen, anstatt nach Ähnlichkeiten zu suchen.
 Aus diesem Grund wurde bei der Wahl der Mitarbeiter nach ihrer Rolle in der Produktentwicklung von \jf differenziert.
@@ -202,7 +202,7 @@ Da ein gutes Verständnis der Verfahren dafür nötig ist, werden die Fragen wei
 Außerdem wird für Bezug zur \hyperref[forschungsfrage:1]{Forschungsfrage} die Auswirkung der Verfahren auf die Granularität des Systems befragt.
 Anschließend werden die mit \gls{arh} erhaltenen \bpp bewertet.
 Auch hier werden zunächst offene Fragen gestellt und am Ende eine Frage mit Bezug zu den Qualitätsaspekten aus der \hyperref[forschungsfrage:1]{Forschungsfrage} gestellt.
-Zum Abschluss werden dem Interviewten noch zwei Fragen zur Gesamtbewertung der Anwendung des Frameworks gestellt.
+Zum Abschluss werden dem Interviewten noch zwei Fragen zur Gesamtbewertung der Anwendung des Frameworks vorgelegt.
 Dabei soll er seine Einzelbewertungen der letzten Schritte zusammenfassen und ein Fazit ziehen.
 
 \paragraph{Vorbereitungsmaterial:}
@@ -228,9 +228,9 @@ Die Rohdaten liegen in Form von drei Audioaufnahmen vor, die jeweils etwa eine S
 Die Audioaufnahmen werden mithilfe der von \Citet{Mayring2019} vorgestellten Techniken  \emph{Zusammenfassen} und \emph{Explikation} getrennt transkribiert (siehe \cref{fig:datenanalyse}).
 Die Ergebnisse dieser Transkription werden auf zwei verschiedene Arten in diese Thesis übernommen.
 Zum einen wird eine \emph{Strukturierung} nach \Citet{Mayring2019} durchgeführt.
-Dabei werden für jede gestellten Fragen die Antworten kategorisiert.
+Dabei werden für jede gestellte Frage die Antwort kategorisiert.
 Das dafür entworfene \glqq ordinal geordnete Kategoriensystem\grqq{} nach \Citet{Mayring2019} ist in \cref{fig:kodierleitfaden} zu sehen.
-Auf der anderen Seite werden die Transkripte, sowie die Kodierungen in textueller Form aggregiert.
+Auf der anderen Seite werden die Transkripte sowie die Kodierungen in textueller Form aggregiert.
 Eine Übersicht über die dadurch entstandenen aggregierten Zusammenfassungen ist in \cref{tab:expert-interviews-analysis} gegeben.
 
 %Diese enthalten Sammlungen von langen Texten, welche folgend auf einen geringeren Umfang gekürzt werden, ohne dabei relevante Informationen zu verlieren.
@@ -270,7 +270,8 @@ Eine Übersicht über die dadurch entstandenen aggregierten Zusammenfassungen is
 
 Nachdem alle Feldnotizen erstellt sind, werden diese qualitativ ausgewertet.
 Auch hier wird die Strukturierung nach \Citet{Mayring2019} verwendet.
-Dafür wurde eine Kodierung erstellt, welche in \cref{tab:methodik-feldnitzen-kodierung} zu sehen ist und an vielen Stellen von der Kodierung aus der ähnlichen Arbeit von \Citet{master-marvin-knodel} inspiriert ist.
+Dafür wurde eine Kodierung erstellt, welche in \cref{tab:methodik-feldnitzen-kodierung} zu sehen ist.
+An vielen Stellen wurde diese aus der ähnlichen Arbeit von \Citet{master-marvin-knodel} inspiriert.
 
 \input{tables/methodology/feldnotizen-codierung}
 
@@ -279,5 +280,5 @@ Die Definition der Codes \glqq Mehr gut gelaufen\grqq{} und \glqq Mehr schlecht 
 Es wurde sich stattdessen für eine Definition dieser über die Wahrnehmung des Autors nach Betrachtung der positiven und negativen Aspekte der jeweiligen Feldnotiz entschieden.
 Das hat natürlich den Nachteil einer geringeren Objektivität.
 Trotzdem wurde es als sinnvoller eingeschätzt, da sonst keine Gewichtung der positiven und negativen Aspekte stattfindet.
-Dass die Ergebnisse je nach Definition dieser Kodierung abweichen wurde bei Betrachtung erkannt und sich deswegen für die angepasste Variante entschieden.
+Dass die Ergebnisse je nach Definition dieser Kodierung abweichen, wurde bei Betrachtung erkannt und sich deswegen für die angepasste Variante entschieden.
 
