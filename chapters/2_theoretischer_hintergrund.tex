@@ -5,7 +5,7 @@ In diesem Kapitel wird in den theoretischen Hintergrund der für diese Thesis re
 Zunächst wird ein kurzer Vergleich zwischen dem häufig verwendeten Legacy-Architekturprinzip \emph{Monolith} und dem behandelten, modernen Architekturprinzip \emph{Microservices} gezogen.
 Anschließend werden aktuelle Arbeiten zur Migration zu \acrlongpl{msa} beschrieben.
 Des Weiteren wird das \acrfull{mmf} vorgestellt, das ein wesentlicher Bestandteil und Untersuchungsobjekt dieser Arbeit ist.
-Abschließend wird ein Überblick über das Produkt gegeben, das in dieser Thesis mithilfe des \gls{mmf} überarbeitet wird.
+Abschließend wird ein Überblick über das Produkt gegeben, das in dieser Thesis mithilfe des \gls{mmf} überarbeitet wurde.
 
 \section{Vergleich von monolithischen und Microservices-Systemen}
 \label{sec:monolith-vs-microservices}
@@ -14,7 +14,7 @@ Die monolithische Systemarchitektur hat lange Zeit einen Großteil der Softwarep
 Moderne Programmiersprachen ermöglichen zwar die Modularisierung von Monolithen, jedoch befindet sich die gesamte Funktionalität eines Monolithen in einer Applikation, die aus nur einem ausführbaren Artefakt besteht.
 Nach den meisten Definitionen (siehe~\cite{Dragoni2017}) sind Monolithen dadurch gekennzeichnet, dass ihre einzelnen Module nicht unabhängig voneinander ausführbar sind.
 Auch wenn in dieser Arbeit die Migration weg von dieser Architektur thematisiert wird, hat sie ihre Vorteile.
-Da es sich um eine simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployment und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{a-survey-on}.
+Da es sich um eine simple Architektur mit nur einer Codebasis handelt, ist das Erstellen, Testen, Deployen und auch Monitoring kleiner Anwendungen einfacher und schneller~\cite{a-survey-on}.
 Es ist kein kompliziertes Kommunikationsmodell notwendig, da Monolithen oft in einer Programmiersprache und sogar mit nur einem Framework geschrieben werden.
 
 Je größer Monolithen jedoch werden, desto stärker zeigen sich die Schwächen dieser Architektur.
@@ -78,7 +78,7 @@ Der Migrationsprozess ist sehr komplex, riskant und fehleranfällig.
 Erschwert wird er durch das Fehlen klarer und strukturierter Anleitungen.
 Mehrere Metastudien haben bereits versucht, eine Übersicht über verschiedene Refactoring- und Migrationsverfahren zu geben, die für Entwickler hilfreich sein können.
 Jedoch bleibt dabei das Problem bestehen, dass sich der aktuelle Stand der Literatur schnell ändert und Metastudien dadurch teilweise obsolet werden.
-Dieses Problem könnte gelöst werden durch die Umsetzung der Anleitung in Form eines Tools, das Entwickler bei der Migration unterstützt.
+Dieses Problem könnte durch die Umsetzung der Anleitung in Form eines Tools, das Entwickler bei der Migration unterstützt, gelöst werden.
 Im Gegensatz zu Metastudien könnte dieses Tool dynamisch an den neuesten Forschungsstand angepasst werden.
 
 Aus diesem Grund hat das \gls{ese} das \acrfull{mmf} und das zugehörige Tool \gls{arh} \cite{arh-github} entwickelt, welche in diesem Kapitel vorgestellt werden.
@@ -127,8 +127,8 @@ Im Folgenden werden diese drei Phasen genauer beschrieben:
 
 \section{jadice flow}
 
-Das vorgestellte Framework wird in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden \acrlong{msa} in der Industrie benutzt.
-Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow}\footnote{\url{https://www.levigo.de/jadice-flow/}} eingegangen, welches mit dem \gls{mmf} überarbeitet wird.
+Das vorgestellte Framework wurde in dieser Thesis nun erstmals zum Refactoring einer bereits vorhanden \acrlong{msa} in der Industrie verwendet.
+Deswegen wird in diesem Abschnitt näher auf das Produkt \emph{jadice flow}\footnote{\url{https://www.levigo.de/jadice-flow/}} eingegangen, welches mit dem \gls{mmf} überarbeitet wurde.
 
 \jf ist ein Produkt der Firma \emph{levigo solutions}\footnote{\url{https://www.levigo.de/dokumentenmanagement/}}.
 \emph{levigo solutions} beschäftigt über 30 Mitarbeiter, von denen ungefähr sechs seit vier Jahren an der Anwendung arbeiten.
@@ -146,8 +146,8 @@ Im Gegensatz zu einfacher PDF-Darstellung von E-Mails in geläufigen Programmen 
 Da \emph{jadice flow} die erste Generation in \acrlong{msa} ist, wird noch architekturelles Verbesserungspotential vermutet.
 Durch die Analyse von \emph{jadice flow 1.0} mithilfe des Tools und weiterer Forschung im Rahmen dieser Bachelorarbeit sollte ein Refactoring-Prozess für \emph{jadice flow 2.0} angestoßen werden.
 
-Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wird es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
-Dadurch wird erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden \acrlong{msa} geeignet sind.
+Obwohl das Framework ursprünglich für die Anwendung auf Monolithen gedacht ist, wurde es in dieser Arbeit auf ein bereits migriertes System angewendet, um dessen Eigenschaften weiter zu verbessern.
+Dadurch wurde erforscht, inwiefern das Framework und das Tool für diesen Spezialfall einer bereits existierenden \acrlong{msa} geeignet sind.
 Falls es deshalb für diesen Anwendungsfall zielführend gewesen wäre, hätte zusätzlich die ursprüngliche monolithische Anwendung von \jf (\emph{jadice server}) hinzugezogen werden können.
 Ein Vergleich der Ergebnisse dessen mit \jf wäre dann möglich gewesen.
 

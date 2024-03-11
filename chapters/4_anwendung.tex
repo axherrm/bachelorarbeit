@@ -1,7 +1,7 @@
 \chapter{Anwendung des Frameworks auf jadice flow}
 \label{chap:anwendung}
 
-In diesem Kapitel wird ein Architektur-Refactoring am Produkt \jf geplant und in theoretischer Ebene durchgeführt.
+In diesem Kapitel wird ein Architektur-Refactoring am Produkt \jf geplant.
 Dazu werden das \acrfull{mmf} beziehungsweise der \acrfull{arh} verwendet, welche den Prozess in drei Phasen unterteilen.
 Eine genauere Beschreibung des Frameworks ist in \cref{sec:mmf} zu finden.
 Sehr abstrahiert und vereinfacht bestehen die Phasen aus den folgenden Aktivitäten:
@@ -70,7 +70,7 @@ Nach einer Diskussionszeit von etwa 35 Minuten ergaben sich die Szenarien, die i
 	\centering
 	\includegraphics[angle=270,width=\textwidth]{scenarios.drawio}
 	\caption[Utility Tree des Architekturreviews mit \acrshortpl{qa} und Szenarien]{
-		Der Utility Tree mit Szenarien, die aus dem in Phase 1 durchgeführten Architekturreview resultieren.
+		Der Utility Tree mit Szenarien, die aus dem in Phase 1 durchgeführten Ar\-chi\-tek\-tur\-review resultieren.
 		Von oben nach unten enthält der Baum folgende Elementarten: [1] Wurzel (ohne Bedeutung), [2] \gls{qa}, [3] Subattribut, [4] Be\-ur\-teilung des Szenarios hinsichtlich Wichtigkeit und technischer Schwierigkeit, [5] Szenariobeschreibung.
 	}
 	\label{fig:scenarios}
@@ -125,7 +125,7 @@ Hierbei wurde in drei Stufen unterschieden:
 	\item \disadvantage\hspace*{0.1cm}: Dieses Szenario profitiert wesentlich mehr von einer monolithischen Architektur als von einer \gls{msa}.
 	\item \hspace*{0.27cm}-\hspace*{0.27cm}: Dieses Szenario profitiert in verschiedenen Punkten sowohl von einer \gls{msa} als auch von einer monolithischen Architektur, wobei sich beide Seiten ungefähr gleichen.
 \end{itemize}
-Bei Szenarien wie beispielsweise den des \emph{Scalability} Attributs war es nicht schwer, Konsens zu finden, da die Möglichkeit der Skalierung auf Service-Ebene einer der größten Vorteile von \glspl{msa} gegenüber Monolithen ist.
+Bei Szenarien wie beispielsweise denen des \emph{Scalability} Attributs war es nicht schwer, Konsens zu finden, da die Möglichkeit der Skalierung auf Service-Ebene einer der größten Vorteile von \glspl{msa} gegenüber Monolithen ist.
 In anderen Fällen jedoch war es schwieriger, abzuwägen, ob die Vorteile einer \gls{msa} oder die eines Monolithen überwiegen.
 Schlussendlich konnte jedoch in Form von offener  Diskussion für jedes Szenario einstimmig geklärt werden, welche der drei Optionen gewählt werden sollte, sodass keine Abstimmungen notwendig waren.
 
@@ -174,7 +174,7 @@ Die ausgewählten Filter sind in \cref{tab:phase2-all-filter} markiert und in \c
 
 \input{tables/phase2/filter-selected}
 
-Bei der Auswahl der Filter, die vom Autor und \gls{po} durchgeführt wurde, haben die folgenden Begründungen zur schlussendlichen Filterwahl geführt:
+Bei der Auswahl der Filter, die vom Autor und \gls{po} durchgeführt wurde, haben die folgenden Be\-gründungen zur schlussendlichen Filterwahl geführt:
 Allgemein wurde darauf geachtet, nur die notwendigsten Filter auszuwählen, um den Einfluss einzelner Filter nicht zu verringern.
 Als gewünschte Zieleigenschaften des Systems wurden die \glspl{sp} als besonders wichtig erachtet.
 Daher wurden insgesamt fünf von sieben verfügbaren Filtern aus dieser Kategorie aufgenommen.
