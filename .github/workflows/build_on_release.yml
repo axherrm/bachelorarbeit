@@ -21,3 +21,4 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: main-german.pdf
+          asset_name: Bachelorarbeit_Axel_Herrmann_Woche_final.pdf
